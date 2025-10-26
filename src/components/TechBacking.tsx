@@ -2,7 +2,7 @@ import { Server, Activity, Lock } from "lucide-react";
 
 const TechBacking = () => {
   return (
-    <section className="py-32 border-t border-border">
+    <section id="infrastructure" className="py-32 border-t border-border">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Architecture Diagram */}
