@@ -1,28 +1,58 @@
+import { Shield } from "lucide-react";
+
 const Footer = () => {
   return (
-    <footer className="border-t border-white/10 py-12">
-      <div className="container mx-auto px-4">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+    <footer className="border-t border-border py-16">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="grid md:grid-cols-3 gap-12 mb-12">
+          {/* Brand */}
           <div>
-            <h3 className="text-2xl font-bold gradient-text mb-2">IR4Q</h3>
-            <p className="text-sm text-muted-foreground">Iraqi-American Tech Infrastructure</p>
+            <h3 className="text-2xl font-display mb-3">IR4Q</h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              Iraqi-operated, U.S.-secured digital infrastructure for mission-critical operations.
+            </p>
           </div>
-          
-          <div className="flex gap-8 text-sm">
-            <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">
-              Services
-            </a>
-            <a href="#about" className="text-muted-foreground hover:text-primary transition-colors">
-              About
-            </a>
-            <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
-              Contact
-            </a>
+
+          {/* Operations */}
+          <div>
+            <h4 className="text-sm font-display mb-4 text-muted-foreground">Operations Centers</h4>
+            <div className="space-y-3 text-sm">
+              <div>
+                <div className="font-mono">Baghdad HQ</div>
+                <div className="text-muted-foreground text-xs">Engineering & NOC</div>
+              </div>
+              <div>
+                <div className="font-mono">Virginia NOC</div>
+                <div className="text-muted-foreground text-xs">Infrastructure & Support</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Legal */}
+          <div>
+            <h4 className="text-sm font-display mb-4 text-muted-foreground">Resources</h4>
+            <nav className="space-y-2 text-sm">
+              <a href="#privacy" className="block hover:text-primary transition-colors">
+                Privacy Policy
+              </a>
+              <a href="#compliance" className="block hover:text-primary transition-colors">
+                Compliance Documentation
+              </a>
+              <a href="#security" className="block hover:text-primary transition-colors">
+                Security Practices
+              </a>
+            </nav>
           </div>
         </div>
-        
-        <div className="mt-8 pt-8 border-t border-white/10 text-center text-sm text-muted-foreground">
-          <p>© 2025 IR4Q. Building the digital future between Baghdad and Virginia.</p>
+
+        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
+          <div className="flex items-center gap-3 text-sm text-muted-foreground">
+            <Shield className="w-4 h-4" />
+            <span>ISO/IEC 27001:2022 Certified</span>
+          </div>
+          <p className="text-sm text-muted-foreground text-center">
+            © 2025 IR4Q Technologies. Building resilient digital infrastructure for Iraq.
+          </p>
         </div>
       </div>
     </footer>

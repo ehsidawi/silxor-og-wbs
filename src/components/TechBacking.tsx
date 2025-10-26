@@ -1,86 +1,109 @@
-import { Globe, TrendingUp, Users } from "lucide-react";
+import { Server, Activity, Lock } from "lucide-react";
 
 const TechBacking = () => {
   return (
-    <section className="py-32 relative overflow-hidden">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left side - Visual */}
-          <div className="relative">
-            <div className="glass-panel p-12 rounded-3xl relative">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
-              
-              {/* Connection visualization */}
-              <div className="relative z-10">
-                <div className="flex justify-between items-center mb-8">
-                  <div className="text-center">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-primary to-accent mx-auto mb-3 flex items-center justify-center animate-glow">
-                      <Globe className="w-10 h-10" />
-                    </div>
-                    <p className="font-semibold">Baghdad</p>
-                    <p className="text-sm text-muted-foreground">Iraq Hub</p>
-                  </div>
-                  
-                  <div className="flex-1 h-0.5 bg-gradient-to-r from-primary via-accent to-primary mx-8 relative">
-                    <div className="absolute top-1/2 -translate-y-1/2 w-3 h-3 bg-primary rounded-full animate-pulse"></div>
-                    <div className="absolute top-1/2 right-0 -translate-y-1/2 w-3 h-3 bg-accent rounded-full animate-pulse" style={{ animationDelay: '0.5s' }}></div>
-                  </div>
-                  
-                  <div className="text-center">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-accent to-primary mx-auto mb-3 flex items-center justify-center animate-glow" style={{ animationDelay: '1s' }}>
-                      <Globe className="w-10 h-10" />
-                    </div>
-                    <p className="font-semibold">Virginia</p>
-                    <p className="text-sm text-muted-foreground">U.S. Hub</p>
-                  </div>
+    <section className="py-32 border-t border-border">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
+          {/* Architecture Diagram */}
+          <div className="surface-elevated p-12">
+            <div className="space-y-8">
+              {/* Baghdad PoP */}
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 border-2 border-primary flex items-center justify-center">
+                  <Server className="w-8 h-8 text-primary" strokeWidth={1.5} />
                 </div>
+                <div>
+                  <div className="font-display text-lg">Baghdad Point of Presence</div>
+                  <div className="text-sm text-muted-foreground font-mono">33.3152&deg; N, 44.3661&deg; E</div>
+                </div>
+              </div>
 
-                <div className="grid grid-cols-3 gap-4 mt-12">
-                  <div className="text-center">
-                    <div className="text-3xl font-bold gradient-text mb-1">2</div>
-                    <p className="text-xs text-muted-foreground">Data Centers</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold gradient-text mb-1">&lt;50ms</div>
-                    <p className="text-xs text-muted-foreground">Latency</p>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-3xl font-bold gradient-text mb-1">100%</div>
-                    <p className="text-xs text-muted-foreground">Redundancy</p>
-                  </div>
+              {/* Connection Path */}
+              <div className="border-l-2 border-dashed border-border pl-8 ml-8 py-4">
+                <div className="flex items-center gap-3 mb-2">
+                  <Lock className="w-4 h-4 text-primary" />
+                  <span className="text-sm font-mono">Encrypted Transit Path</span>
+                </div>
+                <div className="text-sm text-muted-foreground">
+                  AES-256 encryption • Dedicated fiber • &lt;30s failover
+                </div>
+              </div>
+
+              {/* Virginia Facility */}
+              <div className="flex items-center gap-4">
+                <div className="w-16 h-16 border-2 border-accent flex items-center justify-center">
+                  <Server className="w-8 h-8 text-accent" strokeWidth={1.5} />
+                </div>
+                <div>
+                  <div className="font-display text-lg">Ashburn Tier-IV Facility</div>
+                  <div className="text-sm text-muted-foreground font-mono">39.0438&deg; N, 77.4874&deg; W</div>
+                </div>
+              </div>
+
+              {/* Metrics */}
+              <div className="grid grid-cols-3 gap-4 pt-8 border-t border-border">
+                <div>
+                  <div className="text-2xl font-mono text-primary mb-1">42ms</div>
+                  <div className="text-xs text-muted-foreground">Average latency</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-mono text-primary mb-1">N+2</div>
+                  <div className="text-xs text-muted-foreground">Power redundancy</div>
+                </div>
+                <div>
+                  <div className="text-2xl font-mono text-primary mb-1">99.995%</div>
+                  <div className="text-xs text-muted-foreground">Uptime SLA</div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right side - Content */}
-          <div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              <span className="gradient-text">Dual-Continent</span> Infrastructure
-            </h2>
-            <p className="text-xl text-muted-foreground mb-8 leading-relaxed">
-              Bridging two worlds with enterprise-grade technology. Our infrastructure spans Baghdad and Virginia, ensuring low-latency access and complete data redundancy.
-            </p>
+          {/* Technical Description */}
+          <div className="space-y-8">
+            <div>
+              <h2 className="text-display-lg md:text-4xl font-display mb-6">
+                Dual-Continent Resilience Architecture
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                IR4Q operates a distributed infrastructure model ensuring data sovereignty while maintaining enterprise-grade reliability through U.S. Tier-IV certification.
+              </p>
+            </div>
 
             <div className="space-y-6">
-              <div className="glass-panel p-6 rounded-xl flex gap-4">
-                <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
-                  <TrendingUp className="w-6 h-6 text-primary" />
+              <div className="surface-elevated p-6 flex gap-4">
+                <div className="w-12 h-12 border border-border flex items-center justify-center flex-shrink-0">
+                  <Activity className="w-6 h-6 text-primary" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-2">American Standards</h3>
-                  <p className="text-muted-foreground text-sm">Built on U.S. enterprise infrastructure with tier-3 data center certifications.</p>
+                  <h3 className="font-display text-lg mb-2">American Infrastructure Standards</h3>
+                  <p className="text-institutional">
+                    Built on Uptime Institute Tier-IV certified facilities with SOC 2 Type II attestation. All systems undergo continuous compliance monitoring and annual third-party audits.
+                  </p>
                 </div>
               </div>
 
-              <div className="glass-panel p-6 rounded-xl flex gap-4">
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-                  <Users className="w-6 h-6 text-accent" />
+              <div className="surface-elevated p-6 flex gap-4">
+                <div className="w-12 h-12 border border-border flex items-center justify-center flex-shrink-0">
+                  <Server className="w-6 h-6 text-primary" strokeWidth={1.5} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-2">Iraqi Expertise</h3>
-                  <p className="text-muted-foreground text-sm">Local teams understanding regional needs, global teams ensuring excellence.</p>
+                  <h3 className="font-display text-lg mb-2">Iraqi Operational Control</h3>
+                  <p className="text-institutional">
+                    Local engineering teams maintain operational sovereignty while leveraging global infrastructure. All control plane operations remain within Iraqi jurisdiction with U.S. infrastructure serving as resilient backing.
+                  </p>
                 </div>
+              </div>
+            </div>
+
+            <div className="pt-6">
+              <h3 className="text-sm font-display mb-4">Compliance & Certifications</h3>
+              <div className="flex flex-wrap gap-3">
+                {["ISO/IEC 27001:2022", "SOC 2 Type II", "GDPR-Ready", "Tier-IV Certified"].map((cert) => (
+                  <span key={cert} className="px-3 py-1 border border-border text-xs font-mono">
+                    {cert}
+                  </span>
+                ))}
               </div>
             </div>
           </div>

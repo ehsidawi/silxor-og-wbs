@@ -1,65 +1,73 @@
-import { Cloud, Shield, Server, Wrench, Database, Zap } from "lucide-react";
+import { Cloud, Shield, Server, Wrench, Database, Gauge } from "lucide-react";
 
-const services = [
+const capabilities = [
   {
     icon: Cloud,
-    title: "Cloud Hosting",
-    description: "Enterprise-grade cloud infrastructure with guaranteed 99.9% uptime across Iraqi and U.S. data centers.",
+    title: "Sovereign Cloud Hosting",
+    description: "Enterprise-grade cloud infrastructure with complete data sovereignty. Iraqi-operated control planes with U.S.-grade redundancy protocols.",
+    technical: "Hosted in Ashburn, VA • &lt;45ms to Baghdad • 99.995% SLA",
   },
   {
     icon: Shield,
-    title: "Security Solutions",
-    description: "Advanced cybersecurity protocols protecting your data with military-grade encryption and monitoring.",
+    title: "Critical Infrastructure Security",
+    description: "Military-grade security architecture designed for financial institutions and government agencies. Continuous threat monitoring and compliance automation.",
+    technical: "ISO 27001 • SOC 2 Type II • AES-256 encryption at rest and in transit",
   },
   {
     icon: Server,
-    title: "Dedicated Servers",
-    description: "High-performance dedicated hardware optimized for your specific workloads and compliance needs.",
-  },
-  {
-    icon: Wrench,
-    title: "Managed Services",
-    description: "24/7 expert management of your infrastructure, so you can focus on growing your business.",
+    title: "Dedicated Infrastructure",
+    description: "Bare-metal servers and private cloud configurations optimized for regulated workloads requiring physical isolation and audit trails.",
+    technical: "Tier-IV certified • N+2 power redundancy • 2x network paths",
   },
   {
     icon: Database,
-    title: "Data Management",
-    description: "Scalable database solutions with automated backups and disaster recovery protocols.",
+    title: "Data Residency & Compliance",
+    description: "Structured data management solutions ensuring regulatory compliance across Iraqi and international frameworks with automated backup protocols.",
+    technical: "GDPR-ready • Daily automated backups • &lt;30s RTO • RPO: 15min",
   },
   {
-    icon: Zap,
-    title: "Performance Optimization",
-    description: "Continuous monitoring and optimization ensuring peak performance at all times.",
+    icon: Wrench,
+    title: "Managed Operations",
+    description: "24/7 Iraqi-based NOC with escalation to U.S. engineering teams. Proactive monitoring, incident response, and capacity planning.",
+    technical: "Baghdad NOC • Virginia Tier-3 support • &lt;15min P1 response",
+  },
+  {
+    icon: Gauge,
+    title: "Performance Engineering",
+    description: "Continuous infrastructure optimization through real-time telemetry, predictive scaling, and latency reduction protocols.",
+    technical: "Real-time metrics • Predictive autoscaling • 99.9th percentile &lt;100ms",
   },
 ];
 
 const Services = () => {
   return (
-    <section className="py-32 relative">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-6xl font-bold mb-4">
-            Enterprise-Grade <span className="gradient-text">Solutions</span>
+    <section className="py-32">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <div className="mb-20">
+          <h2 className="text-display-lg md:text-5xl font-display mb-4">
+            Core Capabilities
           </h2>
-          <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Comprehensive tech infrastructure backed by dual-continent reliability
+          <p className="text-xl text-muted-foreground font-light max-w-3xl">
+            Comprehensive technology infrastructure engineered for mission-critical operations
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => {
-            const Icon = service.icon;
+        <div className="grid md:grid-cols-2 gap-12">
+          {capabilities.map((capability, index) => {
+            const Icon = capability.icon;
             return (
               <div
                 key={index}
-                className="glass-panel p-8 rounded-2xl hover:scale-105 transition-all duration-300 group cursor-pointer"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className="surface-elevated p-8 accent-border hover:border-l-4 transition-all"
               >
-                <div className="mb-6 w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors group-hover:animate-glow">
-                  <Icon className="w-7 h-7 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                <Icon className="w-6 h-6 text-primary mb-4" strokeWidth={1.5} />
+                <h3 className="text-xl font-display font-normal mb-3">{capability.title}</h3>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  {capability.description}
+                </p>
+                <p className="text-sm font-mono text-primary/80">
+                  {capability.technical}
+                </p>
               </div>
             );
           })}

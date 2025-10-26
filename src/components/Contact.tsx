@@ -1,74 +1,91 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Mail, MessageSquare, Send } from "lucide-react";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Mail } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section className="py-32 relative">
+    <section className="py-32 border-t border-border">
       <div className="container mx-auto px-4 max-w-4xl">
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 glass-panel px-4 py-2 rounded-full mb-6">
-            <MessageSquare className="w-4 h-4 text-primary" />
-            <span className="text-sm font-medium">Get In Touch</span>
-          </div>
-          <h2 className="text-4xl md:text-6xl font-bold mb-4">
-            Let's Build <span className="gradient-text">Together</span>
+        <div className="mb-16">
+          <h2 className="text-display-lg md:text-5xl font-display mb-4">
+            Begin a Technical Assessment
           </h2>
-          <p className="text-xl text-muted-foreground">
-            Ready to transform your infrastructure? Our team is standing by.
+          <p className="text-lg text-muted-foreground font-light">
+            Our engineering team will conduct a comprehensive evaluation of your infrastructure requirements and provide a detailed proposal within 48 hours.
           </p>
         </div>
 
-        <div className="glass-panel p-8 md:p-12 rounded-3xl">
+        <div className="surface-elevated p-12">
           <form className="space-y-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div>
-                <label className="block text-sm font-medium mb-2">Full Name</label>
+                <label className="block text-sm font-display mb-2 text-muted-foreground">
+                  Full Name
+                </label>
                 <Input 
-                  placeholder="John Doe" 
-                  className="bg-background/50 border-white/10 focus:border-primary"
+                  placeholder="Technical contact name" 
+                  className="bg-background border-border focus:border-primary"
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium mb-2">Email Address</label>
+                <label className="block text-sm font-display mb-2 text-muted-foreground">
+                  Email Address
+                </label>
                 <Input 
                   type="email" 
-                  placeholder="john@company.com" 
-                  className="bg-background/50 border-white/10 focus:border-primary"
+                  placeholder="email@organization.iq" 
+                  className="bg-background border-border focus:border-primary"
                 />
               </div>
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Company</label>
+              <label className="block text-sm font-display mb-2 text-muted-foreground">
+                Organization
+              </label>
               <Input 
-                placeholder="Your Company" 
-                className="bg-background/50 border-white/10 focus:border-primary"
+                placeholder="Organization or institution name" 
+                className="bg-background border-border focus:border-primary"
               />
             </div>
 
             <div>
-              <label className="block text-sm font-medium mb-2">Message</label>
-              <Textarea 
-                placeholder="Tell us about your infrastructure needs..." 
-                rows={6}
-                className="bg-background/50 border-white/10 focus:border-primary resize-none"
-              />
+              <label className="block text-sm font-display mb-2 text-muted-foreground">
+                Primary Use Case
+              </label>
+              <Select>
+                <SelectTrigger className="bg-background border-border focus:border-primary">
+                  <SelectValue placeholder="Select assessment type" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="migration">Cloud Migration</SelectItem>
+                  <SelectItem value="security">Security Audit</SelectItem>
+                  <SelectItem value="infrastructure">Infrastructure Review</SelectItem>
+                  <SelectItem value="custom">Custom Development</SelectItem>
+                  <SelectItem value="compliance">Compliance Assessment</SelectItem>
+                </SelectContent>
+              </Select>
             </div>
 
-            <Button variant="hero" size="lg" className="w-full group">
-              <Mail className="w-5 h-5" />
-              Send Message
-              <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <Button variant="institutional" size="lg" className="w-full">
+              Request Assessment
             </Button>
           </form>
 
-          <div className="mt-8 pt-8 border-t border-white/10 text-center">
-            <p className="text-muted-foreground mb-2">Or reach us directly</p>
-            <a href="mailto:contact@ir4q.tech" className="text-primary hover:text-primary/80 font-medium transition-colors">
-              contact@ir4q.tech
-            </a>
+          <div className="mt-8 pt-8 border-t border-border">
+            <p className="text-sm text-muted-foreground mb-3">
+              For immediate technical inquiries, contact our engineering team directly:
+            </p>
+            <div className="flex items-center gap-2">
+              <Mail className="w-4 h-4 text-primary" />
+              <a 
+                href="mailto:solutions@ir4q.tech" 
+                className="text-primary hover:opacity-80 transition-opacity font-mono text-sm"
+              >
+                solutions@ir4q.tech
+              </a>
+            </div>
           </div>
         </div>
       </div>

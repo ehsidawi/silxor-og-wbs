@@ -8,51 +8,42 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* IR4Q Dark Tech Theme */
-    --background: 228 71% 7%;
-    --foreground: 0 0% 100%;
+    /* IR4Q Enterprise Design System */
+    --background: 225 12% 8%;
+    --foreground: 220 15% 95%;
 
-    --card: 228 71% 7%;
-    --card-foreground: 0 0% 100%;
+    --card: 225 10% 12%;
+    --card-foreground: 220 15% 95%;
 
-    --popover: 228 71% 7%;
-    --popover-foreground: 0 0% 100%;
+    --popover: 225 10% 12%;
+    --popover-foreground: 220 15% 95%;
 
-    /* Electric Cyan Primary */
-    --primary: 187 100% 50%;
-    --primary-foreground: 228 71% 7%;
+    /* Strategic Accent - Used Sparingly */
+    --primary: 195 85% 55%;
+    --primary-foreground: 225 12% 8%;
 
-    /* Deep Navy Secondary */
-    --secondary: 228 71% 12%;
-    --secondary-foreground: 0 0% 100%;
+    /* Surface Elevation */
+    --secondary: 225 10% 12%;
+    --secondary-foreground: 220 15% 95%;
 
-    --muted: 228 40% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 225 8% 18%;
+    --muted-foreground: 220 10% 65%;
 
-    /* Purple Accent */
-    --accent: 270 75% 65%;
-    --accent-foreground: 0 0% 100%;
+    /* Success State */
+    --accent: 150 70% 45%;
+    --accent-foreground: 220 15% 95%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive: 0 70% 50%;
+    --destructive-foreground: 220 15% 95%;
 
-    --border: 228 40% 20%;
-    --input: 228 40% 20%;
-    --ring: 187 100% 50%;
+    --border: 225 8% 20%;
+    --input: 225 8% 20%;
+    --ring: 195 85% 55%;
 
-    --radius: 0.75rem;
+    --radius: 0.25rem;
 
-    /* Glassmorphism */
-    --glass-bg: 0 0% 100% / 0.05;
-    --glass-border: 0 0% 100% / 0.1;
-    
-    /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(187 100% 50%), hsl(270 75% 65%));
-    --gradient-bg: linear-gradient(180deg, hsl(228 71% 7%), hsl(228 71% 3%));
-    
-    /* Shadows */
-    --glow-cyan: 0 0 40px hsl(187 100% 50% / 0.3);
-    --glow-purple: 0 0 40px hsl(270 75% 65% / 0.3);
+    /* Controlled Transparency */
+    --glass-functional: 240 100% 99% / 0.03;
   }
 }
 
@@ -63,53 +54,38 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground font-body antialiased;
-    background: linear-gradient(180deg, hsl(228 71% 7%), hsl(228 71% 3%));
+    background: hsl(225 12% 8%);
+    background-image: 
+      repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.01) 2px, rgba(255,255,255,0.01) 4px);
     min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-display;
+    font-weight: 300;
+    letter-spacing: 0.5px;
   }
 }
 
 @layer utilities {
-  .glass-panel {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  .surface-elevated {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
   }
 
-  .gradient-text {
-    background: linear-gradient(135deg, hsl(187 100% 50%), hsl(270 75% 65%));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .functional-glass {
+    background: rgba(240, 245, 255, 0.03);
+    backdrop-filter: blur(8px);
+    border: 1px solid hsl(var(--border));
   }
 
-  .glow-cyan {
-    box-shadow: 0 0 40px hsl(187 100% 50% / 0.3);
+  .text-institutional {
+    color: hsl(var(--muted-foreground));
+    font-size: 0.875rem;
+    line-height: 1.6;
   }
 
-  .glow-purple {
-    box-shadow: 0 0 40px hsl(270 75% 65% / 0.3);
-  }
-
-  .animate-float {
-    animation: float 6s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-  }
-
-  .animate-glow {
-    animation: glow 2s ease-in-out infinite alternate;
-  }
-
-  @keyframes glow {
-    from { box-shadow: 0 0 20px hsl(187 100% 50% / 0.2); }
-    to { box-shadow: 0 0 40px hsl(187 100% 50% / 0.6); }
+  .accent-border {
+    border-left: 2px solid hsl(var(--primary));
   }
 }

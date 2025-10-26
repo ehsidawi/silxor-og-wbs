@@ -14,8 +14,13 @@ export default {
     },
     extend: {
       fontFamily: {
-        display: ['Space Grotesk', 'sans-serif'],
+        display: ['IBM Plex Sans Condensed', 'sans-serif'],
         body: ['Inter', 'sans-serif'],
+        mono: ['IBM Plex Mono', 'monospace'],
+      },
+      fontSize: {
+        'display-xl': ['3rem', { lineHeight: '1.1', letterSpacing: '0.5px', fontWeight: '300' }],
+        'display-lg': ['2rem', { lineHeight: '1.2', letterSpacing: '0.5px', fontWeight: '400' }],
       },
       colors: {
         border: "hsl(var(--border))",
