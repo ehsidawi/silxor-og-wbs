@@ -30,9 +30,11 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
-            <Button variant="institutional" size="lg">
-              Request Technical Assessment
-              <ArrowRight className="w-4 h-4" />
+            <Button variant="institutional" size="lg" asChild>
+              <a href="https://cal.com/silxor/1-hr?user=silxor&duration=30" target="_blank" rel="noopener noreferrer">
+                Request Technical Assessment
+                <ArrowRight className="w-4 h-4" />
+              </a>
             </Button>
             <Button variant="minimal" size="lg">
               View Infrastructure
