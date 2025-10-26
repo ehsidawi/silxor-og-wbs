@@ -8,6 +8,15 @@ const Hero = () => {
     }}>
       <div className="container mx-auto px-6 py-24 md:py-32">
         <div className="max-w-3xl">
+          {/* Logo */}
+          <div className="mb-12">
+            <img 
+              src="/placeholder.svg" 
+              alt="IR4Q Technologies" 
+              className="h-12 md:h-16 w-auto"
+            />
+          </div>
+
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-wide leading-tight mb-6">
             Sovereign digital infrastructure for Iraq — engineered locally, hardened globally.
           </h1>
