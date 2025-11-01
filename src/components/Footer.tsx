@@ -1,4 +1,5 @@
 import { Shield } from "lucide-react";
+import ir4qLogo from "@/assets/ir4q-logo.jpg";
 
 const Footer = () => {
   return (
@@ -7,7 +8,10 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-12 mb-12">
           {/* Brand */}
           <div>
-            <h3 className="text-2xl font-display mb-3">IR4Q</h3>
+            <div className="flex items-center gap-3 mb-3">
+              <img src={ir4qLogo} alt="IR4Q Technologies" className="h-8 w-auto" />
+              <h3 className="text-2xl font-display">IR4Q</h3>
+            </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Iraqi-operated, U.S.-secured digital infrastructure for mission-critical operations.
             </p>
