@@ -9,9 +9,7 @@ const Hero = () => {
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-wide leading-tight mb-6">Sovereign digital infrastructure for Iraq engineered locally, hardened globally.</h1>
             
-            <p className="text-lg text-muted-foreground mb-10 max-w-2xl">
-              IR4Q delivers end-to-end technology services — from Baghdad-based development to Tier-IV U.S. data centers — ensuring compliance, resilience, and performance for Iraq's most critical systems.
-            </p>
+            <p className="text-lg text-muted-foreground mb-10 max-w-2xl">IR4Q delivers end-to-end technology services, from Baghdad-based development to Tier-IV U.S. data centers, ensuring compliance, resilience, and performance for Iraq's most critical systems.</p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Button variant="institutional" size="lg" asChild>
