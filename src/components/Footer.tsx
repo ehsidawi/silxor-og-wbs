@@ -1,5 +1,5 @@
 import { Shield } from "lucide-react";
-import ir4qLogo from "@/assets/ir4q-logo.jpg";
+import ir4qLogo from "@/assets/ir4q-logo.png";
 
 const Footer = () => {
   return (
