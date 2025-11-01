@@ -2,55 +2,50 @@ import { useEffect } from "react";
 
 const Contact = () => {
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://app.cal.com/embed/embed.js';
-    script.async = true;
-    document.head.appendChild(script);
-
-    script.onload = () => {
+    // @ts-ignore
+    (function (C, A, L) { 
+      let p = function (a, ar) { a.q.push(ar); }; 
+      let d = C.document; 
       // @ts-ignore
-      window.Cal = window.Cal || function () { 
+      C.Cal = C.Cal || function () { 
         // @ts-ignore
-        let cal = window.Cal; 
+        let cal = C.Cal;
         let ar = arguments; 
         if (!cal.loaded) { 
           cal.ns = {}; 
           cal.q = cal.q || []; 
+          d.head.appendChild(d.createElement("script")).src = A; 
           cal.loaded = true; 
         } 
-        if (ar[0] === "init") { 
-          const api = function () { cal.q.push(arguments); }; 
+        if (ar[0] === L) { 
+          const api = function () { p(api, arguments); }; 
           const namespace = ar[1]; 
           api.q = api.q || []; 
           if(typeof namespace === "string"){
             cal.ns[namespace] = cal.ns[namespace] || api;
-            cal.q.push(ar);
-            cal.q.push(["initNamespace", namespace]);
-          } else cal.q.push(ar); 
+            p(cal.ns[namespace], ar);
+            p(cal, ["initNamespace", namespace]);
+          } else p(cal, ar); 
           return;
         } 
-        cal.q.push(ar); 
-      };
-      
-      // @ts-ignore
-      window.Cal("init", "technical-assessment", {origin:"https://app.cal.com"});
-      // @ts-ignore    
-      window.Cal.ns["technical-assessment"]("inline", {     
-        elementOrSelector:"#my-cal-inline-technical-assessment",     
-        config: {"layout":"month_view"},     
-        calLink: "silxor/technical-assessment",   
-      });
-      // @ts-ignore    
-      window.Cal.ns["technical-assessment"]("ui", {
-        "cssVarsPerTheme":{"light":{"cal-brand":"#6d6d6d"},"dark":{"cal-brand":"#fafafa"}},
-        "hideEventTypeDetails":false,
-        "layout":"month_view"
-      });
-    };
-
-    return () => {
-      document.head.removeChild(script);
-    };
+        p(cal, ar); 
+      }; 
+    })(window, "https://app.cal.com/embed/embed.js", "init");
+    
+    // @ts-ignore
+    window.Cal("init", "technical-assessment", {origin:"https://app.cal.com"});
+    // @ts-ignore
+    window.Cal.ns["technical-assessment"]("inline", {
+      elementOrSelector:"#my-cal-inline-technical-assessment",
+      config: {"layout":"month_view"},
+      calLink: "silxor/technical-assessment",
+    });
+    // @ts-ignore
+    window.Cal.ns["technical-assessment"]("ui", {
+      "cssVarsPerTheme":{"light":{"cal-brand":"#6d6d6d"},"dark":{"cal-brand":"#fafafa"}},
+      "hideEventTypeDetails":false,
+      "layout":"month_view"
+    });
   }, []);
   return (
     <section className="py-32 border-t border-border">
@@ -64,9 +59,9 @@ const Contact = () => {
           </p>
         </div>
 
-        <div className="surface-elevated p-12">
+        <div className="surface-elevated p-12" style={{minHeight: '700px'}}>
           <div 
-            style={{width: '100%', height: '600px', overflow: 'auto'}} 
+            style={{width: '100%', height: '100%', overflow: 'scroll'}} 
             id="my-cal-inline-technical-assessment"
           />
         </div>
