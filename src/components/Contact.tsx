@@ -79,12 +79,12 @@ const Contact = () => {
             </p>
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4 text-primary" />
-              <a 
-                href="mailto:solutions@ir4q.tech" 
-                className="text-primary hover:opacity-80 transition-opacity font-mono text-sm"
-              >
-                solutions@ir4q.tech
-              </a>
+            <a 
+              href="mailto:contact@ir4q.com" 
+              className="text-primary hover:opacity-80 transition-opacity font-mono text-sm"
+            >
+              contact@ir4q.com
+            </a>
             </div>
           </div>
         </div>
