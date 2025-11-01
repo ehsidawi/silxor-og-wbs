@@ -20,9 +20,7 @@ const Hero = () => {
                 </a>
               </Button>
               <Button variant="minimal" size="lg" asChild>
-                <a href="#infrastructure">
-                  View Infrastructure Architecture
-                </a>
+                
               </Button>
             </div>
 
