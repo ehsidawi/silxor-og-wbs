@@ -1,9 +1,57 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Mail } from "lucide-react";
+import { useEffect } from "react";
 
 const Contact = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://app.cal.com/embed/embed.js';
+    script.async = true;
+    document.head.appendChild(script);
+
+    script.onload = () => {
+      // @ts-ignore
+      window.Cal = window.Cal || function () { 
+        // @ts-ignore
+        let cal = window.Cal; 
+        let ar = arguments; 
+        if (!cal.loaded) { 
+          cal.ns = {}; 
+          cal.q = cal.q || []; 
+          cal.loaded = true; 
+        } 
+        if (ar[0] === "init") { 
+          const api = function () { cal.q.push(arguments); }; 
+          const namespace = ar[1]; 
+          api.q = api.q || []; 
+          if(typeof namespace === "string"){
+            cal.ns[namespace] = cal.ns[namespace] || api;
+            cal.q.push(ar);
+            cal.q.push(["initNamespace", namespace]);
+          } else cal.q.push(ar); 
+          return;
+        } 
+        cal.q.push(ar); 
+      };
+      
+      // @ts-ignore
+      window.Cal("init", "technical-assessment", {origin:"https://app.cal.com"});
+      // @ts-ignore    
+      window.Cal.ns["technical-assessment"]("inline", {     
+        elementOrSelector:"#my-cal-inline-technical-assessment",     
+        config: {"layout":"month_view"},     
+        calLink: "silxor/technical-assessment",   
+      });
+      // @ts-ignore    
+      window.Cal.ns["technical-assessment"]("ui", {
+        "cssVarsPerTheme":{"light":{"cal-brand":"#6d6d6d"},"dark":{"cal-brand":"#fafafa"}},
+        "hideEventTypeDetails":false,
+        "layout":"month_view"
+      });
+    };
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
   return (
     <section className="py-32 border-t border-border">
       <div className="container mx-auto px-4 max-w-4xl">
@@ -17,76 +65,10 @@ const Contact = () => {
         </div>
 
         <div className="surface-elevated p-12">
-          <form className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <label className="block text-sm font-display mb-2 text-muted-foreground">
-                  Full Name
-                </label>
-                <Input 
-                  placeholder="Technical contact name" 
-                  className="bg-background border-border focus:border-primary"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-display mb-2 text-muted-foreground">
-                  Email Address
-                </label>
-                <Input 
-                  type="email" 
-                  placeholder="email@organization.iq" 
-                  className="bg-background border-border focus:border-primary"
-                />
-              </div>
-            </div>
-
-            <div>
-              <label className="block text-sm font-display mb-2 text-muted-foreground">
-                Organization
-              </label>
-              <Input 
-                placeholder="Organization or institution name" 
-                className="bg-background border-border focus:border-primary"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-display mb-2 text-muted-foreground">
-                Primary Use Case
-              </label>
-              <Select>
-                <SelectTrigger className="bg-background border-border focus:border-primary">
-                  <SelectValue placeholder="Select assessment type" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="migration">Cloud Migration</SelectItem>
-                  <SelectItem value="security">Security Audit</SelectItem>
-                  <SelectItem value="infrastructure">Infrastructure Review</SelectItem>
-                  <SelectItem value="custom">Custom Development</SelectItem>
-                  <SelectItem value="compliance">Compliance Assessment</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            <Button variant="institutional" size="lg" className="w-full">
-              Request Assessment
-            </Button>
-          </form>
-
-          <div className="mt-8 pt-8 border-t border-border">
-            <p className="text-sm text-muted-foreground mb-3">
-              For immediate technical inquiries, contact our engineering team directly:
-            </p>
-            <div className="flex items-center gap-2">
-              <Mail className="w-4 h-4 text-primary" />
-            <a 
-              href="mailto:contact@ir4q.com" 
-              className="text-primary hover:opacity-80 transition-opacity font-mono text-sm"
-            >
-              contact@ir4q.com
-            </a>
-            </div>
-          </div>
+          <div 
+            style={{width: '100%', height: '600px', overflow: 'auto'}} 
+            id="my-cal-inline-technical-assessment"
+          />
         </div>
       </div>
     </section>
