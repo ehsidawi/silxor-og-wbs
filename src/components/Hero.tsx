@@ -41,7 +41,7 @@ const Hero = () => {
 
           {/* Logo */}
           <div className="hidden lg:flex items-center justify-center">
-            <img src={ir4qLogo} alt="IR4Q Technologies" className="h-32 w-auto" />
+            
           </div>
         </div>
       </div>
