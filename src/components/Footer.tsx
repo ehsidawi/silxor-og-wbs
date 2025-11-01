@@ -13,7 +13,7 @@ const Footer = () => {
               <h3 className="text-2xl font-display">IR4Q</h3>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
-              Iraqi-operated, U.S.-secured digital infrastructure for mission-critical operations.
+              IR4Q is a Silxor company. Iraqi-operated, U.S.-secured digital infrastructure for mission-critical operations.
             </p>
           </div>
 
