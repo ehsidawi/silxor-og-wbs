@@ -6,7 +6,7 @@ const Hero = () => {
     backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.01'/%3E%3C/svg%3E")`
   }}>
       <div className="container mx-auto px-6 py-24 md:py-32">
-        <div className="grid lg:grid-cols-[1fr,auto] gap-12 lg:gap-16 items-center">
+        <div className="grid lg:grid-cols-[1fr,auto] gap-12 lg:gap-16 items-center px-[80px]">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-light tracking-wide leading-tight mb-6">Sovereign digital infrastructure for Iraq engineered locally, hardened globally.</h1>
             
