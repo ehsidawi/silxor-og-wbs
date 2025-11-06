@@ -41,31 +41,33 @@ const capabilities = [
 
 const Services = () => {
   return (
-    <section className="py-32">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="mb-20">
-          <h2 className="text-display-lg md:text-5xl font-display mb-4">
+    <section className="section-spacing">
+      <div className="container-content">
+        <div className="mb-12 md:mb-16 lg:mb-20">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display mb-4">
             Core Capabilities
           </h2>
-          <p className="text-xl text-muted-foreground font-light max-w-3xl">
+          <p className="text-base md:text-lg lg:text-xl text-muted-foreground font-light max-w-3xl leading-relaxed">
             Comprehensive technology infrastructure engineered for mission-critical operations
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 lg:gap-12">
           {capabilities.map((capability, index) => {
             const Icon = capability.icon;
             return (
               <div
                 key={index}
-                className="surface-elevated p-8 accent-border hover:border-l-4 transition-all"
+                className="surface-elevated p-6 md:p-8 accent-border hover:border-l-4 transition-all"
               >
-                <Icon className="w-6 h-6 text-primary mb-4" strokeWidth={1.5} />
-                <h3 className="text-xl font-display font-normal mb-3">{capability.title}</h3>
-                <p className="text-muted-foreground leading-relaxed mb-4">
+                <Icon className="w-5 h-5 md:w-6 md:h-6 text-primary mb-4" strokeWidth={1.5} />
+                <h3 className="text-lg md:text-xl font-display font-normal mb-3">
+                  {capability.title}
+                </h3>
+                <p className="text-sm md:text-base text-muted-foreground leading-relaxed mb-4">
                   {capability.description}
                 </p>
-                <p className="text-sm font-mono text-primary/80">
+                <p className="text-xs md:text-sm font-mono text-primary/80 leading-relaxed">
                   {capability.technical}
                 </p>
               </div>
