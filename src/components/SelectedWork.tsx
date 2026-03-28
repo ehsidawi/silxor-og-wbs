@@ -1,4 +1,3 @@
-import { FolderOpen } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 const projects = [
