@@ -9,7 +9,7 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* IR4Q Enterprise Design System */
-    --background: 225 12% 8%;
+    --background: 220 14% 8%;
     --foreground: 220 15% 95%;
 
     --card: 225 10% 12%;
