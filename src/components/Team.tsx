@@ -7,16 +7,6 @@ const leaders = [
     bio: "Sr. Principal Cybersecurity - Identity Ecosystem Architect | Digital Transformation Architect | Ex: CISA, Ally Financial, Meta, Google, Dell, Apple.",
     linkedin: "https://www.linkedin.com/in/ehsidawi",
   },
-  {
-    name: "[First Last]",
-    title: "Chief Technology Officer",
-    bio: "Infrastructure and cloud architect with international Tier-IV operations experience and deep expertise in sovereign systems design.",
-  },
-  {
-    name: "[First Last]",
-    title: "Head of AI & Software Engineering",
-    bio: "AI systems and software engineering leader specializing in sovereign LLM deployments and enterprise platform delivery.",
-  },
 ];
 
 const Team = () => {
@@ -32,7 +22,7 @@ const Team = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="flex justify-center">
           {leaders.map((leader, index) => (
             <div key={index} className="surface-elevated rounded p-6 md:p-8 text-center">
               <div className="w-20 h-20 rounded-full bg-muted flex items-center justify-center mx-auto mb-5">
