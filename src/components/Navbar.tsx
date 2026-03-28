@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ArrowRight, Menu, X } from "lucide-react";
-import silxorLogo from "@/assets/ir4q-logo.png";
+
 
 const navLinks = [
   { label: "Home", href: "#" },
