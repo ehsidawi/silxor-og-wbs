@@ -68,7 +68,7 @@ const Navbar = () => {
           />
         </a>
 
-        <div className="hidden lg:flex items-center">
+        <div className="hidden xl:flex items-center">
           <div className="flex items-center gap-0">
             {navLinks.map((link) => (
               <a
@@ -123,7 +123,7 @@ const Navbar = () => {
         </div>
 
         <button
-          className="lg:hidden flex items-center justify-center w-10 h-10"
+          className="xl:hidden flex items-center justify-center w-10 h-10"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
@@ -140,7 +140,7 @@ const Navbar = () => {
       </div>
 
       <div
-        className="lg:hidden overflow-hidden transition-all duration-500"
+        className="xl:hidden overflow-hidden transition-all duration-500"
         style={{
           maxHeight: mobileOpen ? 600 : 0,
           opacity: mobileOpen ? 1 : 0,
