@@ -42,7 +42,7 @@ const Hero = () => {
               className="section-eyebrow blink-cursor mb-5"
               style={{ marginBottom: 20, fontFamily: arFont }}
             >
-              {t("SOVEREIGN TECHNOLOGY INFRASTRUCTURE", "البنية التحتية التقنية السيادية")}
+              {t("COMMISSIONED BY INSTITUTIONS THAT CANNOT FAIL. ENGINEERED TO TRANSFORM AT SCALE.", "مُكلَّفون من مؤسسات لا تتحمل الفشل. مهندَسون للتحول على نطاق واسع.")}
             </motion.div>
 
             <motion.h1
@@ -67,8 +67,8 @@ const Hero = () => {
               style={{ fontSize: 17, lineHeight: 1.7, color: "#8A8F9E", maxWidth: 520, marginTop: 24, fontFamily: arFont }}
             >
               {t(
-                "IR4Q designs, builds, secures, and operates the digital systems powering Iraq's most critical institutions — from sovereign cloud infrastructure to custom enterprise software and private AI.",
-                "IR4Q تصمم وتبني وتؤمن وتشغّل الأنظمة الرقمية التي تدعم أهم المؤسسات في العراق — من البنية التحتية السحابية السيادية إلى البرمجيات المخصصة والذكاء الاصطناعي الخاص."
+                "IR4Q architects, engineers, and operates the critical systems powering the most demanding institutions — from sovereign cloud infrastructure to enterprise software, private AI, and identity transformation.",
+                "IR4Q تصمم وتهندس وتشغّل الأنظمة الحيوية التي تدعم أكثر المؤسسات صرامة في متطلباتها — من البنية التحتية السحابية السيادية إلى البرمجيات المؤسسية والذكاء الاصطناعي الخاص وتحول منظومة الهوية."
               )}
             </motion.p>
 

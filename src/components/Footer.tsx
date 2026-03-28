@@ -19,8 +19,8 @@ const Footer = () => {
             </div>
             <p className="font-body font-[300]" style={{ fontSize: 14, color: "#4A5060", lineHeight: 1.7 }}>
               {t(
-                "IR4Q is Iraq's sovereign technology company — delivering infrastructure, software, AI, and consulting for the institutions that power the country. A Silxor company.",
-                "IR4Q هي شركة العراق السيادية للتقنيات — تقدم البنية التحتية والبرمجيات والذكاء الاصطناعي والاستشارات للمؤسسات التي تقود البلاد. شركة Silxor."
+                "Commissioned by institutions that cannot fail. Engineered to transform at scale. IR4Q delivers infrastructure, software, AI, and identity management for the systems that matter most. A Silxor company.",
+                "مُكلَّفون من مؤسسات لا تتحمل الفشل. مهندَسون للتحول على نطاق واسع. IR4Q تقدم البنية التحتية والبرمجيات والذكاء الاصطناعي وإدارة الهوية للأنظمة الأكثر أهمية. شركة Silxor."
               )}
             </p>
           </div>
