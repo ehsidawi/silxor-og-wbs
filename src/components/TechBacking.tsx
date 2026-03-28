@@ -69,7 +69,7 @@ const TechBacking = () => {
               <h2 className="text-xl sm:text-2xl md:text-3xl font-display mb-3 md:mb-4">
                 Dual-Continent Resilience Architecture
               </h2>
-              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                 IR4Q operates a distributed infrastructure model ensuring data sovereignty while maintaining enterprise-grade reliability through U.S. Tier-IV certification.
               </p>
             </div>
