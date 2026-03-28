@@ -389,9 +389,7 @@ const IdentityServices = () => {
                   ))}
                 </ul>
                 <a
-                  href="mailto:contact@ir4q.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={pkg.mailto}
                   className="block text-center font-mono font-[400] uppercase transition-all duration-200"
                   style={{
                     fontSize: 10,
