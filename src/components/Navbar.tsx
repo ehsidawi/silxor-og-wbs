@@ -40,7 +40,7 @@ const Navbar = () => {
           className="flex items-center gap-2 touch-target"
           onClick={(e) => handleNavClick(e, "#")}
         >
-          <img src={silxorLogo} alt="IR4Q" className="h-7 w-auto" />
+          <img src={silxorLogo} alt="IR4Q" className="h-14 w-auto" />
           <span className="font-display text-lg">IR4Q</span>
         </a>
 
