@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import { ArrowRight, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Home", href: "#" },
+  { label: "Home", href: "#home" },
   { label: "Infrastructure", href: "#infrastructure" },
   { label: "Software", href: "#software" },
+  { label: "AI & Automation", href: "#ai" },
   { label: "Identity", href: "#identity" },
+  { label: "Consulting", href: "#consulting" },
   { label: "Packages", href: "#packages" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },

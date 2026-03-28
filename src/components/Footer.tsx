@@ -52,7 +52,7 @@ const Footer = () => {
           <div>
             <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: '0.12em', color: '#F0EDE8', marginBottom: 20 }}>Packages</h4>
             <nav className="space-y-3">
-              {["Infrastructure Packages", "Software Packages", "AI Packages", "Consulting Packages"].map((label) => (
+              {["Infrastructure Packages", "Software Packages", "AI Packages", "Identity Packages", "Consulting Packages"].map((label) => (
                 <a
                   key={label}
                   href="#packages"

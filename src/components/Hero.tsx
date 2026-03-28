@@ -107,7 +107,7 @@ const Hero = () => {
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
-                href="#what-we-do"
+                href="#infrastructure"
                 className="inline-flex items-center justify-center gap-2 font-body font-[500] uppercase transition-all duration-200"
                 style={{
                   fontSize: 13,
