@@ -49,13 +49,19 @@ const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display font-[800] leading-[1.05] mb-6"
-              style={{ fontSize: "clamp(40px, 6vw, 72px)", color: "#F0EDE8", maxWidth: 640, fontFamily: arFont }}
+              className="font-display font-[800] hero-headline"
+              style={{ lineHeight: 1.08, letterSpacing: "-0.02em", color: "#F0EDE8", maxWidth: 860, marginBottom: 28, fontFamily: arFont }}
             >
               {language === "ar" ? (
-                <>مُكلَّفون من مؤسسات لا <span style={{ color: "#C9A84C" }}>تتحمل الفشل</span>.<br />مهندَسون للتحول على نطاق واسع.</>
+                <>
+                  <span style={{ display: "block", marginBottom: 8 }}>مُكلَّفون من مؤسسات لا <span style={{ color: "#C9A84C" }}>تتحمل الفشل.</span></span>
+                  <span style={{ display: "block" }}>مهندَسون لل<span style={{ color: "#C9A84C" }}>تحول على نطاق واسع.</span></span>
+                </>
               ) : (
-                <>Commissioned by Institutions That <span style={{ color: "#C9A84C" }}>Cannot Fail</span>.<br />Engineered to Transform at Scale.</>
+                <>
+                  <span style={{ display: "block", marginBottom: 8 }}>Commissioned by Institutions That <span style={{ color: "#C9A84C" }}>Cannot Fail.</span></span>
+                  <span style={{ display: "block" }}>Engineered to <span style={{ color: "#C9A84C" }}>Transform at Scale.</span></span>
+                </>
               )}
             </motion.h1>
 
