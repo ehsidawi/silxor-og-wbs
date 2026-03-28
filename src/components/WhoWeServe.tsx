@@ -27,26 +27,26 @@ const WhoWeServe = () => {
   return (
     <section className="section-spacing" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
       <div className="container-content">
-        <div style={{ marginBottom: 64 }}>
+        <div style={{ marginBottom: 32 }}>
           <div className="section-eyebrow">SECTORS</div>
-          <h2 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: '#F0EDE8' }}>
+          <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: '#F0EDE8' }}>
             Built for Iraq's Most Critical Sectors
           </h2>
-          <p className="font-body font-[300]" style={{ fontSize: 16, color: '#8A8F9E', maxWidth: 560, marginTop: 16, lineHeight: 1.7 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 14, color: '#8A8F9E', maxWidth: 520, marginTop: 10, lineHeight: 1.7 }}>
             IR4Q delivers across the institutions that cannot afford downtime, data loss, or compromise.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-6">
+        <div className="grid sm:grid-cols-2 gap-4">
           {sectors.map((sector, index) => {
             const Icon = sector.icon;
             return (
-              <div key={index} className="surface-elevated" style={{ padding: 32 }}>
-                <Icon className="mb-5" style={{ width: 32, height: 32, color: '#C9A84C' }} strokeWidth={1.5} />
-                <h3 className="font-body font-[500]" style={{ fontSize: 17, color: '#F0EDE8', marginBottom: 10 }}>
+              <div key={index} className="surface-elevated" style={{ padding: 20 }}>
+                <Icon className="mb-3" style={{ width: 24, height: 24, color: '#C9A84C' }} strokeWidth={1.5} />
+                <h3 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 6 }}>
                   {sector.title}
                 </h3>
-                <p className="font-body font-[300]" style={{ fontSize: 14, color: '#8A8F9E', lineHeight: 1.7 }}>
+                <p className="font-body font-[300]" style={{ fontSize: 13, color: '#8A8F9E', lineHeight: 1.65 }}>
                   {sector.description}
                 </p>
               </div>
