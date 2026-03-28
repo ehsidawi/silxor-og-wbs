@@ -34,7 +34,7 @@ const Hero = () => {
       </div>
 
       <div className="container-content relative" style={{ zIndex: 1 }}>
-        <div className="flex items-center" style={{ minHeight: "calc(100vh - 64px)" }}>
+        <div>
           <div style={{ maxWidth: 700 }}>
             <motion.div
               initial={{ opacity: 0, y: 24 }}
