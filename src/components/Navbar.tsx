@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import silxorLogo from "@/assets/ir4q-logo.png";
 
 const navLinks = [
@@ -9,6 +9,7 @@ const navLinks = [
   { label: "Software", href: "#software" },
   { label: "AI & Automation", href: "#ai" },
   { label: "Consulting", href: "#consulting" },
+  { label: "Packages", href: "#packages" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
@@ -35,6 +36,12 @@ const Navbar = () => {
               {link.label}
             </a>
           ))}
+          <Button variant="institutional" size="sm" asChild>
+            <a href="https://cal.com/silxor/1-hr?user=silxor&duration=30" target="_blank" rel="noopener noreferrer">
+              Request Assessment
+              <ArrowRight className="w-3 h-3" />
+            </a>
+          </Button>
         </div>
 
         {/* Mobile toggle */}
@@ -61,6 +68,12 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
+            <Button variant="institutional" size="sm" className="w-full mt-2" asChild>
+              <a href="https://cal.com/silxor/1-hr?user=silxor&duration=30" target="_blank" rel="noopener noreferrer">
+                Request Assessment
+                <ArrowRight className="w-3 h-3" />
+              </a>
+            </Button>
           </div>
         </div>
       )}
