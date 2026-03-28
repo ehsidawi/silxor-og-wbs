@@ -34,12 +34,16 @@ const Index = () => {
       <AnimatedSection>
         <Services />
       </AnimatedSection>
-      <AnimatedSection>
-        <SoftwareAICapabilities />
-      </AnimatedSection>
-      <AnimatedSection>
-        <ServicePackages />
-      </AnimatedSection>
+      <div id="ai">
+        <AnimatedSection>
+          <SoftwareAICapabilities />
+        </AnimatedSection>
+      </div>
+      <div id="consulting">
+        <AnimatedSection>
+          <ServicePackages />
+        </AnimatedSection>
+      </div>
       <AnimatedSection>
         <FAQ />
       </AnimatedSection>
