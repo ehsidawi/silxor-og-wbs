@@ -114,6 +114,7 @@ const identityPackages: IdPkg[] = [
       "Direct access to senior identity architect",
     ],
     cta: "Become a Partner",
+    mailto: "mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Managed%20Identity%20Operations%20Retainer&body=Hello%20Ehsan%2C%0A%0AI%20am%20interested%20in%20the%20Managed%20Identity%20Operations%20retainer.%0A%0AOrganization%3A%20%0AEnvironment%3A%20",
   },
 ];
 
