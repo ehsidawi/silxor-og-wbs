@@ -51,7 +51,7 @@ const Hero = () => {
           </div>
 
           <div className="hidden lg:flex items-center justify-center">
-            <img src={ir4qLogo} alt="IR4Q Technologies" className="h-32 w-auto opacity-80" />
+            <img src={ir4qLogo} alt="IR4Q Technologies" className="h-64 w-auto opacity-80" />
           </div>
         </div>
       </div>
