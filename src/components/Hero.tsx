@@ -16,7 +16,7 @@ const Hero = () => {
         `,
       }}
     >
-      {/* Hexagonal wireframe - right side */}
+      {/* Eight-point star wireframe - right side */}
       <div className="absolute right-[-100px] top-1/2 -translate-y-1/2 hidden lg:block" style={{ zIndex: 0 }}>
         <svg
           width="400"
@@ -26,13 +26,13 @@ const Hero = () => {
           style={{ animation: 'hex-rotate 120s linear infinite' }}
         >
           <polygon
-            points="200,20 370,110 370,290 200,380 30,290 30,110"
+            points="200,20 255,145 380,145 280,220 310,355 200,280 90,355 120,220 20,145 145,145"
             stroke="rgba(201,168,76,0.12)"
             strokeWidth="1"
             fill="none"
           />
           <polygon
-            points="200,80 320,140 320,260 200,320 80,260 80,140"
+            points="200,80 233,162 330,162 252,215 272,310 200,260 128,310 148,215 70,162 167,162"
             stroke="rgba(201,168,76,0.08)"
             strokeWidth="1"
             fill="rgba(201,168,76,0.04)"
