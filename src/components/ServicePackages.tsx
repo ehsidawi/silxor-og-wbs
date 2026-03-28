@@ -214,9 +214,9 @@ const PackageSubsection = ({
   packages: PackageCard[];
   consulting?: boolean;
 }) => (
-  <div className="mb-12 md:mb-16">
-    <h3 className="text-xl md:text-2xl font-display mb-6 md:mb-8">{title}</h3>
-    <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+  <div className="mb-8 md:mb-12">
+    <h3 className="text-base md:text-lg font-display mb-4 md:mb-6">{title}</h3>
+    <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
       {packages.map((pkg, i) => (
         <PackageCardComponent key={i} pkg={consulting ? { ...pkg, popular: false } : pkg} />
       ))}
@@ -228,11 +228,11 @@ const ServicePackages = () => {
   return (
     <section id="packages" className="section-spacing border-t border-border">
       <div className="container-content">
-        <div className="mb-12 md:mb-16 lg:mb-20">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display mb-4">
+        <div className="mb-8 md:mb-12">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display mb-3">
             Transparent Service Packages
           </h2>
-          <p className="text-base md:text-lg lg:text-xl text-muted-foreground font-light max-w-3xl leading-relaxed">
+          <p className="text-sm md:text-base lg:text-lg text-muted-foreground font-light max-w-3xl leading-relaxed">
             Every engagement starts with clarity. Choose your entry point across any of our four technology domains.
           </p>
         </div>
@@ -242,8 +242,8 @@ const ServicePackages = () => {
         <PackageSubsection title="AI & Automation Packages" packages={aiPackages} />
         <PackageSubsection title="Consulting Packages" packages={consultingPackages} consulting />
 
-        <div className="surface-elevated rounded p-6 md:p-8 text-center">
-          <p className="text-sm md:text-base text-muted-foreground leading-relaxed max-w-3xl mx-auto">
+        <div className="surface-elevated rounded p-4 md:p-5 text-center">
+          <p className="text-xs md:text-sm text-muted-foreground leading-relaxed max-w-3xl mx-auto">
             All packages include an initial technical discovery session. Enterprise and Government engagements begin with a formal Request for Assessment. Custom packages available for multi-domain engagements spanning infrastructure, software, AI, and consulting.
           </p>
         </div>

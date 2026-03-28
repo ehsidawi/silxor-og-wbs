@@ -43,7 +43,7 @@ const Services = () => {
   return (
     <section className="section-spacing">
       <div className="container-content">
-        <div className="mb-12 md:mb-16 lg:mb-20">
+        <div className="mb-8 md:mb-12">
           <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display mb-3">
             Infrastructure Capabilities
           </h2>
