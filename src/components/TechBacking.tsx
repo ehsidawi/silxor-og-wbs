@@ -66,7 +66,7 @@ const TechBacking = () => {
           {/* Technical Description */}
           <div className="space-y-6 md:space-y-8">
             <div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-display mb-4 md:mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-display mb-3 md:mb-4">
                 Dual-Continent Resilience Architecture
               </h2>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
