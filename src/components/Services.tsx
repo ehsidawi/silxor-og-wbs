@@ -13,10 +13,6 @@ const Services = () => {
     { icon: Gauge, title: t("Performance Engineering", "هندسة الأداء"), description: t("Real-time telemetry, predictive scaling, and latency reduction.", "قياس في الوقت الفعلي وتوسيع تنبؤي وتقليل زمن الاستجابة."), technical: "Autoscaling • P99.9 <100ms" },
   ];
 
-  // Split into two tiers for hierarchy
-  const coreTier = capabilities.slice(0, 3);
-  const opsTier = capabilities.slice(3);
-
   return (
     <section className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="container-content">
@@ -30,92 +26,58 @@ const Services = () => {
           </p>
         </div>
 
-        {/* Org Chart / Hierarchy */}
-        <div className="flex flex-col items-center gap-0">
-          {/* Root node */}
+        {/* Vertical chart list */}
+        <div className="relative">
+          {/* Vertical line */}
           <div
-            className="surface-elevated text-center"
-            style={{
-              padding: "16px 32px",
-              borderRadius: 4,
-              border: "1px solid rgba(201,168,76,0.4)",
-              minWidth: 220,
-            }}
-          >
-            <span className="font-mono font-[600] uppercase" style={{ fontSize: 11, letterSpacing: "0.15em", color: "#C9A84C" }}>
-              IR4Q {t("Infrastructure", "البنية التحتية")}
-            </span>
-          </div>
+            className="absolute hidden md:block"
+            style={{ left: 16, top: 0, bottom: 0, width: 2, background: "linear-gradient(180deg, rgba(201,168,76,0.4) 0%, rgba(201,168,76,0.08) 100%)" }}
+          />
 
-          {/* Connector down */}
-          <div style={{ width: 2, height: 28, backgroundColor: "rgba(201,168,76,0.3)" }} />
-
-          {/* Core tier label */}
-          <div
-            className="font-mono font-[400] uppercase text-center"
-            style={{ fontSize: 9, letterSpacing: "0.15em", color: "#8A8F9E", marginBottom: 8 }}
-          >
-            {t("CORE PLATFORM", "المنصة الأساسية")}
-          </div>
-
-          {/* Horizontal connector bar for core tier */}
-          <div className="relative w-full hidden md:block" style={{ maxWidth: 700, height: 2, backgroundColor: "rgba(201,168,76,0.2)", margin: "0 auto" }} />
-
-          {/* Core tier cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 w-full" style={{ maxWidth: 780, marginTop: 0 }}>
-            {coreTier.map((cap, i) => {
+          <div className="flex flex-col gap-0">
+            {capabilities.map((cap, index) => {
               const Icon = cap.icon;
               return (
-                <div key={i} className="flex flex-col items-center">
-                  {/* Vertical connector from bar */}
-                  <div className="hidden md:block" style={{ width: 2, height: 16, backgroundColor: "rgba(201,168,76,0.2)" }} />
-                  <div
-                    className="surface-elevated w-full"
-                    style={{ padding: 18, borderRadius: 4, borderTop: "2px solid rgba(201,168,76,0.3)" }}
-                  >
-                    <div className="flex items-center gap-2" style={{ marginBottom: 8 }}>
-                      <Icon style={{ width: 18, height: 18, color: "#C9A84C" }} strokeWidth={1.5} />
-                      <h3 className="font-body font-[500]" style={{ fontSize: 13, color: "#F0EDE8" }}>{cap.title}</h3>
+                <div key={index} className="relative flex items-stretch gap-0 md:gap-8">
+                  {/* Timeline node */}
+                  <div className="hidden md:flex flex-col items-center" style={{ width: 34, flexShrink: 0 }}>
+                    <div
+                      style={{
+                        width: 34, height: 34, borderRadius: "50%",
+                        border: "2px solid rgba(201,168,76,0.5)",
+                        backgroundColor: "rgba(201,168,76,0.08)",
+                        display: "flex", alignItems: "center", justifyContent: "center",
+                        marginTop: 20, position: "relative", zIndex: 2,
+                      }}
+                    >
+                      <Icon style={{ width: 16, height: 16, color: "#C9A84C" }} strokeWidth={1.5} />
                     </div>
-                    <p className="font-body font-[300]" style={{ fontSize: 12, color: "#8A8F9E", lineHeight: 1.6, marginBottom: 8 }}>{cap.description}</p>
-                    <p className="font-mono font-[400]" style={{ fontSize: 9, color: "#C9A84C", opacity: 0.7, letterSpacing: "0.05em" }}>{cap.technical}</p>
                   </div>
-                </div>
-              );
-            })}
-          </div>
 
-          {/* Connector down */}
-          <div style={{ width: 2, height: 28, backgroundColor: "rgba(201,168,76,0.2)", marginTop: 4 }} />
-
-          {/* Ops tier label */}
-          <div
-            className="font-mono font-[400] uppercase text-center"
-            style={{ fontSize: 9, letterSpacing: "0.15em", color: "#8A8F9E", marginBottom: 8 }}
-          >
-            {t("OPERATIONS LAYER", "طبقة العمليات")}
-          </div>
-
-          {/* Horizontal connector bar for ops tier */}
-          <div className="relative w-full hidden md:block" style={{ maxWidth: 700, height: 2, backgroundColor: "rgba(201,168,76,0.12)", margin: "0 auto" }} />
-
-          {/* Ops tier cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 w-full" style={{ maxWidth: 780, marginTop: 0 }}>
-            {opsTier.map((cap, i) => {
-              const Icon = cap.icon;
-              return (
-                <div key={i} className="flex flex-col items-center">
-                  <div className="hidden md:block" style={{ width: 2, height: 16, backgroundColor: "rgba(201,168,76,0.12)" }} />
+                  {/* Card */}
                   <div
-                    className="surface-elevated w-full"
-                    style={{ padding: 18, borderRadius: 4, borderTop: "2px solid rgba(201,168,76,0.15)" }}
+                    className="surface-elevated flex-1"
+                    style={{
+                      borderRadius: 4, padding: 20,
+                      borderLeft: "3px solid rgba(201,168,76,0.3)",
+                      marginBottom: index < capabilities.length - 1 ? 2 : 0,
+                    }}
                   >
-                    <div className="flex items-center gap-2" style={{ marginBottom: 8 }}>
-                      <Icon style={{ width: 18, height: 18, color: "#C9A84C" }} strokeWidth={1.5} />
-                      <h3 className="font-body font-[500]" style={{ fontSize: 13, color: "#F0EDE8" }}>{cap.title}</h3>
+                    <div className="flex items-center gap-2 mb-1">
+                      <span className="md:hidden"><Icon style={{ width: 16, height: 16, color: "#C9A84C" }} strokeWidth={1.5} /></span>
+                      <span className="font-mono font-[400] uppercase" style={{ fontSize: 9, letterSpacing: "0.15em", color: "#C9A84C" }}>
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
                     </div>
-                    <p className="font-body font-[300]" style={{ fontSize: 12, color: "#8A8F9E", lineHeight: 1.6, marginBottom: 8 }}>{cap.description}</p>
-                    <p className="font-mono font-[400]" style={{ fontSize: 9, color: "#C9A84C", opacity: 0.7, letterSpacing: "0.05em" }}>{cap.technical}</p>
+                    <h3 className="font-body font-[500]" style={{ fontSize: 15, color: "#F0EDE8", marginBottom: 4 }}>
+                      {cap.title}
+                    </h3>
+                    <p className="font-body font-[300]" style={{ fontSize: 13, color: "#8A8F9E", lineHeight: 1.65, marginBottom: 8 }}>
+                      {cap.description}
+                    </p>
+                    <p className="font-mono font-[400]" style={{ fontSize: 10, color: "#C9A84C", opacity: 0.7, letterSpacing: "0.05em" }}>
+                      {cap.technical}
+                    </p>
                   </div>
                 </div>
               );
