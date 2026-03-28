@@ -1,4 +1,4 @@
-import { Check, Star } from "lucide-react";
+import { Check, Star, Minus } from "lucide-react";
 
 interface PackageCard {
   name: string;
