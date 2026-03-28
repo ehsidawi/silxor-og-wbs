@@ -37,6 +37,11 @@ const Index = () => {
           <SoftwareAICapabilities />
         </AnimatedSection>
       </div>
+      <div id="identity">
+        <AnimatedSection>
+          <IdentityServices />
+        </AnimatedSection>
+      </div>
       <div id="packages">
         <AnimatedSection>
           <ServicePackages />
