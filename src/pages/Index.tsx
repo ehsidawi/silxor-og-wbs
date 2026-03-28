@@ -24,6 +24,12 @@ const Index = () => {
       </div>
       <StatsBar />
       <AnimatedSection>
+        <ProcessFlow />
+      </AnimatedSection>
+      <AnimatedSection>
+        <TechBacking />
+      </AnimatedSection>
+      <AnimatedSection>
         <WhatWeDo />
       </AnimatedSection>
       <div id="infrastructure">
@@ -47,12 +53,6 @@ const Index = () => {
           <ServicePackages />
         </AnimatedSection>
       </div>
-      <AnimatedSection>
-        <ProcessFlow />
-      </AnimatedSection>
-      <AnimatedSection>
-        <TechBacking />
-      </AnimatedSection>
       <div id="about">
         <AnimatedSection>
           <FAQ />
