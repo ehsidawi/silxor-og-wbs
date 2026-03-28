@@ -4,9 +4,9 @@ const TechBacking = () => {
   return (
     <section id="infrastructure" className="section-spacing border-t border-border">
       <div className="container-content">
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start">
           {/* Architecture Diagram */}
-          <div className="surface-elevated p-6 md:p-8 lg:p-12">
+          <div className="surface-elevated p-4 md:p-5 lg:p-8">
             <div className="space-y-6 md:space-y-8">
               {/* Baghdad PoP */}
               <div className="flex items-center gap-3 md:gap-4">
