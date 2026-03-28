@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-3">
-              <img src={ir4qLogo} alt="IR4Q Technologies" className="h-8 w-auto" />
+              
               <span className="font-display font-[800]" style={{ fontSize: 24, color: '#F0EDE8' }}>
                 IR4Q
                 <span
