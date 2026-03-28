@@ -1,13 +1,10 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
-import WhatWeDo from "@/components/WhatWeDo";
 import Services from "@/components/Services";
 import SoftwareAICapabilities from "@/components/SoftwareAICapabilities";
 import ServicePackages from "@/components/ServicePackages";
 import FAQ from "@/components/FAQ";
-import WhoWeServe from "@/components/WhoWeServe";
-import WhyIR4Q from "@/components/WhyIR4Q";
 import TechBacking from "@/components/TechBacking";
 import ProcessFlow from "@/components/ProcessFlow";
 import Team from "@/components/Team";
@@ -29,20 +26,11 @@ const Index = () => {
       <AnimatedSection>
         <TechBacking />
       </AnimatedSection>
-      <AnimatedSection>
-        <WhatWeDo />
-      </AnimatedSection>
       <div id="infrastructure">
         <AnimatedSection>
           <Services />
         </AnimatedSection>
       </div>
-      <AnimatedSection>
-        <WhoWeServe />
-      </AnimatedSection>
-      <AnimatedSection>
-        <WhyIR4Q />
-      </AnimatedSection>
       <div id="software">
         <AnimatedSection>
           <SoftwareAICapabilities />
