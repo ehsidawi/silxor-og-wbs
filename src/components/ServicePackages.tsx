@@ -265,12 +265,110 @@ const PackageSubsection = ({
   packages: PackageCard[];
   consulting?: boolean;
 }) => (
-  <div style={{ marginBottom: 32 }}>
-    <h3 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 16 }}>{title}</h3>
-    <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4">
-      {packages.map((pkg, i) => (
-        <PackageCardComponent key={i} pkg={consulting ? { ...pkg, popular: false } : pkg} />
-      ))}
+  <div style={{ marginBottom: 40 }}>
+    <h3 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 20 }}>{title}</h3>
+
+    {/* Horizontal presentation: scrollable cards with tier progression */}
+    <div className="relative">
+      {/* Progress bar behind cards (desktop) */}
+      <div className="hidden md:block absolute" style={{ top: 28, left: 0, right: 0, height: 2, backgroundColor: 'rgba(201,168,76,0.1)', zIndex: 0 }} />
+
+      <div className="flex flex-col md:flex-row gap-4 md:gap-0 relative" style={{ zIndex: 1 }}>
+        {packages.map((pkg, i) => {
+          const tierLabel = i === 0 ? "STARTER" : i === 1 ? "GROWTH" : "ENTERPRISE";
+          const tierAccent = i === 0 ? "rgba(201,168,76,0.2)" : i === 1 ? "rgba(201,168,76,0.4)" : "rgba(201,168,76,0.6)";
+          const isPopular = consulting ? false : pkg.popular;
+
+          return (
+            <div key={i} className="flex-1 flex flex-col md:flex-row items-stretch">
+              {/* Card */}
+              <div className="flex-1 flex flex-col">
+                {/* Tier dot + label */}
+                <div className="flex items-center gap-3 mb-3">
+                  <div style={{
+                    width: 20, height: 20, borderRadius: '50%',
+                    border: `2px solid ${tierAccent}`,
+                    backgroundColor: isPopular ? '#C9A84C' : 'rgba(201,168,76,0.06)',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    flexShrink: 0,
+                  }}>
+                    <span className="font-mono font-[700]" style={{ fontSize: 8, color: isPopular ? '#080A0F' : '#C9A84C' }}>
+                      {String(i + 1).padStart(2, '0')}
+                    </span>
+                  </div>
+                  <span className="font-mono font-[400] uppercase" style={{ fontSize: 9, letterSpacing: '0.15em', color: '#8A8F9E' }}>
+                    {tierLabel}
+                  </span>
+                  {isPopular && (
+                    <span className="font-mono font-[400] uppercase flex items-center gap-1" style={{
+                      fontSize: 8, letterSpacing: '0.1em', color: '#080A0F', backgroundColor: '#C9A84C',
+                      padding: '2px 8px', borderRadius: 2,
+                    }}>
+                      <Star style={{ width: 8, height: 8 }} /> Popular
+                    </span>
+                  )}
+                </div>
+
+                {/* Content card */}
+                <div
+                  className="surface-elevated flex-1 flex flex-col"
+                  style={{
+                    padding: 20, borderRadius: 4,
+                    borderLeft: `3px solid ${tierAccent}`,
+                    marginLeft: 9, marginRight: i < packages.length - 1 ? 0 : 0,
+                  }}
+                >
+                  <h4 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 4 }}>{pkg.name}</h4>
+                  <p className="font-body font-[300]" style={{ fontSize: 12, color: '#8A8F9E', marginBottom: 14 }}>{pkg.tagline}</p>
+                  <ul className="flex-1" style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 16 }}>
+                    {pkg.specs.map((spec, j) => (
+                      <li key={j} className="flex items-start gap-2">
+                        <Check style={{ width: 13, height: 13, color: '#C9A84C', flexShrink: 0, marginTop: 1 }} />
+                        <span className="font-body font-[300]" style={{ fontSize: 12, color: '#8A8F9E' }}>{spec}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href="https://cal.com/silxor/1-hr?user=silxor&duration=30"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block text-center font-mono font-[400] uppercase transition-all duration-200"
+                    style={{
+                      fontSize: 10, letterSpacing: '0.1em', padding: '10px 16px', borderRadius: 2,
+                      ...(isPopular
+                        ? { backgroundColor: '#C9A84C', color: '#080A0F' }
+                        : { border: '1px solid rgba(201,168,76,0.4)', color: '#C9A84C', backgroundColor: 'transparent' }),
+                    }}
+                    onMouseEnter={(e) => {
+                      if (isPopular) e.currentTarget.style.backgroundColor = '#E2C06A';
+                      else { e.currentTarget.style.borderColor = '#C9A84C'; e.currentTarget.style.backgroundColor = 'rgba(201,168,76,0.05)'; }
+                    }}
+                    onMouseLeave={(e) => {
+                      if (isPopular) e.currentTarget.style.backgroundColor = '#C9A84C';
+                      else { e.currentTarget.style.borderColor = 'rgba(201,168,76,0.4)'; e.currentTarget.style.backgroundColor = 'transparent'; }
+                    }}
+                  >
+                    {pkg.cta}
+                  </a>
+                </div>
+              </div>
+
+              {/* Arrow connector between cards (desktop) */}
+              {i < packages.length - 1 && (
+                <div className="hidden md:flex items-center justify-center" style={{ width: 32, flexShrink: 0 }}>
+                  <div style={{ width: 24, height: 2, backgroundColor: 'rgba(201,168,76,0.2)', position: 'relative' }}>
+                    <div style={{
+                      position: 'absolute', right: -3, top: -3, width: 0, height: 0,
+                      borderTop: '4px solid transparent', borderBottom: '4px solid transparent',
+                      borderLeft: '6px solid rgba(201,168,76,0.3)',
+                    }} />
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
     </div>
   </div>
 );
