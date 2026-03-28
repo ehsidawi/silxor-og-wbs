@@ -255,3 +255,19 @@
     gap: 6px;
   }
 }
+
+.hero-headline {
+  font-size: 28px;
+}
+@media (min-width: 480px) {
+  .hero-headline { font-size: 28px; }
+}
+@media (min-width: 768px) {
+  .hero-headline { font-size: 38px; }
+}
+@media (min-width: 1024px) {
+  .hero-headline { font-size: 52px; }
+}
+@media (min-width: 1280px) {
+  .hero-headline { font-size: 64px; }
+}
