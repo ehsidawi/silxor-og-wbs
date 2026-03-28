@@ -32,7 +32,7 @@ const ProcessFlow = () => {
             Enterprise Delivery Process
           </h2>
           <p className="text-sm md:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            From initial assessment to ongoing operations, our structured approach ensures precision and reliability at every stage.
+            Whether we're deploying cloud infrastructure, delivering a software platform, or standing up a sovereign AI system — our structured delivery process ensures precision at every stage.
           </p>
         </div>
 

@@ -45,10 +45,10 @@ const Services = () => {
       <div className="container-content">
         <div className="mb-12 md:mb-16 lg:mb-20">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display mb-4">
-            Core Capabilities
+            Infrastructure Capabilities
           </h2>
           <p className="text-base md:text-lg lg:text-xl text-muted-foreground font-light max-w-3xl leading-relaxed">
-            Comprehensive technology infrastructure engineered for mission-critical operations
+            Enterprise-grade sovereign cloud and security infrastructure — the foundation everything else is built on.
           </p>
         </div>
 
