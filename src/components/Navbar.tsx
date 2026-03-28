@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ArrowRight, Menu, X } from "lucide-react";
-import silxorLogo from "@/assets/ir4q-logo.png";
+
 
 const navLinks = [
   { label: "Home", href: "#" },
@@ -39,7 +39,7 @@ const Navbar = () => {
           className="flex items-center gap-2 touch-target"
           onClick={(e) => handleNavClick(e, "#")}
         >
-          <img src={silxorLogo} alt="IR4Q" className="h-12 w-auto" />
+          
           <span className="font-display text-xl font-[800]" style={{ color: '#F0EDE8' }}>
             IR4Q
             <span

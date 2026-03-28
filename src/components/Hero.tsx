@@ -1,6 +1,6 @@
 import { ArrowRight, Shield, Globe } from "lucide-react";
 import { motion } from "framer-motion";
-import ir4qLogo from "@/assets/ir4q-logo.png";
+
 
 const Hero = () => {
   return (
