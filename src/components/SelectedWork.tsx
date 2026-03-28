@@ -12,7 +12,7 @@ const projects = [
   },
   {
     tag: "IDENTITY",
-    title: "Enterprise IAM Deployment",
+    title: "Enterprise Identity Deployment",
     titleAr: "نشر إدارة الهوية المؤسسية",
     body: "Greenfield identity and access management architecture for a government ministry — SSO, PAM vaulting, and IGA lifecycle management.",
     bodyAr: "بنية إدارة هوية ووصول جديدة بالكامل لوزارة حكومية — تسجيل دخول موحّد، خزنة الحسابات المميزة، وإدارة دورة حياة الهوية.",
