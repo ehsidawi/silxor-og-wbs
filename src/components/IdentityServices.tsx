@@ -278,7 +278,7 @@ const IdentityServices = () => {
           <p className="font-body font-[300]" style={{ fontSize: 13, color: '#8A8F9E', maxWidth: 520, marginBottom: 20, lineHeight: 1.7 }}>
             IR4Q architects and operates across all identity disciplines — purpose-built for governments, financial institutions, and enterprises operating in high-stakes environments.
           </p>
-          <RadialDomainMap />
+          <DomainOrgChart />
         </div>
 
         {/* ── Subsection 2: Engagement Flow ── */}
