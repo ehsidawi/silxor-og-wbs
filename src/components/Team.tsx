@@ -7,16 +7,6 @@ const leaders = [
     bio: "Sr. Principal Cybersecurity - Identity Ecosystem Architect | Digital Transformation Architect | Ex: CISA, Ally Financial, Meta, Google, Dell, Apple.",
     linkedin: "https://www.linkedin.com/in/ehsidawi",
   },
-  {
-    name: "[First Last]",
-    title: "Chief Technology Officer",
-    bio: "Infrastructure and cloud architect with international Tier-IV operations experience and deep expertise in sovereign systems design.",
-  },
-  {
-    name: "[First Last]",
-    title: "Head of AI & Software Engineering",
-    bio: "AI systems and software engineering leader specializing in sovereign LLM deployments and enterprise platform delivery.",
-  },
 ];
 
 const Team = () => {
