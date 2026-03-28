@@ -68,7 +68,7 @@ const Footer = () => {
             <span>ISO/IEC 27001:2022 Certified</span>
           </div>
           <p className="text-xs md:text-sm text-muted-foreground text-center">
-            © 2025 IR4Q Technologies.
+            © 2026 IR4Q Technologies.
           </p>
         </div>
       </div>

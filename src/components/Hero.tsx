@@ -45,7 +45,7 @@ const Hero = () => {
               </span>
               <span className="flex items-center gap-2 touch-target">
                 <Globe className="w-4 h-4 flex-shrink-0" />
-                <span>Partnered with Equinix Ashburn</span>
+                <span>Hosted at Equinix Ashburn</span>
               </span>
             </div>
           </div>

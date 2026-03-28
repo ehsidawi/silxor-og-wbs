@@ -1,6 +1,6 @@
 const stats = [
   { value: "99.995%", label: "Uptime SLA" },
-  { value: "42ms", label: "Baghdad Latency" },
+  { value: "<120ms", label: "Baghdad Latency" },
   { value: "4", label: "Business Units" },
   { value: "24/7", label: "NOC Coverage" },
   { value: "ISO 27001:2022", label: "Certified" },

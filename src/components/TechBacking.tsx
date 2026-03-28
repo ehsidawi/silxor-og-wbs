@@ -48,8 +48,8 @@ const TechBacking = () => {
               {/* Metrics */}
               <div className="grid grid-cols-3 gap-3 md:gap-4 pt-6 md:pt-8 border-t border-border">
                 <div>
-                  <div className="text-xl md:text-2xl font-mono text-primary mb-1">42ms</div>
-                  <div className="text-xs text-muted-foreground">Average latency</div>
+                  <div className="text-xl md:text-2xl font-mono text-primary mb-1">&lt;120ms</div>
+                  <div className="text-xs text-muted-foreground">Avg. Latency</div>
                 </div>
                 <div>
                   <div className="text-xl md:text-2xl font-mono text-primary mb-1">N+2</div>

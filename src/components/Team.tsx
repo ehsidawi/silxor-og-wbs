@@ -45,7 +45,7 @@ const Team = () => {
         </div>
 
         <p className="text-xs text-muted-foreground text-center mt-8">
-          Full leadership profiles available upon request during assessment engagement.
+          IR4Q leadership profiles and team bios are available upon request as part of the technical assessment engagement.
         </p>
       </div>
     </section>
