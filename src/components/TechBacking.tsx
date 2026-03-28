@@ -74,8 +74,8 @@ const TechBacking = () => {
               </p>
             </div>
 
-            <div className="space-y-4 md:space-y-6">
-              <div className="surface-elevated p-4 md:p-6 flex gap-3 md:gap-4">
+            <div className="space-y-3 md:space-y-4">
+              <div className="surface-elevated p-3 md:p-4 flex gap-3">
                 <div className="w-10 h-10 md:w-12 md:h-12 border border-border flex items-center justify-center flex-shrink-0">
                   <Activity className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
                 </div>
