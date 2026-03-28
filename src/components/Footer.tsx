@@ -31,6 +31,7 @@ const Footer = () => {
                 { label: "Infrastructure & Cloud", href: "#infrastructure" },
                 { label: "Software Development", href: "#software" },
                 { label: "AI & Automation", href: "#ai" },
+                { label: "Identity & Access Mgmt", href: "#identity" },
                 { label: "Technology Consulting", href: "#consulting" },
               ].map((link) => (
                 <a
