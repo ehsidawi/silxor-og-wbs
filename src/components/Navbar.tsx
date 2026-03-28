@@ -123,7 +123,7 @@ const Navbar = () => {
         </div>
 
         <button
-          className="lg:hidden flex items-center justify-center w-10 h-10"
+          className="xl:hidden flex items-center justify-center w-10 h-10"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
