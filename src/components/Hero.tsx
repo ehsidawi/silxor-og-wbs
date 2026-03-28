@@ -42,7 +42,7 @@ const Hero = () => {
               className="section-eyebrow blink-cursor mb-5"
               style={{ marginBottom: 20, fontFamily: arFont }}
             >
-              {t("SOVEREIGN TECHNOLOGY INFRASTRUCTURE", "البنية التحتية التقنية السيادية")}
+              {t("COMMISSIONED BY INSTITUTIONS THAT CANNOT FAIL. ENGINEERED TO TRANSFORM AT SCALE.", "مُكلَّفون من مؤسسات لا تتحمل الفشل. مهندَسون للتحول على نطاق واسع.")}
             </motion.div>
 
             <motion.h1
