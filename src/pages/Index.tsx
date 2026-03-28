@@ -79,9 +79,6 @@ const Index = () => {
           <StartEngagement />
         </AnimatedSection>
       </div>
-      <AnimatedSection>
-        <PressAnnouncements />
-      </AnimatedSection>
       <Footer />
     </div>
   );
