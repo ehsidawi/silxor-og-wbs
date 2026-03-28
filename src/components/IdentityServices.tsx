@@ -85,6 +85,7 @@ const identityPackages: IdPkg[] = [
       "Executive and technical findings briefing",
     ],
     cta: "Book Assessment",
+    mailto: "mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Identity%20Assessment%20%26%20Roadmap%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20book%20an%20Identity%20Assessment%20%26%20Roadmap%20engagement.%0A%0AOrganization%3A%20%0AEnvironment%3A%20",
   },
   {
     name: "Identity Build & Deploy",
