@@ -1,111 +1,110 @@
 import { Shield } from "lucide-react";
-
+import { useLanguage } from "@/context/LanguageContext";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const { t } = useLanguage();
+
   return (
-    <footer style={{ backgroundColor: '#080A0F', borderTop: '1px solid rgba(255,255,255,0.06)', padding: '80px 0 40px' }}>
+    <footer style={{ backgroundColor: "#080A0F", borderTop: "1px solid rgba(255,255,255,0.06)", padding: "80px 0 40px" }}>
       <div className="container-content">
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12" style={{ marginBottom: 48 }}>
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-3">
-              
-              <span className="font-display font-[800]" style={{ fontSize: 24, color: '#F0EDE8' }}>
+              <span className="font-display font-[800]" style={{ fontSize: 24, color: "#F0EDE8" }}>
                 IR4Q
-                <span
-                  className="inline-block ml-1"
-                  style={{ width: 6, height: 6, backgroundColor: '#C9A84C', verticalAlign: 'middle', marginBottom: 2 }}
-                />
+                <span className="inline-block ml-1" style={{ width: 6, height: 6, backgroundColor: "#C9A84C", verticalAlign: "middle", marginBottom: 2 }} />
               </span>
             </div>
-            <p className="font-body font-[300]" style={{ fontSize: 14, color: '#4A5060', lineHeight: 1.7 }}>
-              IR4Q is Iraq's sovereign technology company — delivering infrastructure, software, AI, and consulting for the institutions that power the country. A Silxor company.
+            <p className="font-body font-[300]" style={{ fontSize: 14, color: "#4A5060", lineHeight: 1.7 }}>
+              {t(
+                "IR4Q is Iraq's sovereign technology company — delivering infrastructure, software, AI, and consulting for the institutions that power the country. A Silxor company.",
+                "IR4Q هي شركة العراق السيادية للتقنيات — تقدم البنية التحتية والبرمجيات والذكاء الاصطناعي والاستشارات للمؤسسات التي تقود البلاد. شركة Silxor."
+              )}
             </p>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: '0.12em', color: '#F0EDE8', marginBottom: 20 }}>Services</h4>
+            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.12em", color: "#F0EDE8", marginBottom: 20 }}>
+              {t("Services", "الخدمات")}
+            </h4>
             <nav className="space-y-3">
               {[
-                { label: "Infrastructure & Cloud", href: "#infrastructure" },
-                { label: "Software Development", href: "#software" },
-                { label: "AI & Automation", href: "#ai" },
-                { label: "Identity & Access Mgmt", href: "#identity" },
-                { label: "Technology Consulting", href: "#consulting" },
+                { label: t("Infrastructure & Cloud", "البنية التحتية والسحابة"), href: "#infrastructure" },
+                { label: t("Software Development", "تطوير البرمجيات"), href: "#software" },
+                { label: t("AI & Automation", "الذكاء الاصطناعي والأتمتة"), href: "#ai" },
+                { label: t("Identity & Access Mgmt", "إدارة الهوية والوصول"), href: "#identity" },
+                { label: t("Technology Consulting", "الاستشارات التقنية"), href: "#consulting" },
               ].map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="block font-body font-[300] transition-colors duration-200"
-                  style={{ fontSize: 14, color: '#4A5060' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#C9A84C')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#4A5060')}
-                >
-                  {link.label}
-                </a>
+                <a key={link.label} href={link.href} className="block font-body font-[300] transition-colors duration-200" style={{ fontSize: 14, color: "#4A5060" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#C9A84C")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "#4A5060")}
+                >{link.label}</a>
               ))}
             </nav>
           </div>
 
           {/* Packages */}
           <div>
-            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: '0.12em', color: '#F0EDE8', marginBottom: 20 }}>Packages</h4>
+            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.12em", color: "#F0EDE8", marginBottom: 20 }}>
+              {t("Packages", "الباقات")}
+            </h4>
             <nav className="space-y-3">
-              {["Infrastructure Packages", "Software Packages", "AI Packages", "Identity Packages", "Consulting Packages"].map((label) => (
-                <a
-                  key={label}
-                  href="#packages"
-                  className="block font-body font-[300] transition-colors duration-200"
-                  style={{ fontSize: 14, color: '#4A5060' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#C9A84C')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#4A5060')}
-                >
-                  {label}
-                </a>
+              {[
+                t("Infrastructure Packages", "باقات البنية التحتية"),
+                t("Software Packages", "باقات البرمجيات"),
+                t("AI Packages", "باقات الذكاء الاصطناعي"),
+                t("Identity Packages", "باقات الهوية"),
+                t("Consulting Packages", "باقات الاستشارات"),
+              ].map((label) => (
+                <a key={label} href="#packages" className="block font-body font-[300] transition-colors duration-200" style={{ fontSize: 14, color: "#4A5060" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#C9A84C")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "#4A5060")}
+                >{label}</a>
               ))}
             </nav>
           </div>
 
           {/* Company */}
           <div>
-            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: '0.12em', color: '#F0EDE8', marginBottom: 20 }}>Company</h4>
+            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.12em", color: "#F0EDE8", marginBottom: 20 }}>
+              {t("Company", "الشركة")}
+            </h4>
             <nav className="space-y-3">
               {[
-                { label: "About IR4Q", href: "#about" },
-                { label: "Leadership", href: "#about" },
-                { label: "Careers", href: "#contact" },
-                { label: "Contact", href: "#contact" },
+                { label: t("About IR4Q", "عن IR4Q"), href: "#about" },
+                { label: t("Leadership", "القيادة"), href: "#about" },
+                { label: t("Selected Work", "أعمالنا المختارة"), href: "#work" },
+                { label: t("Press & Announcements", "الأخبار والإعلانات"), href: "#press" },
+                { label: t("Careers", "الوظائف"), href: "#contact" },
+                { label: t("Contact", "تواصل معنا"), href: "#contact" },
               ].map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="block font-body font-[300] transition-colors duration-200"
-                  style={{ fontSize: 14, color: '#4A5060' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#C9A84C')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#4A5060')}
-                >
-                  {link.label}
-                </a>
+                <a key={link.label} href={link.href} className="block font-body font-[300] transition-colors duration-200" style={{ fontSize: 14, color: "#4A5060" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#C9A84C")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "#4A5060")}
+                >{link.label}</a>
               ))}
             </nav>
           </div>
 
           {/* Legal */}
           <div>
-            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: '0.12em', color: '#F0EDE8', marginBottom: 20 }}>Legal & Compliance</h4>
+            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.12em", color: "#F0EDE8", marginBottom: 20 }}>
+              {t("Legal & Compliance", "القانوني والامتثال")}
+            </h4>
             <nav className="space-y-3">
-              {["Privacy Policy", "Compliance Documentation", "Security Practices", "SLA Documentation"].map((label) => (
-                <a
-                  key={label}
-                  href="#"
-                  className="block font-body font-[300] transition-colors duration-200"
-                  style={{ fontSize: 14, color: '#4A5060' }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = '#C9A84C')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = '#4A5060')}
-                >
-                  {label}
-                </a>
+              {[
+                { label: t("Privacy Policy", "سياسة الخصوصية"), href: "/privacy" },
+                { label: t("Compliance Documentation", "وثائق الامتثال"), href: "/compliance" },
+                { label: t("Security Practices", "ممارسات الأمن"), href: "/compliance" },
+                { label: t("SLA Documentation", "وثائق اتفاقية مستوى الخدمة"), href: "/sla" },
+              ].map((link) => (
+                <Link key={link.label} to={link.href} className="block font-body font-[300] transition-colors duration-200" style={{ fontSize: 14, color: "#4A5060" }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#C9A84C")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "#4A5060")}
+                >{link.label}</Link>
               ))}
             </nav>
           </div>
@@ -121,10 +120,10 @@ const Footer = () => {
           ))}
         </div>
 
-        {/* Divider + Copyright */}
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 24 }}>
-          <p className="font-body font-[300]" style={{ fontSize: 12, color: '#4A5060' }}>
-            © 2026 IR4Q Technologies. A Silxor company.
+        {/* Copyright */}
+        <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 24 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 12, color: "#4A5060" }}>
+            {t("© 2026 IR4Q Technologies. A Silxor company.", "© 2026 IR4Q Technologies. شركة Silxor.")}
           </p>
         </div>
       </div>

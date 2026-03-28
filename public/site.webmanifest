@@ -1,0 +1,16 @@
+{
+  "name": "IR4Q Technologies",
+  "short_name": "IR4Q",
+  "description": "Iraq's Sovereign Technology Company",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080A0F",
+  "theme_color": "#C9A84C",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

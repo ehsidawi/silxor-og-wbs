@@ -1,13 +1,16 @@
 import { ArrowRight, Shield, Globe } from "lucide-react";
 import { motion } from "framer-motion";
-
+import { useLanguage } from "@/context/LanguageContext";
 
 const Hero = () => {
+  const { t, language } = useLanguage();
+  const arFont = language === "ar" ? "'Cairo', sans-serif" : undefined;
+
   return (
     <section
       className="relative overflow-hidden"
       style={{
-        minHeight: '100vh',
+        minHeight: "100vh",
         background: `
           radial-gradient(ellipse 80% 60% at 50% -10%, rgba(201,168,76,0.08) 0%, transparent 70%),
           url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 60 0 L 60 60 M 0 0 L 0 60 M 0 60 L 60 60 M 0 0 L 60 0' stroke='rgba(255,255,255,0.02)' stroke-width='1' fill='none'/%3E%3C/svg%3E"),
@@ -16,52 +19,44 @@ const Hero = () => {
         `,
       }}
     >
-      {/* Eight-point star wireframe - right side */}
       <div className="absolute right-[-100px] top-1/2 -translate-y-1/2 hidden lg:block" style={{ zIndex: 0 }}>
-        <svg
-          width="400"
-          height="400"
-          viewBox="0 0 400 400"
-          fill="none"
-          style={{ animation: 'hex-rotate 120s linear infinite' }}
-        >
+        <svg width="400" height="400" viewBox="0 0 400 400" fill="none" style={{ animation: "hex-rotate 120s linear infinite" }}>
           <polygon
             points="200,20 230,150 340,60 250,170 380,200 250,230 340,340 230,250 200,380 170,250 60,340 150,230 20,200 150,170 60,60 170,150"
-            stroke="rgba(201,168,76,0.12)"
-            strokeWidth="1"
-            fill="none"
+            stroke="rgba(201,168,76,0.12)" strokeWidth="1" fill="none"
           />
           <polygon
             points="200,80 218,162 290,110 238,178 320,200 238,222 290,290 218,238 200,320 182,238 110,290 162,222 80,200 162,178 110,110 182,162"
-            stroke="rgba(201,168,76,0.08)"
-            strokeWidth="1"
-            fill="rgba(201,168,76,0.04)"
+            stroke="rgba(201,168,76,0.08)" strokeWidth="1" fill="rgba(201,168,76,0.04)"
           />
         </svg>
       </div>
 
       <div className="container-content relative" style={{ zIndex: 1 }}>
-        <div className="flex items-center" style={{ minHeight: 'calc(100vh - 64px)' }}>
+        <div className="flex items-center" style={{ minHeight: "calc(100vh - 64px)" }}>
           <div style={{ maxWidth: 700 }}>
-            {/* Classification label */}
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="section-eyebrow blink-cursor mb-5"
-              style={{ marginBottom: 20 }}
+              style={{ marginBottom: 20, fontFamily: arFont }}
             >
-              SOVEREIGN TECHNOLOGY INFRASTRUCTURE
+              {t("SOVEREIGN TECHNOLOGY INFRASTRUCTURE", "البنية التحتية التقنية السيادية")}
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="font-display font-[800] leading-[1.05] mb-6"
-              style={{ fontSize: 'clamp(40px, 6vw, 72px)', color: '#F0EDE8', maxWidth: 640 }}
+              style={{ fontSize: "clamp(40px, 6vw, 72px)", color: "#F0EDE8", maxWidth: 640, fontFamily: arFont }}
             >
-              Iraq's <span style={{ color: '#C9A84C' }}>Sovereign</span> Technology Company
+              {language === "ar" ? (
+                <>شركة العراق للتقنيات <span style={{ color: "#C9A84C" }}>السيادية</span></>
+              ) : (
+                <>Iraq's <span style={{ color: "#C9A84C" }}>Sovereign</span> Technology Company</>
+              )}
             </motion.h1>
 
             <motion.p
@@ -69,9 +64,12 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
               className="font-body font-[300]"
-              style={{ fontSize: 17, lineHeight: 1.7, color: '#8A8F9E', maxWidth: 520, marginTop: 24 }}
+              style={{ fontSize: 17, lineHeight: 1.7, color: "#8A8F9E", maxWidth: 520, marginTop: 24, fontFamily: arFont }}
             >
-              IR4Q designs, builds, secures, and operates the digital systems powering Iraq's most critical institutions — from sovereign cloud infrastructure to custom enterprise software and private AI.
+              {t(
+                "IR4Q designs, builds, secures, and operates the digital systems powering Iraq's most critical institutions — from sovereign cloud infrastructure to custom enterprise software and private AI.",
+                "IR4Q تصمم وتبني وتؤمن وتشغّل الأنظمة الرقمية التي تدعم أهم المؤسسات في العراق — من البنية التحتية السحابية السيادية إلى البرمجيات المخصصة والذكاء الاصطناعي الخاص."
+              )}
             </motion.p>
 
             <motion.div
@@ -87,47 +85,27 @@ const Hero = () => {
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 font-body font-[500] uppercase transition-all duration-200"
                 style={{
-                  fontSize: 13,
-                  letterSpacing: '0.1em',
-                  backgroundColor: '#C9A84C',
-                  color: '#080A0F',
-                  padding: '14px 28px',
-                  borderRadius: 2,
+                  fontSize: 13, letterSpacing: "0.1em", backgroundColor: "#C9A84C", color: "#080A0F",
+                  padding: "14px 28px", borderRadius: 2, fontFamily: arFont,
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = '#E2C06A';
-                  e.currentTarget.style.boxShadow = '0 0 30px rgba(201,168,76,0.3)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = '#C9A84C';
-                  e.currentTarget.style.boxShadow = 'none';
-                }}
+                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#E2C06A"; e.currentTarget.style.boxShadow = "0 0 30px rgba(201,168,76,0.3)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#C9A84C"; e.currentTarget.style.boxShadow = "none"; }}
               >
-                Request Technical Assessment
+                {t("Request Technical Assessment", "طلب تقييم تقني")}
                 <ArrowRight className="w-4 h-4" />
               </a>
               <a
                 href="#infrastructure"
                 className="inline-flex items-center justify-center gap-2 font-body font-[500] uppercase transition-all duration-200"
                 style={{
-                  fontSize: 13,
-                  letterSpacing: '0.1em',
-                  color: '#C9A84C',
-                  border: '1px solid rgba(201,168,76,0.4)',
-                  backgroundColor: 'transparent',
-                  padding: '14px 28px',
-                  borderRadius: 2,
+                  fontSize: 13, letterSpacing: "0.1em", color: "#C9A84C",
+                  border: "1px solid rgba(201,168,76,0.4)", backgroundColor: "transparent",
+                  padding: "14px 28px", borderRadius: 2, fontFamily: arFont,
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = '#C9A84C';
-                  e.currentTarget.style.backgroundColor = 'rgba(201,168,76,0.05)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(201,168,76,0.4)';
-                  e.currentTarget.style.backgroundColor = 'transparent';
-                }}
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#C9A84C"; e.currentTarget.style.backgroundColor = "rgba(201,168,76,0.05)"; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(201,168,76,0.4)"; e.currentTarget.style.backgroundColor = "transparent"; }}
               >
-                Explore Our Services
+                {t("Explore Our Services", "استكشف خدماتنا")}
               </a>
             </motion.div>
 
@@ -140,14 +118,14 @@ const Hero = () => {
             >
               <span className="badge-pill">
                 <Shield className="w-3 h-3 flex-shrink-0" />
-                ISO/IEC 27001:2022 Certified
+                ISO/IEC 27001:2022 {t("Certified", "معتمد")}
               </span>
               <span className="badge-pill">
-                Uptime Institute Tier-IV Ready
+                Uptime Institute Tier-IV {t("Ready", "جاهز")}
               </span>
               <span className="badge-pill">
                 <Globe className="w-3 h-3 flex-shrink-0" />
-                Hosted at Equinix Ashburn
+                {t("Hosted at Equinix Ashburn", "مستضاف في Equinix أشبرن")}
               </span>
             </motion.div>
           </div>
