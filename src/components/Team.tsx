@@ -22,7 +22,7 @@ const Team = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div className="flex justify-center">
           {leaders.map((leader, index) => (
             <div key={index} className="surface-elevated rounded p-6 md:p-8 text-center">
               <div className="w-20 h-20 rounded-full bg-muted flex items-center justify-center mx-auto mb-5">
