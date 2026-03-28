@@ -10,7 +10,8 @@ const Hero = () => {
     <section
       className="relative overflow-hidden"
       style={{
-        minHeight: "100vh",
+        paddingTop: 120,
+        paddingBottom: 80,
         background: `
           radial-gradient(ellipse 80% 60% at 50% -10%, rgba(201,168,76,0.08) 0%, transparent 70%),
           url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 60 0 L 60 60 M 0 0 L 0 60 M 0 60 L 60 60 M 0 0 L 60 0' stroke='rgba(255,255,255,0.02)' stroke-width='1' fill='none'/%3E%3C/svg%3E"),
