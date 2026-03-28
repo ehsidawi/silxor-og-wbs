@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   Shield, Key, Users, GitBranch, Activity, AlertTriangle, Cpu, Database,
   Cloud, Link, Lock, Layers, Search, Map, Code, Upload, RefreshCw,
@@ -37,23 +38,35 @@ interface EngagementItem {
 }
 
 const engagements: EngagementItem[] = [
-  { icon: Search, label: "Identity Assessment", detail: "Full audit of your existing identity environment — gaps, risks, misconfigurations, and attack surface." },
-  { icon: Map, label: "Architecture Design", detail: "Greenfield and brownfield identity architecture blueprints aligned to Zero Trust and compliance requirements." },
-  { icon: Code, label: "Build & Integration", detail: "Custom identity platform build, IdP integration, connector development, and API-level access control implementation." },
-  { icon: Upload, label: "Deployment & Migration", detail: "Production deployment with zero-downtime migration from legacy systems, full cutover planning, and rollback procedures." },
-  { icon: RefreshCw, label: "Modernization & Rebuild", detail: "Legacy identity system modernization — replacing outdated IAM stacks with sovereign, cloud-native, or hybrid architectures." },
-  { icon: Ambulance, label: "Recovery & Incident Response", detail: "Emergency identity recovery — AD forest rebuilds, PAM vault recovery, identity breach containment, and post-incident hardening." },
-  { icon: Settings, label: "Managed IAM Operations", detail: "Ongoing identity platform administration, access review campaigns, policy enforcement, and 24/7 identity operations support." },
-  { icon: FileCheck, label: "Compliance & Audit Readiness", detail: "Identity controls mapping to ISO 27001, NIST SP 800-63, SOC 2, CBI frameworks, and regulatory audit evidence packages." },
-  { icon: Zap, label: "Rapid Deployment", detail: "Time-critical identity deployments — MFA rollouts, SSO implementations, and emergency PAM deployments executed in days, not months." },
+  { icon: Search, label: "Assess", detail: "Full audit of your existing identity environment — gaps, risks, misconfigurations, and attack surface." },
+  { icon: Map, label: "Design", detail: "Greenfield and brownfield identity architecture blueprints aligned to Zero Trust and compliance requirements." },
+  { icon: Code, label: "Build", detail: "Custom identity platform build, IdP integration, connector development, and API-level access control implementation." },
+  { icon: Upload, label: "Deploy", detail: "Production deployment with zero-downtime migration from legacy systems, full cutover planning, and rollback procedures." },
+  { icon: RefreshCw, label: "Modernize", detail: "Legacy identity system modernization — replacing outdated IAM stacks with sovereign, cloud-native, or hybrid architectures." },
+  { icon: Ambulance, label: "Recover", detail: "Emergency identity recovery — AD forest rebuilds, PAM vault recovery, identity breach containment, and post-incident hardening." },
+  { icon: Settings, label: "Operate", detail: "Ongoing identity platform administration, access review campaigns, policy enforcement, and 24/7 identity operations support." },
+  { icon: FileCheck, label: "Comply", detail: "Identity controls mapping to ISO 27001, NIST SP 800-63, SOC 2, CBI frameworks, and regulatory audit evidence packages." },
+  { icon: Zap, label: "Accelerate", detail: "Time-critical identity deployments — MFA rollouts, SSO implementations, and emergency PAM deployments executed in days, not months." },
 ];
 
-/* ── SUBSECTION 3: Environment Pills ── */
-const environments = [
-  "On-Premise", "Cloud-Native", "Hybrid Identity", "Air-Gapped", "Multi-Cloud",
-  "Azure / Entra", "AWS", "GCP", "Sovereign Hosted", "Active Directory",
-  "Linux/Unix", "Windows Server", "Kubernetes Workloads", "CI/CD Pipelines",
-  "Legacy Mainframe", "OT / ICS Networks", "Government Networks", "Financial Core Systems",
+/* ── SUBSECTION 3: Environment Categories ── */
+const envCategories = [
+  {
+    header: "Deployment Models",
+    items: ["On-Premise", "Cloud-Native", "Hybrid Identity", "Air-Gapped", "Sovereign Hosted"],
+  },
+  {
+    header: "Cloud Platforms",
+    items: ["Azure / Entra", "AWS", "GCP", "Multi-Cloud"],
+  },
+  {
+    header: "Operating Systems & Infra",
+    items: ["Active Directory", "Linux/Unix", "Windows Server", "Kubernetes Workloads", "CI/CD Pipelines", "Legacy Mainframe"],
+  },
+  {
+    header: "Regulated Environments",
+    items: ["OT / ICS Networks", "Government Networks", "Financial Core Systems"],
+  },
 ];
 
 /* ── SUBSECTION 4: Identity Packages ── */
@@ -102,6 +115,205 @@ const identityPackages: IdPkg[] = [
   },
 ];
 
+/* ── Radial Domain Map ── */
+const RadialDomainMap = () => {
+  const [active, setActive] = useState<number | null>(null);
+  const size = 480;
+  const cx = size / 2;
+  const cy = size / 2;
+  const radius = 180;
+  const nodeRadius = 28;
+
+  const nodePositions = domains.map((_, i) => {
+    const angle = (i * 30 - 90) * (Math.PI / 180);
+    return {
+      x: cx + radius * Math.cos(angle),
+      y: cy + radius * Math.sin(angle),
+    };
+  });
+
+  return (
+    <div>
+      {/* Desktop radial */}
+      <div className="hidden md:flex flex-col items-center">
+        <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} style={{ overflow: 'visible' }}>
+          {/* Connecting lines */}
+          {nodePositions.map((pos, i) => (
+            <line
+              key={`line-${i}`}
+              x1={cx} y1={cy} x2={pos.x} y2={pos.y}
+              stroke={active === i ? 'rgba(201,168,76,0.8)' : 'rgba(201,168,76,0.2)'}
+              strokeWidth={1}
+              style={{ transition: 'stroke 250ms ease' }}
+            />
+          ))}
+
+          {/* Center pulsing circle */}
+          <circle cx={cx} cy={cy} r={40} fill="none" stroke="rgba(201,168,76,0.3)" strokeWidth={1}>
+            <animate attributeName="r" values="38;44;38" dur="3s" repeatCount="indefinite" />
+            <animate attributeName="opacity" values="1;0.4;1" dur="3s" repeatCount="indefinite" />
+          </circle>
+          <circle cx={cx} cy={cy} r={36} fill="#0D1017" stroke="rgba(201,168,76,0.5)" strokeWidth={1} />
+          <text x={cx} y={cy - 6} textAnchor="middle" fill="#C9A84C" fontFamily="'JetBrains Mono', monospace" fontSize={9} fontWeight={400} letterSpacing="0.15em">
+            IR4Q
+          </text>
+          <text x={cx} y={cy + 8} textAnchor="middle" fill="#C9A84C" fontFamily="'JetBrains Mono', monospace" fontSize={7} fontWeight={400} letterSpacing="0.1em">
+            IDENTITY
+          </text>
+
+          {/* Domain nodes */}
+          {domains.map((d, i) => {
+            const pos = nodePositions[i];
+            const isActive = active === i;
+            return (
+              <g
+                key={d.abbrev}
+                onMouseEnter={() => setActive(i)}
+                onMouseLeave={() => setActive(null)}
+                style={{ cursor: 'pointer' }}
+              >
+                <circle
+                  cx={pos.x} cy={pos.y} r={nodeRadius}
+                  fill={isActive ? '#C9A84C' : '#0D1017'}
+                  stroke={isActive ? '#C9A84C' : 'rgba(201,168,76,0.3)'}
+                  strokeWidth={1}
+                  style={{ transition: 'all 250ms ease' }}
+                />
+                <text
+                  x={pos.x} y={pos.y + 3}
+                  textAnchor="middle"
+                  fill={isActive ? '#080A0F' : '#C9A84C'}
+                  fontFamily="'JetBrains Mono', monospace"
+                  fontSize={d.abbrev.length > 5 ? 7 : 10}
+                  fontWeight={isActive ? 700 : 400}
+                  style={{ transition: 'fill 250ms ease' }}
+                >
+                  {d.abbrev}
+                </text>
+              </g>
+            );
+          })}
+        </svg>
+
+        {/* Hover detail panel */}
+        <div
+          style={{
+            minHeight: 100,
+            marginTop: 24,
+            maxWidth: 560,
+            width: '100%',
+            textAlign: 'center',
+            transition: 'opacity 250ms ease',
+            opacity: active !== null ? 1 : 0.4,
+          }}
+        >
+          {active !== null ? (
+            <>
+              <h4 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 6 }}>
+                {domains[active].title}
+              </h4>
+              <p className="font-body font-[300]" style={{ fontSize: 12, color: '#8A8F9E', lineHeight: 1.7, marginBottom: 8 }}>
+                {domains[active].body}
+              </p>
+              <div className="font-mono font-[400]" style={{ fontSize: 10, color: '#4A5060', letterSpacing: '0.04em' }}>
+                {domains[active].tags}
+              </div>
+            </>
+          ) : (
+            <p className="font-body font-[300]" style={{ fontSize: 12, color: '#4A5060' }}>
+              Hover a domain to explore
+            </p>
+          )}
+        </div>
+      </div>
+
+      {/* Mobile 2-column grid */}
+      <div className="grid grid-cols-2 gap-3 md:hidden">
+        {domains.map((d) => (
+          <div
+            key={d.abbrev}
+            style={{
+              backgroundColor: '#0D1017',
+              border: '1px solid rgba(255,255,255,0.06)',
+              borderRadius: 4,
+              padding: 14,
+            }}
+          >
+            <div className="font-mono font-[400] uppercase" style={{ fontSize: 10, letterSpacing: '0.15em', color: '#C9A84C', marginBottom: 4 }}>
+              {d.abbrev}
+            </div>
+            <div className="font-body font-[500]" style={{ fontSize: 12, color: '#F0EDE8' }}>
+              {d.title}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+/* ── Engagement Flow ── */
+const EngagementFlow = () => (
+  <div>
+    {/* Desktop horizontal flow */}
+    <div className="hidden md:block overflow-x-auto pb-4">
+      <div className="flex items-start gap-0" style={{ minWidth: 'max-content' }}>
+        {engagements.map((item, i) => {
+          const Icon = item.icon;
+          return (
+            <div key={i} className="flex items-start">
+              <div style={{ width: 140, flexShrink: 0 }}>
+                <div className="font-mono font-[700]" style={{ fontSize: 32, color: '#C9A84C', opacity: 0.3, lineHeight: 1, marginBottom: 8 }}>
+                  {String(i + 1).padStart(2, '0')}
+                </div>
+                <Icon style={{ width: 20, height: 20, color: '#C9A84C', marginBottom: 6 }} strokeWidth={1.5} />
+                <div className="font-body font-[500]" style={{ fontSize: 14, color: '#F0EDE8', marginBottom: 2 }}>
+                  {item.label}
+                </div>
+                <div className="font-body font-[300]" style={{ fontSize: 12, color: '#8A8F9E', lineHeight: 1.5, maxWidth: 120 }}>
+                  {item.detail.split('—')[0].trim()}
+                </div>
+              </div>
+              {i < engagements.length - 1 && (
+                <div className="flex items-center self-center" style={{ padding: '0 4px', marginTop: 36 }}>
+                  <ArrowRight style={{ width: 16, height: 16, color: 'rgba(201,168,76,0.3)' }} />
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+
+    {/* Mobile vertical stack */}
+    <div className="md:hidden space-y-4">
+      {engagements.map((item, i) => {
+        const Icon = item.icon;
+        return (
+          <div key={i} className="flex items-start gap-3">
+            <div style={{ flexShrink: 0, width: 32 }}>
+              <div className="font-mono font-[700]" style={{ fontSize: 20, color: '#C9A84C', opacity: 0.3 }}>
+                {String(i + 1).padStart(2, '0')}
+              </div>
+            </div>
+            <div className="flex items-start gap-3">
+              <Icon style={{ width: 18, height: 18, color: '#C9A84C', flexShrink: 0, marginTop: 2 }} strokeWidth={1.5} />
+              <div>
+                <div className="font-body font-[500]" style={{ fontSize: 13, color: '#F0EDE8', marginBottom: 2 }}>
+                  {item.label}
+                </div>
+                <div className="font-body font-[300]" style={{ fontSize: 12, color: '#8A8F9E', lineHeight: 1.6 }}>
+                  {item.detail}
+                </div>
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </div>
+);
+
 /* ── COMPONENT ── */
 const IdentityServices = () => {
   return (
@@ -118,7 +330,7 @@ const IdentityServices = () => {
           </p>
         </div>
 
-        {/* ── Subsection 1: Identity Domains ── */}
+        {/* ── Subsection 1: Radial Domain Map ── */}
         <div style={{ marginBottom: 48 }}>
           <h3 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 6 }}>
             Every Identity Domain. One Partner.
@@ -126,48 +338,10 @@ const IdentityServices = () => {
           <p className="font-body font-[300]" style={{ fontSize: 13, color: '#8A8F9E', maxWidth: 520, marginBottom: 20, lineHeight: 1.7 }}>
             IR4Q architects and operates across all identity disciplines — purpose-built for governments, financial institutions, and enterprises operating in high-stakes environments.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {domains.map((d, i) => {
-              const Icon = d.icon;
-              return (
-                <div
-                  key={i}
-                  style={{
-                    backgroundColor: '#0D1017',
-                    border: '1px solid rgba(255,255,255,0.06)',
-                    borderRadius: 4,
-                    padding: 20,
-                    transition: 'all 250ms ease',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(201,168,76,0.3)';
-                    e.currentTarget.style.backgroundColor = '#12161E';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)';
-                    e.currentTarget.style.backgroundColor = '#0D1017';
-                  }}
-                >
-                  <Icon style={{ width: 24, height: 24, color: '#C9A84C', marginBottom: 12 }} strokeWidth={1.5} />
-                  <div className="font-mono font-[400] uppercase" style={{ fontSize: 11, letterSpacing: '0.15em', color: '#C9A84C', marginBottom: 4 }}>
-                    {d.abbrev}
-                  </div>
-                  <h4 className="font-body font-[500]" style={{ fontSize: 14, color: '#F0EDE8', marginBottom: 6 }}>
-                    {d.title}
-                  </h4>
-                  <p className="font-body font-[300]" style={{ fontSize: 12, color: '#8A8F9E', lineHeight: 1.7, marginBottom: 10 }}>
-                    {d.body}
-                  </p>
-                  <div className="font-mono font-[400]" style={{ fontSize: 10, color: '#4A5060', letterSpacing: '0.04em' }}>
-                    {d.tags}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <RadialDomainMap />
         </div>
 
-        {/* ── Subsection 2: Engagement Items ── */}
+        {/* ── Subsection 2: Engagement Flow ── */}
         <div style={{ marginBottom: 48 }}>
           <h3 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 6 }}>
             What IR4Q Delivers Across Every Identity Engagement
@@ -175,27 +349,10 @@ const IdentityServices = () => {
           <p className="font-body font-[300]" style={{ fontSize: 13, color: '#8A8F9E', maxWidth: 520, marginBottom: 20, lineHeight: 1.7 }}>
             We don't sell software licenses. We architect, build, deploy, and operate your identity infrastructure from the ground up — or rescue what's already broken.
           </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {engagements.map((item, i) => {
-              const Icon = item.icon;
-              return (
-                <div key={i} className="flex items-start gap-3" style={{ padding: '12px 0' }}>
-                  <Icon style={{ width: 20, height: 20, color: '#C9A84C', flexShrink: 0, marginTop: 2 }} strokeWidth={1.5} />
-                  <div>
-                    <div className="font-body font-[500]" style={{ fontSize: 13, color: '#F0EDE8', marginBottom: 2 }}>
-                      {item.label}
-                    </div>
-                    <div className="font-body font-[300]" style={{ fontSize: 12, color: '#8A8F9E', lineHeight: 1.6 }}>
-                      {item.detail}
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
+          <EngagementFlow />
         </div>
 
-        {/* ── Subsection 3: Environments ── */}
+        {/* ── Subsection 3: Categorized Environments ── */}
         <div style={{ marginBottom: 48 }}>
           <h3 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 6 }}>
             Every Environment. No Exceptions.
@@ -203,22 +360,42 @@ const IdentityServices = () => {
           <p className="font-body font-[300]" style={{ fontSize: 13, color: '#8A8F9E', maxWidth: 480, marginBottom: 16, lineHeight: 1.7 }}>
             IR4Q identity engineers operate across on-premise, cloud, hybrid, air-gapped, and sovereign-hosted environments.
           </p>
-          <div className="flex flex-wrap gap-2">
-            {environments.map((env, i) => (
-              <span
-                key={i}
-                className="font-mono font-[400]"
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {envCategories.map((cat) => (
+              <div
+                key={cat.header}
                 style={{
-                  fontSize: 11,
-                  color: '#C9A84C',
-                  backgroundColor: 'rgba(201,168,76,0.06)',
-                  border: '1px solid rgba(201,168,76,0.2)',
-                  padding: '8px 16px',
-                  borderRadius: 2,
+                  backgroundColor: 'rgba(255,255,255,0.02)',
+                  border: '1px solid rgba(255,255,255,0.06)',
+                  borderRadius: 4,
+                  padding: 16,
                 }}
               >
-                {env}
-              </span>
+                <div
+                  className="font-mono font-[400] uppercase"
+                  style={{ fontSize: 10, letterSpacing: '0.15em', color: '#C9A84C', marginBottom: 12 }}
+                >
+                  {cat.header}
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {cat.items.map((env) => (
+                    <span
+                      key={env}
+                      className="font-mono font-[400]"
+                      style={{
+                        fontSize: 11,
+                        color: '#C9A84C',
+                        backgroundColor: 'rgba(201,168,76,0.06)',
+                        border: '1px solid rgba(201,168,76,0.2)',
+                        padding: '6px 12px',
+                        borderRadius: 2,
+                      }}
+                    >
+                      {env}
+                    </span>
+                  ))}
+                </div>
+              </div>
             ))}
           </div>
         </div>

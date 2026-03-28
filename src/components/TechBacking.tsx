@@ -51,19 +51,6 @@ const TechBacking = () => {
                 </div>
               </div>
 
-              {/* Metrics */}
-              <div className="grid grid-cols-3 gap-4" style={{ paddingTop: 24, borderTop: '1px solid rgba(255,255,255,0.06)' }}>
-                {[
-                  { value: "<120ms", label: "Avg. Latency" },
-                  { value: "N+2", label: "Power redundancy" },
-                  { value: "99.995%", label: "Uptime SLA" },
-                ].map((stat, i) => (
-                  <div key={i} style={{ background: '#12161E', border: '1px solid rgba(255,255,255,0.06)', borderTop: '2px solid #C9A84C', padding: '16px 12px' }}>
-                    <div className="font-mono font-[700]" style={{ fontSize: 24, color: '#F0EDE8' }}>{stat.value}</div>
-                    <div className="font-body font-[400] uppercase" style={{ fontSize: 11, color: '#8A8F9E', letterSpacing: '0.1em', marginTop: 4 }}>{stat.label}</div>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
 

@@ -28,13 +28,10 @@ const Index = () => {
         <StatsBar />
       </AnimatedSection>
       <AnimatedSection>
-        <WhatWeDo />
-      </AnimatedSection>
-      <AnimatedSection>
         <WhoWeServe />
       </AnimatedSection>
       <AnimatedSection>
-        <WhyIR4Q />
+        <ServiceSectorMatrix />
       </AnimatedSection>
       <AnimatedSection>
         <SelectedWork />
