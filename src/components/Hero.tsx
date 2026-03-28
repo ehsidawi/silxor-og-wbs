@@ -1,57 +1,155 @@
-import { Button } from "@/components/ui/button";
 import { ArrowRight, Shield, Globe } from "lucide-react";
+import { motion } from "framer-motion";
 import ir4qLogo from "@/assets/ir4q-logo.png";
 
 const Hero = () => {
   return (
     <section
-      className="relative overflow-hidden section-spacing"
+      className="relative overflow-hidden"
       style={{
-        backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.01'/%3E%3C/svg%3E")`,
+        minHeight: '100vh',
+        background: `
+          radial-gradient(ellipse 80% 60% at 50% -10%, rgba(201,168,76,0.08) 0%, transparent 70%),
+          url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 60 0 L 60 60 M 0 0 L 0 60 M 0 60 L 60 60 M 0 0 L 60 0' stroke='rgba(255,255,255,0.02)' stroke-width='1' fill='none'/%3E%3C/svg%3E"),
+          url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E"),
+          #080A0F
+        `,
       }}
     >
-      <div className="container-content">
-        <div className="grid lg:grid-cols-[1fr,auto] gap-8 md:gap-12 lg:gap-16 items-center">
-          <div className="max-w-3xl">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-wide leading-tight mb-6">
-              Iraq's Sovereign Technology Company
-            </h1>
+      {/* Hexagonal wireframe - right side */}
+      <div className="absolute right-[-100px] top-1/2 -translate-y-1/2 hidden lg:block" style={{ zIndex: 0 }}>
+        <svg
+          width="400"
+          height="400"
+          viewBox="0 0 400 400"
+          fill="none"
+          style={{ animation: 'hex-rotate 120s linear infinite' }}
+        >
+          <polygon
+            points="200,20 370,110 370,290 200,380 30,290 30,110"
+            stroke="rgba(201,168,76,0.12)"
+            strokeWidth="1"
+            fill="none"
+          />
+          <polygon
+            points="200,80 320,140 320,260 200,320 80,260 80,140"
+            stroke="rgba(201,168,76,0.08)"
+            strokeWidth="1"
+            fill="rgba(201,168,76,0.04)"
+          />
+        </svg>
+      </div>
 
-            <p className="text-base md:text-lg text-muted-foreground mb-8 md:mb-10 max-w-2xl leading-relaxed">
+      <div className="container-content relative" style={{ zIndex: 1 }}>
+        <div className="flex items-center" style={{ minHeight: 'calc(100vh - 64px)' }}>
+          <div style={{ maxWidth: 700 }}>
+            {/* Classification label */}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0 }}
+              className="section-eyebrow blink-cursor mb-5"
+              style={{ marginBottom: 20 }}
+            >
+              SOVEREIGN TECHNOLOGY INFRASTRUCTURE
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0 }}
+              className="font-display font-[800] leading-[1.05] mb-6"
+              style={{ fontSize: 'clamp(40px, 6vw, 72px)', color: '#F0EDE8', maxWidth: 640 }}
+            >
+              Iraq's <span style={{ color: '#C9A84C' }}>Sovereign</span> Technology Company
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+              className="font-body font-[300]"
+              style={{ fontSize: 17, lineHeight: 1.7, color: '#8A8F9E', maxWidth: 520, marginTop: 24 }}
+            >
               IR4Q designs, builds, secures, and operates the digital systems powering Iraq's most critical institutions — from sovereign cloud infrastructure to custom enterprise software and private AI.
-            </p>
+            </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mb-8 md:mb-12">
-              <Button variant="institutional" size="lg" className="touch-target w-full sm:w-auto" asChild>
-                <a href="https://cal.com/silxor/1-hr?user=silxor&duration=30" target="_blank" rel="noopener noreferrer">
-                  Request Technical Assessment
-                  <ArrowRight className="w-4 h-4" />
-                </a>
-              </Button>
-              <Button variant="outline" size="lg" className="touch-target w-full sm:w-auto" asChild>
-                <a href="#what-we-do">
-                  Explore Our Services
-                </a>
-              </Button>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+              className="flex flex-col sm:flex-row gap-4"
+              style={{ marginTop: 40 }}
+            >
+              <a
+                href="https://cal.com/silxor/1-hr?user=silxor&duration=30"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 font-body font-[500] uppercase transition-all duration-200"
+                style={{
+                  fontSize: 13,
+                  letterSpacing: '0.1em',
+                  backgroundColor: '#C9A84C',
+                  color: '#080A0F',
+                  padding: '14px 28px',
+                  borderRadius: 2,
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.backgroundColor = '#E2C06A';
+                  e.currentTarget.style.boxShadow = '0 0 30px rgba(201,168,76,0.3)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.backgroundColor = '#C9A84C';
+                  e.currentTarget.style.boxShadow = 'none';
+                }}
+              >
+                Request Technical Assessment
+                <ArrowRight className="w-4 h-4" />
+              </a>
+              <a
+                href="#what-we-do"
+                className="inline-flex items-center justify-center gap-2 font-body font-[500] uppercase transition-all duration-200"
+                style={{
+                  fontSize: 13,
+                  letterSpacing: '0.1em',
+                  color: '#C9A84C',
+                  border: '1px solid rgba(201,168,76,0.4)',
+                  backgroundColor: 'transparent',
+                  padding: '14px 28px',
+                  borderRadius: 2,
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = '#C9A84C';
+                  e.currentTarget.style.backgroundColor = 'rgba(201,168,76,0.05)';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(201,168,76,0.4)';
+                  e.currentTarget.style.backgroundColor = 'transparent';
+                }}
+              >
+                Explore Our Services
+              </a>
+            </motion.div>
 
-            <div className="flex flex-wrap gap-x-6 md:gap-x-8 gap-y-3 text-xs sm:text-sm text-muted-foreground">
-              <span className="flex items-center gap-2 touch-target">
-                <Shield className="w-4 h-4 flex-shrink-0" />
-                <span>ISO/IEC 27001:2022 Certified</span>
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.45 }}
+              className="flex flex-wrap gap-[10px]"
+              style={{ marginTop: 48 }}
+            >
+              <span className="badge-pill">
+                <Shield className="w-3 h-3 flex-shrink-0" />
+                ISO/IEC 27001:2022 Certified
               </span>
-              <span className="touch-target flex items-center">
+              <span className="badge-pill">
                 Uptime Institute Tier-IV Ready
               </span>
-              <span className="flex items-center gap-2 touch-target">
-                <Globe className="w-4 h-4 flex-shrink-0" />
-                <span>Hosted at Equinix Ashburn</span>
+              <span className="badge-pill">
+                <Globe className="w-3 h-3 flex-shrink-0" />
+                Hosted at Equinix Ashburn
               </span>
-            </div>
-          </div>
-
-          <div className="hidden lg:flex items-center justify-center">
-            <img src={ir4qLogo} alt="IR4Q Technologies" className="h-64 w-auto opacity-80" />
+            </motion.div>
           </div>
         </div>
       </div>

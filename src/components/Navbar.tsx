@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
-import { Menu, X, ArrowRight } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import silxorLogo from "@/assets/ir4q-logo.png";
 
 const navLinks = [
@@ -33,35 +32,71 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="sticky top-0 z-50 functional-glass border-b border-border">
-      <div className="container-content flex items-center justify-between h-14 md:h-16">
+    <nav className="sticky top-0 z-[100] functional-glass">
+      <div className="container-content flex items-center justify-between" style={{ height: 64 }}>
         <a
           href="#"
           className="flex items-center gap-2 touch-target"
           onClick={(e) => handleNavClick(e, "#")}
         >
-          <img src={silxorLogo} alt="IR4Q" className="h-14 w-auto" />
-          <span className="font-display text-lg">IR4Q</span>
+          <img src={silxorLogo} alt="IR4Q" className="h-12 w-auto" />
+          <span className="font-display text-xl font-[800]" style={{ color: '#F0EDE8' }}>
+            IR4Q
+            <span
+              className="inline-block ml-1"
+              style={{
+                width: 6,
+                height: 6,
+                backgroundColor: '#C9A84C',
+                verticalAlign: 'middle',
+                marginBottom: 2,
+              }}
+            />
+          </span>
         </a>
 
         {/* Desktop links */}
-        <div className="hidden lg:flex items-center gap-6">
+        <div className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.label}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="text-xs font-mono text-muted-foreground hover:text-foreground transition-colors touch-target"
+              className="font-body font-[400] uppercase touch-target transition-colors duration-200"
+              style={{
+                fontSize: 13,
+                letterSpacing: '0.08em',
+                color: '#8A8F9E',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#F0EDE8')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = '#8A8F9E')}
             >
               {link.label}
             </a>
           ))}
-          <Button variant="institutional" size="sm" asChild>
-            <a href="https://cal.com/silxor/1-hr?user=silxor&duration=30" target="_blank" rel="noopener noreferrer">
-              Request Assessment
-              <ArrowRight className="w-3 h-3" />
-            </a>
-          </Button>
+
+          {/* Gold divider */}
+          <div style={{ width: 1, height: 20, backgroundColor: '#C9A84C', opacity: 0.4 }} />
+
+          <a
+            href="https://cal.com/silxor/1-hr?user=silxor&duration=30"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 font-body font-[500] uppercase transition-colors duration-200"
+            style={{
+              fontSize: 12,
+              letterSpacing: '0.1em',
+              backgroundColor: '#C9A84C',
+              color: '#080A0F',
+              padding: '10px 20px',
+              borderRadius: 2,
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#E2C06A')}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#C9A84C')}
+          >
+            Request Assessment
+            <ArrowRight className="w-3 h-3" />
+          </a>
         </div>
 
         {/* Mobile toggle */}
@@ -70,30 +105,49 @@ const Navbar = () => {
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
         >
-          {mobileOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          {mobileOpen ? (
+            <X className="w-5 h-5" style={{ color: '#C9A84C' }} />
+          ) : (
+            <div className="flex flex-col gap-[5px]">
+              <span style={{ width: 20, height: 1, backgroundColor: '#C9A84C', display: 'block' }} />
+              <span style={{ width: 20, height: 1, backgroundColor: '#C9A84C', display: 'block' }} />
+              <span style={{ width: 20, height: 1, backgroundColor: '#C9A84C', display: 'block' }} />
+            </div>
+          )}
         </button>
       </div>
 
       {/* Mobile menu */}
       {mobileOpen && (
-        <div className="lg:hidden border-t border-border bg-background">
+        <div style={{ backgroundColor: '#080A0F', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
           <div className="container-content py-4 space-y-1">
             {navLinks.map((link) => (
               <a
                 key={link.label}
                 href={link.href}
-                className="block py-3 text-sm font-mono text-muted-foreground hover:text-foreground transition-colors touch-target"
+                className="block py-3 font-body font-[400] uppercase transition-colors touch-target"
+                style={{ fontSize: 13, letterSpacing: '0.08em', color: '#8A8F9E' }}
                 onClick={(e) => handleNavClick(e, link.href)}
               >
                 {link.label}
               </a>
             ))}
-            <Button variant="institutional" size="sm" className="w-full mt-2" asChild>
-              <a href="https://cal.com/silxor/1-hr?user=silxor&duration=30" target="_blank" rel="noopener noreferrer">
-                Request Assessment
-                <ArrowRight className="w-3 h-3" />
-              </a>
-            </Button>
+            <a
+              href="https://cal.com/silxor/1-hr?user=silxor&duration=30"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-center font-body font-[500] uppercase mt-4"
+              style={{
+                fontSize: 12,
+                letterSpacing: '0.1em',
+                backgroundColor: '#C9A84C',
+                color: '#080A0F',
+                padding: '12px 20px',
+                borderRadius: 2,
+              }}
+            >
+              Request Assessment
+            </a>
           </div>
         </div>
       )}

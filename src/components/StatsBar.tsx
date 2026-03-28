@@ -8,22 +8,41 @@ const stats = [
 
 const StatsBar = () => {
   return (
-    <section className="border-t border-b border-border bg-card/50">
-      <div className="container-content py-8 md:py-10">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-0">
+    <section
+      style={{
+        backgroundColor: '#0D1017',
+        borderTop: '1px solid rgba(255,255,255,0.06)',
+        borderBottom: '1px solid rgba(255,255,255,0.06)',
+        padding: '32px 0',
+      }}
+    >
+      <div className="container-content">
+        <div className="flex flex-wrap justify-between items-center gap-6">
           {stats.map((stat, index) => (
-            <div
-              key={index}
-              className={`flex flex-col items-center text-center ${
-                index < stats.length - 1 ? "lg:border-r lg:border-border" : ""
-              }`}
-            >
-              <span className="text-2xl md:text-3xl lg:text-4xl font-display font-light text-foreground mb-1">
-                {stat.value}
-              </span>
-              <span className="text-xs md:text-sm font-mono text-muted-foreground uppercase tracking-wider">
-                {stat.label}
-              </span>
+            <div key={index} className="flex items-center">
+              <div
+                className="flex flex-col items-center text-center group cursor-default"
+                style={{ minWidth: 100 }}
+              >
+                <span
+                  className="font-mono font-[700] transition-colors duration-200 group-hover:text-sovereign-gold"
+                  style={{ fontSize: 28, color: '#F0EDE8' }}
+                >
+                  {stat.value}
+                </span>
+                <span
+                  className="font-body font-[400] uppercase"
+                  style={{ fontSize: 11, letterSpacing: '0.1em', color: '#8A8F9E', marginTop: 6 }}
+                >
+                  {stat.label}
+                </span>
+              </div>
+              {index < stats.length - 1 && (
+                <div
+                  className="hidden lg:block ml-6"
+                  style={{ width: 1, height: 40, backgroundColor: 'rgba(255,255,255,0.06)' }}
+                />
+              )}
             </div>
           ))}
         </div>
