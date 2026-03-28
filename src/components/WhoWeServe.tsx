@@ -12,6 +12,7 @@ const WhoWeServe = () => {
         "Sovereign infrastructure and software for ministries, agencies, and public institutions requiring compliance, auditability, and national data residency.",
         "بنية تحتية وبرمجيات سيادية للوزارات والوكالات والمؤسسات العامة التي تتطلب الامتثال والتدقيق وإقامة البيانات الوطنية."
       ),
+      coord: t("33.3°N · 44.4°E", "٣٣.٣° ش · ٤٤.٤° شر"),
     },
     {
       icon: Banknote,
@@ -20,6 +21,7 @@ const WhoWeServe = () => {
         "Core banking integrations, fintech platforms, and security architecture for Iraq's financial sector — meeting Central Bank of Iraq regulatory requirements.",
         "تكاملات مصرفية أساسية، منصات تقنية مالية، وبنية أمنية للقطاع المالي العراقي — تلبية متطلبات البنك المركزي العراقي التنظيمية."
       ),
+      coord: t("36.2°N · 44.0°E", "٣٦.٢° ش · ٤٤.٠° شر"),
     },
     {
       icon: Fuel,
@@ -28,6 +30,7 @@ const WhoWeServe = () => {
         "Technology systems for oil, gas, utilities, and industrial operations where availability and integrity are non-negotiable.",
         "أنظمة تقنية للنفط والغاز والمرافق والعمليات الصناعية حيث التوفر والنزاهة غير قابلين للتفاوض."
       ),
+      coord: t("30.5°N · 47.8°E", "٣٠.٥° ش · ٤٧.٨° شر"),
     },
     {
       icon: Building2,
@@ -36,6 +39,7 @@ const WhoWeServe = () => {
         "End-to-end technology partnership for Iraq's largest private enterprises scaling their digital operations.",
         "شراكة تقنية شاملة لأكبر المؤسسات الخاصة في العراق التي توسع عملياتها الرقمية."
       ),
+      coord: t("32.6°N · 44.0°E", "٣٢.٦° ش · ٤٤.٠° شر"),
     },
   ];
 
@@ -44,10 +48,10 @@ const WhoWeServe = () => {
       <div className="container-content">
         <div style={{ marginBottom: 32 }}>
           <div className="section-eyebrow">{t("SECTORS", "القطاعات")}</div>
-          <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "#F0EDE8" }}>
+          <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "hsl(var(--foreground))" }}>
             {t("Built for Iraq's Most Critical Sectors", "مُصمَّم لأهم قطاعات العراق")}
           </h2>
-          <p className="font-body font-[300]" style={{ fontSize: 14, color: "#8A8F9E", maxWidth: 520, marginTop: 10, lineHeight: 1.7 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 520, marginTop: 10, lineHeight: 1.7 }}>
             {t(
               "IR4Q delivers across the institutions that cannot afford downtime, data loss, or compromise.",
               "IR4Q تخدم المؤسسات التي لا تتحمل أي توقف أو فقدان بيانات أو اختراق."
@@ -55,60 +59,95 @@ const WhoWeServe = () => {
           </p>
         </div>
 
-        {/* Vertical chart list */}
-        <div className="relative">
-          {/* Vertical line */}
-          <div
-            className="absolute hidden md:block"
-            style={{ left: 16, top: 0, bottom: 0, width: 2, background: "linear-gradient(180deg, rgba(201,168,76,0.4) 0%, rgba(201,168,76,0.08) 100%)" }}
-          />
+        {/* Map list */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px]">
+          {sectors.map((sector, index) => {
+            const Icon = sector.icon;
+            return (
+              <div
+                key={index}
+                className="group relative surface-elevated"
+                style={{
+                  borderRadius: 2,
+                  padding: "24px 22px",
+                  overflow: "hidden",
+                  transition: "background 0.3s ease",
+                }}
+              >
+                {/* Grid overlay pattern */}
+                <div
+                  className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                  style={{
+                    backgroundImage:
+                      "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)",
+                    backgroundSize: "40px 40px",
+                  }}
+                />
 
-          <div className="flex flex-col gap-0">
-            {sectors.map((sector, index) => {
-              const Icon = sector.icon;
-              return (
-                <div key={index} className="relative flex items-stretch gap-0 md:gap-8">
-                  {/* Timeline node */}
-                  <div className="hidden md:flex flex-col items-center" style={{ width: 34, flexShrink: 0 }}>
+                {/* Coordinate tag */}
+                <div className="flex items-center justify-between mb-4 relative z-10">
+                  <div className="flex items-center gap-2">
                     <div
                       style={{
-                        width: 34, height: 34, borderRadius: "50%",
-                        border: "2px solid rgba(201,168,76,0.5)",
-                        backgroundColor: "rgba(201,168,76,0.08)",
-                        display: "flex", alignItems: "center", justifyContent: "center",
-                        marginTop: 20, position: "relative", zIndex: 2,
+                        width: 8,
+                        height: 8,
+                        borderRadius: "50%",
+                        backgroundColor: "hsl(var(--primary))",
+                        boxShadow: "0 0 8px hsl(var(--primary) / 0.5)",
                       }}
+                    />
+                    <span
+                      className="font-mono font-[400] uppercase"
+                      style={{ fontSize: 9, letterSpacing: "0.15em", color: "hsl(var(--primary))" }}
                     >
-                      <Icon style={{ width: 16, height: 16, color: "#C9A84C" }} strokeWidth={1.5} />
-                    </div>
+                      {t("PIN", "موقع")} {String(index + 1).padStart(2, "0")}
+                    </span>
                   </div>
+                  <span
+                    className="font-mono font-[300]"
+                    style={{ fontSize: 9, color: "hsl(var(--muted-foreground))", letterSpacing: "0.05em" }}
+                  >
+                    {sector.coord}
+                  </span>
+                </div>
 
-                  {/* Card */}
+                {/* Icon + Content */}
+                <div className="relative z-10">
                   <div
-                    className="surface-elevated flex-1"
+                    className="mb-3"
                     style={{
-                      borderRadius: 4, padding: 20,
-                      borderLeft: "3px solid rgba(201,168,76,0.3)",
-                      marginBottom: index < sectors.length - 1 ? 2 : 0,
+                      width: 36,
+                      height: 36,
+                      borderRadius: 4,
+                      border: "1px solid hsl(var(--primary) / 0.25)",
+                      backgroundColor: "hsl(var(--primary) / 0.06)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
                     }}
                   >
-                    <div className="flex items-center gap-2 mb-1">
-                      <span className="md:hidden"><Icon style={{ width: 16, height: 16, color: "#C9A84C" }} strokeWidth={1.5} /></span>
-                      <span className="font-mono font-[400] uppercase" style={{ fontSize: 9, letterSpacing: "0.15em", color: "#C9A84C" }}>
-                        {t("SECTOR", "قطاع")} {String(index + 1).padStart(2, "0")}
-                      </span>
-                    </div>
-                    <h3 className="font-body font-[500]" style={{ fontSize: 15, color: "#F0EDE8", marginBottom: 4 }}>
-                      {sector.title}
-                    </h3>
-                    <p className="font-body font-[300]" style={{ fontSize: 13, color: "#8A8F9E", lineHeight: 1.65 }}>
-                      {sector.description}
-                    </p>
+                    <Icon style={{ width: 16, height: 16, color: "hsl(var(--primary))" }} strokeWidth={1.5} />
                   </div>
+
+                  <h3 className="font-body font-[500]" style={{ fontSize: 15, color: "hsl(var(--foreground))", marginBottom: 6 }}>
+                    {sector.title}
+                  </h3>
+                  <p className="font-body font-[300]" style={{ fontSize: 13, color: "hsl(var(--muted-foreground))", lineHeight: 1.65 }}>
+                    {sector.description}
+                  </p>
                 </div>
-              );
-            })}
-          </div>
+
+                {/* Corner crosshair accent */}
+                <div
+                  className="absolute pointer-events-none"
+                  style={{ top: 10, right: 10, width: 14, height: 14, opacity: 0.15 }}
+                >
+                  <div style={{ position: "absolute", top: 6, left: 0, width: 14, height: 1, backgroundColor: "hsl(var(--primary))" }} />
+                  <div style={{ position: "absolute", top: 0, left: 6, width: 1, height: 14, backgroundColor: "hsl(var(--primary))" }} />
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
