@@ -2,114 +2,122 @@ import { Server, Activity, Lock } from "lucide-react";
 
 const TechBacking = () => {
   return (
-    <section id="infrastructure" className="section-spacing border-t border-border">
+    <section id="infrastructure" className="section-spacing" style={{ borderTop: '1px solid rgba(255,255,255,0.06)', backgroundColor: '#0D1017' }}>
       <div className="container-content">
-        <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
           {/* Architecture Diagram */}
-          <div className="surface-elevated p-4 md:p-5 lg:p-8">
-            <div className="space-y-6 md:space-y-8">
+          <div className="surface-elevated" style={{ padding: 32 }}>
+            <div className="space-y-8">
               {/* Baghdad PoP */}
-              <div className="flex items-center gap-3 md:gap-4">
-                <div className="w-12 h-12 md:w-16 md:h-16 border-2 border-primary flex items-center justify-center flex-shrink-0">
-                  <Server className="w-6 h-6 md:w-8 md:h-8 text-primary" strokeWidth={1.5} />
+              <div className="flex items-center gap-4">
+                <div
+                  className="flex items-center justify-center flex-shrink-0 relative"
+                  style={{ width: 56, height: 56, border: '1px solid rgba(201,168,76,0.4)', backgroundColor: '#080A0F' }}
+                >
+                  <div className="relative pulse-dot" style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: '#C9A84C' }} />
                 </div>
-                <div className="min-w-0">
-                  <div className="font-display text-base md:text-lg">Baghdad Point of Presence</div>
-                  <div className="text-xs md:text-sm text-muted-foreground font-mono truncate">
+                <div>
+                  <div className="font-body font-[500]" style={{ fontSize: 17, color: '#F0EDE8' }}>Baghdad Point of Presence</div>
+                  <div className="font-mono font-[400]" style={{ fontSize: 11, color: '#8A8F9E' }}>
                     33.3406&deg; N, 44.4009&deg; E
                   </div>
                 </div>
               </div>
 
               {/* Connection Path */}
-              <div className="border-l-2 border-dashed border-border pl-6 md:pl-8 ml-6 md:ml-8 py-4">
+              <div style={{ borderLeft: '1px dashed rgba(201,168,76,0.4)', paddingLeft: 28, marginLeft: 28, paddingTop: 8, paddingBottom: 8 }}>
                 <div className="flex items-center gap-3 mb-2">
-                  <Lock className="w-4 h-4 text-primary flex-shrink-0" />
-                  <span className="text-xs md:text-sm font-mono">Encrypted Transit Path</span>
+                  <Lock style={{ width: 16, height: 16, color: '#C9A84C' }} />
+                  <span className="font-mono font-[400]" style={{ fontSize: 12, color: '#F0EDE8' }}>Encrypted Transit Path</span>
                 </div>
-                <div className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+                <p className="font-body font-[300]" style={{ fontSize: 13, color: '#8A8F9E' }}>
                   AES-256 encryption • Dedicated fiber • &lt;30s failover
-                </div>
+                </p>
               </div>
 
               {/* Virginia Facility */}
-              <div className="flex items-center gap-3 md:gap-4">
-                <div className="w-12 h-12 md:w-16 md:h-16 border-2 border-accent flex items-center justify-center flex-shrink-0">
-                  <Server className="w-6 h-6 md:w-8 md:h-8 text-accent" strokeWidth={1.5} />
+              <div className="flex items-center gap-4">
+                <div
+                  className="flex items-center justify-center flex-shrink-0 relative"
+                  style={{ width: 56, height: 56, border: '1px solid rgba(42,157,92,0.4)', backgroundColor: '#080A0F' }}
+                >
+                  <div className="relative pulse-dot" style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: '#2A9D5C' }} />
                 </div>
-                <div className="min-w-0">
-                  <div className="font-display text-base md:text-lg">Ashburn Tier-IV Facility</div>
-                  <div className="text-xs md:text-sm text-muted-foreground font-mono truncate">
+                <div>
+                  <div className="font-body font-[500]" style={{ fontSize: 17, color: '#F0EDE8' }}>Ashburn Tier-IV Facility</div>
+                  <div className="font-mono font-[400]" style={{ fontSize: 11, color: '#8A8F9E' }}>
                     39.0438&deg; N, 77.4874&deg; W
                   </div>
                 </div>
               </div>
 
               {/* Metrics */}
-              <div className="grid grid-cols-3 gap-3 md:gap-4 pt-6 md:pt-8 border-t border-border">
-                <div>
-                  <div className="text-xl md:text-2xl font-mono text-primary mb-1">&lt;120ms</div>
-                  <div className="text-xs text-muted-foreground">Avg. Latency</div>
-                </div>
-                <div>
-                  <div className="text-xl md:text-2xl font-mono text-primary mb-1">N+2</div>
-                  <div className="text-xs text-muted-foreground">Power redundancy</div>
-                </div>
-                <div>
-                  <div className="text-xl md:text-2xl font-mono text-primary mb-1 text-[0.9em] md:text-2xl">99.995%</div>
-                  <div className="text-xs text-muted-foreground">Uptime SLA</div>
-                </div>
+              <div className="grid grid-cols-3 gap-4" style={{ paddingTop: 24, borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+                {[
+                  { value: "<120ms", label: "Avg. Latency" },
+                  { value: "N+2", label: "Power redundancy" },
+                  { value: "99.995%", label: "Uptime SLA" },
+                ].map((stat, i) => (
+                  <div key={i} style={{ background: '#12161E', border: '1px solid rgba(255,255,255,0.06)', borderTop: '2px solid #C9A84C', padding: '16px 12px' }}>
+                    <div className="font-mono font-[700]" style={{ fontSize: 24, color: '#F0EDE8' }}>{stat.value}</div>
+                    <div className="font-body font-[400] uppercase" style={{ fontSize: 11, color: '#8A8F9E', letterSpacing: '0.1em', marginTop: 4 }}>{stat.label}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
           {/* Technical Description */}
-          <div className="space-y-6 md:space-y-8">
+          <div className="space-y-8">
             <div>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-display mb-3 md:mb-4">
+              <div className="section-eyebrow">ARCHITECTURE</div>
+              <h2 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: '#F0EDE8', marginBottom: 16 }}>
                 Dual-Continent Resilience Architecture
               </h2>
-              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+              <p className="font-body font-[300]" style={{ fontSize: 16, color: '#8A8F9E', lineHeight: 1.7 }}>
                 IR4Q operates a distributed infrastructure model ensuring data sovereignty while maintaining enterprise-grade reliability through U.S. Tier-IV certification.
               </p>
             </div>
 
-            <div className="space-y-3 md:space-y-4">
-              <div className="surface-elevated p-3 md:p-4 flex gap-3">
-                <div className="w-10 h-10 md:w-12 md:h-12 border border-border flex items-center justify-center flex-shrink-0">
-                  <Activity className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
+            <div className="space-y-4">
+              <div className="surface-elevated flex gap-4" style={{ padding: 24 }}>
+                <div
+                  className="flex items-center justify-center flex-shrink-0"
+                  style={{ width: 48, height: 48, border: '1px solid rgba(255,255,255,0.06)' }}
+                >
+                  <Activity style={{ width: 24, height: 24, color: '#C9A84C' }} strokeWidth={1.5} />
                 </div>
-                <div className="min-w-0">
-                  <h3 className="font-display text-base md:text-lg mb-2">American Infrastructure Standards</h3>
-                  <p className="text-institutional">
+                <div>
+                  <h3 className="font-body font-[500]" style={{ fontSize: 17, color: '#F0EDE8', marginBottom: 8 }}>American Infrastructure Standards</h3>
+                  <p className="font-body font-[300]" style={{ fontSize: 14, color: '#8A8F9E', lineHeight: 1.7 }}>
                     Built on Uptime Institute Tier-IV certified facilities with SOC 2 Type II attestation. All systems undergo continuous compliance monitoring and annual third-party audits.
                   </p>
                 </div>
               </div>
 
-              <div className="surface-elevated p-3 md:p-4 flex gap-3">
-                <div className="w-10 h-10 md:w-12 md:h-12 border border-border flex items-center justify-center flex-shrink-0">
-                  <Server className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
+              <div className="surface-elevated flex gap-4" style={{ padding: 24 }}>
+                <div
+                  className="flex items-center justify-center flex-shrink-0"
+                  style={{ width: 48, height: 48, border: '1px solid rgba(255,255,255,0.06)' }}
+                >
+                  <Server style={{ width: 24, height: 24, color: '#C9A84C' }} strokeWidth={1.5} />
                 </div>
-                <div className="min-w-0">
-                  <h3 className="font-display text-base md:text-lg mb-2">Iraqi Operational Control</h3>
-                  <p className="text-institutional">
+                <div>
+                  <h3 className="font-body font-[500]" style={{ fontSize: 17, color: '#F0EDE8', marginBottom: 8 }}>Iraqi Operational Control</h3>
+                  <p className="font-body font-[300]" style={{ fontSize: 14, color: '#8A8F9E', lineHeight: 1.7 }}>
                     Local engineering teams maintain operational sovereignty while leveraging global infrastructure. All control plane operations remain within Iraqi jurisdiction with U.S. infrastructure serving as resilient backing.
                   </p>
                 </div>
               </div>
             </div>
 
-            <div className="pt-4 md:pt-6">
-              <h3 className="text-xs md:text-sm font-display mb-3 md:mb-4 text-muted-foreground">
+            <div style={{ paddingTop: 16 }}>
+              <h3 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: '0.12em', color: '#8A8F9E', marginBottom: 16 }}>
                 Compliance & Certifications
               </h3>
-              <div className="flex flex-wrap gap-2 md:gap-3">
+              <div className="flex flex-wrap gap-3">
                 {["ISO/IEC 27001:2022", "SOC 2 Type II", "GDPR-Ready", "Tier-IV Certified"].map((cert) => (
-                  <span 
-                    key={cert} 
-                    className="px-3 py-1.5 border border-border text-xs font-mono inline-block"
-                  >
+                  <span key={cert} className="badge-pill">
                     {cert}
                   </span>
                 ))}

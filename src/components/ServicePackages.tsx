@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Check, Star } from "lucide-react";
 
 interface PackageCard {
@@ -11,34 +10,86 @@ interface PackageCard {
 
 const PackageCardComponent = ({ pkg }: { pkg: PackageCard }) => (
   <div
-    className={`surface-elevated rounded p-4 md:p-5 flex flex-col relative ${
-      pkg.popular ? "border-primary/50 border-2" : ""
-    }`}
+    className="relative flex flex-col"
+    style={{
+      backgroundColor: '#0D1017',
+      border: pkg.popular ? '1px solid rgba(201,168,76,0.5)' : '1px solid rgba(255,255,255,0.06)',
+      borderRadius: 4,
+      padding: 32,
+      transition: 'all 250ms ease',
+    }}
+    onMouseEnter={(e) => {
+      e.currentTarget.style.borderColor = 'rgba(201,168,76,0.3)';
+      e.currentTarget.style.backgroundColor = '#12161E';
+    }}
+    onMouseLeave={(e) => {
+      e.currentTarget.style.borderColor = pkg.popular ? 'rgba(201,168,76,0.5)' : 'rgba(255,255,255,0.06)';
+      e.currentTarget.style.backgroundColor = '#0D1017';
+    }}
   >
     {pkg.popular && (
-      <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground text-xs font-mono px-3 py-1 rounded-full flex items-center gap-1">
-        <Star className="w-3 h-3" /> Most Popular
+      <div
+        className="absolute font-mono font-[400] uppercase"
+        style={{
+          top: 0,
+          right: 0,
+          backgroundColor: '#C9A84C',
+          color: '#080A0F',
+          fontSize: 9,
+          letterSpacing: '0.15em',
+          padding: '4px 10px',
+          borderRadius: '0 4px 0 4px',
+          display: 'flex',
+          alignItems: 'center',
+          gap: 4,
+        }}
+      >
+        <Star style={{ width: 10, height: 10 }} /> Most Popular
       </div>
     )}
-    <h4 className="text-base md:text-lg font-display mb-1">{pkg.name}</h4>
-    <p className="text-xs text-muted-foreground mb-4">{pkg.tagline}</p>
-    <ul className="space-y-2 mb-6 flex-1">
+    <h4 className="font-body font-[500]" style={{ fontSize: 17, color: '#F0EDE8', marginBottom: 6 }}>{pkg.name}</h4>
+    <p className="font-body font-[300]" style={{ fontSize: 13, color: '#8A8F9E', marginBottom: 24 }}>{pkg.tagline}</p>
+    <ul className="flex-1" style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 24 }}>
       {pkg.specs.map((spec, i) => (
-        <li key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
-          <Check className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
-          <span>{spec}</span>
+        <li key={i} className="flex items-start gap-3">
+          <Check style={{ width: 16, height: 16, color: '#C9A84C', flexShrink: 0, marginTop: 2 }} />
+          <span className="font-body font-[300]" style={{ fontSize: 14, color: '#8A8F9E' }}>{spec}</span>
         </li>
       ))}
     </ul>
-    <Button
-      variant={pkg.popular ? "institutional" : "outline"}
-      className="w-full touch-target"
-      asChild
+    <a
+      href="https://cal.com/silxor/1-hr?user=silxor&duration=30"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="block text-center font-mono font-[400] uppercase transition-all duration-200"
+      style={{
+        fontSize: 11,
+        letterSpacing: '0.1em',
+        padding: '12px 20px',
+        borderRadius: 2,
+        ...(pkg.popular
+          ? { backgroundColor: '#C9A84C', color: '#080A0F' }
+          : { border: '1px solid rgba(201,168,76,0.4)', color: '#C9A84C', backgroundColor: 'transparent' }),
+      }}
+      onMouseEnter={(e) => {
+        if (pkg.popular) {
+          e.currentTarget.style.backgroundColor = '#E2C06A';
+        } else {
+          e.currentTarget.style.borderColor = '#C9A84C';
+          e.currentTarget.style.backgroundColor = 'rgba(201,168,76,0.05)';
+        }
+      }}
+      onMouseLeave={(e) => {
+        if (pkg.popular) {
+          e.currentTarget.style.backgroundColor = '#C9A84C';
+        } else {
+          e.currentTarget.style.borderColor = 'rgba(201,168,76,0.4)';
+          e.currentTarget.style.backgroundColor = 'transparent';
+        }
+      }}
     >
-      <a href="https://cal.com/silxor/1-hr?user=silxor&duration=30" target="_blank" rel="noopener noreferrer">
-        {pkg.cta}
-      </a>
-    </Button>
+      {pkg.cta}
+    </a>
   </div>
 );
 
@@ -214,9 +265,9 @@ const PackageSubsection = ({
   packages: PackageCard[];
   consulting?: boolean;
 }) => (
-  <div className="mb-8 md:mb-12">
-    <h3 className="text-base md:text-lg font-display mb-4 md:mb-6">{title}</h3>
-    <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+  <div style={{ marginBottom: 48 }}>
+    <h3 className="font-body font-[500]" style={{ fontSize: 17, color: '#F0EDE8', marginBottom: 24 }}>{title}</h3>
+    <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6">
       {packages.map((pkg, i) => (
         <PackageCardComponent key={i} pkg={consulting ? { ...pkg, popular: false } : pkg} />
       ))}
@@ -226,13 +277,14 @@ const PackageSubsection = ({
 
 const ServicePackages = () => {
   return (
-    <section id="packages" className="section-spacing border-t border-border">
+    <section id="packages" className="section-spacing" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
       <div className="container-content">
-        <div className="mb-8 md:mb-12">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display mb-3">
+        <div style={{ marginBottom: 64 }}>
+          <div className="section-eyebrow">PACKAGES</div>
+          <h2 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: '#F0EDE8' }}>
             Transparent Service Packages
           </h2>
-          <p className="text-sm md:text-base lg:text-lg text-muted-foreground font-light max-w-3xl leading-relaxed">
+          <p className="font-body font-[300]" style={{ fontSize: 16, color: '#8A8F9E', maxWidth: 560, marginTop: 16, lineHeight: 1.7 }}>
             Every engagement starts with clarity. Choose your entry point across any of our four technology domains.
           </p>
         </div>
@@ -242,10 +294,23 @@ const ServicePackages = () => {
         <PackageSubsection title="AI & Automation Packages" packages={aiPackages} />
         <PackageSubsection title="Consulting Packages" packages={consultingPackages} consulting />
 
-        <div className="surface-elevated rounded p-4 md:p-5 text-center">
-          <p className="text-xs md:text-sm text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-            All packages include an initial technical discovery session. Enterprise and Government engagements begin with a formal Request for Assessment. Custom packages available for multi-domain engagements spanning infrastructure, software, AI, and consulting.
-          </p>
+        <div
+          className="font-body font-[300]"
+          style={{
+            background: 'rgba(201,168,76,0.04)',
+            border: '1px solid rgba(201,168,76,0.12)',
+            borderLeft: '3px solid #C9A84C',
+            borderRadius: 4,
+            padding: '20px 24px',
+            fontSize: 13,
+            color: '#8A8F9E',
+            lineHeight: 1.7,
+            textAlign: 'center',
+            maxWidth: 800,
+            margin: '0 auto',
+          }}
+        >
+          All packages include an initial technical discovery session. Enterprise and Government engagements begin with a formal Request for Assessment. Custom packages available for multi-domain engagements spanning infrastructure, software, AI, and consulting.
         </div>
       </div>
     </section>
