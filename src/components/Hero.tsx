@@ -49,7 +49,7 @@ const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display font-[800] hero-headline"
+              className="font-[800] hero-headline text-4xl font-mono"
               style={{ lineHeight: 1.08, letterSpacing: "-0.02em", color: "#F0EDE8", maxWidth: 860, marginBottom: 28, fontFamily: arFont }}
             >
               {language === "ar" ? (
@@ -59,8 +59,8 @@ const Hero = () => {
                 </>
               ) : (
                 <>
-                  <span style={{ display: "block", marginBottom: 8 }}>Commissioned by Institutions That <span style={{ color: "#C9A84C" }}>Cannot Fail.</span></span>
-                  <span style={{ display: "block" }}>Engineered to <span style={{ color: "#C9A84C" }}>Transform at Scale.</span></span>
+                  <span className="text-4xl" style={{ display: "block", marginBottom: 8 }}>Commissioned by Institutions That <span style={{ color: "#C9A84C" }}>Cannot Fail.</span></span>
+                  <span className="text-4xl" style={{ display: "block" }}>Engineered to <span style={{ color: "#C9A84C" }}>Transform at Scale.</span></span>
                 </>
               )}
             </motion.h1>
