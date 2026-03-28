@@ -70,7 +70,7 @@ const envCategories = [
 ];
 
 /* ── SUBSECTION 4: Identity Packages ── */
-interface IdPkg { name: string; tagline: string; specs: string[]; cta: string }
+interface IdPkg { name: string; tagline: string; specs: string[]; cta: string; mailto: string }
 
 const identityPackages: IdPkg[] = [
   {
