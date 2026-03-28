@@ -115,79 +115,88 @@ const identityPackages: IdPkg[] = [
   },
 ];
 
-/* ── Identity Domain Org Chart ── */
-const DomainOrgChart = () => {
-  // Split 12 domains into 3 tiers of 4
-  const coreTier = domains.slice(0, 4);   // IAM, PAM, CIAM, IGA
-  const secTier = domains.slice(4, 8);    // ISPM, ITDR, NHI, DIR
-  const cloudTier = domains.slice(8, 12); // CLOUD IAM, FED, PKI, ZTI
-
-  const tiers = [
-    { label: "CORE IDENTITY", cards: coreTier, accent: "rgba(201,168,76,0.3)" },
-    { label: "SECURITY & GOVERNANCE", cards: secTier, accent: "rgba(201,168,76,0.2)" },
-    { label: "CLOUD & ZERO TRUST", cards: cloudTier, accent: "rgba(201,168,76,0.15)" },
+/* ── Identity Domain Map List ── */
+const DomainMapList = () => {
+  const coords = [
+    "33.3°N · 44.4°E", "33.3°N · 44.4°E", "36.2°N · 44.0°E", "33.3°N · 44.4°E",
+    "30.5°N · 47.8°E", "33.3°N · 44.4°E", "32.6°N · 44.0°E", "33.3°N · 44.4°E",
+    "39.0°N · 77.5°W", "36.2°N · 44.0°E", "33.3°N · 44.4°E", "33.3°N · 44.4°E",
   ];
 
   return (
-    <div className="flex flex-col items-center gap-0">
-      {/* Root node */}
-      <div
-        className="surface-elevated text-center"
-        style={{
-          padding: "16px 32px",
-          borderRadius: 4,
-          border: "1px solid rgba(201,168,76,0.4)",
-          minWidth: 220,
-        }}
-      >
-        <span className="font-mono font-[600] uppercase" style={{ fontSize: 11, letterSpacing: "0.15em", color: "#C9A84C" }}>
-          IR4Q IDENTITY
-        </span>
-      </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-[2px]">
+      {domains.map((d, index) => {
+        const Icon = d.icon;
+        return (
+          <div
+            key={index}
+            className="group relative surface-elevated"
+            style={{
+              borderRadius: 2,
+              padding: "22px 20px",
+              overflow: "hidden",
+              transition: "background 0.3s ease",
+            }}
+          >
+            {/* Grid overlay */}
+            <div
+              className="absolute inset-0 opacity-[0.03] pointer-events-none"
+              style={{
+                backgroundImage:
+                  "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)",
+                backgroundSize: "40px 40px",
+              }}
+            />
 
-      {tiers.map((tier, ti) => (
-        <div key={ti} className="flex flex-col items-center w-full">
-          {/* Connector down */}
-          <div style={{ width: 2, height: 24, backgroundColor: tier.accent }} />
+            {/* Header: pin + coord */}
+            <div className="flex items-center justify-between mb-3 relative z-10">
+              <div className="flex items-center gap-2">
+                <div
+                  style={{
+                    width: 8, height: 8, borderRadius: "50%",
+                    backgroundColor: "hsl(var(--primary))",
+                    boxShadow: "0 0 8px hsl(var(--primary) / 0.5)",
+                  }}
+                />
+                <span className="font-mono font-[400] uppercase" style={{ fontSize: 9, letterSpacing: "0.15em", color: "hsl(var(--primary))" }}>
+                  {d.abbrev}
+                </span>
+              </div>
+              <span className="font-mono font-[300]" style={{ fontSize: 8, color: "hsl(var(--muted-foreground))", letterSpacing: "0.05em" }}>
+                {coords[index]}
+              </span>
+            </div>
 
-          {/* Tier label */}
-          <div className="font-mono font-[400] uppercase text-center" style={{ fontSize: 9, letterSpacing: "0.15em", color: "#8A8F9E", marginBottom: 8 }}>
-            {tier.label}
+            {/* Icon + content */}
+            <div className="relative z-10">
+              <div
+                className="mb-3"
+                style={{
+                  width: 34, height: 34, borderRadius: 4,
+                  border: "1px solid hsl(var(--primary) / 0.25)",
+                  backgroundColor: "hsl(var(--primary) / 0.06)",
+                  display: "flex", alignItems: "center", justifyContent: "center",
+                }}
+              >
+                <Icon style={{ width: 15, height: 15, color: "hsl(var(--primary))" }} strokeWidth={1.5} />
+              </div>
+
+              <h4 className="font-body font-[500]" style={{ fontSize: 13, color: "hsl(var(--foreground))", marginBottom: 4 }}>
+                {d.title}
+              </h4>
+              <p className="font-body font-[300]" style={{ fontSize: 11, color: "hsl(var(--muted-foreground))", lineHeight: 1.55 }}>
+                {d.body.split('—')[0].trim()}
+              </p>
+            </div>
+
+            {/* Corner crosshair */}
+            <div className="absolute pointer-events-none" style={{ top: 8, right: 8, width: 12, height: 12, opacity: 0.15 }}>
+              <div style={{ position: "absolute", top: 5, left: 0, width: 12, height: 1, backgroundColor: "hsl(var(--primary))" }} />
+              <div style={{ position: "absolute", top: 0, left: 5, width: 1, height: 12, backgroundColor: "hsl(var(--primary))" }} />
+            </div>
           </div>
-
-          {/* Horizontal bar (desktop) */}
-          <div className="relative w-full hidden md:block" style={{ maxWidth: 860, height: 2, backgroundColor: tier.accent, margin: "0 auto" }} />
-
-          {/* Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 w-full" style={{ maxWidth: 900, marginTop: 0 }}>
-            {tier.cards.map((d, i) => {
-              const Icon = d.icon;
-              return (
-                <div key={i} className="flex flex-col items-center">
-                  <div className="hidden md:block" style={{ width: 2, height: 14, backgroundColor: tier.accent }} />
-                  <div
-                    className="surface-elevated w-full"
-                    style={{ padding: 16, borderRadius: 4, borderTop: `2px solid ${tier.accent}` }}
-                  >
-                    <div className="flex items-center gap-2" style={{ marginBottom: 6 }}>
-                      <Icon style={{ width: 16, height: 16, color: "#C9A84C" }} strokeWidth={1.5} />
-                      <span className="font-mono font-[500] uppercase" style={{ fontSize: 9, letterSpacing: "0.1em", color: "#C9A84C" }}>
-                        {d.abbrev}
-                      </span>
-                    </div>
-                    <h4 className="font-body font-[500]" style={{ fontSize: 12, color: "#F0EDE8", marginBottom: 4 }}>
-                      {d.title}
-                    </h4>
-                    <p className="font-body font-[300]" style={{ fontSize: 11, color: "#8A8F9E", lineHeight: 1.55 }}>
-                      {d.body.split('—')[0].trim()}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 };
@@ -278,7 +287,7 @@ const IdentityServices = () => {
           <p className="font-body font-[300]" style={{ fontSize: 13, color: '#8A8F9E', maxWidth: 520, marginBottom: 20, lineHeight: 1.7 }}>
             IR4Q architects and operates across all identity disciplines — purpose-built for governments, financial institutions, and enterprises operating in high-stakes environments.
           </p>
-          <DomainOrgChart />
+          <DomainMapList />
         </div>
 
         {/* ── Subsection 2: Engagement Flow ── */}
