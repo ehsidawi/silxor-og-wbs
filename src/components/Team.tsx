@@ -13,11 +13,11 @@ const Team = () => {
   return (
     <section id="about" className="section-spacing border-t border-border">
       <div className="container-content">
-        <div className="mb-12 md:mb-16 lg:mb-20">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display mb-4">
+        <div className="mb-8 md:mb-12">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display mb-3">
             Iraqi Engineers. Global Standards.
           </h2>
-          <p className="text-base md:text-lg lg:text-xl text-muted-foreground font-light max-w-3xl leading-relaxed">
+          <p className="text-sm md:text-base lg:text-lg text-muted-foreground font-light max-w-3xl leading-relaxed">
             IR4Q is built and operated by technologists with backgrounds across international infrastructure, cybersecurity, and enterprise software — rooted in Iraq.
           </p>
         </div>
