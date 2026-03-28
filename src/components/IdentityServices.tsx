@@ -115,139 +115,79 @@ const identityPackages: IdPkg[] = [
   },
 ];
 
-/* ── Radial Domain Map ── */
-const RadialDomainMap = () => {
-  const [active, setActive] = useState<number | null>(null);
-  const size = 480;
-  const cx = size / 2;
-  const cy = size / 2;
-  const radius = 180;
-  const nodeRadius = 28;
+/* ── Identity Domain Org Chart ── */
+const DomainOrgChart = () => {
+  // Split 12 domains into 3 tiers of 4
+  const coreTier = domains.slice(0, 4);   // IAM, PAM, CIAM, IGA
+  const secTier = domains.slice(4, 8);    // ISPM, ITDR, NHI, DIR
+  const cloudTier = domains.slice(8, 12); // CLOUD IAM, FED, PKI, ZTI
 
-  const nodePositions = domains.map((_, i) => {
-    const angle = (i * 30 - 90) * (Math.PI / 180);
-    return {
-      x: cx + radius * Math.cos(angle),
-      y: cy + radius * Math.sin(angle),
-    };
-  });
+  const tiers = [
+    { label: "CORE IDENTITY", cards: coreTier, accent: "rgba(201,168,76,0.3)" },
+    { label: "SECURITY & GOVERNANCE", cards: secTier, accent: "rgba(201,168,76,0.2)" },
+    { label: "CLOUD & ZERO TRUST", cards: cloudTier, accent: "rgba(201,168,76,0.15)" },
+  ];
 
   return (
-    <div>
-      {/* Desktop radial */}
-      <div className="hidden md:flex flex-col items-center">
-        <svg width={size} height={size} viewBox={`0 0 ${size} ${size}`} style={{ overflow: 'visible' }}>
-          {/* Connecting lines */}
-          {nodePositions.map((pos, i) => (
-            <line
-              key={`line-${i}`}
-              x1={cx} y1={cy} x2={pos.x} y2={pos.y}
-              stroke={active === i ? 'rgba(201,168,76,0.8)' : 'rgba(201,168,76,0.2)'}
-              strokeWidth={1}
-              style={{ transition: 'stroke 250ms ease' }}
-            />
-          ))}
-
-          {/* Center pulsing circle */}
-          <circle cx={cx} cy={cy} r={40} fill="none" stroke="rgba(201,168,76,0.3)" strokeWidth={1}>
-            <animate attributeName="r" values="38;44;38" dur="3s" repeatCount="indefinite" />
-            <animate attributeName="opacity" values="1;0.4;1" dur="3s" repeatCount="indefinite" />
-          </circle>
-          <circle cx={cx} cy={cy} r={36} fill="#0D1017" stroke="rgba(201,168,76,0.5)" strokeWidth={1} />
-          <text x={cx} y={cy - 6} textAnchor="middle" fill="#C9A84C" fontFamily="'JetBrains Mono', monospace" fontSize={9} fontWeight={400} letterSpacing="0.15em">
-            IR4Q
-          </text>
-          <text x={cx} y={cy + 8} textAnchor="middle" fill="#C9A84C" fontFamily="'JetBrains Mono', monospace" fontSize={7} fontWeight={400} letterSpacing="0.1em">
-            IDENTITY
-          </text>
-
-          {/* Domain nodes */}
-          {domains.map((d, i) => {
-            const pos = nodePositions[i];
-            const isActive = active === i;
-            return (
-              <g
-                key={d.abbrev}
-                onMouseEnter={() => setActive(i)}
-                onMouseLeave={() => setActive(null)}
-                style={{ cursor: 'pointer' }}
-              >
-                <circle
-                  cx={pos.x} cy={pos.y} r={nodeRadius}
-                  fill={isActive ? '#C9A84C' : '#0D1017'}
-                  stroke={isActive ? '#C9A84C' : 'rgba(201,168,76,0.3)'}
-                  strokeWidth={1}
-                  style={{ transition: 'all 250ms ease' }}
-                />
-                <text
-                  x={pos.x} y={pos.y + 3}
-                  textAnchor="middle"
-                  fill={isActive ? '#080A0F' : '#C9A84C'}
-                  fontFamily="'JetBrains Mono', monospace"
-                  fontSize={d.abbrev.length > 5 ? 7 : 10}
-                  fontWeight={isActive ? 700 : 400}
-                  style={{ transition: 'fill 250ms ease' }}
-                >
-                  {d.abbrev}
-                </text>
-              </g>
-            );
-          })}
-        </svg>
-
-        {/* Hover detail panel */}
-        <div
-          style={{
-            minHeight: 100,
-            marginTop: 24,
-            maxWidth: 560,
-            width: '100%',
-            textAlign: 'center',
-            transition: 'opacity 250ms ease',
-            opacity: active !== null ? 1 : 0.4,
-          }}
-        >
-          {active !== null ? (
-            <>
-              <h4 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 6 }}>
-                {domains[active].title}
-              </h4>
-              <p className="font-body font-[300]" style={{ fontSize: 12, color: '#8A8F9E', lineHeight: 1.7, marginBottom: 8 }}>
-                {domains[active].body}
-              </p>
-              <div className="font-mono font-[400]" style={{ fontSize: 10, color: '#4A5060', letterSpacing: '0.04em' }}>
-                {domains[active].tags}
-              </div>
-            </>
-          ) : (
-            <p className="font-body font-[300]" style={{ fontSize: 12, color: '#4A5060' }}>
-              Hover a domain to explore
-            </p>
-          )}
-        </div>
+    <div className="flex flex-col items-center gap-0">
+      {/* Root node */}
+      <div
+        className="surface-elevated text-center"
+        style={{
+          padding: "16px 32px",
+          borderRadius: 4,
+          border: "1px solid rgba(201,168,76,0.4)",
+          minWidth: 220,
+        }}
+      >
+        <span className="font-mono font-[600] uppercase" style={{ fontSize: 11, letterSpacing: "0.15em", color: "#C9A84C" }}>
+          IR4Q IDENTITY
+        </span>
       </div>
 
-      {/* Mobile 2-column grid */}
-      <div className="grid grid-cols-2 gap-3 md:hidden">
-        {domains.map((d) => (
-          <div
-            key={d.abbrev}
-            style={{
-              backgroundColor: '#0D1017',
-              border: '1px solid rgba(255,255,255,0.06)',
-              borderRadius: 4,
-              padding: 14,
-            }}
-          >
-            <div className="font-mono font-[400] uppercase" style={{ fontSize: 10, letterSpacing: '0.15em', color: '#C9A84C', marginBottom: 4 }}>
-              {d.abbrev}
-            </div>
-            <div className="font-body font-[500]" style={{ fontSize: 12, color: '#F0EDE8' }}>
-              {d.title}
-            </div>
+      {tiers.map((tier, ti) => (
+        <div key={ti} className="flex flex-col items-center w-full">
+          {/* Connector down */}
+          <div style={{ width: 2, height: 24, backgroundColor: tier.accent }} />
+
+          {/* Tier label */}
+          <div className="font-mono font-[400] uppercase text-center" style={{ fontSize: 9, letterSpacing: "0.15em", color: "#8A8F9E", marginBottom: 8 }}>
+            {tier.label}
           </div>
-        ))}
-      </div>
+
+          {/* Horizontal bar (desktop) */}
+          <div className="relative w-full hidden md:block" style={{ maxWidth: 860, height: 2, backgroundColor: tier.accent, margin: "0 auto" }} />
+
+          {/* Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 w-full" style={{ maxWidth: 900, marginTop: 0 }}>
+            {tier.cards.map((d, i) => {
+              const Icon = d.icon;
+              return (
+                <div key={i} className="flex flex-col items-center">
+                  <div className="hidden md:block" style={{ width: 2, height: 14, backgroundColor: tier.accent }} />
+                  <div
+                    className="surface-elevated w-full"
+                    style={{ padding: 16, borderRadius: 4, borderTop: `2px solid ${tier.accent}` }}
+                  >
+                    <div className="flex items-center gap-2" style={{ marginBottom: 6 }}>
+                      <Icon style={{ width: 16, height: 16, color: "#C9A84C" }} strokeWidth={1.5} />
+                      <span className="font-mono font-[500] uppercase" style={{ fontSize: 9, letterSpacing: "0.1em", color: "#C9A84C" }}>
+                        {d.abbrev}
+                      </span>
+                    </div>
+                    <h4 className="font-body font-[500]" style={{ fontSize: 12, color: "#F0EDE8", marginBottom: 4 }}>
+                      {d.title}
+                    </h4>
+                    <p className="font-body font-[300]" style={{ fontSize: 11, color: "#8A8F9E", lineHeight: 1.55 }}>
+                      {d.body.split('—')[0].trim()}
+                    </p>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ))}
     </div>
   );
 };
