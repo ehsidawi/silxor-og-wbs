@@ -4,6 +4,7 @@ import StatsBar from "@/components/StatsBar";
 import WhatWeDo from "@/components/WhatWeDo";
 import WhoWeServe from "@/components/WhoWeServe";
 import WhyIR4Q from "@/components/WhyIR4Q";
+import SelectedWork from "@/components/SelectedWork";
 import Services from "@/components/Services";
 import SoftwareAICapabilities from "@/components/SoftwareAICapabilities";
 import IdentityServices from "@/components/IdentityServices";
@@ -13,6 +14,7 @@ import TechBacking from "@/components/TechBacking";
 import FAQ from "@/components/FAQ";
 import Team from "@/components/Team";
 import StartEngagement from "@/components/StartEngagement";
+import PressAnnouncements from "@/components/PressAnnouncements";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 
@@ -34,6 +36,9 @@ const Index = () => {
       </AnimatedSection>
       <AnimatedSection>
         <WhyIR4Q />
+      </AnimatedSection>
+      <AnimatedSection>
+        <SelectedWork />
       </AnimatedSection>
       <div id="infrastructure">
         <AnimatedSection>
@@ -78,6 +83,9 @@ const Index = () => {
           <StartEngagement />
         </AnimatedSection>
       </div>
+      <AnimatedSection>
+        <PressAnnouncements />
+      </AnimatedSection>
       <Footer />
     </div>
   );
