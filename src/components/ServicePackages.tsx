@@ -11,7 +11,7 @@ interface PackageCard {
 
 const PackageCardComponent = ({ pkg }: { pkg: PackageCard }) => (
   <div
-    className={`surface-elevated rounded p-6 md:p-8 flex flex-col relative ${
+    className={`surface-elevated rounded p-4 md:p-5 flex flex-col relative ${
       pkg.popular ? "border-primary/50 border-2" : ""
     }`}
   >
@@ -20,12 +20,12 @@ const PackageCardComponent = ({ pkg }: { pkg: PackageCard }) => (
         <Star className="w-3 h-3" /> Most Popular
       </div>
     )}
-    <h4 className="text-lg md:text-xl font-display mb-2">{pkg.name}</h4>
-    <p className="text-xs md:text-sm text-muted-foreground mb-6">{pkg.tagline}</p>
-    <ul className="space-y-3 mb-8 flex-1">
+    <h4 className="text-base md:text-lg font-display mb-1">{pkg.name}</h4>
+    <p className="text-xs text-muted-foreground mb-4">{pkg.tagline}</p>
+    <ul className="space-y-2 mb-6 flex-1">
       {pkg.specs.map((spec, i) => (
-        <li key={i} className="flex items-start gap-2 text-xs md:text-sm text-muted-foreground">
-          <Check className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />
+        <li key={i} className="flex items-start gap-2 text-xs text-muted-foreground">
+          <Check className="w-3.5 h-3.5 text-primary flex-shrink-0 mt-0.5" />
           <span>{spec}</span>
         </li>
       ))}
