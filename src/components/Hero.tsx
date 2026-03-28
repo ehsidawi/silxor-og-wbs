@@ -42,7 +42,7 @@ const Hero = () => {
               className="section-eyebrow blink-cursor mb-5"
               style={{ marginBottom: 20, fontFamily: arFont }}
             >
-              {t("COMMISSIONED BY INSTITUTIONS THAT CANNOT FAIL. ENGINEERED TO TRANSFORM AT SCALE.", "مُكلَّفون من مؤسسات لا تتحمل الفشل. مهندَسون للتحول على نطاق واسع.")}
+              {t("IR4Q TECHNOLOGIES", "IR4Q تكنولوجيز")}
             </motion.div>
 
             <motion.h1
@@ -53,9 +53,9 @@ const Hero = () => {
               style={{ fontSize: "clamp(40px, 6vw, 72px)", color: "#F0EDE8", maxWidth: 640, fontFamily: arFont }}
             >
               {language === "ar" ? (
-                <>شركة العراق للتقنيات <span style={{ color: "#C9A84C" }}>السيادية</span></>
+                <>مُكلَّفون من مؤسسات لا <span style={{ color: "#C9A84C" }}>تتحمل الفشل</span>.<br />مهندَسون للتحول على نطاق واسع.</>
               ) : (
-                <>Iraq's <span style={{ color: "#C9A84C" }}>Sovereign</span> Technology Company</>
+                <>Commissioned by Institutions That <span style={{ color: "#C9A84C" }}>Cannot Fail</span>.<br />Engineered to Transform at Scale.</>
               )}
             </motion.h1>
 
