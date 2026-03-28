@@ -95,7 +95,7 @@ const Navbar = () => {
           <div className="mx-4" style={{ width: 1, height: 16, background: "linear-gradient(180deg, transparent, rgba(201,168,76,0.4), transparent)" }} />
 
           <a
-            href="https://cal.com/silxor/1-hr?user=silxor&duration=30"
+            href="mailto:contact@ir4q.com"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 font-mono uppercase transition-all duration-300 hover:shadow-[0_0_20px_rgba(201,168,76,0.15)]"
@@ -172,7 +172,7 @@ const Navbar = () => {
             <LanguageToggle />
           </div>
           <a
-            href="https://cal.com/silxor/1-hr?user=silxor&duration=30"
+            href="mailto:contact@ir4q.com"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 font-mono uppercase mt-4"

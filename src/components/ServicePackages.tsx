@@ -403,7 +403,7 @@ const ServicePackages = () => {
                         </ul>
 
                         <a
-                          href="https://cal.com/silxor/1-hr?user=silxor&duration=30"
+                          href="mailto:contact@ir4q.com"
                           target="_blank"
                           rel="noopener noreferrer"
                           className="block text-center font-mono font-[400] uppercase transition-all duration-200"

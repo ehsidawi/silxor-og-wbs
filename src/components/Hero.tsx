@@ -104,7 +104,7 @@ const Hero = () => {
               style={{ marginTop: 40 }}
             >
               <a
-                href="https://cal.com/silxor/1-hr?user=silxor&duration=30"
+                href="mailto:contact@ir4q.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 font-body font-[500] uppercase transition-all duration-200"
