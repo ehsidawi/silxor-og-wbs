@@ -5,7 +5,7 @@ const capabilities = [
     icon: Cloud,
     title: "Sovereign Cloud Hosting",
     description: "Enterprise-grade cloud infrastructure with complete data sovereignty. Iraqi-operated control planes with U.S.-grade redundancy protocols.",
-    technical: "Hosted in Ashburn, VA • &lt;45ms to Baghdad • 99.995% SLA",
+    technical: "Hosted in Ashburn, VA • &lt;120ms to Baghdad • 99.995% SLA",
   },
   {
     icon: Shield,
