@@ -17,20 +17,20 @@ const WhyIR4Q = () => {
   return (
     <section id="why-ir4q" className="section-spacing" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
       <div className="container-content">
-        <div style={{ marginBottom: 64 }}>
+        <div style={{ marginBottom: 32 }}>
           <div className="section-eyebrow">WHY IR4Q</div>
-          <h2 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: '#F0EDE8' }}>
+          <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: '#F0EDE8' }}>
             The Only Technology Company That Owns the Full Stack
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-4">
           {pillars.map((pillar, index) => (
-            <div key={index} className="surface-elevated" style={{ padding: 32 }}>
-              <h3 className="font-body font-[500]" style={{ fontSize: 17, color: '#F0EDE8', marginBottom: 10 }}>
+            <div key={index} className="surface-elevated" style={{ padding: 20 }}>
+              <h3 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 6 }}>
                 {pillar.title}
               </h3>
-              <p className="font-body font-[300]" style={{ fontSize: 14, color: '#8A8F9E', lineHeight: 1.7 }}>
+              <p className="font-body font-[300]" style={{ fontSize: 13, color: '#8A8F9E', lineHeight: 1.65 }}>
                 {pillar.body}
               </p>
             </div>

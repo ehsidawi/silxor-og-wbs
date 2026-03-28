@@ -15,7 +15,7 @@ const PackageCardComponent = ({ pkg }: { pkg: PackageCard }) => (
       backgroundColor: '#0D1017',
       border: pkg.popular ? '1px solid rgba(201,168,76,0.5)' : '1px solid rgba(255,255,255,0.06)',
       borderRadius: 4,
-      padding: 32,
+      padding: 20,
       transition: 'all 250ms ease',
     }}
     onMouseEnter={(e) => {
@@ -35,25 +35,25 @@ const PackageCardComponent = ({ pkg }: { pkg: PackageCard }) => (
           right: 0,
           backgroundColor: '#C9A84C',
           color: '#080A0F',
-          fontSize: 9,
+          fontSize: 8,
           letterSpacing: '0.15em',
-          padding: '4px 10px',
+          padding: '3px 8px',
           borderRadius: '0 4px 0 4px',
           display: 'flex',
           alignItems: 'center',
-          gap: 4,
+          gap: 3,
         }}
       >
-        <Star style={{ width: 10, height: 10 }} /> Most Popular
+        <Star style={{ width: 8, height: 8 }} /> Most Popular
       </div>
     )}
-    <h4 className="font-body font-[500]" style={{ fontSize: 17, color: '#F0EDE8', marginBottom: 6 }}>{pkg.name}</h4>
-    <p className="font-body font-[300]" style={{ fontSize: 13, color: '#8A8F9E', marginBottom: 24 }}>{pkg.tagline}</p>
-    <ul className="flex-1" style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 24 }}>
+    <h4 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 4 }}>{pkg.name}</h4>
+    <p className="font-body font-[300]" style={{ fontSize: 12, color: '#8A8F9E', marginBottom: 16 }}>{pkg.tagline}</p>
+    <ul className="flex-1" style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 16 }}>
       {pkg.specs.map((spec, i) => (
-        <li key={i} className="flex items-start gap-3">
-          <Check style={{ width: 16, height: 16, color: '#C9A84C', flexShrink: 0, marginTop: 2 }} />
-          <span className="font-body font-[300]" style={{ fontSize: 14, color: '#8A8F9E' }}>{spec}</span>
+        <li key={i} className="flex items-start gap-2">
+          <Check style={{ width: 14, height: 14, color: '#C9A84C', flexShrink: 0, marginTop: 1 }} />
+          <span className="font-body font-[300]" style={{ fontSize: 12, color: '#8A8F9E' }}>{spec}</span>
         </li>
       ))}
     </ul>
@@ -63,9 +63,9 @@ const PackageCardComponent = ({ pkg }: { pkg: PackageCard }) => (
       rel="noopener noreferrer"
       className="block text-center font-mono font-[400] uppercase transition-all duration-200"
       style={{
-        fontSize: 11,
+        fontSize: 10,
         letterSpacing: '0.1em',
-        padding: '12px 20px',
+        padding: '10px 16px',
         borderRadius: 2,
         ...(pkg.popular
           ? { backgroundColor: '#C9A84C', color: '#080A0F' }
@@ -265,9 +265,9 @@ const PackageSubsection = ({
   packages: PackageCard[];
   consulting?: boolean;
 }) => (
-  <div style={{ marginBottom: 48 }}>
-    <h3 className="font-body font-[500]" style={{ fontSize: 17, color: '#F0EDE8', marginBottom: 24 }}>{title}</h3>
-    <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6">
+  <div style={{ marginBottom: 32 }}>
+    <h3 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 16 }}>{title}</h3>
+    <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4">
       {packages.map((pkg, i) => (
         <PackageCardComponent key={i} pkg={consulting ? { ...pkg, popular: false } : pkg} />
       ))}
@@ -279,12 +279,12 @@ const ServicePackages = () => {
   return (
     <section id="packages" className="section-spacing" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
       <div className="container-content">
-        <div style={{ marginBottom: 64 }}>
+        <div style={{ marginBottom: 32 }}>
           <div className="section-eyebrow">PACKAGES</div>
-          <h2 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: '#F0EDE8' }}>
+          <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: '#F0EDE8' }}>
             Transparent Service Packages
           </h2>
-          <p className="font-body font-[300]" style={{ fontSize: 16, color: '#8A8F9E', maxWidth: 560, marginTop: 16, lineHeight: 1.7 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 14, color: '#8A8F9E', maxWidth: 520, marginTop: 10, lineHeight: 1.7 }}>
             Every engagement starts with clarity. Choose your entry point across any of our four technology domains.
           </p>
         </div>
@@ -301,8 +301,8 @@ const ServicePackages = () => {
             border: '1px solid rgba(201,168,76,0.12)',
             borderLeft: '3px solid #C9A84C',
             borderRadius: 4,
-            padding: '20px 24px',
-            fontSize: 13,
+            padding: '14px 20px',
+            fontSize: 12,
             color: '#8A8F9E',
             lineHeight: 1.7,
             textAlign: 'center',

@@ -36,9 +36,9 @@ const FAQ = () => {
   return (
     <section className="section-spacing" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
       <div className="container-content">
-        <div style={{ marginBottom: 64 }}>
+        <div style={{ marginBottom: 32 }}>
           <div className="section-eyebrow">FAQ</div>
-          <h2 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: '#F0EDE8' }}>
+          <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: '#F0EDE8' }}>
             The Questions Our Clients Ask Before They Sign
           </h2>
         </div>
@@ -49,18 +49,18 @@ const FAQ = () => {
               <AccordionItem
                 key={index}
                 value={`faq-${index}`}
-                style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '24px 0' }}
+                style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', padding: '16px 0' }}
                 className="border-none"
               >
                 <AccordionTrigger
                   className="hover:no-underline text-left py-0 font-body font-[500] [&[data-state=open]]:text-sovereign-gold"
-                  style={{ fontSize: 16, color: '#F0EDE8' }}
+                  style={{ fontSize: 14, color: '#F0EDE8' }}
                 >
                   {faq.q}
                 </AccordionTrigger>
                 <AccordionContent
                   className="font-body font-[300] pb-0"
-                  style={{ fontSize: 15, color: '#8A8F9E', lineHeight: 1.8, paddingTop: 16 }}
+                  style={{ fontSize: 13, color: '#8A8F9E', lineHeight: 1.75, paddingTop: 12 }}
                 >
                   {faq.a}
                 </AccordionContent>
