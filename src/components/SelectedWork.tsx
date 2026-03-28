@@ -57,12 +57,6 @@ const SelectedWork = () => {
               className="surface-elevated flex flex-col"
               style={{ borderRadius: 4 }}
             >
-              <div
-                className="flex items-center justify-center"
-                style={{ height: 200, backgroundColor: "#12161E", borderRadius: "4px 4px 0 0" }}
-              >
-                <FolderOpen style={{ width: 48, height: 48, color: "rgba(201,168,76,0.2)" }} />
-              </div>
               <div style={{ padding: 24 }}>
                 <div className="font-mono font-[400] uppercase" style={{ fontSize: 10, letterSpacing: "0.15em", color: "#C9A84C", marginBottom: 8 }}>
                   {project.tag}
