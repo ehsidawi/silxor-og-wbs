@@ -19,49 +19,57 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <AnimatedSection>
-        <Hero />
-      </AnimatedSection>
+      <div id="home">
+        <AnimatedSection>
+          <Hero />
+        </AnimatedSection>
+      </div>
       <AnimatedSection delay={0.1}>
         <StatsBar />
       </AnimatedSection>
       <AnimatedSection>
-        <ProcessFlow />
-      </AnimatedSection>
-      <AnimatedSection>
         <WhatWeDo />
       </AnimatedSection>
-      <AnimatedSection>
-        <Services />
-      </AnimatedSection>
-      <div id="ai">
+      <div id="infrastructure">
         <AnimatedSection>
-          <SoftwareAICapabilities />
+          <Services />
         </AnimatedSection>
       </div>
-      <div id="consulting">
-        <AnimatedSection>
-          <ServicePackages />
-        </AnimatedSection>
-      </div>
-      <AnimatedSection>
-        <FAQ />
-      </AnimatedSection>
       <AnimatedSection>
         <WhoWeServe />
       </AnimatedSection>
       <AnimatedSection>
         <WhyIR4Q />
       </AnimatedSection>
+      <div id="software">
+        <AnimatedSection>
+          <SoftwareAICapabilities />
+        </AnimatedSection>
+      </div>
+      <div id="packages">
+        <AnimatedSection>
+          <ServicePackages />
+        </AnimatedSection>
+      </div>
+      <AnimatedSection>
+        <ProcessFlow />
+      </AnimatedSection>
       <AnimatedSection>
         <TechBacking />
       </AnimatedSection>
+      <div id="about">
+        <AnimatedSection>
+          <FAQ />
+        </AnimatedSection>
+      </div>
       <AnimatedSection>
         <Team />
       </AnimatedSection>
-      <AnimatedSection>
-        <StartEngagement />
-      </AnimatedSection>
+      <div id="contact">
+        <AnimatedSection>
+          <StartEngagement />
+        </AnimatedSection>
+      </div>
       <Footer />
     </div>
   );
