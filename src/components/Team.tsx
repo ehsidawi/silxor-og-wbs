@@ -3,7 +3,7 @@ import { User } from "lucide-react";
 const leaders = [
   {
     name: "Ehsan Nidawi",
-    title: "Chief Executive Officer",
+    title: "FOUNDER - SR. PRINCIPAL CYBERSECURITY",
     bio: "Sr. Principal Cybersecurity - Identity Ecosystem Architect | Digital Transformation Architect | Ex: CISA, Ally Financial, Meta, Google, Dell, Apple.",
     linkedin: "https://www.linkedin.com/in/ehsidawi",
   },
