@@ -1,377 +1,162 @@
 import { Check, Star, Minus } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
-interface PackageCard {
+interface PackageItem {
   name: string;
+  nameAr: string;
   tagline: string;
+  taglineAr: string;
   specs: string[];
+  specsAr: string[];
   cta: string;
+  ctaAr: string;
   popular?: boolean;
+  domain: string;
+  domainAr: string;
+  coord: { en: string; ar: string };
 }
 
-const PackageCardComponent = ({ pkg }: { pkg: PackageCard }) => (
-  <div
-    className="relative flex flex-col"
-    style={{
-      backgroundColor: '#0D1017',
-      border: pkg.popular ? '1px solid rgba(201,168,76,0.5)' : '1px solid rgba(255,255,255,0.06)',
-      borderRadius: 4,
-      padding: 20,
-      transition: 'all 250ms ease',
-    }}
-    onMouseEnter={(e) => {
-      e.currentTarget.style.borderColor = 'rgba(201,168,76,0.3)';
-      e.currentTarget.style.backgroundColor = '#12161E';
-    }}
-    onMouseLeave={(e) => {
-      e.currentTarget.style.borderColor = pkg.popular ? 'rgba(201,168,76,0.5)' : 'rgba(255,255,255,0.06)';
-      e.currentTarget.style.backgroundColor = '#0D1017';
-    }}
-  >
-    {pkg.popular && (
-      <div
-        className="absolute font-mono font-[400] uppercase"
-        style={{
-          top: 0,
-          right: 0,
-          backgroundColor: '#C9A84C',
-          color: '#080A0F',
-          fontSize: 8,
-          letterSpacing: '0.15em',
-          padding: '3px 8px',
-          borderRadius: '0 4px 0 4px',
-          display: 'flex',
-          alignItems: 'center',
-          gap: 3,
-        }}
-      >
-        <Star style={{ width: 8, height: 8 }} /> Most Popular
-      </div>
-    )}
-    <h4 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 4 }}>{pkg.name}</h4>
-    <p className="font-body font-[300]" style={{ fontSize: 12, color: '#8A8F9E', marginBottom: 16 }}>{pkg.tagline}</p>
-    <ul className="flex-1" style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 16 }}>
-      {pkg.specs.map((spec, i) => (
-        <li key={i} className="flex items-start gap-2">
-          <Check style={{ width: 14, height: 14, color: '#C9A84C', flexShrink: 0, marginTop: 1 }} />
-          <span className="font-body font-[300]" style={{ fontSize: 12, color: '#8A8F9E' }}>{spec}</span>
-        </li>
-      ))}
-    </ul>
-    <a
-      href="https://cal.com/silxor/1-hr?user=silxor&duration=30"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block text-center font-mono font-[400] uppercase transition-all duration-200"
-      style={{
-        fontSize: 10,
-        letterSpacing: '0.1em',
-        padding: '10px 16px',
-        borderRadius: 2,
-        ...(pkg.popular
-          ? { backgroundColor: '#C9A84C', color: '#080A0F' }
-          : { border: '1px solid rgba(201,168,76,0.4)', color: '#C9A84C', backgroundColor: 'transparent' }),
-      }}
-      onMouseEnter={(e) => {
-        if (pkg.popular) {
-          e.currentTarget.style.backgroundColor = '#E2C06A';
-        } else {
-          e.currentTarget.style.borderColor = '#C9A84C';
-          e.currentTarget.style.backgroundColor = 'rgba(201,168,76,0.05)';
-        }
-      }}
-      onMouseLeave={(e) => {
-        if (pkg.popular) {
-          e.currentTarget.style.backgroundColor = '#C9A84C';
-        } else {
-          e.currentTarget.style.borderColor = 'rgba(201,168,76,0.4)';
-          e.currentTarget.style.backgroundColor = 'transparent';
-        }
-      }}
-    >
-      {pkg.cta}
-    </a>
-  </div>
-);
-
-const infraPackages: PackageCard[] = [
+const allPackages: PackageItem[] = [
+  // Infrastructure
   {
     name: "Sovereign Starter",
+    nameAr: "السيادي الأساسي",
     tagline: "For startups and small teams entering sovereign hosting",
-    specs: [
-      "2 vCPU / 8GB RAM / 100GB SSD",
-      "Shared NOC monitoring",
-      "99.9% Uptime SLA",
-      "Standard support — <4hr P1 response",
-      "Weekly backups",
-    ],
-    cta: "Get Started",
+    taglineAr: "للشركات الناشئة والفرق الصغيرة التي تدخل الاستضافة السيادية",
+    specs: ["2 vCPU / 8GB RAM / 100GB SSD", "Shared NOC monitoring", "99.9% Uptime SLA", "Standard support — <4hr P1 response", "Weekly backups"],
+    specsAr: ["2 vCPU / 8GB RAM / 100GB SSD", "مراقبة NOC مشتركة", "99.9% SLA وقت التشغيل", "دعم قياسي — <4 ساعات استجابة P1", "نسخ احتياطي أسبوعي"],
+    cta: "Get Started", ctaAr: "ابدأ الآن",
+    domain: "INFRA", domainAr: "بنية تحتية",
+    coord: { en: "33.3°N · 44.4°E", ar: "٣٣.٣° ش · ٤٤.٤° شر" },
   },
   {
     name: "Sovereign Business",
+    nameAr: "السيادي للأعمال",
     tagline: "For growing enterprises and regulated fintechs",
-    specs: [
-      "8 vCPU / 32GB RAM / 500GB SSD",
-      "Dedicated NOC coverage",
-      "99.99% Uptime SLA",
-      "Priority support — <1hr P1 response",
-      "Daily backups + <30s RTO",
-      "Compliance reporting",
-    ],
-    cta: "Get Started",
+    taglineAr: "للمؤسسات النامية والتقنية المالية المنظمة",
+    specs: ["8 vCPU / 32GB RAM / 500GB SSD", "Dedicated NOC coverage", "99.99% Uptime SLA", "Priority support — <1hr P1 response", "Daily backups + <30s RTO", "Compliance reporting"],
+    specsAr: ["8 vCPU / 32GB RAM / 500GB SSD", "تغطية NOC مخصصة", "99.99% SLA وقت التشغيل", "دعم أولوية — <1 ساعة استجابة P1", "نسخ احتياطي يومي + <30 ثانية RTO", "تقارير الامتثال"],
+    cta: "Get Started", ctaAr: "ابدأ الآن",
     popular: true,
+    domain: "INFRA", domainAr: "بنية تحتية",
+    coord: { en: "36.2°N · 44.0°E", ar: "٣٦.٢° ش · ٤٤.٠° شر" },
   },
   {
     name: "Sovereign Enterprise",
+    nameAr: "السيادي المؤسسي",
     tagline: "For government, banking, and critical infrastructure",
-    specs: [
-      "Dedicated bare-metal or private cloud",
-      "24/7 Baghdad + Virginia dual-NOC",
-      "99.995% Uptime SLA",
-      "<15min P1 response",
-      "Custom redundancy architecture",
-      "Full compliance documentation + audit support",
-      "Air-gap available on request",
-    ],
-    cta: "Request Assessment",
+    taglineAr: "للحكومة والبنوك والبنية التحتية الحيوية",
+    specs: ["Dedicated bare-metal or private cloud", "24/7 Baghdad + Virginia dual-NOC", "99.995% Uptime SLA", "<15min P1 response", "Custom redundancy architecture", "Full compliance documentation + audit support", "Air-gap available on request"],
+    specsAr: ["خادم مخصص أو سحابة خاصة", "NOC مزدوج بغداد + فيرجينيا 24/7", "99.995% SLA وقت التشغيل", "<15 دقيقة استجابة P1", "بنية تكرار مخصصة", "توثيق امتثال كامل + دعم تدقيق", "عزل هوائي متاح عند الطلب"],
+    cta: "Request Assessment", ctaAr: "طلب تقييم",
+    domain: "INFRA", domainAr: "بنية تحتية",
+    coord: { en: "30.5°N · 47.8°E", ar: "٣٠.٥° ش · ٤٧.٨° شر" },
   },
-];
-
-const softwarePackages: PackageCard[] = [
+  // Software
   {
     name: "Build Essentials",
+    nameAr: "أساسيات البناء",
     tagline: "For MVPs, internal tools, and first digital products",
-    specs: [
-      "Up to 5 delivery sprints",
-      "Web or mobile platform (one)",
-      "Basic QA and UAT",
-      "3 months post-launch support",
-    ],
-    cta: "Start a Project",
+    taglineAr: "للمنتجات الأولية والأدوات الداخلية والمنتجات الرقمية الأولى",
+    specs: ["Up to 5 delivery sprints", "Web or mobile platform (one)", "Basic QA and UAT", "3 months post-launch support"],
+    specsAr: ["حتى 5 دورات تسليم", "منصة ويب أو موبايل (واحدة)", "ضمان جودة أساسي واختبار قبول", "3 أشهر دعم بعد الإطلاق"],
+    cta: "Start a Project", ctaAr: "ابدأ مشروعاً",
+    domain: "SOFTWARE", domainAr: "برمجيات",
+    coord: { en: "34.0°N · 43.5°E", ar: "٣٤.٠° ش · ٤٣.٥° شر" },
   },
   {
     name: "Build Professional",
+    nameAr: "البناء الاحترافي",
     tagline: "For enterprise platforms and government portals",
-    specs: [
-      "Up to 15 delivery sprints",
-      "Web + mobile + API development",
-      "Full QA pipeline + security review",
-      "6 months managed support + SLA",
-      "Integration with third-party systems",
-    ],
-    cta: "Start a Project",
+    taglineAr: "لمنصات المؤسسات والبوابات الحكومية",
+    specs: ["Up to 15 delivery sprints", "Web + mobile + API development", "Full QA pipeline + security review", "6 months managed support + SLA", "Integration with third-party systems"],
+    specsAr: ["حتى 15 دورة تسليم", "تطوير ويب + موبايل + API", "خط ضمان جودة كامل + مراجعة أمنية", "6 أشهر دعم مُدار + SLA", "تكامل مع أنظمة الطرف الثالث"],
+    cta: "Start a Project", ctaAr: "ابدأ مشروعاً",
     popular: true,
+    domain: "SOFTWARE", domainAr: "برمجيات",
+    coord: { en: "35.5°N · 45.4°E", ar: "٣٥.٥° ش · ٤٥.٤° شر" },
   },
   {
     name: "Build Enterprise",
+    nameAr: "البناء المؤسسي",
     tagline: "For mission-critical national systems",
-    specs: [
-      "Dedicated engineering team",
-      "Multi-platform + full systems integration",
-      "Security audit + compliance documentation",
-      "12 months managed support",
-      "Custom SLA and delivery governance",
-    ],
-    cta: "Request Assessment",
+    taglineAr: "للأنظمة الوطنية ذات المهام الحرجة",
+    specs: ["Dedicated engineering team", "Multi-platform + full systems integration", "Security audit + compliance documentation", "12 months managed support", "Custom SLA and delivery governance"],
+    specsAr: ["فريق هندسي مخصص", "منصات متعددة + تكامل أنظمة كامل", "تدقيق أمني + توثيق امتثال", "12 شهر دعم مُدار", "SLA مخصص وحوكمة التسليم"],
+    cta: "Request Assessment", ctaAr: "طلب تقييم",
+    domain: "SOFTWARE", domainAr: "برمجيات",
+    coord: { en: "32.6°N · 44.0°E", ar: "٣٢.٦° ش · ٤٤.٠° شر" },
   },
-];
-
-const aiPackages: PackageCard[] = [
+  // AI
   {
     name: "AI Foundation",
+    nameAr: "أساس الذكاء الاصطناعي",
     tagline: "For organizations deploying their first sovereign AI system",
-    specs: [
-      "1 sovereign LLM deployment (7B–14B)",
-      "Basic RAG pipeline + document ingestion",
-      "Hosted on IR4Q sovereign infrastructure",
-      "Standard monitoring dashboard",
-      "No data leaves Iraqi control",
-    ],
-    cta: "Get Started",
+    taglineAr: "للمنظمات التي تنشر أول نظام ذكاء اصطناعي سيادي",
+    specs: ["1 sovereign LLM deployment (7B–14B)", "Basic RAG pipeline + document ingestion", "Hosted on IR4Q sovereign infrastructure", "Standard monitoring dashboard", "No data leaves Iraqi control"],
+    specsAr: ["نشر LLM سيادي واحد (7B–14B)", "خط RAG أساسي + استيعاب المستندات", "مستضاف على بنية IR4Q السيادية", "لوحة مراقبة قياسية", "لا تغادر البيانات السيطرة العراقية"],
+    cta: "Get Started", ctaAr: "ابدأ الآن",
+    domain: "AI", domainAr: "ذكاء اصطناعي",
+    coord: { en: "33.3°N · 44.4°E", ar: "٣٣.٣° ش · ٤٤.٤° شر" },
   },
   {
     name: "AI Professional",
+    nameAr: "الذكاء الاصطناعي الاحترافي",
     tagline: "For enterprise automation and intelligent operations",
-    specs: [
-      "Up to 3 LLM deployments",
-      "Multi-source RAG + vector search",
-      "Agentic workflow automation (up to 5 workflows)",
-      "Model monitoring + retraining pipeline",
-      "API integration with existing systems",
-      "No data leaves Iraqi control",
-    ],
-    cta: "Get Started",
+    taglineAr: "لأتمتة المؤسسات والعمليات الذكية",
+    specs: ["Up to 3 LLM deployments", "Multi-source RAG + vector search", "Agentic workflow automation (up to 5 workflows)", "Model monitoring + retraining pipeline", "API integration with existing systems", "No data leaves Iraqi control"],
+    specsAr: ["حتى 3 عمليات نشر LLM", "RAG متعدد المصادر + بحث متجهي", "أتمتة سير عمل وكيلي (حتى 5 سير عمل)", "مراقبة النموذج + خط إعادة التدريب", "تكامل API مع الأنظمة الحالية", "لا تغادر البيانات السيطرة العراقية"],
+    cta: "Get Started", ctaAr: "ابدأ الآن",
     popular: true,
+    domain: "AI", domainAr: "ذكاء اصطناعي",
+    coord: { en: "36.2°N · 44.0°E", ar: "٣٦.٢° ش · ٤٤.٠° شر" },
   },
   {
     name: "AI Sovereign Enterprise",
+    nameAr: "الذكاء الاصطناعي السيادي المؤسسي",
     tagline: "For government AI and national-scale intelligent systems",
-    specs: [
-      "Unlimited model deployments",
-      "Full agentic infrastructure + orchestration layer",
-      "Air-gap deployment available",
-      "Custom model fine-tuning + data pipelines",
-      "Dedicated AI engineering team",
-      "Full audit trail and explainability reporting",
-    ],
-    cta: "Request Assessment",
+    taglineAr: "للذكاء الاصطناعي الحكومي والأنظمة الذكية الوطنية",
+    specs: ["Unlimited model deployments", "Full agentic infrastructure + orchestration layer", "Air-gap deployment available", "Custom model fine-tuning + data pipelines", "Dedicated AI engineering team", "Full audit trail and explainability reporting"],
+    specsAr: ["عمليات نشر نماذج غير محدودة", "بنية تحتية وكيلية كاملة + طبقة تنسيق", "نشر معزول هوائياً متاح", "ضبط دقيق للنموذج + خطوط بيانات مخصصة", "فريق هندسة ذكاء اصطناعي مخصص", "مسار تدقيق كامل وتقارير القابلية للتفسير"],
+    cta: "Request Assessment", ctaAr: "طلب تقييم",
+    domain: "AI", domainAr: "ذكاء اصطناعي",
+    coord: { en: "30.5°N · 47.8°E", ar: "٣٠.٥° ش · ٤٧.٨° شر" },
   },
-];
-
-const consultingPackages: PackageCard[] = [
+  // Consulting
   {
     name: "Advisory Sprint",
+    nameAr: "سباق استشاري",
     tagline: "2-week focused engagement",
-    specs: [
-      "Architecture or security assessment",
-      "Written findings and recommendations report",
-      "Executive summary for leadership",
-      "1 follow-up strategy session",
-      "Deliverable: Assessment Report",
-    ],
-    cta: "Book a Sprint",
+    taglineAr: "مشاركة مركزة لمدة أسبوعين",
+    specs: ["Architecture or security assessment", "Written findings and recommendations report", "Executive summary for leadership", "1 follow-up strategy session", "Deliverable: Assessment Report"],
+    specsAr: ["تقييم معماري أو أمني", "تقرير نتائج وتوصيات مكتوب", "ملخص تنفيذي للقيادة", "جلسة استراتيجية متابعة واحدة", "المخرج: تقرير تقييم"],
+    cta: "Book a Sprint", ctaAr: "احجز سباقاً",
+    domain: "CONSULT", domainAr: "استشارات",
+    coord: { en: "33.3°N · 44.4°E", ar: "٣٣.٣° ش · ٤٤.٤° شر" },
   },
   {
     name: "Transformation Program",
+    nameAr: "برنامج التحول",
     tagline: "3-month modernization engagement",
-    specs: [
-      "Full digital transformation roadmap",
-      "Zero Trust and IAM architecture design",
-      "Vendor selection and procurement advisory",
-      "Program governance and delivery framework",
-      "Deliverable: Transformation Playbook",
-    ],
-    cta: "Start Program",
+    taglineAr: "مشاركة تحديث لمدة 3 أشهر",
+    specs: ["Full digital transformation roadmap", "Zero Trust and IAM architecture design", "Vendor selection and procurement advisory", "Program governance and delivery framework", "Deliverable: Transformation Playbook"],
+    specsAr: ["خارطة طريق التحول الرقمي الكاملة", "تصميم بنية Zero Trust و IAM", "اختيار الموردين واستشارات المشتريات", "حوكمة البرنامج وإطار التسليم", "المخرج: دليل التحول"],
+    cta: "Start Program", ctaAr: "ابدأ البرنامج",
+    domain: "CONSULT", domainAr: "استشارات",
+    coord: { en: "35.5°N · 45.4°E", ar: "٣٥.٥° ش · ٤٥.٤° شر" },
   },
   {
     name: "Strategic Partner",
+    nameAr: "شريك استراتيجي",
     tagline: "Ongoing retainer — embedded expertise",
-    specs: [
-      "Dedicated senior architect on call",
-      "Monthly security and architecture reviews",
-      "Compliance monitoring and audit preparation",
-      "Quarterly technology roadmap sessions",
-      "Priority access across all IR4Q business units",
-    ],
-    cta: "Become a Partner",
+    taglineAr: "عقد مستمر — خبرة مدمجة",
+    specs: ["Dedicated senior architect on call", "Monthly security and architecture reviews", "Compliance monitoring and audit preparation", "Quarterly technology roadmap sessions", "Priority access across all IR4Q business units"],
+    specsAr: ["مهندس معماري أول مخصص تحت الطلب", "مراجعات أمنية ومعمارية شهرية", "مراقبة الامتثال وإعداد التدقيق", "جلسات خارطة طريق تقنية ربع سنوية", "وصول أولوية عبر جميع وحدات أعمال IR4Q"],
+    cta: "Become a Partner", ctaAr: "كن شريكاً",
+    domain: "CONSULT", domainAr: "استشارات",
+    coord: { en: "32.6°N · 44.0°E", ar: "٣٢.٦° ش · ٤٤.٠° شر" },
   },
 ];
-
-const PackageSubsection = ({
-  title,
-  packages,
-  consulting,
-}: {
-  title: string;
-  packages: PackageCard[];
-  consulting?: boolean;
-}) => (
-  <div style={{ marginBottom: 40 }}>
-    <h3 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 20 }}>{title}</h3>
-
-    {/* Horizontal presentation: scrollable cards with tier progression */}
-    <div className="relative">
-      {/* Progress bar behind cards (desktop) */}
-      <div className="hidden md:block absolute" style={{ top: 28, left: 0, right: 0, height: 2, backgroundColor: 'rgba(201,168,76,0.1)', zIndex: 0 }} />
-
-      <div className="flex flex-col md:flex-row gap-4 md:gap-0 relative" style={{ zIndex: 1 }}>
-        {packages.map((pkg, i) => {
-          const tierLabel = i === 0 ? "STARTER" : i === 1 ? "GROWTH" : "ENTERPRISE";
-          const tierAccent = i === 0 ? "rgba(201,168,76,0.2)" : i === 1 ? "rgba(201,168,76,0.4)" : "rgba(201,168,76,0.6)";
-          const isPopular = consulting ? false : pkg.popular;
-
-          return (
-            <div key={i} className="flex-1 flex flex-col md:flex-row items-stretch">
-              {/* Card */}
-              <div className="flex-1 flex flex-col">
-                {/* Tier dot + label */}
-                <div className="flex items-center gap-3 mb-3">
-                  <div style={{
-                    width: 20, height: 20, borderRadius: '50%',
-                    border: `2px solid ${tierAccent}`,
-                    backgroundColor: isPopular ? '#C9A84C' : 'rgba(201,168,76,0.06)',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center',
-                    flexShrink: 0,
-                  }}>
-                    <span className="font-mono font-[700]" style={{ fontSize: 8, color: isPopular ? '#080A0F' : '#C9A84C' }}>
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                  </div>
-                  <span className="font-mono font-[400] uppercase" style={{ fontSize: 9, letterSpacing: '0.15em', color: '#8A8F9E' }}>
-                    {tierLabel}
-                  </span>
-                  {isPopular && (
-                    <span className="font-mono font-[400] uppercase flex items-center gap-1" style={{
-                      fontSize: 8, letterSpacing: '0.1em', color: '#080A0F', backgroundColor: '#C9A84C',
-                      padding: '2px 8px', borderRadius: 2,
-                    }}>
-                      <Star style={{ width: 8, height: 8 }} /> Popular
-                    </span>
-                  )}
-                </div>
-
-                {/* Content card */}
-                <div
-                  className="surface-elevated flex-1 flex flex-col"
-                  style={{
-                    padding: 20, borderRadius: 4,
-                    borderLeft: `3px solid ${tierAccent}`,
-                    marginLeft: 9, marginRight: i < packages.length - 1 ? 0 : 0,
-                  }}
-                >
-                  <h4 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 4 }}>{pkg.name}</h4>
-                  <p className="font-body font-[300]" style={{ fontSize: 12, color: '#8A8F9E', marginBottom: 14 }}>{pkg.tagline}</p>
-                  <ul className="flex-1" style={{ display: 'flex', flexDirection: 'column', gap: 6, marginBottom: 16 }}>
-                    {pkg.specs.map((spec, j) => (
-                      <li key={j} className="flex items-start gap-2">
-                        <Check style={{ width: 13, height: 13, color: '#C9A84C', flexShrink: 0, marginTop: 1 }} />
-                        <span className="font-body font-[300]" style={{ fontSize: 12, color: '#8A8F9E' }}>{spec}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <a
-                    href="https://cal.com/silxor/1-hr?user=silxor&duration=30"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block text-center font-mono font-[400] uppercase transition-all duration-200"
-                    style={{
-                      fontSize: 10, letterSpacing: '0.1em', padding: '10px 16px', borderRadius: 2,
-                      ...(isPopular
-                        ? { backgroundColor: '#C9A84C', color: '#080A0F' }
-                        : { border: '1px solid rgba(201,168,76,0.4)', color: '#C9A84C', backgroundColor: 'transparent' }),
-                    }}
-                    onMouseEnter={(e) => {
-                      if (isPopular) e.currentTarget.style.backgroundColor = '#E2C06A';
-                      else { e.currentTarget.style.borderColor = '#C9A84C'; e.currentTarget.style.backgroundColor = 'rgba(201,168,76,0.05)'; }
-                    }}
-                    onMouseLeave={(e) => {
-                      if (isPopular) e.currentTarget.style.backgroundColor = '#C9A84C';
-                      else { e.currentTarget.style.borderColor = 'rgba(201,168,76,0.4)'; e.currentTarget.style.backgroundColor = 'transparent'; }
-                    }}
-                  >
-                    {pkg.cta}
-                  </a>
-                </div>
-              </div>
-
-              {/* Arrow connector between cards (desktop) */}
-              {i < packages.length - 1 && (
-                <div className="hidden md:flex items-center justify-center" style={{ width: 32, flexShrink: 0 }}>
-                  <div style={{ width: 24, height: 2, backgroundColor: 'rgba(201,168,76,0.2)', position: 'relative' }}>
-                    <div style={{
-                      position: 'absolute', right: -3, top: -3, width: 0, height: 0,
-                      borderTop: '4px solid transparent', borderBottom: '4px solid transparent',
-                      borderLeft: '6px solid rgba(201,168,76,0.3)',
-                    }} />
-                  </div>
-                </div>
-              )}
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  </div>
-);
 
 /* ── Tier Comparison Table ── */
 const comparisonRows = [
@@ -387,122 +172,291 @@ const comparisonRows = [
 ];
 
 const CellValue = ({ value }: { value: string | boolean | null }) => {
-  if (value === true) return <Check style={{ width: 16, height: 16, color: '#C9A84C', margin: '0 auto' }} />;
-  if (value === null) return <Minus style={{ width: 16, height: 16, color: 'rgba(255,255,255,0.2)', margin: '0 auto' }} />;
+  if (value === true) return <Check style={{ width: 16, height: 16, color: "hsl(var(--primary))", margin: "0 auto" }} />;
+  if (value === null) return <Minus style={{ width: 16, height: 16, color: "hsl(var(--muted-foreground) / 0.3)", margin: "0 auto" }} />;
   return <span>{value}</span>;
 };
 
-const TierComparisonTable = () => (
-  <div style={{ marginBottom: 40 }}>
-    <div className="font-mono font-[400] uppercase" style={{ fontSize: 11, letterSpacing: '0.15em', color: '#C9A84C', marginBottom: 8 }}>
-      TIER COMPARISON
-    </div>
-    <h3 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 16 }}>
-      At a Glance — What Changes Across Tiers
-    </h3>
-    <div style={{ overflowX: 'auto' }}>
-      <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 520 }}>
-        <thead>
-          <tr style={{ backgroundColor: '#12161E' }}>
-            {["Feature", "Starter", "Business", "Enterprise"].map((h, i) => (
-              <th
-                key={h}
-                className="font-mono font-[400]"
-                style={{
-                  fontSize: 11,
-                  color: '#C9A84C',
-                  padding: '12px 16px',
-                  textAlign: i === 0 ? 'left' : 'center',
-                  borderBottom: '1px solid rgba(255,255,255,0.06)',
-                }}
-              >
-                {h}
-              </th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {comparisonRows.map((row, i) => (
-            <tr
-              key={row.feature}
-              style={{
-                borderBottom: i < comparisonRows.length - 1 ? '1px solid rgba(255,255,255,0.04)' : 'none',
-                transition: 'background 200ms',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.02)')}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
-            >
-              <td className="font-body font-[400]" style={{ fontSize: 13, color: '#8A8F9E', padding: '10px 16px' }}>
-                {row.feature}
-              </td>
-              <td className="font-mono font-[400]" style={{ fontSize: 12, color: '#8A8F9E', padding: '10px 16px', textAlign: 'center' }}>
-                <CellValue value={row.starter} />
-              </td>
-              <td
-                className="font-mono font-[400]"
-                style={{
-                  fontSize: 12,
-                  color: '#8A8F9E',
-                  padding: '10px 16px',
-                  textAlign: 'center',
-                  borderLeft: '1px solid rgba(201,168,76,0.2)',
-                  borderRight: '1px solid rgba(201,168,76,0.2)',
-                }}
-              >
-                <CellValue value={row.business} />
-              </td>
-              <td className="font-mono font-[400]" style={{ fontSize: 12, color: '#8A8F9E', padding: '10px 16px', textAlign: 'center' }}>
-                <CellValue value={row.enterprise} />
-              </td>
+const TierComparisonTable = () => {
+  const { t } = useLanguage();
+  return (
+    <div style={{ marginBottom: 40 }}>
+      <div className="font-mono font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.15em", color: "hsl(var(--primary))", marginBottom: 8 }}>
+        {t("TIER COMPARISON", "مقارنة المستويات")}
+      </div>
+      <h3 className="font-body font-[500]" style={{ fontSize: 15, color: "hsl(var(--foreground))", marginBottom: 16 }}>
+        {t("At a Glance — What Changes Across Tiers", "نظرة سريعة — ما يتغير عبر المستويات")}
+      </h3>
+      <div style={{ overflowX: "auto" }}>
+        <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 520 }}>
+          <thead>
+            <tr className="surface-elevated">
+              {[t("Feature", "الميزة"), t("Starter", "أساسي"), t("Business", "أعمال"), t("Enterprise", "مؤسسي")].map((h, i) => (
+                <th
+                  key={h}
+                  className="font-mono font-[400]"
+                  style={{
+                    fontSize: 11,
+                    color: "hsl(var(--primary))",
+                    padding: "12px 16px",
+                    textAlign: i === 0 ? "left" : "center",
+                    borderBottom: "1px solid hsl(var(--border))",
+                  }}
+                >
+                  {h}
+                </th>
+              ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {comparisonRows.map((row, i) => (
+              <tr
+                key={row.feature}
+                style={{
+                  borderBottom: i < comparisonRows.length - 1 ? "1px solid hsl(var(--border))" : "none",
+                  transition: "background 200ms",
+                }}
+              >
+                <td className="font-body font-[400]" style={{ fontSize: 13, color: "hsl(var(--muted-foreground))", padding: "10px 16px" }}>
+                  {row.feature}
+                </td>
+                <td className="font-mono font-[400]" style={{ fontSize: 12, color: "hsl(var(--muted-foreground))", padding: "10px 16px", textAlign: "center" }}>
+                  <CellValue value={row.starter} />
+                </td>
+                <td className="font-mono font-[400]" style={{ fontSize: 12, color: "hsl(var(--muted-foreground))", padding: "10px 16px", textAlign: "center", borderLeft: "1px solid hsl(var(--primary) / 0.2)", borderRight: "1px solid hsl(var(--primary) / 0.2)" }}>
+                  <CellValue value={row.business} />
+                </td>
+                <td className="font-mono font-[400]" style={{ fontSize: 12, color: "hsl(var(--muted-foreground))", padding: "10px 16px", textAlign: "center" }}>
+                  <CellValue value={row.enterprise} />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p className="font-body font-[300]" style={{ fontSize: 11, color: "hsl(var(--muted-foreground) / 0.5)", marginTop: 10, textAlign: "center" }}>
+        {t("Full SLA terms available at ir4q.com/sla", "شروط SLA الكاملة متوفرة على ir4q.com/sla")}
+      </p>
     </div>
-    <p className="font-body font-[300]" style={{ fontSize: 11, color: '#4A5060', marginTop: 10, textAlign: 'center' }}>
-      Full SLA terms available at ir4q.com/sla
-    </p>
-  </div>
-);
+  );
+};
 
 const ServicePackages = () => {
+  const { t } = useLanguage();
+
+  // Group by domain
+  const domains = ["INFRA", "SOFTWARE", "AI", "CONSULT"];
+  const domainLabels: Record<string, { en: string; ar: string }> = {
+    INFRA: { en: "Infrastructure Packages", ar: "حزم البنية التحتية" },
+    SOFTWARE: { en: "Software Development Packages", ar: "حزم تطوير البرمجيات" },
+    AI: { en: "AI & Automation Packages", ar: "حزم الذكاء الاصطناعي والأتمتة" },
+    CONSULT: { en: "Consulting Packages", ar: "حزم الاستشارات" },
+  };
+
   return (
-    <section id="packages" className="section-spacing" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+    <section id="packages" className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="container-content">
         <div style={{ marginBottom: 32 }}>
-          <div className="section-eyebrow">PACKAGES</div>
-          <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: '#F0EDE8' }}>
-            Transparent Service Packages
+          <div className="section-eyebrow">{t("PACKAGES", "الحزم")}</div>
+          <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "hsl(var(--foreground))" }}>
+            {t("Transparent Service Packages", "حزم خدمات شفافة")}
           </h2>
-          <p className="font-body font-[300]" style={{ fontSize: 14, color: '#8A8F9E', maxWidth: 520, marginTop: 10, lineHeight: 1.7 }}>
-            Every engagement starts with clarity. Choose your entry point across any of our four technology domains.
+          <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 520, marginTop: 10, lineHeight: 1.7 }}>
+            {t(
+              "Every engagement starts with clarity. Choose your entry point across any of our four technology domains.",
+              "كل مشاركة تبدأ بالوضوح. اختر نقطة دخولك عبر أي من مجالاتنا التقنية الأربعة."
+            )}
           </p>
         </div>
 
         <TierComparisonTable />
 
-        <PackageSubsection title="Infrastructure Packages" packages={infraPackages} />
-        <PackageSubsection title="Software Development Packages" packages={softwarePackages} />
-        <PackageSubsection title="AI & Automation Packages" packages={aiPackages} />
-        <PackageSubsection title="Consulting Packages" packages={consultingPackages} consulting />
+        {domains.map((domain) => {
+          const domainPackages = allPackages.filter((p) => p.domain === domain);
+          const label = domainLabels[domain];
+          return (
+            <div key={domain} style={{ marginBottom: 40 }}>
+              <h3 className="font-body font-[500]" style={{ fontSize: 15, color: "hsl(var(--foreground))", marginBottom: 16 }}>
+                {t(label.en, label.ar)}
+              </h3>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2px]">
+                {domainPackages.map((pkg, index) => {
+                  const tierLabel = index === 0 ? t("STARTER", "أساسي") : index === 1 ? t("GROWTH", "نمو") : t("ENTERPRISE", "مؤسسي");
+                  return (
+                    <div
+                      key={index}
+                      className="group relative surface-elevated flex flex-col"
+                      style={{
+                        borderRadius: 2,
+                        padding: "24px 22px",
+                        overflow: "hidden",
+                        transition: "background 0.3s ease",
+                      }}
+                    >
+                      {/* Grid overlay pattern */}
+                      <div
+                        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+                        style={{
+                          backgroundImage:
+                            "linear-gradient(hsl(var(--primary)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px)",
+                          backgroundSize: "40px 40px",
+                        }}
+                      />
+
+                      {/* Popular badge */}
+                      {pkg.popular && (
+                        <div
+                          className="absolute font-mono font-[400] uppercase"
+                          style={{
+                            top: 0,
+                            right: 0,
+                            backgroundColor: "hsl(var(--primary))",
+                            color: "hsl(var(--background))",
+                            fontSize: 8,
+                            letterSpacing: "0.15em",
+                            padding: "3px 8px",
+                            borderRadius: "0 2px 0 4px",
+                            display: "flex",
+                            alignItems: "center",
+                            gap: 3,
+                            zIndex: 10,
+                          }}
+                        >
+                          <Star style={{ width: 8, height: 8 }} /> {t("Popular", "الأكثر طلباً")}
+                        </div>
+                      )}
+
+                      {/* Coordinate tag */}
+                      <div className="flex items-center justify-between mb-4 relative z-10">
+                        <div className="flex items-center gap-2">
+                          <div
+                            style={{
+                              width: 8,
+                              height: 8,
+                              borderRadius: "50%",
+                              backgroundColor: "hsl(var(--primary))",
+                              boxShadow: "0 0 8px hsl(var(--primary) / 0.5)",
+                            }}
+                          />
+                          <span
+                            className="font-mono font-[400] uppercase"
+                            style={{ fontSize: 9, letterSpacing: "0.15em", color: "hsl(var(--primary))" }}
+                          >
+                            {t("PIN", "موقع")} {String(index + 1).padStart(2, "0")}
+                          </span>
+                          <span
+                            className="font-mono font-[400] uppercase"
+                            style={{
+                              fontSize: 8,
+                              letterSpacing: "0.1em",
+                              color: "hsl(var(--muted-foreground))",
+                              backgroundColor: "hsl(var(--primary) / 0.08)",
+                              border: "1px solid hsl(var(--primary) / 0.15)",
+                              padding: "1px 6px",
+                              borderRadius: 2,
+                            }}
+                          >
+                            {tierLabel}
+                          </span>
+                        </div>
+                        <span
+                          className="font-mono font-[300]"
+                          style={{ fontSize: 9, color: "hsl(var(--muted-foreground))", letterSpacing: "0.05em" }}
+                        >
+                          {t(pkg.coord.en, pkg.coord.ar)}
+                        </span>
+                      </div>
+
+                      {/* Domain + Content */}
+                      <div className="relative z-10 flex-1 flex flex-col">
+                        <div className="flex items-center gap-2 mb-3">
+                          <span
+                            className="font-mono font-[500] uppercase"
+                            style={{
+                              fontSize: 9,
+                              letterSpacing: "0.12em",
+                              color: "hsl(var(--primary))",
+                              backgroundColor: "hsl(var(--primary) / 0.08)",
+                              border: "1px solid hsl(var(--primary) / 0.2)",
+                              padding: "2px 8px",
+                              borderRadius: 2,
+                            }}
+                          >
+                            {t(pkg.domain, pkg.domainAr)}
+                          </span>
+                        </div>
+
+                        <h4 className="font-body font-[500]" style={{ fontSize: 15, color: "hsl(var(--foreground))", marginBottom: 4 }}>
+                          {t(pkg.name, pkg.nameAr)}
+                        </h4>
+                        <p className="font-body font-[300]" style={{ fontSize: 12, color: "hsl(var(--muted-foreground))", marginBottom: 14, lineHeight: 1.6 }}>
+                          {t(pkg.tagline, pkg.taglineAr)}
+                        </p>
+
+                        <ul className="flex-1" style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 16 }}>
+                          {(t(pkg.specs.join("|||"), pkg.specsAr.join("|||"))).split("|||").map((spec, j) => (
+                            <li key={j} className="flex items-start gap-2">
+                              <Check style={{ width: 13, height: 13, color: "hsl(var(--primary))", flexShrink: 0, marginTop: 1 }} />
+                              <span className="font-body font-[300]" style={{ fontSize: 12, color: "hsl(var(--muted-foreground))" }}>{spec}</span>
+                            </li>
+                          ))}
+                        </ul>
+
+                        <a
+                          href="https://cal.com/silxor/1-hr?user=silxor&duration=30"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="block text-center font-mono font-[400] uppercase transition-all duration-200"
+                          style={{
+                            fontSize: 10,
+                            letterSpacing: "0.1em",
+                            padding: "10px 16px",
+                            borderRadius: 2,
+                            ...(pkg.popular
+                              ? { backgroundColor: "hsl(var(--primary))", color: "hsl(var(--background))" }
+                              : { border: "1px solid hsl(var(--primary) / 0.4)", color: "hsl(var(--primary))", backgroundColor: "transparent" }),
+                          }}
+                        >
+                          {t(pkg.cta, pkg.ctaAr)}
+                        </a>
+                      </div>
+
+                      {/* Corner crosshair accent */}
+                      <div
+                        className="absolute pointer-events-none"
+                        style={{ top: 10, right: 10, width: 14, height: 14, opacity: 0.15 }}
+                      >
+                        <div style={{ position: "absolute", top: 6, left: 0, width: 14, height: 1, backgroundColor: "hsl(var(--primary))" }} />
+                        <div style={{ position: "absolute", top: 0, left: 6, width: 1, height: 14, backgroundColor: "hsl(var(--primary))" }} />
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          );
+        })}
 
         <div
           className="font-body font-[300]"
           style={{
-            background: 'rgba(201,168,76,0.04)',
-            border: '1px solid rgba(201,168,76,0.12)',
-            borderLeft: '3px solid #C9A84C',
+            background: "hsl(var(--primary) / 0.04)",
+            border: "1px solid hsl(var(--primary) / 0.12)",
+            borderLeft: "3px solid hsl(var(--primary))",
             borderRadius: 4,
-            padding: '14px 20px',
+            padding: "14px 20px",
             fontSize: 12,
-            color: '#8A8F9E',
+            color: "hsl(var(--muted-foreground))",
             lineHeight: 1.7,
-            textAlign: 'center',
+            textAlign: "center",
             maxWidth: 800,
-            margin: '0 auto',
+            margin: "0 auto",
           }}
         >
-          All packages include an initial technical discovery session. Enterprise and Government engagements begin with a formal Request for Assessment. Custom packages available for multi-domain engagements spanning infrastructure, software, AI, and consulting.
+          {t(
+            "All packages include an initial technical discovery session. Enterprise and Government engagements begin with a formal Request for Assessment. Custom packages available for multi-domain engagements spanning infrastructure, software, AI, and consulting.",
+            "تتضمن جميع الحزم جلسة اكتشاف تقني أولية. تبدأ مشاركات المؤسسات والحكومة بطلب تقييم رسمي. حزم مخصصة متاحة للمشاركات متعددة المجالات التي تشمل البنية التحتية والبرمجيات والذكاء الاصطناعي والاستشارات."
+          )}
         </div>
       </div>
     </section>
