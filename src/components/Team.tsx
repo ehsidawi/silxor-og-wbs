@@ -13,18 +13,18 @@ const Team = () => {
   return (
     <section id="about" className="section-spacing border-t border-border">
       <div className="container-content">
-        <div className="mb-12 md:mb-16 lg:mb-20">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display mb-4">
+        <div className="mb-8 md:mb-12">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display mb-3">
             Iraqi Engineers. Global Standards.
           </h2>
-          <p className="text-base md:text-lg lg:text-xl text-muted-foreground font-light max-w-3xl leading-relaxed">
+          <p className="text-sm md:text-base lg:text-lg text-muted-foreground font-light max-w-3xl leading-relaxed">
             IR4Q is built and operated by technologists with backgrounds across international infrastructure, cybersecurity, and enterprise software — rooted in Iraq.
           </p>
         </div>
 
         <div className="flex justify-center">
           {leaders.map((leader, index) => (
-            <div key={index} className="surface-elevated rounded p-6 md:p-8 text-center">
+            <div key={index} className="surface-elevated rounded p-4 md:p-5 text-center">
               <div className="w-20 h-20 rounded-full bg-muted flex items-center justify-center mx-auto mb-5">
                 <User className="w-8 h-8 text-muted-foreground" />
               </div>

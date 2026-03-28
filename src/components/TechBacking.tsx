@@ -4,9 +4,9 @@ const TechBacking = () => {
   return (
     <section id="infrastructure" className="section-spacing border-t border-border">
       <div className="container-content">
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start">
           {/* Architecture Diagram */}
-          <div className="surface-elevated p-6 md:p-8 lg:p-12">
+          <div className="surface-elevated p-4 md:p-5 lg:p-8">
             <div className="space-y-6 md:space-y-8">
               {/* Baghdad PoP */}
               <div className="flex items-center gap-3 md:gap-4">
@@ -66,16 +66,16 @@ const TechBacking = () => {
           {/* Technical Description */}
           <div className="space-y-6 md:space-y-8">
             <div>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-display mb-4 md:mb-6">
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-display mb-3 md:mb-4">
                 Dual-Continent Resilience Architecture
               </h2>
-              <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
+              <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
                 IR4Q operates a distributed infrastructure model ensuring data sovereignty while maintaining enterprise-grade reliability through U.S. Tier-IV certification.
               </p>
             </div>
 
-            <div className="space-y-4 md:space-y-6">
-              <div className="surface-elevated p-4 md:p-6 flex gap-3 md:gap-4">
+            <div className="space-y-3 md:space-y-4">
+              <div className="surface-elevated p-3 md:p-4 flex gap-3">
                 <div className="w-10 h-10 md:w-12 md:h-12 border border-border flex items-center justify-center flex-shrink-0">
                   <Activity className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
                 </div>
@@ -87,7 +87,7 @@ const TechBacking = () => {
                 </div>
               </div>
 
-              <div className="surface-elevated p-4 md:p-6 flex gap-3 md:gap-4">
+              <div className="surface-elevated p-3 md:p-4 flex gap-3">
                 <div className="w-10 h-10 md:w-12 md:h-12 border border-border flex items-center justify-center flex-shrink-0">
                   <Server className="w-5 h-5 md:w-6 md:h-6 text-primary" strokeWidth={1.5} />
                 </div>

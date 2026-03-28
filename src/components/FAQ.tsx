@@ -36,8 +36,8 @@ const FAQ = () => {
   return (
     <section className="section-spacing border-t border-border">
       <div className="container-content">
-        <div className="mb-12 md:mb-16 lg:mb-20">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display mb-4">
+        <div className="mb-8 md:mb-12">
+          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display mb-3">
             The Questions Our Clients Ask Before They Sign
           </h2>
         </div>
@@ -48,12 +48,12 @@ const FAQ = () => {
               <AccordionItem
                 key={index}
                 value={`faq-${index}`}
-                className="surface-elevated rounded px-6 border-none"
+                className="surface-elevated rounded px-4 border-none"
               >
-                <AccordionTrigger className="text-sm md:text-base font-display hover:no-underline text-left py-5">
+                <AccordionTrigger className="text-xs md:text-sm font-display hover:no-underline text-left py-4">
                   {faq.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-sm md:text-base text-muted-foreground leading-relaxed pb-5">
+                <AccordionContent className="text-xs md:text-sm text-muted-foreground leading-relaxed pb-4">
                   {faq.a}
                 </AccordionContent>
               </AccordionItem>
