@@ -46,14 +46,14 @@ const Index = () => {
           <FAQ />
         </AnimatedSection>
       </div>
-      <AnimatedSection>
-        <Team />
-      </AnimatedSection>
       <div id="contact">
         <AnimatedSection>
           <StartEngagement />
         </AnimatedSection>
       </div>
+      <AnimatedSection>
+        <Team />
+      </AnimatedSection>
       <Footer />
     </div>
   );
