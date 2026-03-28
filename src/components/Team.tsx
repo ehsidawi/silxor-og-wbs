@@ -38,7 +38,13 @@ const Team = () => {
               <div className="w-20 h-20 rounded-full bg-muted flex items-center justify-center mx-auto mb-5">
                 <User className="w-8 h-8 text-muted-foreground" />
               </div>
-              <h4 className="text-sm md:text-base font-display mb-1">{leader.name}</h4>
+              <h4 className="text-sm md:text-base font-display mb-1">
+                {leader.linkedin ? (
+                  <a href={leader.linkedin} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline transition-colors">
+                    {leader.name}
+                  </a>
+                ) : leader.name}
+              </h4>
               <p className="text-xs md:text-sm font-mono text-primary mb-4">{leader.title}</p>
               <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{leader.bio}</p>
             </div>
