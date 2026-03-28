@@ -26,7 +26,7 @@ const Navbar = () => {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setMobileOpen(false);
-    if (href === "#") {
+    if (href === "#" || href === "#home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
