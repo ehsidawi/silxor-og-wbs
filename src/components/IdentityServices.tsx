@@ -435,9 +435,7 @@ const IdentityServices = () => {
             </p>
           </div>
           <a
-            href="mailto:contact@ir4q.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Identity%20Assessment%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20request%20an%20identity%20assessment.%0A%0AOrganization%3A%20%0AIdentity%20Environment%3A%20"
             className="font-mono font-[400] uppercase whitespace-nowrap transition-all duration-200 flex items-center gap-2"
             style={{
               fontSize: 11,

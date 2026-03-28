@@ -22,26 +22,30 @@ const ContactForm = () => {
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
   const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
     setStatus("idle");
 
     try {
-      const res = await fetch("https://formspree.io/f/ir4q-contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formState),
-      });
-      if (res.ok) {
-        setStatus("success");
-        setFormState({ name: "", organization: "", email: "", service: "", message: "" });
-      } else {
-        window.open(`mailto:contact@ir4q.com?subject=${encodeURIComponent("IR4Q Assessment Request — " + formState.service)}`, "_self");
-        setStatus("error");
-      }
+      const subject = encodeURIComponent(
+        `IR4Q - ${formState.service || 'General Inquiry'} - ${formState.organization}`
+      );
+
+      const body = encodeURIComponent(
+        `Hello Ehsan,\n\n` +
+        `Name: ${formState.name}\n` +
+        `Organization: ${formState.organization}\n` +
+        `Email: ${formState.email}\n` +
+        `Service Interest: ${formState.service}\n\n` +
+        `Message:\n${formState.message}`
+      );
+
+      window.location.href = `mailto:ehsan@ir4q.com?subject=${subject}&body=${body}`;
+
+      setStatus("success");
+      setFormState({ name: "", organization: "", email: "", service: "", message: "" });
     } catch {
-      window.open(`mailto:contact@ir4q.com?subject=${encodeURIComponent("IR4Q Assessment Request")}`, "_self");
       setStatus("error");
     } finally {
       setSubmitting(false);
@@ -197,16 +201,16 @@ const ContactForm = () => {
         {status === "success" && (
           <div className="sm:col-span-2 font-body font-[300] text-center" style={{ fontSize: 14, color: "#C9A84C", animation: "fadeIn 300ms ease" }}>
             {t(
-              "Message received. Our team will respond within one business day.",
-              "تم استلام رسالتك. سيرد فريقنا خلال يوم عمل واحد."
+              "Your email client has opened with your message pre-filled. Please send it to complete your inquiry.",
+              "تم فتح عميل البريد الإلكتروني مع رسالتك المعبأة مسبقاً. يرجى إرسالها لإتمام استفسارك."
             )}
           </div>
         )}
         {status === "error" && (
           <div className="sm:col-span-2 font-body font-[300] text-center" style={{ fontSize: 14, color: "#C94C4C" }}>
             {t(
-              "Something went wrong. Please email us directly at contact@ir4q.com",
-              "حدث خطأ ما. يرجى مراسلتنا مباشرة على contact@ir4q.com"
+              "Something went wrong. Please email us directly at ehsan@ir4q.com",
+              "حدث خطأ ما. يرجى مراسلتنا مباشرة على ehsan@ir4q.com"
             )}
           </div>
         )}

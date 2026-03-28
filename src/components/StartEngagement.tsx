@@ -14,6 +14,7 @@ const StartEngagement = () => {
         "ابدأ بتقييم السيادة والامتثال لبيئة الاستضافة الحالية."
       ),
       cta: t("Request Infrastructure Assessment", "طلب تقييم البنية التحتية"),
+      mailto: "mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Infrastructure%20Assessment%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20request%20an%20infrastructure%20and%20sovereignty%20assessment.%0A%0AOrganization%3A%20%0ACurrent%20Environment%3A%20",
     },
     {
       icon: Code,
@@ -23,6 +24,7 @@ const StartEngagement = () => {
         "صف متطلبات منصتك أو نظام الذكاء الاصطناعي واحصل على اقتراح تسليم محدد النطاق خلال 5 أيام عمل."
       ),
       cta: t("Start a Project", "ابدأ مشروعاً"),
+      mailto: "mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Software%20%26%20AI%20Project%20Inquiry&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20discuss%20a%20software%20or%20AI%20project.%0A%0AOrganization%3A%20%0AProject%20Description%3A%20",
     },
     {
       icon: Shield,
@@ -32,6 +34,7 @@ const StartEngagement = () => {
         "احجز جلسة استشارية مدتها 60 دقيقة حول البنية المعمارية أو الأمن مع مهندس IR4Q أقدم."
       ),
       cta: t("Book Advisory Session", "احجز جلسة استشارية"),
+      mailto: "mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Strategic%20Advisory%20Session%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20book%20a%2060-minute%20advisory%20session.%0A%0AOrganization%3A%20%0AFocus%20Area%3A%20",
     },
   ];
 
@@ -64,9 +67,7 @@ const StartEngagement = () => {
                   {path.description}
                 </p>
                 <a
-                  href="mailto:contact@ir4q.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={path.mailto}
                   className="block text-center font-mono font-[400] uppercase transition-all duration-200"
                   style={{
                     fontSize: 11,
