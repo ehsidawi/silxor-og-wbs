@@ -24,9 +24,6 @@ const Index = () => {
           <Hero />
         </AnimatedSection>
       </div>
-      <AnimatedSection delay={0.1}>
-        <StatsBar />
-      </AnimatedSection>
       <AnimatedSection>
         <WhatWeDo />
       </AnimatedSection>
