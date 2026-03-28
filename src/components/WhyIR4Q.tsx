@@ -15,7 +15,7 @@ const pillars = [
 
 const WhyIR4Q = () => {
   return (
-    <section id="about" className="section-spacing border-t border-border">
+    <section id="why-ir4q" className="section-spacing border-t border-border">
       <div className="container-content">
         <div className="mb-12 md:mb-16">
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display mb-4">

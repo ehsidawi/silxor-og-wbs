@@ -13,24 +13,55 @@ import ProcessFlow from "@/components/ProcessFlow";
 import Team from "@/components/Team";
 import StartEngagement from "@/components/StartEngagement";
 import Footer from "@/components/Footer";
+import AnimatedSection from "@/components/AnimatedSection";
 
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <Hero />
-      <StatsBar />
-      <WhatWeDo />
-      <Services />
-      <SoftwareAICapabilities />
-      <ServicePackages />
-      <FAQ />
-      <WhoWeServe />
-      <WhyIR4Q />
-      <TechBacking />
-      <ProcessFlow />
-      <Team />
-      <StartEngagement />
+      <AnimatedSection>
+        <Hero />
+      </AnimatedSection>
+      <AnimatedSection delay={0.1}>
+        <StatsBar />
+      </AnimatedSection>
+      <AnimatedSection>
+        <ProcessFlow />
+      </AnimatedSection>
+      <AnimatedSection>
+        <WhatWeDo />
+      </AnimatedSection>
+      <AnimatedSection>
+        <Services />
+      </AnimatedSection>
+      <div id="ai">
+        <AnimatedSection>
+          <SoftwareAICapabilities />
+        </AnimatedSection>
+      </div>
+      <div id="consulting">
+        <AnimatedSection>
+          <ServicePackages />
+        </AnimatedSection>
+      </div>
+      <AnimatedSection>
+        <FAQ />
+      </AnimatedSection>
+      <AnimatedSection>
+        <WhoWeServe />
+      </AnimatedSection>
+      <AnimatedSection>
+        <WhyIR4Q />
+      </AnimatedSection>
+      <AnimatedSection>
+        <TechBacking />
+      </AnimatedSection>
+      <AnimatedSection>
+        <Team />
+      </AnimatedSection>
+      <AnimatedSection>
+        <StartEngagement />
+      </AnimatedSection>
       <Footer />
     </div>
   );

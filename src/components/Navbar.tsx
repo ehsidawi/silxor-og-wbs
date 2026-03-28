@@ -17,10 +17,29 @@ const navLinks = [
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setMobileOpen(false);
+    if (href === "#") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+    const el = document.querySelector(href);
+    if (el) {
+      const navHeight = 64;
+      const top = el.getBoundingClientRect().top + window.scrollY - navHeight;
+      window.scrollTo({ top, behavior: "smooth" });
+    }
+  };
+
   return (
     <nav className="sticky top-0 z-50 functional-glass border-b border-border">
       <div className="container-content flex items-center justify-between h-14 md:h-16">
-        <a href="#" className="flex items-center gap-2 touch-target">
+        <a
+          href="#"
+          className="flex items-center gap-2 touch-target"
+          onClick={(e) => handleNavClick(e, "#")}
+        >
           <img src={silxorLogo} alt="IR4Q" className="h-7 w-auto" />
           <span className="font-display text-lg">IR4Q</span>
         </a>
@@ -31,6 +50,7 @@ const Navbar = () => {
             <a
               key={link.label}
               href={link.href}
+              onClick={(e) => handleNavClick(e, link.href)}
               className="text-xs font-mono text-muted-foreground hover:text-foreground transition-colors touch-target"
             >
               {link.label}
@@ -63,7 +83,7 @@ const Navbar = () => {
                 key={link.label}
                 href={link.href}
                 className="block py-3 text-sm font-mono text-muted-foreground hover:text-foreground transition-colors touch-target"
-                onClick={() => setMobileOpen(false)}
+                onClick={(e) => handleNavClick(e, link.href)}
               >
                 {link.label}
               </a>
