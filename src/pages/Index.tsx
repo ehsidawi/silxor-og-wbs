@@ -1,13 +1,16 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
+import WhatWeDo from "@/components/WhatWeDo";
+import WhoWeServe from "@/components/WhoWeServe";
+import WhyIR4Q from "@/components/WhyIR4Q";
 import Services from "@/components/Services";
 import SoftwareAICapabilities from "@/components/SoftwareAICapabilities";
 import IdentityServices from "@/components/IdentityServices";
 import ServicePackages from "@/components/ServicePackages";
-import FAQ from "@/components/FAQ";
-import TechBacking from "@/components/TechBacking";
 import ProcessFlow from "@/components/ProcessFlow";
+import TechBacking from "@/components/TechBacking";
+import FAQ from "@/components/FAQ";
 import Team from "@/components/Team";
 import StartEngagement from "@/components/StartEngagement";
 import Footer from "@/components/Footer";
@@ -20,12 +23,17 @@ const Index = () => {
       <div id="home">
         <Hero />
       </div>
-      <StatsBar />
-      <AnimatedSection>
-        <ProcessFlow />
+      <AnimatedSection delay={0.1}>
+        <StatsBar />
       </AnimatedSection>
       <AnimatedSection>
-        <TechBacking />
+        <WhatWeDo />
+      </AnimatedSection>
+      <AnimatedSection>
+        <WhoWeServe />
+      </AnimatedSection>
+      <AnimatedSection>
+        <WhyIR4Q />
       </AnimatedSection>
       <div id="infrastructure">
         <AnimatedSection>
@@ -33,33 +41,43 @@ const Index = () => {
         </AnimatedSection>
       </div>
       <div id="software">
-        <AnimatedSection>
-          <SoftwareAICapabilities />
-        </AnimatedSection>
+        <div id="ai">
+          <AnimatedSection>
+            <SoftwareAICapabilities />
+          </AnimatedSection>
+        </div>
       </div>
       <div id="identity">
         <AnimatedSection>
           <IdentityServices />
         </AnimatedSection>
       </div>
-      <div id="packages">
-        <AnimatedSection>
-          <ServicePackages />
-        </AnimatedSection>
+      <div id="consulting">
+        <div id="packages">
+          <AnimatedSection>
+            <ServicePackages />
+          </AnimatedSection>
+        </div>
       </div>
+      <AnimatedSection>
+        <ProcessFlow />
+      </AnimatedSection>
+      <AnimatedSection>
+        <TechBacking />
+      </AnimatedSection>
       <div id="about">
         <AnimatedSection>
           <FAQ />
         </AnimatedSection>
       </div>
+      <AnimatedSection>
+        <Team />
+      </AnimatedSection>
       <div id="contact">
         <AnimatedSection>
           <StartEngagement />
         </AnimatedSection>
       </div>
-      <AnimatedSection>
-        <Team />
-      </AnimatedSection>
       <Footer />
     </div>
   );

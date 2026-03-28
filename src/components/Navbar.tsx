@@ -2,10 +2,12 @@ import { useState, useEffect } from "react";
 import { ArrowRight, X } from "lucide-react";
 
 const navLinks = [
-  { label: "Home", href: "#" },
+  { label: "Home", href: "#home" },
   { label: "Infrastructure", href: "#infrastructure" },
   { label: "Software", href: "#software" },
+  { label: "AI & Automation", href: "#ai" },
   { label: "Identity", href: "#identity" },
+  { label: "Consulting", href: "#consulting" },
   { label: "Packages", href: "#packages" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
@@ -24,7 +26,7 @@ const Navbar = () => {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     setMobileOpen(false);
-    if (href === "#") {
+    if (href === "#" || href === "#home") {
       window.scrollTo({ top: 0, behavior: "smooth" });
       return;
     }
