@@ -13,7 +13,7 @@ import TechBacking from "@/components/TechBacking";
 import FAQ from "@/components/FAQ";
 import Team from "@/components/Team";
 import StartEngagement from "@/components/StartEngagement";
-import PressAnnouncements from "@/components/PressAnnouncements";
+
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
 
