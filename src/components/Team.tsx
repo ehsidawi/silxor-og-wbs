@@ -2,14 +2,17 @@ import { User } from "lucide-react";
 
 const leaders = [
   {
+    name: "[First Last]",
     title: "Chief Executive Officer",
     bio: "Former enterprise technology executive with regional infrastructure and digital transformation experience across Iraq and the Gulf.",
   },
   {
+    name: "[First Last]",
     title: "Chief Technology Officer",
     bio: "Infrastructure and cloud architect with international Tier-IV operations experience and deep expertise in sovereign systems design.",
   },
   {
+    name: "[First Last]",
     title: "Head of AI & Software Engineering",
     bio: "AI systems and software engineering leader specializing in sovereign LLM deployments and enterprise platform delivery.",
   },
@@ -34,7 +37,7 @@ const Team = () => {
               <div className="w-20 h-20 rounded-full bg-muted flex items-center justify-center mx-auto mb-5">
                 <User className="w-8 h-8 text-muted-foreground" />
               </div>
-              <h4 className="text-sm md:text-base font-display mb-1">[Name]</h4>
+              <h4 className="text-sm md:text-base font-display mb-1">{leader.name}</h4>
               <p className="text-xs md:text-sm font-mono text-primary mb-4">{leader.title}</p>
               <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{leader.bio}</p>
             </div>
@@ -42,7 +45,7 @@ const Team = () => {
         </div>
 
         <p className="text-xs text-muted-foreground text-center mt-8">
-          Full leadership profiles available upon request during assessment engagement.
+          IR4Q leadership profiles and team bios are available upon request as part of the technical assessment engagement.
         </p>
       </div>
     </section>

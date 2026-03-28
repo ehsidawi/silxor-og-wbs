@@ -16,7 +16,7 @@ const TechBacking = () => {
                 <div className="min-w-0">
                   <div className="font-display text-base md:text-lg">Baghdad Point of Presence</div>
                   <div className="text-xs md:text-sm text-muted-foreground font-mono truncate">
-                    33.3152&deg; N, 44.3661&deg; E
+                    33.3406&deg; N, 44.4009&deg; E
                   </div>
                 </div>
               </div>
@@ -48,8 +48,8 @@ const TechBacking = () => {
               {/* Metrics */}
               <div className="grid grid-cols-3 gap-3 md:gap-4 pt-6 md:pt-8 border-t border-border">
                 <div>
-                  <div className="text-xl md:text-2xl font-mono text-primary mb-1">42ms</div>
-                  <div className="text-xs text-muted-foreground">Average latency</div>
+                  <div className="text-xl md:text-2xl font-mono text-primary mb-1">&lt;120ms</div>
+                  <div className="text-xs text-muted-foreground">Avg. Latency</div>
                 </div>
                 <div>
                   <div className="text-xl md:text-2xl font-mono text-primary mb-1">N+2</div>
