@@ -36,19 +36,19 @@ const WhatWeDo = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
           {units.map((unit, index) => {
             const Icon = unit.icon;
             return (
               <div
                 key={index}
-                className="surface-elevated p-6 md:p-8 accent-border hover:border-l-4 transition-all"
+                className="surface-elevated p-4 md:p-5 accent-border hover:border-l-4 transition-all"
               >
-                <Icon className="w-5 h-5 md:w-6 md:h-6 text-primary mb-4" strokeWidth={1.5} />
-                <h3 className="text-lg md:text-xl font-display font-normal mb-3">
+                <Icon className="w-4 h-4 md:w-5 md:h-5 text-primary mb-3" strokeWidth={1.5} />
+                <h3 className="text-base md:text-lg font-display font-normal mb-2">
                   {unit.title}
                 </h3>
-                <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
                   {unit.body}
                 </p>
               </div>
