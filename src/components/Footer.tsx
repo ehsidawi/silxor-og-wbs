@@ -3,72 +3,127 @@ import ir4qLogo from "@/assets/ir4q-logo.png";
 
 const Footer = () => {
   return (
-    <footer className="border-t border-border py-12 md:py-16">
+    <footer style={{ backgroundColor: '#080A0F', borderTop: '1px solid rgba(255,255,255,0.06)', padding: '80px 0 40px' }}>
       <div className="container-content">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12 mb-8 md:mb-12">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12" style={{ marginBottom: 48 }}>
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-3">
-              <img src={ir4qLogo} alt="IR4Q Technologies" className="h-7 md:h-8 w-auto" />
-              <h3 className="text-xl md:text-2xl font-display">IR4Q</h3>
+              <img src={ir4qLogo} alt="IR4Q Technologies" className="h-8 w-auto" />
+              <span className="font-display font-[800]" style={{ fontSize: 24, color: '#F0EDE8' }}>
+                IR4Q
+                <span
+                  className="inline-block ml-1"
+                  style={{ width: 6, height: 6, backgroundColor: '#C9A84C', verticalAlign: 'middle', marginBottom: 2 }}
+                />
+              </span>
             </div>
-            <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">
+            <p className="font-body font-[300]" style={{ fontSize: 14, color: '#4A5060', lineHeight: 1.7 }}>
               IR4Q is Iraq's sovereign technology company — delivering infrastructure, software, AI, and consulting for the institutions that power the country. A Silxor company.
             </p>
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="text-xs md:text-sm font-display mb-3 md:mb-4 text-muted-foreground">Services</h4>
-            <nav className="space-y-2 text-xs md:text-sm">
-              <a href="#infrastructure" className="block hover:text-primary transition-colors touch-target">Infrastructure & Cloud</a>
-              <a href="#software" className="block hover:text-primary transition-colors touch-target">Software Development</a>
-              <a href="#ai" className="block hover:text-primary transition-colors touch-target">AI & Automation</a>
-              <a href="#consulting" className="block hover:text-primary transition-colors touch-target">Technology Consulting</a>
+            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: '0.12em', color: '#F0EDE8', marginBottom: 20 }}>Services</h4>
+            <nav className="space-y-3">
+              {[
+                { label: "Infrastructure & Cloud", href: "#infrastructure" },
+                { label: "Software Development", href: "#software" },
+                { label: "AI & Automation", href: "#ai" },
+                { label: "Technology Consulting", href: "#consulting" },
+              ].map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="block font-body font-[300] transition-colors duration-200"
+                  style={{ fontSize: 14, color: '#4A5060' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#C9A84C')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#4A5060')}
+                >
+                  {link.label}
+                </a>
+              ))}
             </nav>
           </div>
 
           {/* Packages */}
           <div>
-            <h4 className="text-xs md:text-sm font-display mb-3 md:mb-4 text-muted-foreground">Packages</h4>
-            <nav className="space-y-2 text-xs md:text-sm">
-              <a href="#packages" className="block hover:text-primary transition-colors touch-target">Infrastructure Packages</a>
-              <a href="#packages" className="block hover:text-primary transition-colors touch-target">Software Packages</a>
-              <a href="#packages" className="block hover:text-primary transition-colors touch-target">AI Packages</a>
-              <a href="#packages" className="block hover:text-primary transition-colors touch-target">Consulting Packages</a>
+            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: '0.12em', color: '#F0EDE8', marginBottom: 20 }}>Packages</h4>
+            <nav className="space-y-3">
+              {["Infrastructure Packages", "Software Packages", "AI Packages", "Consulting Packages"].map((label) => (
+                <a
+                  key={label}
+                  href="#packages"
+                  className="block font-body font-[300] transition-colors duration-200"
+                  style={{ fontSize: 14, color: '#4A5060' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#C9A84C')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#4A5060')}
+                >
+                  {label}
+                </a>
+              ))}
             </nav>
           </div>
 
           {/* Company */}
           <div>
-            <h4 className="text-xs md:text-sm font-display mb-3 md:mb-4 text-muted-foreground">Company</h4>
-            <nav className="space-y-2 text-xs md:text-sm">
-              <a href="#about" className="block hover:text-primary transition-colors touch-target">About IR4Q</a>
-              <a href="#about" className="block hover:text-primary transition-colors touch-target">Leadership</a>
-              <a href="#contact" className="block hover:text-primary transition-colors touch-target">Careers</a>
-              <a href="#contact" className="block hover:text-primary transition-colors touch-target">Contact</a>
+            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: '0.12em', color: '#F0EDE8', marginBottom: 20 }}>Company</h4>
+            <nav className="space-y-3">
+              {[
+                { label: "About IR4Q", href: "#about" },
+                { label: "Leadership", href: "#about" },
+                { label: "Careers", href: "#contact" },
+                { label: "Contact", href: "#contact" },
+              ].map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  className="block font-body font-[300] transition-colors duration-200"
+                  style={{ fontSize: 14, color: '#4A5060' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#C9A84C')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#4A5060')}
+                >
+                  {link.label}
+                </a>
+              ))}
             </nav>
           </div>
 
           {/* Legal */}
           <div>
-            <h4 className="text-xs md:text-sm font-display mb-3 md:mb-4 text-muted-foreground">Legal & Compliance</h4>
-            <nav className="space-y-2 text-xs md:text-sm">
-              <a href="#" className="block hover:text-primary transition-colors touch-target">Privacy Policy</a>
-              <a href="#" className="block hover:text-primary transition-colors touch-target">Compliance Documentation</a>
-              <a href="#" className="block hover:text-primary transition-colors touch-target">Security Practices</a>
-              <a href="#" className="block hover:text-primary transition-colors touch-target">SLA Documentation</a>
+            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: '0.12em', color: '#F0EDE8', marginBottom: 20 }}>Legal & Compliance</h4>
+            <nav className="space-y-3">
+              {["Privacy Policy", "Compliance Documentation", "Security Practices", "SLA Documentation"].map((label) => (
+                <a
+                  key={label}
+                  href="#"
+                  className="block font-body font-[300] transition-colors duration-200"
+                  style={{ fontSize: 14, color: '#4A5060' }}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = '#C9A84C')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = '#4A5060')}
+                >
+                  {label}
+                </a>
+              ))}
             </nav>
           </div>
         </div>
 
-        <div className="pt-6 md:pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <div className="flex items-center gap-2 md:gap-3 text-xs md:text-sm text-muted-foreground">
-            <Shield className="w-4 h-4 flex-shrink-0" />
-            <span>ISO/IEC 27001:2022 Certified</span>
-          </div>
-          <p className="text-xs md:text-sm text-muted-foreground text-center">
-            © 2026 IR4Q Technologies.
+        {/* Certification badges */}
+        <div className="flex flex-wrap gap-3" style={{ marginTop: 48, marginBottom: 32 }}>
+          {["ISO/IEC 27001:2022", "SOC 2 Type II", "Tier-IV Certified", "GDPR-Ready"].map((cert) => (
+            <span key={cert} className="badge-pill">
+              <Shield style={{ width: 10, height: 10 }} />
+              {cert}
+            </span>
+          ))}
+        </div>
+
+        {/* Divider + Copyright */}
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: 24 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 12, color: '#4A5060' }}>
+            © 2026 IR4Q Technologies. A Silxor company.
           </p>
         </div>
       </div>

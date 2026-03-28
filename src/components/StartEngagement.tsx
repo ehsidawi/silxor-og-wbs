@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Server, Code, Shield } from "lucide-react";
 
 const paths = [
@@ -24,32 +23,58 @@ const paths = [
 
 const StartEngagement = () => {
   return (
-    <section id="contact" className="section-spacing border-t border-border">
+    <section id="contact" className="section-spacing" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
       <div className="container-content">
-        <div className="text-center mb-8 md:mb-12">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display mb-3">
+        <div className="text-center" style={{ marginBottom: 64 }}>
+          <div className="section-eyebrow justify-center">ENGAGE</div>
+          <h2 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: '#F0EDE8' }}>
             Ready to Build on Sovereign Infrastructure?
           </h2>
-          <p className="text-sm md:text-base text-muted-foreground font-light max-w-2xl mx-auto leading-relaxed">
+          <p className="font-body font-[300] mx-auto" style={{ fontSize: 16, color: '#8A8F9E', maxWidth: 560, marginTop: 16, lineHeight: 1.7 }}>
             Every IR4Q engagement begins with a no-cost Technical Assessment. Tell us what you're building and we'll tell you exactly how we can deliver it.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6">
           {paths.map((path, index) => {
             const Icon = path.icon;
             return (
-              <div key={index} className="surface-elevated rounded p-4 md:p-5 flex flex-col">
-                <Icon className="w-5 h-5 text-primary mb-3" strokeWidth={1.5} />
-                <h3 className="text-base md:text-lg font-display mb-2">{path.title}</h3>
-                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed mb-4 flex-1">
+              <div
+                key={index}
+                className="surface-elevated flex flex-col"
+                style={{ padding: 32 }}
+              >
+                <Icon className="mb-5" style={{ width: 32, height: 32, color: '#C9A84C' }} strokeWidth={1.5} />
+                <h3 className="font-body font-[500]" style={{ fontSize: 17, color: '#F0EDE8', marginBottom: 10 }}>
+                  {path.title}
+                </h3>
+                <p className="font-body font-[300] flex-1" style={{ fontSize: 14, color: '#8A8F9E', lineHeight: 1.7, marginBottom: 24 }}>
                   {path.description}
                 </p>
-                <Button variant="outline" className="w-full touch-target" asChild>
-                  <a href="https://cal.com/silxor/1-hr?user=silxor&duration=30" target="_blank" rel="noopener noreferrer">
-                    {path.cta}
-                  </a>
-                </Button>
+                <a
+                  href="https://cal.com/silxor/1-hr?user=silxor&duration=30"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block text-center font-mono font-[400] uppercase transition-all duration-200"
+                  style={{
+                    fontSize: 11,
+                    letterSpacing: '0.1em',
+                    border: '1px solid rgba(201,168,76,0.4)',
+                    color: '#C9A84C',
+                    padding: '12px 20px',
+                    borderRadius: 2,
+                  }}
+                  onMouseEnter={(e) => {
+                    e.currentTarget.style.borderColor = '#C9A84C';
+                    e.currentTarget.style.backgroundColor = 'rgba(201,168,76,0.05)';
+                  }}
+                  onMouseLeave={(e) => {
+                    e.currentTarget.style.borderColor = 'rgba(201,168,76,0.4)';
+                    e.currentTarget.style.backgroundColor = 'transparent';
+                  }}
+                >
+                  {path.cta}
+                </a>
               </div>
             );
           })}

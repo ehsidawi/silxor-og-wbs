@@ -11,37 +11,72 @@ const leaders = [
 
 const Team = () => {
   return (
-    <section id="about" className="section-spacing border-t border-border">
+    <section id="about" className="section-spacing" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
       <div className="container-content">
-        <div className="mb-8 md:mb-12">
-          <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-display mb-3">
+        <div style={{ marginBottom: 64 }}>
+          <div className="section-eyebrow">LEADERSHIP</div>
+          <h2 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: '#F0EDE8' }}>
             Iraqi Engineers. Global Standards.
           </h2>
-          <p className="text-sm md:text-base lg:text-lg text-muted-foreground font-light max-w-3xl leading-relaxed">
+          <p className="font-body font-[300]" style={{ fontSize: 16, color: '#8A8F9E', maxWidth: 560, marginTop: 16, lineHeight: 1.7 }}>
             IR4Q is built and operated by technologists with backgrounds across international infrastructure, cybersecurity, and enterprise software — rooted in Iraq.
           </p>
         </div>
 
         <div className="flex justify-center">
           {leaders.map((leader, index) => (
-            <div key={index} className="surface-elevated rounded p-4 md:p-5 text-center">
-              <div className="w-20 h-20 rounded-full bg-muted flex items-center justify-center mx-auto mb-5">
-                <User className="w-8 h-8 text-muted-foreground" />
+            <div
+              key={index}
+              className="text-center"
+              style={{
+                backgroundColor: '#0D1017',
+                border: '1px solid rgba(255,255,255,0.06)',
+                borderRadius: 4,
+                padding: 32,
+                maxWidth: 400,
+              }}
+            >
+              <div
+                className="mx-auto flex items-center justify-center"
+                style={{
+                  width: 72,
+                  height: 72,
+                  borderRadius: '50%',
+                  background: 'linear-gradient(135deg, rgba(201,168,76,0.13), rgba(201,168,76,0.03))',
+                  border: '1px solid rgba(201,168,76,0.2)',
+                }}
+              >
+                <User style={{ width: 28, height: 28, color: '#C9A84C' }} />
               </div>
-              <h4 className="text-sm md:text-base font-display mb-1">
+
+              <div className="font-mono font-[400] uppercase" style={{ fontSize: 11, letterSpacing: '0.15em', color: '#C9A84C', marginTop: 16 }}>
+                {leader.title}
+              </div>
+
+              <h4 className="font-body font-[500]" style={{ fontSize: 17, color: '#F0EDE8', marginTop: 8 }}>
                 {leader.linkedin ? (
-                  <a href={leader.linkedin} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline transition-colors">
+                  <a
+                    href={leader.linkedin}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors duration-200"
+                    style={{ color: '#C9A84C' }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = '#E2C06A')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = '#C9A84C')}
+                  >
                     {leader.name}
                   </a>
                 ) : leader.name}
               </h4>
-              <p className="text-xs md:text-sm font-mono text-primary mb-4">{leader.title}</p>
-              <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{leader.bio}</p>
+
+              <p className="font-body font-[300]" style={{ fontSize: 14, color: '#8A8F9E', lineHeight: 1.7, marginTop: 12 }}>
+                {leader.bio}
+              </p>
             </div>
           ))}
         </div>
 
-        <p className="text-xs text-muted-foreground text-center mt-8">
+        <p className="font-body font-[300] text-center" style={{ fontSize: 13, color: '#4A5060', fontStyle: 'italic', marginTop: 32 }}>
           IR4Q leadership profiles and team bios are available upon request as part of the technical assessment engagement.
         </p>
       </div>
