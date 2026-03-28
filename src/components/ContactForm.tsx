@@ -37,9 +37,11 @@ const ContactForm = () => {
         setStatus("success");
         setFormState({ name: "", organization: "", email: "", service: "", message: "" });
       } else {
+        window.open(`mailto:contact@ir4q.com?subject=${encodeURIComponent("IR4Q Assessment Request — " + formState.service)}`, "_self");
         setStatus("error");
       }
     } catch {
+      window.open(`mailto:contact@ir4q.com?subject=${encodeURIComponent("IR4Q Assessment Request")}`, "_self");
       setStatus("error");
     } finally {
       setSubmitting(false);

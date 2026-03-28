@@ -140,7 +140,7 @@ const Navbar = () => {
       </div>
 
       <div
-        className="lg:hidden overflow-hidden transition-all duration-500"
+        className="xl:hidden overflow-hidden transition-all duration-500"
         style={{
           maxHeight: mobileOpen ? 600 : 0,
           opacity: mobileOpen ? 1 : 0,

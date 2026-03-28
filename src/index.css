@@ -237,6 +237,10 @@
   }
 
   /* Gold badge pill */
+  /* RTL support */
+  [dir="rtl"] .section-eyebrow { flex-direction: row-reverse; }
+  [dir="rtl"] .section-eyebrow::before { order: 1; }
+
   .badge-pill {
     display: inline-flex;
     align-items: center;
