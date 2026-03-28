@@ -2,14 +2,17 @@ import { User } from "lucide-react";
 
 const leaders = [
   {
+    name: "[First Last]",
     title: "Chief Executive Officer",
     bio: "Former enterprise technology executive with regional infrastructure and digital transformation experience across Iraq and the Gulf.",
   },
   {
+    name: "[First Last]",
     title: "Chief Technology Officer",
     bio: "Infrastructure and cloud architect with international Tier-IV operations experience and deep expertise in sovereign systems design.",
   },
   {
+    name: "[First Last]",
     title: "Head of AI & Software Engineering",
     bio: "AI systems and software engineering leader specializing in sovereign LLM deployments and enterprise platform delivery.",
   },
