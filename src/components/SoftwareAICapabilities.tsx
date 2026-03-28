@@ -4,19 +4,42 @@ import { useLanguage } from "@/context/LanguageContext";
 const SoftwareAICapabilities = () => {
   const { t } = useLanguage();
 
-  const capabilities = [
-    { icon: Code, title: t("Custom Enterprise Software", "برمجيات مؤسسية مخصصة"), description: t("Full-cycle software development for government portals, financial platforms, operational systems, and citizen-facing applications. Delivered by Baghdad-based engineering teams.", "تطوير برمجيات كامل الدورة لبوابات حكومية ومنصات مالية وأنظمة تشغيلية وتطبيقات مواطنين. تسليم من فرق هندسية في بغداد."), technical: "Web • Mobile • API • Integration" },
-    { icon: Brain, title: t("Sovereign AI Deployment", "نشر الذكاء الاصطناعي السيادي"), description: t("Private LLM hosting and fine-tuning on IR4Q infrastructure. No data leaves Iraqi sovereign control. Includes model serving, RAG pipelines, and vector search — fully air-gapped if required.", "استضافة وضبط نماذج لغوية خاصة على بنية IR4Q التحتية. لا تخرج أي بيانات من السيطرة السيادية العراقية. يشمل خدمة النماذج وخطوط RAG والبحث المتجهي — معزول بالكامل عند الحاجة."), technical: "On-premise LLMs • RAG • Vector Search • Air-gap ready" },
-    { icon: Bot, title: t("Agentic Automation", "الأتمتة الوكيلية"), description: t("Intelligent workflow automation using AI agents that operate across your enterprise systems — document processing, decision routing, multi-step task execution, and process orchestration.", "أتمتة سير عمل ذكية باستخدام وكلاء ذكاء اصطناعي يعملون عبر أنظمتك المؤسسية — معالجة المستندات وتوجيه القرارات وتنفيذ المهام متعددة الخطوات وتنسيق العمليات."), technical: "n8n • Agent workflows • Process automation • API orchestration" },
-    { icon: Database, title: t("Data Engineering", "هندسة البيانات"), description: t("Data pipeline design, warehousing, and analytics infrastructure. Structured and unstructured data management with full lineage, auditability, and compliance controls.", "تصميم خطوط بيانات ومستودعات وبنية تحليلات. إدارة بيانات منظمة وغير منظمة مع سلالة كاملة وقابلية تدقيق وضوابط امتثال."), technical: "Pipelines • Warehousing • Analytics • Audit trails" },
-    { icon: ShieldCheck, title: t("Cybersecurity Engineering", "هندسة الأمن السيبراني"), description: t("Zero Trust architecture, identity and access management, threat modeling, and security operations. Designed for financial institutions and government agencies operating in high-risk environments.", "بنية الثقة المعدومة وإدارة الهوية والوصول ونمذجة التهديدات وعمليات الأمن. مصممة للمؤسسات المالية والجهات الحكومية العاملة في بيئات عالية المخاطر."), technical: "Zero Trust • IAM • Threat modeling • SOC" },
-    { icon: Compass, title: t("Digital Transformation Advisory", "استشارات التحول الرقمي"), description: t("End-to-end technology strategy for organizations modernizing legacy systems or building net-new digital capabilities. Architecture, vendor selection, and program delivery.", "استراتيجية تقنية شاملة للمنظمات التي تحدّث أنظمتها القديمة أو تبني قدرات رقمية جديدة. البنية المعمارية واختيار الموردين وتسليم البرامج."), technical: "Strategy • Architecture • Program delivery • Vendor advisory" },
+  const softwareTier = [
+    { icon: Code, title: t("Custom Enterprise Software", "برمجيات مؤسسية مخصصة"), description: t("Full-cycle development for government portals, financial platforms, and operational systems.", "تطوير كامل الدورة لبوابات حكومية ومنصات مالية وأنظمة تشغيلية."), technical: "Web • Mobile • API • Integration" },
+    { icon: Brain, title: t("Sovereign AI Deployment", "نشر الذكاء الاصطناعي السيادي"), description: t("Private LLM hosting on IR4Q infrastructure. No data leaves sovereign control.", "استضافة نماذج لغوية خاصة على بنية IR4Q. لا تخرج بيانات من السيطرة السيادية."), technical: "LLMs • RAG • Vector Search • Air-gap" },
+    { icon: Bot, title: t("Agentic Automation", "الأتمتة الوكيلية"), description: t("AI agents for document processing, decision routing, and process orchestration.", "وكلاء ذكاء اصطناعي لمعالجة المستندات وتوجيه القرارات وتنسيق العمليات."), technical: "n8n • Agent workflows • API orchestration" },
   ];
+
+  const enablementTier = [
+    { icon: Database, title: t("Data Engineering", "هندسة البيانات"), description: t("Pipeline design, warehousing, and analytics with full lineage and compliance.", "خطوط بيانات ومستودعات وتحليلات مع سلالة كاملة وامتثال."), technical: "Pipelines • Warehousing • Audit trails" },
+    { icon: ShieldCheck, title: t("Cybersecurity Engineering", "هندسة الأمن السيبراني"), description: t("Zero Trust, IAM, threat modeling, and security operations for high-risk environments.", "الثقة المعدومة وإدارة الهوية ونمذجة التهديدات لبيئات عالية المخاطر."), technical: "Zero Trust • IAM • Threat modeling • SOC" },
+    { icon: Compass, title: t("Digital Transformation Advisory", "استشارات التحول الرقمي"), description: t("Technology strategy, architecture, vendor selection, and program delivery.", "استراتيجية تقنية وبنية معمارية واختيار موردين وتسليم برامج."), technical: "Strategy • Architecture • Program delivery" },
+  ];
+
+  const renderCard = (cap: typeof softwareTier[0], i: number, accent: string) => {
+    const Icon = cap.icon;
+    return (
+      <div key={i} className="flex flex-col items-center">
+        <div className="hidden md:block" style={{ width: 2, height: 16, backgroundColor: accent }} />
+        <div
+          className="surface-elevated w-full"
+          style={{ padding: 18, borderRadius: 4, borderTop: `2px solid ${accent}` }}
+        >
+          <div className="flex items-center gap-2" style={{ marginBottom: 8 }}>
+            <Icon style={{ width: 18, height: 18, color: "#C9A84C" }} strokeWidth={1.5} />
+            <h3 className="font-body font-[500]" style={{ fontSize: 13, color: "#F0EDE8" }}>{cap.title}</h3>
+          </div>
+          <p className="font-body font-[300]" style={{ fontSize: 12, color: "#8A8F9E", lineHeight: 1.6, marginBottom: 8 }}>{cap.description}</p>
+          <p className="font-mono font-[400]" style={{ fontSize: 9, color: "#C9A84C", opacity: 0.7, letterSpacing: "0.05em" }}>{cap.technical}</p>
+        </div>
+      </div>
+    );
+  };
 
   return (
     <section id="software" className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="container-content">
-        <div style={{ marginBottom: 32 }}>
+        <div style={{ marginBottom: 40 }}>
           <div className="section-eyebrow">{t("SOFTWARE & AI", "البرمجيات والذكاء الاصطناعي")}</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "#F0EDE8" }}>
             {t("Build & Deliver Capabilities", "قدرات البناء والتسليم")}
@@ -26,18 +49,54 @@ const SoftwareAICapabilities = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {capabilities.map((capability, index) => {
-            const Icon = capability.icon;
-            return (
-              <div key={index} className="surface-elevated" style={{ padding: 20 }}>
-                <Icon className="mb-3" style={{ width: 24, height: 24, color: "#C9A84C" }} strokeWidth={1.5} />
-                <h3 className="font-body font-[500]" style={{ fontSize: 15, color: "#F0EDE8", marginBottom: 6 }}>{capability.title}</h3>
-                <p className="font-body font-[300]" style={{ fontSize: 13, color: "#8A8F9E", lineHeight: 1.65, marginBottom: 12 }}>{capability.description}</p>
-                <p className="font-mono font-[400]" style={{ fontSize: 10, color: "#C9A84C", opacity: 0.7, letterSpacing: "0.05em" }}>{capability.technical}</p>
-              </div>
-            );
-          })}
+        {/* Org Chart Hierarchy */}
+        <div className="flex flex-col items-center gap-0">
+          {/* Root node */}
+          <div
+            className="surface-elevated text-center"
+            style={{
+              padding: "16px 32px",
+              borderRadius: 4,
+              border: "1px solid rgba(201,168,76,0.4)",
+              minWidth: 220,
+            }}
+          >
+            <span className="font-mono font-[600] uppercase" style={{ fontSize: 11, letterSpacing: "0.15em", color: "#C9A84C" }}>
+              IR4Q {t("Software & AI", "البرمجيات والذكاء الاصطناعي")}
+            </span>
+          </div>
+
+          {/* Connector down */}
+          <div style={{ width: 2, height: 28, backgroundColor: "rgba(201,168,76,0.3)" }} />
+
+          {/* Software tier label */}
+          <div className="font-mono font-[400] uppercase text-center" style={{ fontSize: 9, letterSpacing: "0.15em", color: "#8A8F9E", marginBottom: 8 }}>
+            {t("BUILD LAYER", "طبقة البناء")}
+          </div>
+
+          {/* Horizontal bar */}
+          <div className="relative w-full hidden md:block" style={{ maxWidth: 700, height: 2, backgroundColor: "rgba(201,168,76,0.2)", margin: "0 auto" }} />
+
+          {/* Software tier cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 w-full" style={{ maxWidth: 780, marginTop: 0 }}>
+            {softwareTier.map((cap, i) => renderCard(cap, i, "rgba(201,168,76,0.3)"))}
+          </div>
+
+          {/* Connector down */}
+          <div style={{ width: 2, height: 28, backgroundColor: "rgba(201,168,76,0.2)", marginTop: 4 }} />
+
+          {/* Enablement tier label */}
+          <div className="font-mono font-[400] uppercase text-center" style={{ fontSize: 9, letterSpacing: "0.15em", color: "#8A8F9E", marginBottom: 8 }}>
+            {t("ENABLEMENT LAYER", "طبقة التمكين")}
+          </div>
+
+          {/* Horizontal bar */}
+          <div className="relative w-full hidden md:block" style={{ maxWidth: 700, height: 2, backgroundColor: "rgba(201,168,76,0.12)", margin: "0 auto" }} />
+
+          {/* Enablement tier cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 w-full" style={{ maxWidth: 780, marginTop: 0 }}>
+            {enablementTier.map((cap, i) => renderCard(cap, i, "rgba(201,168,76,0.15)"))}
+          </div>
         </div>
       </div>
     </section>
