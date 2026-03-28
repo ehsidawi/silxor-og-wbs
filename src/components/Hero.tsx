@@ -21,15 +21,32 @@ const Hero = () => {
       }}
     >
       <div className="absolute right-[-100px] top-1/2 -translate-y-1/2 hidden lg:block" style={{ zIndex: 0 }}>
-        <svg width="400" height="400" viewBox="0 0 400 400" fill="none" style={{ animation: "hex-rotate 120s linear infinite" }}>
-          <polygon
-            points="200,20 230,150 340,60 250,170 380,200 250,230 340,340 230,250 200,380 170,250 60,340 150,230 20,200 150,170 60,60 170,150"
-            stroke="rgba(201,168,76,0.12)" strokeWidth="1" fill="none"
-          />
-          <polygon
-            points="200,80 218,162 290,110 238,178 320,200 238,222 290,290 218,238 200,320 182,238 110,290 162,222 80,200 162,178 110,110 182,162"
-            stroke="rgba(201,168,76,0.08)" strokeWidth="1" fill="rgba(201,168,76,0.04)"
-          />
+        <svg width="400" height="400" viewBox="0 0 400 400" fill="none" style={{ overflow: 'hidden' }}>
+          {/* Matrix rain columns */}
+          {Array.from({ length: 16 }).map((_, col) => {
+            const x = col * 25 + 12;
+            const chars = "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン";
+            return Array.from({ length: 20 }).map((_, row) => {
+              const char = chars[Math.floor(Math.random() * chars.length)];
+              const delay = (col * 0.3 + row * 0.15) % 4;
+              const y = row * 20 + 10;
+              return (
+                <text
+                  key={`${col}-${row}`}
+                  x={x}
+                  y={y}
+                  fill="rgba(201,168,76,0.15)"
+                  fontFamily="'JetBrains Mono', monospace"
+                  fontSize={12}
+                  textAnchor="middle"
+                >
+                  {char}
+                  <animate attributeName="opacity" values="0.05;0.25;0.05" dur={`${2 + delay}s`} begin={`${delay}s`} repeatCount="indefinite" />
+                  <animate attributeName="fill" values="rgba(201,168,76,0.08);rgba(201,168,76,0.3);rgba(201,168,76,0.08)" dur={`${2 + delay}s`} begin={`${delay}s`} repeatCount="indefinite" />
+                </text>
+              );
+            });
+          })}
         </svg>
       </div>
 
