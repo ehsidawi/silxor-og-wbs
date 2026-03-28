@@ -1,4 +1,4 @@
-import { Check, Star } from "lucide-react";
+import { Check, Star, Minus } from "lucide-react";
 
 interface PackageCard {
   name: string;
@@ -275,6 +275,98 @@ const PackageSubsection = ({
   </div>
 );
 
+/* ── Tier Comparison Table ── */
+const comparisonRows = [
+  { feature: "Uptime SLA", starter: "99.9%", business: "99.99%", enterprise: "99.995%" },
+  { feature: "P1 Response", starter: "<4hr", business: "<1hr", enterprise: "<15min" },
+  { feature: "NOC Coverage", starter: "Shared", business: "Dedicated", enterprise: "24/7 Dual" },
+  { feature: "Backups", starter: "Weekly", business: "Daily", enterprise: "Continuous" },
+  { feature: "RTO", starter: "<4hr", business: "<30min", enterprise: "<30sec" },
+  { feature: "RPO", starter: "24hr", business: "1hr", enterprise: "15min" },
+  { feature: "Air-Gap", starter: null, business: null, enterprise: true },
+  { feature: "Compliance Docs", starter: null, business: true, enterprise: true },
+  { feature: "Dedicated Mgr", starter: null, business: null, enterprise: true },
+];
+
+const CellValue = ({ value }: { value: string | boolean | null }) => {
+  if (value === true) return <Check style={{ width: 16, height: 16, color: '#C9A84C', margin: '0 auto' }} />;
+  if (value === null) return <Minus style={{ width: 16, height: 16, color: 'rgba(255,255,255,0.2)', margin: '0 auto' }} />;
+  return <span>{value}</span>;
+};
+
+const TierComparisonTable = () => (
+  <div style={{ marginBottom: 40 }}>
+    <div className="font-mono font-[400] uppercase" style={{ fontSize: 11, letterSpacing: '0.15em', color: '#C9A84C', marginBottom: 8 }}>
+      TIER COMPARISON
+    </div>
+    <h3 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 16 }}>
+      At a Glance — What Changes Across Tiers
+    </h3>
+    <div style={{ overflowX: 'auto' }}>
+      <table style={{ width: '100%', borderCollapse: 'collapse', minWidth: 520 }}>
+        <thead>
+          <tr style={{ backgroundColor: '#12161E' }}>
+            {["Feature", "Starter", "Business", "Enterprise"].map((h, i) => (
+              <th
+                key={h}
+                className="font-mono font-[400]"
+                style={{
+                  fontSize: 11,
+                  color: '#C9A84C',
+                  padding: '12px 16px',
+                  textAlign: i === 0 ? 'left' : 'center',
+                  borderBottom: '1px solid rgba(255,255,255,0.06)',
+                }}
+              >
+                {h}
+              </th>
+            ))}
+          </tr>
+        </thead>
+        <tbody>
+          {comparisonRows.map((row, i) => (
+            <tr
+              key={row.feature}
+              style={{
+                borderBottom: i < comparisonRows.length - 1 ? '1px solid rgba(255,255,255,0.04)' : 'none',
+                transition: 'background 200ms',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.02)')}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = 'transparent')}
+            >
+              <td className="font-body font-[400]" style={{ fontSize: 13, color: '#8A8F9E', padding: '10px 16px' }}>
+                {row.feature}
+              </td>
+              <td className="font-mono font-[400]" style={{ fontSize: 12, color: '#8A8F9E', padding: '10px 16px', textAlign: 'center' }}>
+                <CellValue value={row.starter} />
+              </td>
+              <td
+                className="font-mono font-[400]"
+                style={{
+                  fontSize: 12,
+                  color: '#8A8F9E',
+                  padding: '10px 16px',
+                  textAlign: 'center',
+                  borderLeft: '1px solid rgba(201,168,76,0.2)',
+                  borderRight: '1px solid rgba(201,168,76,0.2)',
+                }}
+              >
+                <CellValue value={row.business} />
+              </td>
+              <td className="font-mono font-[400]" style={{ fontSize: 12, color: '#8A8F9E', padding: '10px 16px', textAlign: 'center' }}>
+                <CellValue value={row.enterprise} />
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p className="font-body font-[300]" style={{ fontSize: 11, color: '#4A5060', marginTop: 10, textAlign: 'center' }}>
+      Full SLA terms available at ir4q.com/sla
+    </p>
+  </div>
+);
+
 const ServicePackages = () => {
   return (
     <section id="packages" className="section-spacing" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
@@ -288,6 +380,8 @@ const ServicePackages = () => {
             Every engagement starts with clarity. Choose your entry point across any of our four technology domains.
           </p>
         </div>
+
+        <TierComparisonTable />
 
         <PackageSubsection title="Infrastructure Packages" packages={infraPackages} />
         <PackageSubsection title="Software Development Packages" packages={softwarePackages} />

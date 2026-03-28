@@ -1,9 +1,8 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
-import WhatWeDo from "@/components/WhatWeDo";
 import WhoWeServe from "@/components/WhoWeServe";
-import WhyIR4Q from "@/components/WhyIR4Q";
+import ServiceSectorMatrix from "@/components/ServiceSectorMatrix";
 import SelectedWork from "@/components/SelectedWork";
 import Services from "@/components/Services";
 import SoftwareAICapabilities from "@/components/SoftwareAICapabilities";
@@ -29,13 +28,10 @@ const Index = () => {
         <StatsBar />
       </AnimatedSection>
       <AnimatedSection>
-        <WhatWeDo />
-      </AnimatedSection>
-      <AnimatedSection>
         <WhoWeServe />
       </AnimatedSection>
       <AnimatedSection>
-        <WhyIR4Q />
+        <ServiceSectorMatrix />
       </AnimatedSection>
       <AnimatedSection>
         <SelectedWork />
