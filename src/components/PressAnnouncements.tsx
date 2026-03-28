@@ -63,7 +63,7 @@ const PressAnnouncements = () => {
                 {t(item.body, item.bodyAr)}
               </p>
               <a
-                href="#"
+                href="mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Announcement%20Inquiry&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20learn%20more%20about%20a%20recent%20IR4Q%20announcement.%0A%0AOrganization%3A%20%0AInquiry%3A%20"
                 className="font-body font-[400] transition-colors duration-200"
                 style={{ fontSize: 13, color: "#C9A84C" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#E2C06A")}

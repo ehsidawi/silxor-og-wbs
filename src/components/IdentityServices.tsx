@@ -70,7 +70,7 @@ const envCategories = [
 ];
 
 /* ── SUBSECTION 4: Identity Packages ── */
-interface IdPkg { name: string; tagline: string; specs: string[]; cta: string }
+interface IdPkg { name: string; tagline: string; specs: string[]; cta: string; mailto: string }
 
 const identityPackages: IdPkg[] = [
   {
@@ -85,6 +85,7 @@ const identityPackages: IdPkg[] = [
       "Executive and technical findings briefing",
     ],
     cta: "Book Assessment",
+    mailto: "mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Identity%20Assessment%20%26%20Roadmap%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20book%20an%20Identity%20Assessment%20%26%20Roadmap%20engagement.%0A%0AOrganization%3A%20%0AEnvironment%3A%20",
   },
   {
     name: "Identity Build & Deploy",
@@ -98,6 +99,7 @@ const identityPackages: IdPkg[] = [
       "Handover documentation and operations runbook",
     ],
     cta: "Start a Project",
+    mailto: "mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Identity%20Build%20%26%20Deploy%20Project&body=Hello%20Ehsan%2C%0A%0AI%20am%20interested%20in%20the%20Identity%20Build%20%26%20Deploy%20engagement.%0A%0AOrganization%3A%20%0AScope%3A%20",
   },
   {
     name: "Managed Identity Operations",
@@ -112,6 +114,7 @@ const identityPackages: IdPkg[] = [
       "Direct access to senior identity architect",
     ],
     cta: "Become a Partner",
+    mailto: "mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Managed%20Identity%20Operations%20Retainer&body=Hello%20Ehsan%2C%0A%0AI%20am%20interested%20in%20the%20Managed%20Identity%20Operations%20retainer.%0A%0AOrganization%3A%20%0AEnvironment%3A%20",
   },
 ];
 
@@ -389,9 +392,7 @@ const IdentityServices = () => {
                   ))}
                 </ul>
                 <a
-                  href="mailto:contact@ir4q.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href={pkg.mailto}
                   className="block text-center font-mono font-[400] uppercase transition-all duration-200"
                   style={{
                     fontSize: 10,
@@ -437,9 +438,7 @@ const IdentityServices = () => {
             </p>
           </div>
           <a
-            href="mailto:contact@ir4q.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Identity%20Assessment%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20request%20an%20identity%20assessment.%0A%0AOrganization%3A%20%0AIdentity%20Environment%3A%20"
             className="font-mono font-[400] uppercase whitespace-nowrap transition-all duration-200 flex items-center gap-2"
             style={{
               fontSize: 11,
