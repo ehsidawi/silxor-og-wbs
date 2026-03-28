@@ -95,9 +95,7 @@ const Navbar = () => {
           <div className="mx-4" style={{ width: 1, height: 16, background: "linear-gradient(180deg, transparent, rgba(201,168,76,0.4), transparent)" }} />
 
           <a
-            href="mailto:contact@ir4q.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Assessment%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20request%20a%20technical%20assessment%20with%20IR4Q.%0A%0AOrganization%3A%20%0AService%20Interest%3A%20%0AMessage%3A%20"
             className="inline-flex items-center gap-2 font-mono uppercase transition-all duration-300 hover:shadow-[0_0_20px_rgba(201,168,76,0.15)]"
             style={{
               fontSize: 10,
