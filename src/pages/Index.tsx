@@ -3,6 +3,7 @@ import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
 import Services from "@/components/Services";
 import SoftwareAICapabilities from "@/components/SoftwareAICapabilities";
+import IdentityServices from "@/components/IdentityServices";
 import ServicePackages from "@/components/ServicePackages";
 import FAQ from "@/components/FAQ";
 import TechBacking from "@/components/TechBacking";
@@ -34,6 +35,11 @@ const Index = () => {
       <div id="software">
         <AnimatedSection>
           <SoftwareAICapabilities />
+        </AnimatedSection>
+      </div>
+      <div id="identity">
+        <AnimatedSection>
+          <IdentityServices />
         </AnimatedSection>
       </div>
       <div id="packages">
