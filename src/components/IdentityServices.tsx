@@ -391,29 +391,7 @@ const IdentityServices = () => {
                     </li>
                   ))}
                 </ul>
-                <a
-                  href={pkg.mailto}
-                  className="block text-center font-mono font-[400] uppercase transition-all duration-200"
-                  style={{
-                    fontSize: 10,
-                    letterSpacing: '0.1em',
-                    padding: '10px 16px',
-                    borderRadius: 2,
-                    border: '1px solid rgba(201,168,76,0.4)',
-                    color: '#C9A84C',
-                    backgroundColor: 'transparent',
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = '#C9A84C';
-                    e.currentTarget.style.backgroundColor = 'rgba(201,168,76,0.05)';
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = 'rgba(201,168,76,0.4)';
-                    e.currentTarget.style.backgroundColor = 'transparent';
-                  }}
-                >
-                  {pkg.cta}
-                </a>
+                {/* Per-card CTAs removed — consolidated CTA in callout banner below */}
               </div>
             ))}
           </div>
