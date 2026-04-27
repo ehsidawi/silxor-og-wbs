@@ -60,7 +60,7 @@ const Hero = () => {
               className="section-eyebrow blink-cursor mb-5"
               style={{ marginBottom: 20, fontFamily: arFont }}
             >
-              {t("IR4Q TECHNOLOGIES", "IR4Q تكنولوجيز")}
+              {t("Silxor TECHNOLOGIES", "Silxor تكنولوجيز")}
             </motion.div>
 
             <motion.h1
@@ -91,8 +91,8 @@ const Hero = () => {
               style={{ fontSize: 17, lineHeight: 1.7, color: "#8A8F9E", maxWidth: 520, marginTop: 24, fontFamily: arFont }}
             >
               {t(
-                "IR4Q architects, engineers, and operates the critical systems powering the most demanding institutions — from sovereign cloud infrastructure to enterprise software, private AI, and identity transformation.",
-                "IR4Q تصمم وتهندس وتشغّل الأنظمة الحيوية التي تدعم أكثر المؤسسات صرامة في متطلباتها — من البنية التحتية السحابية السيادية إلى البرمجيات المؤسسية والذكاء الاصطناعي الخاص وتحول منظومة الهوية."
+                "Silxor architects, engineers, and operates the critical systems powering the most demanding institutions — from sovereign cloud infrastructure to enterprise software, private AI, and identity transformation.",
+                "Silxor تصمم وتهندس وتشغّل الأنظمة الحيوية التي تدعم أكثر المؤسسات صرامة في متطلباتها — من البنية التحتية السحابية السيادية إلى البرمجيات المؤسسية والذكاء الاصطناعي الخاص وتحول منظومة الهوية."
               )}
             </motion.p>
 
@@ -104,7 +104,7 @@ const Hero = () => {
               style={{ marginTop: 40 }}
             >
               <a
-                href="mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Technical%20Assessment%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20request%20a%20technical%20assessment%20with%20IR4Q.%0A%0AOrganization%3A%20%0AService%20Interest%3A%20%0AMessage%3A%20"
+                href="mailto:ehsan@silxor.com?subject=Silxor%20-%20Technical%20Assessment%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20request%20a%20technical%20assessment%20with%20Silxor.%0A%0AOrganization%3A%20%0AService%20Interest%3A%20%0AMessage%3A%20"
                 className="inline-flex items-center justify-center gap-2 font-body font-[500] uppercase transition-all duration-200"
                 style={{
                   fontSize: 13, letterSpacing: "0.1em", backgroundColor: "#C9A84C", color: "#080A0F",

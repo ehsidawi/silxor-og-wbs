@@ -5,8 +5,8 @@ const projects = [
     tag: "INFRASTRUCTURE",
     title: "Sovereign Cloud Migration",
     titleAr: "ترحيل السحابة السيادية",
-    body: "Full migration from international public cloud to IR4Q sovereign infrastructure for a Baghdad-based financial institution. Zero downtime cutover.",
-    bodyAr: "ترحيل كامل من السحابة العامة الدولية إلى البنية التحتية السيادية لـ IR4Q لمؤسسة مالية في بغداد. انتقال بدون أي توقف.",
+    body: "Full migration from international public cloud to Silxor sovereign infrastructure for a New York-based financial institution. Zero downtime cutover.",
+    bodyAr: "ترحيل كامل من السحابة العامة الدولية إلى البنية التحتية السيادية لـ Silxor لمؤسسة مالية في نيويورك. انتقال بدون أي توقف.",
     sector: "Financial Services",
     sectorAr: "الخدمات المالية",
     coord: { en: "33.3°N · 44.4°E", ar: "٣٣.٣° ش · ٤٤.٤° شر" },
@@ -25,8 +25,8 @@ const projects = [
     tag: "SOFTWARE + AI",
     title: "Sovereign AI Operations Platform",
     titleAr: "منصة عمليات الذكاء الاصطناعي السيادي",
-    body: "Custom agentic AI platform with private LLM deployment for internal operations automation at an Iraqi energy company.",
-    bodyAr: "منصة ذكاء اصطناعي مخصصة مع نشر نموذج لغوي خاص لأتمتة العمليات الداخلية في شركة طاقة عراقية.",
+    body: "Custom agentic AI platform with private LLM deployment for internal operations automation at an American energy company.",
+    bodyAr: "منصة ذكاء اصطناعي مخصصة مع نشر نموذج لغوي خاص لأتمتة العمليات الداخلية في شركة طاقة أمريكية.",
     sector: "Energy",
     sectorAr: "الطاقة",
     coord: { en: "30.5°N · 47.8°E", ar: "٣٠.٥° ش · ٤٧.٨° شر" },
@@ -46,8 +46,8 @@ const SelectedWork = () => {
           </h2>
           <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 560, marginTop: 10, lineHeight: 1.7 }}>
             {t(
-              "A selection of infrastructure, identity, and software engagements delivered for clients across Iraq's government, financial, and energy sectors.",
-              "مجموعة مختارة من مشاريع البنية التحتية والهوية والبرمجيات المنجزة لعملاء في القطاعات الحكومية والمالية والطاقة في العراق."
+              "A selection of infrastructure, identity, and software engagements delivered for clients across USA's government, financial, and energy sectors.",
+              "مجموعة مختارة من مشاريع البنية التحتية والهوية والبرمجيات المنجزة لعملاء في القطاعات الحكومية والمالية والطاقة في الولايات المتحدة."
             )}
           </p>
         </div>

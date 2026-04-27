@@ -24,7 +24,7 @@ const SLADoc = () => {
             SLA Documentation
           </h1>
           <p className="font-body font-[300]" style={{ fontSize: 16, color: "#8A8F9E", lineHeight: 1.7, marginBottom: 48 }}>
-            IR4Q service level commitments by infrastructure tier.
+            Silxor service level commitments by infrastructure tier.
           </p>
 
           <div style={{ backgroundColor: "#0D1017", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 4, overflow: "hidden" }}>
@@ -77,7 +77,7 @@ const SLADoc = () => {
           </div>
 
           <p className="font-body font-[300] text-center" style={{ fontSize: 13, color: "#4A5060", fontStyle: "italic", marginTop: 48 }}>
-            SLA credits apply for downtime exceeding committed thresholds. Full SLA terms and credit calculation methodology available upon contract execution. Contact: sla@ir4q.com
+            SLA credits apply for downtime exceeding committed thresholds. Full SLA terms and credit calculation methodology available upon contract execution. Contact: sla@silxor.com
           </p>
         </div>
       </section>

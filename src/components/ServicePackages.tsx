@@ -29,7 +29,7 @@ const allPackages: PackageItem[] = [
     cta: "Get Started", ctaAr: "ابدأ الآن",
     domain: "INFRA", domainAr: "بنية تحتية",
     coord: { en: "33.3°N · 44.4°E", ar: "٣٣.٣° ش · ٤٤.٤° شر" },
-    mailto: "mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Sovereign%20Starter%20Package%20Inquiry&body=Hello%20Ehsan%2C%0A%0AI%20am%20interested%20in%20the%20Sovereign%20Starter%20infrastructure%20package.%0A%0AOrganization%3A%20%0AMessage%3A%20",
+    mailto: "mailto:ehsan@silxor.com?subject=Silxor%20-%20Sovereign%20Starter%20Package%20Inquiry&body=Hello%20Ehsan%2C%0A%0AI%20am%20interested%20in%20the%20Sovereign%20Starter%20infrastructure%20package.%0A%0AOrganization%3A%20%0AMessage%3A%20",
   },
   {
     name: "Sovereign Business",
@@ -42,19 +42,19 @@ const allPackages: PackageItem[] = [
     popular: true,
     domain: "INFRA", domainAr: "بنية تحتية",
     coord: { en: "36.2°N · 44.0°E", ar: "٣٦.٢° ش · ٤٤.٠° شر" },
-    mailto: "mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Sovereign%20Business%20Package%20Inquiry&body=Hello%20Ehsan%2C%0A%0AI%20am%20interested%20in%20the%20Sovereign%20Business%20infrastructure%20package.%0A%0AOrganization%3A%20%0AMessage%3A%20",
+    mailto: "mailto:ehsan@silxor.com?subject=Silxor%20-%20Sovereign%20Business%20Package%20Inquiry&body=Hello%20Ehsan%2C%0A%0AI%20am%20interested%20in%20the%20Sovereign%20Business%20infrastructure%20package.%0A%0AOrganization%3A%20%0AMessage%3A%20",
   },
   {
     name: "Sovereign Enterprise",
     nameAr: "السيادي المؤسسي",
     tagline: "For government, banking, and critical infrastructure",
     taglineAr: "للحكومة والبنوك والبنية التحتية الحيوية",
-    specs: ["Dedicated bare-metal or private cloud", "24/7 Baghdad + Virginia dual-NOC", "99.995% Uptime SLA", "<15min P1 response", "Custom redundancy architecture", "Full compliance documentation + audit support", "Air-gap available on request"],
-    specsAr: ["خادم مخصص أو سحابة خاصة", "NOC مزدوج بغداد + فيرجينيا 24/7", "99.995% SLA وقت التشغيل", "<15 دقيقة استجابة P1", "بنية تكرار مخصصة", "توثيق امتثال كامل + دعم تدقيق", "عزل هوائي متاح عند الطلب"],
+    specs: ["Dedicated bare-metal or private cloud", "24/7 New York + Virginia dual-NOC", "99.995% Uptime SLA", "<15min P1 response", "Custom redundancy architecture", "Full compliance documentation + audit support", "Air-gap available on request"],
+    specsAr: ["خادم مخصص أو سحابة خاصة", "NOC مزدوج نيويورك + فيرجينيا 24/7", "99.995% SLA وقت التشغيل", "<15 دقيقة استجابة P1", "بنية تكرار مخصصة", "توثيق امتثال كامل + دعم تدقيق", "عزل هوائي متاح عند الطلب"],
     cta: "Request Assessment", ctaAr: "طلب تقييم",
     domain: "INFRA", domainAr: "بنية تحتية",
     coord: { en: "30.5°N · 47.8°E", ar: "٣٠.٥° ش · ٤٧.٨° شر" },
-    mailto: "mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Sovereign%20Enterprise%20Assessment%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20request%20an%20assessment%20for%20the%20Sovereign%20Enterprise%20package.%0A%0AOrganization%3A%20%0AMessage%3A%20",
+    mailto: "mailto:ehsan@silxor.com?subject=Silxor%20-%20Sovereign%20Enterprise%20Assessment%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20request%20an%20assessment%20for%20the%20Sovereign%20Enterprise%20package.%0A%0AOrganization%3A%20%0AMessage%3A%20",
   },
   // Software
   {
@@ -67,7 +67,7 @@ const allPackages: PackageItem[] = [
     cta: "Start a Project", ctaAr: "ابدأ مشروعاً",
     domain: "SOFTWARE", domainAr: "برمجيات",
     coord: { en: "34.0°N · 43.5°E", ar: "٣٤.٠° ش · ٤٣.٥° شر" },
-    mailto: "mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Build%20Essentials%20Project%20Inquiry&body=Hello%20Ehsan%2C%0A%0AI%20am%20interested%20in%20the%20Build%20Essentials%20software%20package.%0A%0AOrganization%3A%20%0AProject%20Description%3A%20",
+    mailto: "mailto:ehsan@silxor.com?subject=Silxor%20-%20Build%20Essentials%20Project%20Inquiry&body=Hello%20Ehsan%2C%0A%0AI%20am%20interested%20in%20the%20Build%20Essentials%20software%20package.%0A%0AOrganization%3A%20%0AProject%20Description%3A%20",
   },
   {
     name: "Build Professional",
@@ -80,7 +80,7 @@ const allPackages: PackageItem[] = [
     popular: true,
     domain: "SOFTWARE", domainAr: "برمجيات",
     coord: { en: "35.5°N · 45.4°E", ar: "٣٥.٥° ش · ٤٥.٤° شر" },
-    mailto: "mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Build%20Professional%20Project%20Inquiry&body=Hello%20Ehsan%2C%0A%0AI%20am%20interested%20in%20the%20Build%20Professional%20software%20package.%0A%0AOrganization%3A%20%0AProject%20Description%3A%20",
+    mailto: "mailto:ehsan@silxor.com?subject=Silxor%20-%20Build%20Professional%20Project%20Inquiry&body=Hello%20Ehsan%2C%0A%0AI%20am%20interested%20in%20the%20Build%20Professional%20software%20package.%0A%0AOrganization%3A%20%0AProject%20Description%3A%20",
   },
   {
     name: "Build Enterprise",
@@ -92,7 +92,7 @@ const allPackages: PackageItem[] = [
     cta: "Request Assessment", ctaAr: "طلب تقييم",
     domain: "SOFTWARE", domainAr: "برمجيات",
     coord: { en: "32.6°N · 44.0°E", ar: "٣٢.٦° ش · ٤٤.٠° شر" },
-    mailto: "mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Build%20Enterprise%20Assessment%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20request%20an%20assessment%20for%20the%20Build%20Enterprise%20package.%0A%0AOrganization%3A%20%0AProject%20Description%3A%20",
+    mailto: "mailto:ehsan@silxor.com?subject=Silxor%20-%20Build%20Enterprise%20Assessment%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20request%20an%20assessment%20for%20the%20Build%20Enterprise%20package.%0A%0AOrganization%3A%20%0AProject%20Description%3A%20",
   },
   // AI
   {
@@ -100,25 +100,25 @@ const allPackages: PackageItem[] = [
     nameAr: "أساس الذكاء الاصطناعي",
     tagline: "For organizations deploying their first sovereign AI system",
     taglineAr: "للمنظمات التي تنشر أول نظام ذكاء اصطناعي سيادي",
-    specs: ["1 sovereign LLM deployment (7B–14B)", "Basic RAG pipeline + document ingestion", "Hosted on IR4Q sovereign infrastructure", "Standard monitoring dashboard", "No data leaves Iraqi control"],
-    specsAr: ["نشر LLM سيادي واحد (7B–14B)", "خط RAG أساسي + استيعاب المستندات", "مستضاف على بنية IR4Q السيادية", "لوحة مراقبة قياسية", "لا تغادر البيانات السيطرة العراقية"],
+    specs: ["1 sovereign LLM deployment (7B–14B)", "Basic RAG pipeline + document ingestion", "Hosted on Silxor sovereign infrastructure", "Standard monitoring dashboard", "No data leaves American control"],
+    specsAr: ["نشر LLM سيادي واحد (7B–14B)", "خط RAG أساسي + استيعاب المستندات", "مستضاف على بنية Silxor السيادية", "لوحة مراقبة قياسية", "لا تغادر البيانات السيطرة الأمريكية"],
     cta: "Get Started", ctaAr: "ابدأ الآن",
     domain: "AI", domainAr: "ذكاء اصطناعي",
     coord: { en: "33.3°N · 44.4°E", ar: "٣٣.٣° ش · ٤٤.٤° شر" },
-    mailto: "mailto:ehsan@ir4q.com?subject=IR4Q%20-%20AI%20Foundation%20Package%20Inquiry&body=Hello%20Ehsan%2C%0A%0AI%20am%20interested%20in%20the%20AI%20Foundation%20package.%0A%0AOrganization%3A%20%0AUse%20Case%3A%20",
+    mailto: "mailto:ehsan@silxor.com?subject=Silxor%20-%20AI%20Foundation%20Package%20Inquiry&body=Hello%20Ehsan%2C%0A%0AI%20am%20interested%20in%20the%20AI%20Foundation%20package.%0A%0AOrganization%3A%20%0AUse%20Case%3A%20",
   },
   {
     name: "AI Professional",
     nameAr: "الذكاء الاصطناعي الاحترافي",
     tagline: "For enterprise automation and intelligent operations",
     taglineAr: "لأتمتة المؤسسات والعمليات الذكية",
-    specs: ["Up to 3 LLM deployments", "Multi-source RAG + vector search", "Agentic workflow automation (up to 5 workflows)", "Model monitoring + retraining pipeline", "API integration with existing systems", "No data leaves Iraqi control"],
-    specsAr: ["حتى 3 عمليات نشر LLM", "RAG متعدد المصادر + بحث متجهي", "أتمتة سير عمل وكيلي (حتى 5 سير عمل)", "مراقبة النموذج + خط إعادة التدريب", "تكامل API مع الأنظمة الحالية", "لا تغادر البيانات السيطرة العراقية"],
+    specs: ["Up to 3 LLM deployments", "Multi-source RAG + vector search", "Agentic workflow automation (up to 5 workflows)", "Model monitoring + retraining pipeline", "API integration with existing systems", "No data leaves American control"],
+    specsAr: ["حتى 3 عمليات نشر LLM", "RAG متعدد المصادر + بحث متجهي", "أتمتة سير عمل وكيلي (حتى 5 سير عمل)", "مراقبة النموذج + خط إعادة التدريب", "تكامل API مع الأنظمة الحالية", "لا تغادر البيانات السيطرة الأمريكية"],
     cta: "Get Started", ctaAr: "ابدأ الآن",
     popular: true,
     domain: "AI", domainAr: "ذكاء اصطناعي",
     coord: { en: "36.2°N · 44.0°E", ar: "٣٦.٢° ش · ٤٤.٠° شر" },
-    mailto: "mailto:ehsan@ir4q.com?subject=IR4Q%20-%20AI%20Professional%20Package%20Inquiry&body=Hello%20Ehsan%2C%0A%0AI%20am%20interested%20in%20the%20AI%20Professional%20package.%0A%0AOrganization%3A%20%0AUse%20Case%3A%20",
+    mailto: "mailto:ehsan@silxor.com?subject=Silxor%20-%20AI%20Professional%20Package%20Inquiry&body=Hello%20Ehsan%2C%0A%0AI%20am%20interested%20in%20the%20AI%20Professional%20package.%0A%0AOrganization%3A%20%0AUse%20Case%3A%20",
   },
   {
     name: "AI Sovereign Enterprise",
@@ -130,7 +130,7 @@ const allPackages: PackageItem[] = [
     cta: "Request Assessment", ctaAr: "طلب تقييم",
     domain: "AI", domainAr: "ذكاء اصطناعي",
     coord: { en: "30.5°N · 47.8°E", ar: "٣٠.٥° ش · ٤٧.٨° شر" },
-    mailto: "mailto:ehsan@ir4q.com?subject=IR4Q%20-%20AI%20Sovereign%20Enterprise%20Assessment&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20request%20an%20assessment%20for%20the%20AI%20Sovereign%20Enterprise%20package.%0A%0AOrganization%3A%20%0AUse%20Case%3A%20",
+    mailto: "mailto:ehsan@silxor.com?subject=Silxor%20-%20AI%20Sovereign%20Enterprise%20Assessment&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20request%20an%20assessment%20for%20the%20AI%20Sovereign%20Enterprise%20package.%0A%0AOrganization%3A%20%0AUse%20Case%3A%20",
   },
   // Consulting
   {
@@ -143,7 +143,7 @@ const allPackages: PackageItem[] = [
     cta: "Book a Sprint", ctaAr: "احجز سباقاً",
     domain: "CONSULT", domainAr: "استشارات",
     coord: { en: "33.3°N · 44.4°E", ar: "٣٣.٣° ش · ٤٤.٤° شر" },
-    mailto: "mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Advisory%20Sprint%20Booking&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20book%20an%20Advisory%20Sprint%20engagement.%0A%0AOrganization%3A%20%0AFocus%20Area%3A%20",
+    mailto: "mailto:ehsan@silxor.com?subject=Silxor%20-%20Advisory%20Sprint%20Booking&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20book%20an%20Advisory%20Sprint%20engagement.%0A%0AOrganization%3A%20%0AFocus%20Area%3A%20",
   },
   {
     name: "Transformation Program",
@@ -155,19 +155,19 @@ const allPackages: PackageItem[] = [
     cta: "Start Program", ctaAr: "ابدأ البرنامج",
     domain: "CONSULT", domainAr: "استشارات",
     coord: { en: "35.5°N · 45.4°E", ar: "٣٥.٥° ش · ٤٥.٤° شر" },
-    mailto: "mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Transformation%20Program%20Inquiry&body=Hello%20Ehsan%2C%0A%0AI%20am%20interested%20in%20the%20Transformation%20Program%20engagement.%0A%0AOrganization%3A%20%0AScope%3A%20",
+    mailto: "mailto:ehsan@silxor.com?subject=Silxor%20-%20Transformation%20Program%20Inquiry&body=Hello%20Ehsan%2C%0A%0AI%20am%20interested%20in%20the%20Transformation%20Program%20engagement.%0A%0AOrganization%3A%20%0AScope%3A%20",
   },
   {
     name: "Strategic Partner",
     nameAr: "شريك استراتيجي",
     tagline: "Ongoing retainer — embedded expertise",
     taglineAr: "عقد مستمر — خبرة مدمجة",
-    specs: ["Dedicated senior architect on call", "Monthly security and architecture reviews", "Compliance monitoring and audit preparation", "Quarterly technology roadmap sessions", "Priority access across all IR4Q business units"],
-    specsAr: ["مهندس معماري أول مخصص تحت الطلب", "مراجعات أمنية ومعمارية شهرية", "مراقبة الامتثال وإعداد التدقيق", "جلسات خارطة طريق تقنية ربع سنوية", "وصول أولوية عبر جميع وحدات أعمال IR4Q"],
+    specs: ["Dedicated senior architect on call", "Monthly security and architecture reviews", "Compliance monitoring and audit preparation", "Quarterly technology roadmap sessions", "Priority access across all Silxor business units"],
+    specsAr: ["مهندس معماري أول مخصص تحت الطلب", "مراجعات أمنية ومعمارية شهرية", "مراقبة الامتثال وإعداد التدقيق", "جلسات خارطة طريق تقنية ربع سنوية", "وصول أولوية عبر جميع وحدات أعمال Silxor"],
     cta: "Become a Partner", ctaAr: "كن شريكاً",
     domain: "CONSULT", domainAr: "استشارات",
     coord: { en: "32.6°N · 44.0°E", ar: "٣٢.٦° ش · ٤٤.٠° شر" },
-    mailto: "mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Strategic%20Partner%20Retainer%20Inquiry&body=Hello%20Ehsan%2C%0A%0AI%20am%20interested%20in%20the%20Strategic%20Partner%20retainer%20engagement.%0A%0AOrganization%3A%20%0AScope%3A%20",
+    mailto: "mailto:ehsan@silxor.com?subject=Silxor%20-%20Strategic%20Partner%20Retainer%20Inquiry&body=Hello%20Ehsan%2C%0A%0AI%20am%20interested%20in%20the%20Strategic%20Partner%20retainer%20engagement.%0A%0AOrganization%3A%20%0AScope%3A%20",
   },
 ];
 
@@ -248,7 +248,7 @@ const TierComparisonTable = () => {
         </table>
       </div>
       <p className="font-body font-[300]" style={{ fontSize: 11, color: "hsl(var(--muted-foreground) / 0.5)", marginTop: 10, textAlign: "center" }}>
-        {t("Full SLA terms available at ir4q.com/sla", "شروط SLA الكاملة متوفرة على ir4q.com/sla")}
+        {t("Full SLA terms available at silxor.com/sla", "شروط SLA الكاملة متوفرة على silxor.com/sla")}
       </p>
     </div>
   );
