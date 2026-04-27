@@ -415,21 +415,7 @@ const ServicePackages = () => {
                           ))}
                         </ul>
 
-                        <a
-                          href={pkg.mailto}
-                          className="block text-center font-mono font-[400] uppercase transition-all duration-200"
-                          style={{
-                            fontSize: 10,
-                            letterSpacing: "0.1em",
-                            padding: "10px 16px",
-                            borderRadius: 2,
-                            ...(pkg.popular
-                              ? { backgroundColor: "hsl(var(--primary))", color: "hsl(var(--background))" }
-                              : { border: "1px solid hsl(var(--primary) / 0.4)", color: "hsl(var(--primary))", backgroundColor: "transparent" }),
-                          }}
-                        >
-                          {t(pkg.cta, pkg.ctaAr)}
-                        </a>
+                        {/* Per-card CTAs removed — single section CTA below */}
                       </div>
 
                       {/* Corner crosshair accent */}
