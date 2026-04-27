@@ -455,6 +455,23 @@ const ServicePackages = () => {
             "تتضمن جميع الحزم جلسة اكتشاف تقني أولية. تبدأ مشاركات المؤسسات والحكومة بطلب تقييم رسمي. حزم مخصصة متاحة للمشاركات متعددة المجالات التي تشمل البنية التحتية والبرمجيات والذكاء الاصطناعي والاستشارات."
           )}
         </div>
+
+        <div className="flex justify-center" style={{ marginTop: 28 }}>
+          <a
+            href="mailto:ehsan@silxor.com?subject=Silxor%20-%20Package%20Inquiry&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20discuss%20a%20Silxor%20package.%0A%0AOrganization%3A%20%0APackage%20of%20Interest%3A%20%0AMessage%3A%20"
+            className="font-mono font-[400] uppercase transition-all duration-200"
+            style={{
+              fontSize: 11,
+              letterSpacing: "0.12em",
+              padding: "14px 28px",
+              borderRadius: 2,
+              backgroundColor: "hsl(var(--primary))",
+              color: "hsl(var(--background))",
+            }}
+          >
+            {t("Inquire About Packages", "استفسر عن الحزم")}
+          </a>
+        </div>
       </div>
     </section>
   );
