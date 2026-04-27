@@ -41,7 +41,16 @@ const ContactForm = () => {
         `Message:\n${formState.message}`
       );
 
-      window.location.href = `mailto:ehsan@silxor.com?subject=${subject}&body=${body}`;
+      const mailtoUrl = `mailto:ehsan@silxor.com?subject=${subject}&body=${body}`;
+      // Universal cross-client trigger: synthesized anchor click works in
+      // Safari/iOS, Chrome, Firefox, and respects the user's default mail handler
+      // (Gmail web, Outlook web, Apple Mail, Thunderbird, mobile clients).
+      const link = document.createElement("a");
+      link.href = mailtoUrl;
+      link.rel = "noopener";
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
 
       setStatus("success");
       setFormState({ name: "", organization: "", email: "", service: "", message: "" });
