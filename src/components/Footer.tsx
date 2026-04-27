@@ -13,14 +13,14 @@ const Footer = () => {
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-3">
               <span className="font-display font-[800]" style={{ fontSize: 24, color: "#F0EDE8" }}>
-                IR4Q
+                Silxor
                 <span className="inline-block ml-1" style={{ width: 6, height: 6, backgroundColor: "#C9A84C", verticalAlign: "middle", marginBottom: 2 }} />
               </span>
             </div>
             <p className="font-body font-[300]" style={{ fontSize: 14, color: "#4A5060", lineHeight: 1.7 }}>
               {t(
-                "Commissioned by institutions that cannot fail. Engineered to transform at scale. IR4Q delivers infrastructure, software, AI, and identity management for the systems that matter most. A Silxor company.",
-                "مُكلَّفون من مؤسسات لا تتحمل الفشل. مهندَسون للتحول على نطاق واسع. IR4Q تقدم البنية التحتية والبرمجيات والذكاء الاصطناعي وإدارة الهوية للأنظمة الأكثر أهمية. شركة Silxor."
+                "Commissioned by institutions that cannot fail. Engineered to transform at scale. Silxor delivers infrastructure, software, AI, and identity management for the systems that matter most. A Silxor company.",
+                "مُكلَّفون من مؤسسات لا تتحمل الفشل. مهندَسون للتحول على نطاق واسع. Silxor تقدم البنية التحتية والبرمجيات والذكاء الاصطناعي وإدارة الهوية للأنظمة الأكثر أهمية. شركة Silxor."
               )}
             </p>
           </div>
@@ -74,7 +74,7 @@ const Footer = () => {
             </h4>
             <nav className="space-y-3">
               {[
-                { label: t("About IR4Q", "عن IR4Q"), href: "#about" },
+                { label: t("About Silxor", "عن Silxor"), href: "#about" },
                 { label: t("Leadership", "القيادة"), href: "#about" },
                 { label: t("Selected Work", "أعمالنا المختارة"), href: "#work" },
                 { label: t("Press & Announcements", "الأخبار والإعلانات"), href: "#press" },
@@ -123,7 +123,7 @@ const Footer = () => {
         {/* Copyright */}
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 24 }}>
           <p className="font-body font-[300]" style={{ fontSize: 12, color: "#4A5060" }}>
-            {t("© 2026 IR4Q Technologies. A Silxor company.", "© 2026 IR4Q Technologies. شركة Silxor.")}
+            {t("© 2026 Silxor Technologies. A Silxor company.", "© 2026 Silxor Technologies. شركة Silxor.")}
           </p>
         </div>
       </div>

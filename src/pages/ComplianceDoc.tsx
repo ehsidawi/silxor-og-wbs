@@ -6,7 +6,7 @@ const blocks = [
     title: "ISO/IEC 27001:2022",
     status: "CERTIFIED",
     statusColor: "#2A9D5C",
-    body: "IR4Q Technologies holds ISO/IEC 27001:2022 certification covering information security management across all service delivery operations. Annual third-party audit conducted. Certificate available upon request under NDA.",
+    body: "Silxor Technologies holds ISO/IEC 27001:2022 certification covering information security management across all service delivery operations. Annual third-party audit conducted. Certificate available upon request under NDA.",
   },
   {
     title: "SOC 2 Type II",
@@ -24,7 +24,7 @@ const blocks = [
     title: "GDPR Readiness",
     status: "READY",
     statusColor: "#C9A84C",
-    body: "IR4Q data handling practices are aligned with GDPR requirements including data minimization, consent management, and data subject rights fulfillment. Applicable to engagements involving EU-resident data.",
+    body: "Silxor data handling practices are aligned with GDPR requirements including data minimization, consent management, and data subject rights fulfillment. Applicable to engagements involving EU-resident data.",
   },
 ];
 
@@ -39,7 +39,7 @@ const ComplianceDoc = () => {
             Compliance Documentation
           </h1>
           <p className="font-body font-[300]" style={{ fontSize: 16, color: "#8A8F9E", lineHeight: 1.7, marginBottom: 48 }}>
-            IR4Q maintains a comprehensive compliance posture across information security, data residency, and operational standards.
+            Silxor maintains a comprehensive compliance posture across information security, data residency, and operational standards.
           </p>
 
           <div className="space-y-6">
@@ -71,7 +71,7 @@ const ComplianceDoc = () => {
           </div>
 
           <p className="font-body font-[300] text-center" style={{ fontSize: 13, color: "#4A5060", fontStyle: "italic", marginTop: 48 }}>
-            For compliance documentation requests, audit support, or to obtain certificates under NDA, contact: compliance@ir4q.com
+            For compliance documentation requests, audit support, or to obtain certificates under NDA, contact: compliance@silxor.com
           </p>
         </div>
       </section>

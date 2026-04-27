@@ -7,12 +7,12 @@ const TechBacking = () => {
   const archItems = [
     {
       icon: Globe,
-      title: t("Baghdad Point of Presence", "نقطة تواجد بغداد"),
+      title: t("New York Point of Presence", "نقطة تواجد نيويورك"),
       description: t(
-        "Primary sovereign data center with full operational control. All control plane operations remain within Iraqi jurisdiction.",
-        "مركز بيانات سيادي رئيسي مع تحكم تشغيلي كامل. جميع عمليات مستوى التحكم تبقى ضمن الولاية القضائية العراقية."
+        "Primary sovereign data center with full operational control. All control plane operations remain within American jurisdiction.",
+        "مركز بيانات سيادي رئيسي مع تحكم تشغيلي كامل. جميع عمليات مستوى التحكم تبقى ضمن الولاية القضائية الأمريكية."
       ),
-      technical: t("Primary PoP · Iraqi Jurisdiction", "نقطة تواجد رئيسية · الولاية العراقية"),
+      technical: t("Primary PoP · American Jurisdiction", "نقطة تواجد رئيسية · الولاية الأمريكية"),
       coord: { en: "33.3°N · 44.4°E", ar: "٣٣.٣° ش · ٤٤.٤° شر" },
       tag: t("ORIGIN", "المصدر"),
     },
@@ -51,7 +51,7 @@ const TechBacking = () => {
     },
     {
       icon: Network,
-      title: t("Iraqi Operational Control", "التحكم التشغيلي العراقي"),
+      title: t("American Operational Control", "التحكم التشغيلي الأمريكي"),
       description: t(
         "Local engineering teams maintain operational sovereignty while leveraging global infrastructure. U.S. infrastructure serves as resilient backing.",
         "تحافظ الفرق الهندسية المحلية على السيادة التشغيلية مع الاستفادة من البنية التحتية العالمية."
@@ -83,8 +83,8 @@ const TechBacking = () => {
           </h2>
           <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 520, marginTop: 10, lineHeight: 1.7 }}>
             {t(
-              "IR4Q operates a distributed infrastructure model ensuring data sovereignty while maintaining enterprise-grade reliability through U.S. Tier-IV certification.",
-              "تدير IR4Q نموذج بنية تحتية موزع يضمن سيادة البيانات مع الحفاظ على موثوقية بمستوى المؤسسات من خلال شهادة Tier-IV الأمريكية."
+              "Silxor operates a distributed infrastructure model ensuring data sovereignty while maintaining enterprise-grade reliability through U.S. Tier-IV certification.",
+              "تدير Silxor نموذج بنية تحتية موزع يضمن سيادة البيانات مع الحفاظ على موثوقية بمستوى المؤسسات من خلال شهادة Tier-IV الأمريكية."
             )}
           </p>
         </div>

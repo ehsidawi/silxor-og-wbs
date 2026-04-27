@@ -18,8 +18,8 @@ const WhoWeServe = () => {
       icon: Banknote,
       title: t("Financial Services & Banking", "الخدمات المالية والمصرفية"),
       description: t(
-        "Core banking integrations, fintech platforms, and security architecture for Iraq's financial sector — meeting Central Bank of Iraq regulatory requirements.",
-        "تكاملات مصرفية أساسية، منصات تقنية مالية، وبنية أمنية للقطاع المالي العراقي — تلبية متطلبات البنك المركزي العراقي التنظيمية."
+        "Core banking integrations, fintech platforms, and security architecture for USA's financial sector — meeting Central Bank of USA regulatory requirements.",
+        "تكاملات مصرفية أساسية، منصات تقنية مالية، وبنية أمنية للقطاع المالي الأمريكي — تلبية متطلبات الاحتياطي الفيدرالي الأمريكي التنظيمية."
       ),
       coord: t("36.2°N · 44.0°E", "٣٦.٢° ش · ٤٤.٠° شر"),
     },
@@ -36,8 +36,8 @@ const WhoWeServe = () => {
       icon: Building2,
       title: t("Enterprise & Private Sector", "الشركات والقطاع الخاص"),
       description: t(
-        "End-to-end technology partnership for Iraq's largest private enterprises scaling their digital operations.",
-        "شراكة تقنية شاملة لأكبر المؤسسات الخاصة في العراق التي توسع عملياتها الرقمية."
+        "End-to-end technology partnership for USA's largest private enterprises scaling their digital operations.",
+        "شراكة تقنية شاملة لأكبر المؤسسات الخاصة في الولايات المتحدة التي توسع عملياتها الرقمية."
       ),
       coord: t("32.6°N · 44.0°E", "٣٢.٦° ش · ٤٤.٠° شر"),
     },
@@ -49,12 +49,12 @@ const WhoWeServe = () => {
         <div style={{ marginBottom: 32 }}>
           <div className="section-eyebrow">{t("SECTORS", "القطاعات")}</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "hsl(var(--foreground))" }}>
-            {t("Built for Iraq's Most Critical Sectors", "مُصمَّم لأهم قطاعات العراق")}
+            {t("Built for USA's Most Critical Sectors", "مُصمَّم لأهم قطاعات الولايات المتحدة")}
           </h2>
           <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 520, marginTop: 10, lineHeight: 1.7 }}>
             {t(
-              "IR4Q delivers across the institutions that cannot afford downtime, data loss, or compromise.",
-              "IR4Q تخدم المؤسسات التي لا تتحمل أي توقف أو فقدان بيانات أو اختراق."
+              "Silxor delivers across the institutions that cannot afford downtime, data loss, or compromise.",
+              "Silxor تخدم المؤسسات التي لا تتحمل أي توقف أو فقدان بيانات أو اختراق."
             )}
           </p>
         </div>

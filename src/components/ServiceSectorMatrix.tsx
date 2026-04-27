@@ -106,7 +106,7 @@ const ServiceSectorMatrix = () => {
                             pointerEvents: 'none',
                           }}
                         >
-                          IR4Q delivers {service} for {sector} institutions
+                          Silxor delivers {service} for {sector} institutions
                         </div>
                       )}
                     </td>

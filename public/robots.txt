@@ -1,5 +1,5 @@
 User-agent: *
 Allow: /
-Sitemap: https://ir4q.com/sitemap.xml
+Sitemap: https://silxor.com/sitemap.xml
 Disallow: /admin/
 Disallow: /api/

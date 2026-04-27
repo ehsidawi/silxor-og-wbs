@@ -4,7 +4,7 @@ import Footer from "@/components/Footer";
 const sections = [
   {
     title: "1. Data Controller",
-    body: "IR4Q Technologies, a Silxor company, Baghdad, Iraq.\nContact: privacy@ir4q.com",
+    body: "Silxor Technologies, a Silxor company, New York, USA.\nContact: privacy@silxor.com",
   },
   {
     title: "2. Data We Collect",
@@ -16,7 +16,7 @@ const sections = [
   },
   {
     title: "4. Data Residency",
-    body: "All data submitted through IR4Q systems is processed and stored within our sovereign infrastructure. No personal data is routed through international third-party cloud providers without explicit consent.",
+    body: "All data submitted through Silxor systems is processed and stored within our sovereign infrastructure. No personal data is routed through international third-party cloud providers without explicit consent.",
   },
   {
     title: "5. Cookies",
@@ -24,11 +24,11 @@ const sections = [
   },
   {
     title: "6. Your Rights",
-    body: "You have the right to request access to, correction of, or deletion of personal data we hold. Submit requests to privacy@ir4q.com. We respond within 30 days.",
+    body: "You have the right to request access to, correction of, or deletion of personal data we hold. Submit requests to privacy@silxor.com. We respond within 30 days.",
   },
   {
     title: "7. Contact",
-    body: "For all privacy inquiries: privacy@ir4q.com\nIR4Q Technologies — Baghdad, Iraq",
+    body: "For all privacy inquiries: privacy@silxor.com\nSilxor Technologies — New York, USA",
   },
 ];
 

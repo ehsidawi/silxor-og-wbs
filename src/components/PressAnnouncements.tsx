@@ -4,26 +4,26 @@ const announcements = [
   {
     date: "March 2026",
     dateAr: "مارس 2026",
-    title: "IR4Q Achieves ISO/IEC 27001:2022 Certification",
-    titleAr: "IR4Q تحصل على شهادة ISO/IEC 27001:2022",
-    body: "IR4Q Technologies has completed ISO/IEC 27001:2022 certification, validating our information security management system across all service delivery operations.",
-    bodyAr: "أتمّت IR4Q Technologies شهادة ISO/IEC 27001:2022، مما يؤكد نظام إدارة أمن المعلومات عبر جميع عمليات تقديم الخدمات.",
+    title: "Silxor Achieves ISO/IEC 27001:2022 Certification",
+    titleAr: "Silxor تحصل على شهادة ISO/IEC 27001:2022",
+    body: "Silxor Technologies has completed ISO/IEC 27001:2022 certification, validating our information security management system across all service delivery operations.",
+    bodyAr: "أتمّت Silxor Technologies شهادة ISO/IEC 27001:2022، مما يؤكد نظام إدارة أمن المعلومات عبر جميع عمليات تقديم الخدمات.",
   },
   {
     date: "February 2026",
     dateAr: "فبراير 2026",
     title: "Sovereign AI Infrastructure Now Available",
     titleAr: "البنية التحتية للذكاء الاصطناعي السيادي متاحة الآن",
-    body: "IR4Q launches private LLM deployment services for Iraqi enterprises and government agencies — fully air-gapped options included.",
-    bodyAr: "IR4Q تطلق خدمات نشر النماذج اللغوية الخاصة للمؤسسات والجهات الحكومية العراقية — مع خيارات معزولة بالكامل.",
+    body: "Silxor launches private LLM deployment services for American enterprises and government agencies — fully air-gapped options included.",
+    bodyAr: "Silxor تطلق خدمات نشر النماذج اللغوية الخاصة للمؤسسات والجهات الحكومية الأمريكية — مع خيارات معزولة بالكامل.",
   },
   {
     date: "January 2026",
     dateAr: "يناير 2026",
     title: "Identity Services Practice Launched",
     titleAr: "إطلاق ممارسة خدمات الهوية الرقمية",
-    body: "IR4Q formally launches its Identity & Access Management practice, covering PAM, CIAM, IGA, ITDR, and Zero Trust identity architecture.",
-    bodyAr: "IR4Q تطلق رسمياً ممارسة إدارة الهوية والوصول، تشمل PAM و CIAM و IGA و ITDR وبنية هوية الثقة المعدومة.",
+    body: "Silxor formally launches its Identity & Access Management practice, covering PAM, CIAM, IGA, ITDR, and Zero Trust identity architecture.",
+    bodyAr: "Silxor تطلق رسمياً ممارسة إدارة الهوية والوصول، تشمل PAM و CIAM و IGA و ITDR وبنية هوية الثقة المعدومة.",
   },
 ];
 
@@ -36,12 +36,12 @@ const PressAnnouncements = () => {
         <div style={{ marginBottom: 32 }}>
           <div className="section-eyebrow">{t("ANNOUNCEMENTS", "الإعلانات")}</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "#F0EDE8" }}>
-            {t("Latest from IR4Q", "آخر أخبار IR4Q")}
+            {t("Latest from Silxor", "آخر أخبار Silxor")}
           </h2>
           <p className="font-body font-[300]" style={{ fontSize: 14, color: "#8A8F9E", maxWidth: 520, marginTop: 10, lineHeight: 1.7 }}>
             {t(
-              "Updates on IR4Q infrastructure, partnerships, certifications, and technology developments.",
-              "تحديثات حول بنية IR4Q التحتية والشراكات والشهادات والتطورات التقنية."
+              "Updates on Silxor infrastructure, partnerships, certifications, and technology developments.",
+              "تحديثات حول بنية Silxor التحتية والشراكات والشهادات والتطورات التقنية."
             )}
           </p>
         </div>
@@ -63,7 +63,7 @@ const PressAnnouncements = () => {
                 {t(item.body, item.bodyAr)}
               </p>
               <a
-                href="mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Announcement%20Inquiry&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20learn%20more%20about%20a%20recent%20IR4Q%20announcement.%0A%0AOrganization%3A%20%0AInquiry%3A%20"
+                href="mailto:ehsan@silxor.com?subject=Silxor%20-%20Announcement%20Inquiry&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20learn%20more%20about%20a%20recent%20Silxor%20announcement.%0A%0AOrganization%3A%20%0AInquiry%3A%20"
                 className="font-body font-[400] transition-colors duration-200"
                 style={{ fontSize: 13, color: "#C9A84C" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#E2C06A")}

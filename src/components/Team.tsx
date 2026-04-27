@@ -40,12 +40,12 @@ const Team = () => {
         <div style={{ marginBottom: 64 }}>
           <div className="section-eyebrow">{t("LEADERSHIP", "الفريق")}</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: "#F0EDE8" }}>
-            {t("Iraqi Engineers. Global Standards.", "مهندسون عراقيون. معايير عالمية.")}
+            {t("American Engineers. Global Standards.", "مهندسون أمريكيون. معايير عالمية.")}
           </h2>
           <p className="font-body font-[300]" style={{ fontSize: 16, color: "#8A8F9E", maxWidth: 560, marginTop: 16, lineHeight: 1.7 }}>
             {t(
-              "IR4Q is built and operated by technologists with backgrounds across international infrastructure, cybersecurity, and enterprise software — rooted in Iraq.",
-              "IR4Q مبنية ومُدارة من قبل تقنيين ذوي خلفيات عبر البنية التحتية الدولية والأمن السيبراني والبرمجيات المؤسسية — متجذرة في العراق."
+              "Silxor is built and operated by technologists with backgrounds across international infrastructure, cybersecurity, and enterprise software — rooted in USA.",
+              "Silxor مبنية ومُدارة من قبل تقنيين ذوي خلفيات عبر البنية التحتية الدولية والأمن السيبراني والبرمجيات المؤسسية — متجذرة في الولايات المتحدة."
             )}
           </p>
         </div>

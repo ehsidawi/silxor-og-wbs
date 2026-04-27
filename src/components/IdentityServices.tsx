@@ -85,7 +85,7 @@ const identityPackages: IdPkg[] = [
       "Executive and technical findings briefing",
     ],
     cta: "Book Assessment",
-    mailto: "mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Identity%20Assessment%20%26%20Roadmap%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20book%20an%20Identity%20Assessment%20%26%20Roadmap%20engagement.%0A%0AOrganization%3A%20%0AEnvironment%3A%20",
+    mailto: "mailto:ehsan@silxor.com?subject=Silxor%20-%20Identity%20Assessment%20%26%20Roadmap%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20book%20an%20Identity%20Assessment%20%26%20Roadmap%20engagement.%0A%0AOrganization%3A%20%0AEnvironment%3A%20",
   },
   {
     name: "Identity Build & Deploy",
@@ -99,7 +99,7 @@ const identityPackages: IdPkg[] = [
       "Handover documentation and operations runbook",
     ],
     cta: "Start a Project",
-    mailto: "mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Identity%20Build%20%26%20Deploy%20Project&body=Hello%20Ehsan%2C%0A%0AI%20am%20interested%20in%20the%20Identity%20Build%20%26%20Deploy%20engagement.%0A%0AOrganization%3A%20%0AScope%3A%20",
+    mailto: "mailto:ehsan@silxor.com?subject=Silxor%20-%20Identity%20Build%20%26%20Deploy%20Project&body=Hello%20Ehsan%2C%0A%0AI%20am%20interested%20in%20the%20Identity%20Build%20%26%20Deploy%20engagement.%0A%0AOrganization%3A%20%0AScope%3A%20",
   },
   {
     name: "Managed Identity Operations",
@@ -114,7 +114,7 @@ const identityPackages: IdPkg[] = [
       "Direct access to senior identity architect",
     ],
     cta: "Become a Partner",
-    mailto: "mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Managed%20Identity%20Operations%20Retainer&body=Hello%20Ehsan%2C%0A%0AI%20am%20interested%20in%20the%20Managed%20Identity%20Operations%20retainer.%0A%0AOrganization%3A%20%0AEnvironment%3A%20",
+    mailto: "mailto:ehsan@silxor.com?subject=Silxor%20-%20Managed%20Identity%20Operations%20Retainer&body=Hello%20Ehsan%2C%0A%0AI%20am%20interested%20in%20the%20Managed%20Identity%20Operations%20retainer.%0A%0AOrganization%3A%20%0AEnvironment%3A%20",
   },
 ];
 
@@ -278,7 +278,7 @@ const IdentityServices = () => {
             End-to-End Identity Services
           </h2>
           <p className="font-body font-[300]" style={{ fontSize: 14, color: '#8A8F9E', maxWidth: 560, marginTop: 10, lineHeight: 1.7 }}>
-            IR4Q delivers the full spectrum of identity architecture — from initial assessment and greenfield design to deployment, integration, recovery, and ongoing management. Every identity domain. Every environment. Sovereign by default.
+            Silxor delivers the full spectrum of identity architecture — from initial assessment and greenfield design to deployment, integration, recovery, and ongoing management. Every identity domain. Every environment. Sovereign by default.
           </p>
         </div>
 
@@ -288,7 +288,7 @@ const IdentityServices = () => {
             Every Identity Domain. One Partner.
           </h3>
           <p className="font-body font-[300]" style={{ fontSize: 13, color: '#8A8F9E', maxWidth: 520, marginBottom: 20, lineHeight: 1.7 }}>
-            IR4Q architects and operates across all identity disciplines — purpose-built for governments, financial institutions, and enterprises operating in high-stakes environments.
+            Silxor architects and operates across all identity disciplines — purpose-built for governments, financial institutions, and enterprises operating in high-stakes environments.
           </p>
           <DomainMapList />
         </div>
@@ -296,7 +296,7 @@ const IdentityServices = () => {
         {/* ── Subsection 2: Engagement Flow ── */}
         <div style={{ marginBottom: 48 }}>
           <h3 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 6 }}>
-            What IR4Q Delivers Across Every Identity Engagement
+            What Silxor Delivers Across Every Identity Engagement
           </h3>
           <p className="font-body font-[300]" style={{ fontSize: 13, color: '#8A8F9E', maxWidth: 520, marginBottom: 20, lineHeight: 1.7 }}>
             We don't sell software licenses. We architect, build, deploy, and operate your identity infrastructure from the ground up — or rescue what's already broken.
@@ -310,7 +310,7 @@ const IdentityServices = () => {
             Every Environment. No Exceptions.
           </h3>
           <p className="font-body font-[300]" style={{ fontSize: 13, color: '#8A8F9E', maxWidth: 480, marginBottom: 16, lineHeight: 1.7 }}>
-            IR4Q identity engineers operate across on-premise, cloud, hybrid, air-gapped, and sovereign-hosted environments.
+            Silxor identity engineers operate across on-premise, cloud, hybrid, air-gapped, and sovereign-hosted environments.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {envCategories.map((cat) => (
@@ -434,11 +434,11 @@ const IdentityServices = () => {
               Identity Is the Perimeter.
             </h4>
             <p className="font-body font-[300]" style={{ fontSize: 13, color: '#8A8F9E', lineHeight: 1.7 }}>
-              Every breach starts with an identity. IR4Q builds identity infrastructure that assumes compromise and enforces verification at every layer — from the endpoint to the cloud to the AI agent.
+              Every breach starts with an identity. Silxor builds identity infrastructure that assumes compromise and enforces verification at every layer — from the endpoint to the cloud to the AI agent.
             </p>
           </div>
           <a
-            href="mailto:ehsan@ir4q.com?subject=IR4Q%20-%20Identity%20Assessment%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20request%20an%20identity%20assessment.%0A%0AOrganization%3A%20%0AIdentity%20Environment%3A%20"
+            href="mailto:ehsan@silxor.com?subject=Silxor%20-%20Identity%20Assessment%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20request%20an%20identity%20assessment.%0A%0AOrganization%3A%20%0AIdentity%20Environment%3A%20"
             className="font-mono font-[400] uppercase whitespace-nowrap transition-all duration-200 flex items-center gap-2"
             style={{
               fontSize: 11,

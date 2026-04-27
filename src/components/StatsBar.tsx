@@ -5,7 +5,7 @@ const StatsBar = () => {
 
   const stats = [
     { value: "99.995%", label: t("Uptime SLA", "اتفاقية مستوى الخدمة") },
-    { value: "<120ms", label: t("Baghdad Latency", "زمن الاستجابة بغداد") },
+    { value: "<120ms", label: t("New York Latency", "زمن الاستجابة نيويورك") },
     { value: "4", label: t("Business Units", "وحدات أعمال") },
     { value: "24/7", label: t("NOC Coverage", "تغطية مركز العمليات") },
     { value: "ISO 27001:2022", label: t("Certified", "معتمد") },

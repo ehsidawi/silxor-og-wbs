@@ -29,7 +29,7 @@ const ContactForm = () => {
 
     try {
       const subject = encodeURIComponent(
-        `IR4Q - ${formState.service || 'General Inquiry'} - ${formState.organization}`
+        `Silxor - ${formState.service || 'General Inquiry'} - ${formState.organization}`
       );
 
       const body = encodeURIComponent(
@@ -41,7 +41,7 @@ const ContactForm = () => {
         `Message:\n${formState.message}`
       );
 
-      window.location.href = `mailto:ehsan@ir4q.com?subject=${subject}&body=${body}`;
+      window.location.href = `mailto:ehsan@silxor.com?subject=${subject}&body=${body}`;
 
       setStatus("success");
       setFormState({ name: "", organization: "", email: "", service: "", message: "" });
@@ -209,8 +209,8 @@ const ContactForm = () => {
         {status === "error" && (
           <div className="sm:col-span-2 font-body font-[300] text-center" style={{ fontSize: 14, color: "#C94C4C" }}>
             {t(
-              "Something went wrong. Please email us directly at ehsan@ir4q.com",
-              "حدث خطأ ما. يرجى مراسلتنا مباشرة على ehsan@ir4q.com"
+              "Something went wrong. Please email us directly at ehsan@silxor.com",
+              "حدث خطأ ما. يرجى مراسلتنا مباشرة على ehsan@silxor.com"
             )}
           </div>
         )}
