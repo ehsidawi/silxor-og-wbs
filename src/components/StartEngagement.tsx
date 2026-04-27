@@ -66,33 +66,29 @@ const StartEngagement = () => {
                 <p className="font-body font-[300] flex-1" style={{ fontSize: 14, color: "#8A8F9E", lineHeight: 1.7, marginBottom: 24 }}>
                   {path.description}
                 </p>
-                <a
-                  href={path.mailto}
-                  className="block text-center font-mono font-[400] uppercase transition-all duration-200"
-                  style={{
-                    fontSize: 11,
-                    letterSpacing: "0.1em",
-                    border: "1px solid rgba(201,168,76,0.4)",
-                    color: "#C9A84C",
-                    padding: "12px 20px",
-                    borderRadius: 2,
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.borderColor = "#C9A84C";
-                    e.currentTarget.style.backgroundColor = "rgba(201,168,76,0.05)";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.borderColor = "rgba(201,168,76,0.4)";
-                    e.currentTarget.style.backgroundColor = "transparent";
-                  }}
-                >
-                  {path.cta}
-                </a>
               </div>
             );
           })}
         </div>
 
+        <div className="flex justify-center" style={{ marginTop: 48 }}>
+          <a
+            href="mailto:ehsan@silxor.com?subject=Silxor%20-%20Technical%20Assessment%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20request%20a%20no-cost%20Technical%20Assessment%20with%20Silxor.%0A%0AOrganization%3A%20%0AArea%20of%20Interest%20(Infrastructure%20%2F%20Software%20%26%20AI%20%2F%20Consulting)%3A%20%0AMessage%3A%20"
+            className="font-mono font-[400] uppercase transition-all duration-200 flex items-center gap-2"
+            style={{
+              fontSize: 12,
+              letterSpacing: "0.12em",
+              backgroundColor: "#C9A84C",
+              color: "#080A0F",
+              padding: "16px 32px",
+              borderRadius: 2,
+            }}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#E2C06A")}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#C9A84C")}
+          >
+            {t("Request Technical Assessment", "طلب تقييم تقني")}
+          </a>
+        </div>
         
       </div>
     </section>
