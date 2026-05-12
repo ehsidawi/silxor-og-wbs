@@ -7,24 +7,24 @@
 @layer base {
   :root {
     /* Sovereign Command Color System */
-    --background: 222 27% 5%; /* #14171F */
+    --background: 222 19% 10%; /* #14171F */
     --foreground: 36 18% 93%; /* #F0EDE8 */
 
-    --card: 222 22% 6%; /* #1A1D26 */
+    --card: 225 19% 13%; /* #1A1D26 */
     --card-foreground: 36 18% 93%;
 
-    --popover: 222 22% 6%;
+    --popover: 225 19% 13%;
     --popover-foreground: 36 18% 93%;
 
     /* Sovereign Gold Accent */
     --primary: 43 52% 54%; /* #C9A84C */
-    --primary-foreground: 222 27% 5%;
+    --primary-foreground: 222 19% 10%;
 
     /* Surface Elevations */
-    --secondary: 222 24% 10%; /* #20242E */
+    --secondary: 224 18% 16%; /* #20242E */
     --secondary-foreground: 36 18% 93%;
 
-    --muted: 222 20% 13%; /* #262B36 */
+    --muted: 222 16% 19%; /* #262B36 */
     --muted-foreground: 224 10% 58%; /* #8A8F9E */
 
     /* Success / Alert */
