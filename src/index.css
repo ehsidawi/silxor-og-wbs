@@ -75,7 +75,7 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
-    background: #14171F;
+    background: #10131C;
     min-height: 100vh;
     font-weight: 300;
   }
