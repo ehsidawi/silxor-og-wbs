@@ -155,12 +155,12 @@ const Navbar = () => {
               style={{
                 fontSize: 11,
                 letterSpacing: "0.12em",
-                color: "#4A5060",
+                color: "#FFFFFF",
                 borderBottom: i < navLinks.length - 1 ? "1px solid rgba(255,255,255,0.04)" : "none",
               }}
               onClick={(e) => handleNavClick(e, link.href)}
               onMouseEnter={(e) => (e.currentTarget.style.color = "#DDB343")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#4A5060")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#FFFFFF")}
             >
               <span>{link.label}</span>
               <span style={{ fontSize: 9, color: "#4A5060" }}>0{i + 1}</span>
