@@ -75,9 +75,9 @@ const Navbar = () => {
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
                 className="relative font-mono uppercase px-3 py-2 transition-colors duration-200 group"
-                style={{ fontSize: 10, letterSpacing: "0.14em", color: "#4A5060" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#F7F3EC")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "#4A5060")}
+                style={{ fontSize: 10, letterSpacing: "0.14em", color: "#FFFFFF" }}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#DDB343")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#FFFFFF")}
               >
                 {link.label}
                 <span
