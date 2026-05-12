@@ -20,18 +20,18 @@ const SLADoc = () => {
       <section className="section-spacing" style={{ paddingTop: 120 }}>
         <div className="container-content" style={{ maxWidth: 900, margin: "0 auto" }}>
           <div className="section-eyebrow">SERVICE LEVELS</div>
-          <h1 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: "#F0EDE8", marginBottom: 8 }}>
+          <h1 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: "#F7F3EC", marginBottom: 8 }}>
             SLA Documentation
           </h1>
-          <p className="font-body font-[300]" style={{ fontSize: 16, color: "#8A8F9E", lineHeight: 1.7, marginBottom: 48 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 16, color: "#A2A8B8", lineHeight: 1.7, marginBottom: 48 }}>
             Silxor service level commitments by infrastructure tier.
           </p>
 
-          <div style={{ backgroundColor: "#1A1D26", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 4, overflow: "hidden" }}>
+          <div style={{ backgroundColor: "#161A24", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 4, overflow: "hidden" }}>
             <div className="overflow-x-auto">
               <table style={{ width: "100%", borderCollapse: "collapse" }}>
                 <thead>
-                  <tr style={{ backgroundColor: "#20242E" }}>
+                  <tr style={{ backgroundColor: "#1C202C" }}>
                     {["Metric", "Sovereign Starter", "Sovereign Business", "Sovereign Enterprise"].map((h) => (
                       <th
                         key={h}
@@ -39,7 +39,7 @@ const SLADoc = () => {
                         style={{
                           fontSize: 11,
                           letterSpacing: "0.1em",
-                          color: "#C9A84C",
+                          color: "#DDB343",
                           padding: "14px 20px",
                           borderBottom: "1px solid rgba(255,255,255,0.06)",
                         }}
@@ -57,16 +57,16 @@ const SLADoc = () => {
                       onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.02)")}
                       onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
                     >
-                      <td className="font-body font-[400]" style={{ fontSize: 14, color: "#F0EDE8", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+                      <td className="font-body font-[400]" style={{ fontSize: 14, color: "#F7F3EC", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
                         {row.metric}
                       </td>
-                      <td className="font-body font-[300]" style={{ fontSize: 14, color: "#8A8F9E", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+                      <td className="font-body font-[300]" style={{ fontSize: 14, color: "#A2A8B8", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
                         {row.starter}
                       </td>
-                      <td className="font-body font-[300]" style={{ fontSize: 14, color: "#8A8F9E", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+                      <td className="font-body font-[300]" style={{ fontSize: 14, color: "#A2A8B8", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
                         {row.business}
                       </td>
-                      <td className="font-body font-[300]" style={{ fontSize: 14, color: "#8A8F9E", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+                      <td className="font-body font-[300]" style={{ fontSize: 14, color: "#A2A8B8", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
                         {row.enterprise}
                       </td>
                     </tr>

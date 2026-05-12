@@ -39,7 +39,7 @@ const PrivacyPolicy = () => {
       <section className="section-spacing" style={{ paddingTop: 120 }}>
         <div className="container-content" style={{ maxWidth: 720, margin: "0 auto" }}>
           <div className="section-eyebrow">LEGAL</div>
-          <h1 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: "#F0EDE8", marginBottom: 8 }}>
+          <h1 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: "#F7F3EC", marginBottom: 8 }}>
             Privacy Policy
           </h1>
           <p className="font-body font-[300]" style={{ fontSize: 13, color: "#4A5060", marginBottom: 48 }}>
@@ -48,10 +48,10 @@ const PrivacyPolicy = () => {
 
           {sections.map((section, i) => (
             <div key={i} style={{ marginBottom: 40 }}>
-              <h2 className="font-body font-[500]" style={{ fontSize: 17, color: "#F0EDE8", marginBottom: 12 }}>
+              <h2 className="font-body font-[500]" style={{ fontSize: 17, color: "#F7F3EC", marginBottom: 12 }}>
                 {section.title}
               </h2>
-              <p className="font-body font-[300]" style={{ fontSize: 15, color: "#8A8F9E", lineHeight: 1.8, whiteSpace: "pre-line" }}>
+              <p className="font-body font-[300]" style={{ fontSize: 15, color: "#A2A8B8", lineHeight: 1.8, whiteSpace: "pre-line" }}>
                 {section.body}
               </p>
             </div>

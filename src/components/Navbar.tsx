@@ -49,7 +49,7 @@ const Navbar = () => {
         backgroundColor: scrolled ? "rgba(8,10,15,0.92)" : "transparent",
         backdropFilter: scrolled ? "blur(24px) saturate(180%)" : "none",
         WebkitBackdropFilter: scrolled ? "blur(24px) saturate(180%)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(201,168,76,0.08)" : "1px solid transparent",
+        borderBottom: scrolled ? "1px solid rgba(221,179,67,0.08)" : "1px solid transparent",
       }}
     >
       <div className="container-content flex items-center justify-between h-full">
@@ -58,12 +58,12 @@ const Navbar = () => {
           className="flex items-center gap-1.5 group"
           onClick={(e) => handleNavClick(e, "#")}
         >
-          <span className="font-display text-[20px] font-[800] tracking-tight" style={{ color: "#F0EDE8" }}>
+          <span className="font-display text-[20px] font-[800] tracking-tight" style={{ color: "#F7F3EC" }}>
             Silxor
           </span>
           <span
             className="inline-block transition-all duration-300 group-hover:scale-125"
-            style={{ width: 5, height: 5, backgroundColor: "#C9A84C", marginBottom: 8 }}
+            style={{ width: 5, height: 5, backgroundColor: "#DDB343", marginBottom: 8 }}
           />
         </a>
 
@@ -76,41 +76,41 @@ const Navbar = () => {
                 onClick={(e) => handleNavClick(e, link.href)}
                 className="relative font-mono uppercase px-3 py-2 transition-colors duration-200 group"
                 style={{ fontSize: 10, letterSpacing: "0.14em", color: "#4A5060" }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#F0EDE8")}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#F7F3EC")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = "#4A5060")}
               >
                 {link.label}
                 <span
                   className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[1px] w-0 group-hover:w-3/4 transition-all duration-300"
-                  style={{ backgroundColor: "#C9A84C" }}
+                  style={{ backgroundColor: "#DDB343" }}
                 />
               </a>
             ))}
           </div>
 
-          <div className="mx-4" style={{ width: 1, height: 16, background: "linear-gradient(180deg, transparent, rgba(201,168,76,0.4), transparent)" }} />
+          <div className="mx-4" style={{ width: 1, height: 16, background: "linear-gradient(180deg, transparent, rgba(221,179,67,0.4), transparent)" }} />
 
           <LanguageToggle />
 
-          <div className="mx-4" style={{ width: 1, height: 16, background: "linear-gradient(180deg, transparent, rgba(201,168,76,0.4), transparent)" }} />
+          <div className="mx-4" style={{ width: 1, height: 16, background: "linear-gradient(180deg, transparent, rgba(221,179,67,0.4), transparent)" }} />
 
           <a
             href="mailto:ehsan@silxor.com?subject=Silxor%20-%20Assessment%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20request%20a%20technical%20assessment%20with%20Silxor.%0A%0AOrganization%3A%20%0AService%20Interest%3A%20%0AMessage%3A%20"
-            className="inline-flex items-center gap-2 font-mono uppercase transition-all duration-300 hover:shadow-[0_0_20px_rgba(201,168,76,0.15)]"
+            className="inline-flex items-center gap-2 font-mono uppercase transition-all duration-300 hover:shadow-[0_0_20px_rgba(221,179,67,0.15)]"
             style={{
               fontSize: 10,
               letterSpacing: "0.12em",
-              border: "1px solid rgba(201,168,76,0.4)",
-              color: "#C9A84C",
+              border: "1px solid rgba(221,179,67,0.4)",
+              color: "#DDB343",
               padding: "8px 18px",
               borderRadius: 0,
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = "#C9A84C";
-              e.currentTarget.style.backgroundColor = "rgba(201,168,76,0.08)";
+              e.currentTarget.style.borderColor = "#DDB343";
+              e.currentTarget.style.backgroundColor = "rgba(221,179,67,0.08)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = "rgba(201,168,76,0.4)";
+              e.currentTarget.style.borderColor = "rgba(221,179,67,0.4)";
               e.currentTarget.style.backgroundColor = "transparent";
             }}
           >
@@ -125,12 +125,12 @@ const Navbar = () => {
           aria-label="Toggle menu"
         >
           {mobileOpen ? (
-            <X className="w-5 h-5" style={{ color: "#C9A84C" }} />
+            <X className="w-5 h-5" style={{ color: "#DDB343" }} />
           ) : (
             <div className="flex flex-col items-end gap-[4px]">
-              <span style={{ width: 20, height: 1, backgroundColor: "#C9A84C", display: "block" }} />
-              <span style={{ width: 14, height: 1, backgroundColor: "#C9A84C", display: "block" }} />
-              <span style={{ width: 20, height: 1, backgroundColor: "#C9A84C", display: "block" }} />
+              <span style={{ width: 20, height: 1, backgroundColor: "#DDB343", display: "block" }} />
+              <span style={{ width: 14, height: 1, backgroundColor: "#DDB343", display: "block" }} />
+              <span style={{ width: 20, height: 1, backgroundColor: "#DDB343", display: "block" }} />
             </div>
           )}
         </button>
@@ -143,7 +143,7 @@ const Navbar = () => {
           opacity: mobileOpen ? 1 : 0,
           backgroundColor: "rgba(8,10,15,0.97)",
           backdropFilter: "blur(24px)",
-          borderTop: mobileOpen ? "1px solid rgba(201,168,76,0.08)" : "none",
+          borderTop: mobileOpen ? "1px solid rgba(221,179,67,0.08)" : "none",
         }}
       >
         <div className="container-content py-6 space-y-0">
@@ -159,7 +159,7 @@ const Navbar = () => {
                 borderBottom: i < navLinks.length - 1 ? "1px solid rgba(255,255,255,0.04)" : "none",
               }}
               onClick={(e) => handleNavClick(e, link.href)}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#C9A84C")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#DDB343")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "#4A5060")}
             >
               <span>{link.label}</span>
@@ -175,8 +175,8 @@ const Navbar = () => {
             style={{
               fontSize: 10,
               letterSpacing: "0.12em",
-              border: "1px solid rgba(201,168,76,0.4)",
-              color: "#C9A84C",
+              border: "1px solid rgba(221,179,67,0.4)",
+              color: "#DDB343",
               padding: "12px 20px",
             }}
           >

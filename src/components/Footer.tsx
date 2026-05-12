@@ -6,15 +6,15 @@ const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer style={{ backgroundColor: "#14171F", borderTop: "1px solid rgba(255,255,255,0.06)", padding: "80px 0 40px" }}>
+    <footer style={{ backgroundColor: "#10131C", borderTop: "1px solid rgba(255,255,255,0.06)", padding: "80px 0 40px" }}>
       <div className="container-content">
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12" style={{ marginBottom: 48 }}>
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-3">
-              <span className="font-display font-[800]" style={{ fontSize: 24, color: "#F0EDE8" }}>
+              <span className="font-display font-[800]" style={{ fontSize: 24, color: "#F7F3EC" }}>
                 Silxor
-                <span className="inline-block ml-1" style={{ width: 6, height: 6, backgroundColor: "#C9A84C", verticalAlign: "middle", marginBottom: 2 }} />
+                <span className="inline-block ml-1" style={{ width: 6, height: 6, backgroundColor: "#DDB343", verticalAlign: "middle", marginBottom: 2 }} />
               </span>
             </div>
             <p className="font-body font-[300]" style={{ fontSize: 14, color: "#4A5060", lineHeight: 1.7 }}>
@@ -27,7 +27,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.12em", color: "#F0EDE8", marginBottom: 20 }}>
+            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.12em", color: "#F7F3EC", marginBottom: 20 }}>
               {t("Services", "الخدمات")}
             </h4>
             <nav className="space-y-3">
@@ -39,7 +39,7 @@ const Footer = () => {
                 { label: t("Technology Consulting", "الاستشارات التقنية"), href: "#consulting" },
               ].map((link) => (
                 <a key={link.label} href={link.href} className="block font-body font-[300] transition-colors duration-200" style={{ fontSize: 14, color: "#4A5060" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "#C9A84C")}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#DDB343")}
                   onMouseLeave={(e) => (e.currentTarget.style.color = "#4A5060")}
                 >{link.label}</a>
               ))}
@@ -48,7 +48,7 @@ const Footer = () => {
 
           {/* Packages */}
           <div>
-            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.12em", color: "#F0EDE8", marginBottom: 20 }}>
+            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.12em", color: "#F7F3EC", marginBottom: 20 }}>
               {t("Packages", "الباقات")}
             </h4>
             <nav className="space-y-3">
@@ -60,7 +60,7 @@ const Footer = () => {
                 t("Consulting Packages", "باقات الاستشارات"),
               ].map((label) => (
                 <a key={label} href="#packages" className="block font-body font-[300] transition-colors duration-200" style={{ fontSize: 14, color: "#4A5060" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "#C9A84C")}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#DDB343")}
                   onMouseLeave={(e) => (e.currentTarget.style.color = "#4A5060")}
                 >{label}</a>
               ))}
@@ -69,7 +69,7 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.12em", color: "#F0EDE8", marginBottom: 20 }}>
+            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.12em", color: "#F7F3EC", marginBottom: 20 }}>
               {t("Company", "الشركة")}
             </h4>
             <nav className="space-y-3">
@@ -82,7 +82,7 @@ const Footer = () => {
                 { label: t("Contact", "تواصل معنا"), href: "#contact" },
               ].map((link) => (
                 <a key={link.label} href={link.href} className="block font-body font-[300] transition-colors duration-200" style={{ fontSize: 14, color: "#4A5060" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "#C9A84C")}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#DDB343")}
                   onMouseLeave={(e) => (e.currentTarget.style.color = "#4A5060")}
                 >{link.label}</a>
               ))}
@@ -91,7 +91,7 @@ const Footer = () => {
 
           {/* Legal */}
           <div>
-            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.12em", color: "#F0EDE8", marginBottom: 20 }}>
+            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.12em", color: "#F7F3EC", marginBottom: 20 }}>
               {t("Legal & Compliance", "القانوني والامتثال")}
             </h4>
             <nav className="space-y-3">
@@ -102,7 +102,7 @@ const Footer = () => {
                 { label: t("SLA Documentation", "وثائق اتفاقية مستوى الخدمة"), href: "/sla" },
               ].map((link) => (
                 <Link key={link.label} to={link.href} className="block font-body font-[300] transition-colors duration-200" style={{ fontSize: 14, color: "#4A5060" }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = "#C9A84C")}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "#DDB343")}
                   onMouseLeave={(e) => (e.currentTarget.style.color = "#4A5060")}
                 >{link.label}</Link>
               ))}
