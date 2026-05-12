@@ -7,45 +7,45 @@
 @layer base {
   :root {
     /* Sovereign Command Color System */
-    --background: 222 19% 10%; /* #14171F */
-    --foreground: 36 18% 93%; /* #F0EDE8 */
+    --background: 222 22% 8%; /* #10131C */
+    --foreground: 40 30% 96%; /* #F7F3EC */
 
-    --card: 225 19% 13%; /* #1A1D26 */
-    --card-foreground: 36 18% 93%;
+    --card: 225 22% 11%; /* #161A24 */
+    --card-foreground: 40 30% 96%;
 
-    --popover: 225 19% 13%;
-    --popover-foreground: 36 18% 93%;
+    --popover: 225 22% 11%;
+    --popover-foreground: 40 30% 96%;
 
-    /* Sovereign Gold Accent */
-    --primary: 43 52% 54%; /* #C9A84C */
-    --primary-foreground: 222 19% 10%;
+    /* Sovereign Gold Accent — sharpened */
+    --primary: 43 75% 58%; /* #DDB343 */
+    --primary-foreground: 222 22% 8%;
 
     /* Surface Elevations */
-    --secondary: 224 18% 16%; /* #20242E */
-    --secondary-foreground: 36 18% 93%;
+    --secondary: 224 20% 14%; /* #1C202C */
+    --secondary-foreground: 40 30% 96%;
 
-    --muted: 222 16% 19%; /* #262B36 */
-    --muted-foreground: 224 10% 58%; /* #8A8F9E */
+    --muted: 222 18% 17%; /* #232834 */
+    --muted-foreground: 224 14% 68%; /* #A2A8B8 */
 
     /* Success / Alert */
-    --accent: 150 58% 39%; /* #2A9D5C */
-    --accent-foreground: 36 18% 93%;
+    --accent: 150 70% 42%; /* #20B868 */
+    --accent-foreground: 40 30% 96%;
 
-    --destructive: 0 52% 54%; /* #C94C4C */
-    --destructive-foreground: 36 18% 93%;
+    --destructive: 0 70% 58%; /* #DC4848 */
+    --destructive-foreground: 40 30% 96%;
 
     /* Text Muted */
     --text-muted: 222 15% 33%; /* #4A5060 */
 
-    --border: 0 0% 100% / 0.06;
-    --border-highlight: 0 0% 100% / 0.12;
-    --input: 0 0% 100% / 0.06;
-    --ring: 43 52% 54%;
+    --border: 0 0% 100% / 0.10;
+    --border-highlight: 0 0% 100% / 0.18;
+    --input: 0 0% 100% / 0.10;
+    --ring: 43 75% 58%;
 
     --radius: 0.25rem;
 
     /* Accent Glow */
-    --accent-glow: 43 52% 54% / 0.15;
+    --accent-glow: 43 75% 58% / 0.25;
 
     /* Spacing */
     --space-1: 0.25rem;
@@ -75,7 +75,7 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
-    background: #14171F;
+    background: #10131C;
     min-height: 100vh;
     font-weight: 300;
   }
@@ -87,7 +87,7 @@
   /* Selection */
   ::selection {
     background: rgba(201, 168, 76, 0.3);
-    color: #F0EDE8;
+    color: #F7F3EC;
   }
 
   /* Scrollbar */
@@ -95,7 +95,7 @@
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #14171F;
+    background: #10131C;
   }
   ::-webkit-scrollbar-thumb {
     background: rgba(201, 168, 76, 0.4);
@@ -108,7 +108,7 @@
 
 @layer utilities {
   .surface-elevated {
-    background: #1A1D26;
+    background: #161A24;
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 4px;
     transition: all 250ms ease;
@@ -116,7 +116,7 @@
 
   .surface-elevated:hover {
     border-color: rgba(201, 168, 76, 0.3);
-    background: #20242E;
+    background: #1C202C;
     border-top-color: rgba(201, 168, 76, 0.5);
   }
 
@@ -127,7 +127,7 @@
   }
 
   .text-institutional {
-    color: #8A8F9E;
+    color: #A2A8B8;
     font-size: 14px;
     line-height: 1.7;
     font-weight: 300;
@@ -185,7 +185,7 @@
     font-size: 10px;
     font-weight: 400;
     letter-spacing: 0.2em;
-    color: #C9A84C;
+    color: #DDB343;
     text-transform: uppercase;
     margin-bottom: 16px;
   }
@@ -195,7 +195,7 @@
     display: block;
     width: 24px;
     height: 1px;
-    background: #C9A84C;
+    background: #DDB343;
   }
 
   /* Blinking cursor animation */
@@ -231,7 +231,7 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 1px solid #C9A84C;
+    border: 1px solid #DDB343;
     transform: translate(-50%, -50%);
     animation: pulse-ring 2s ease-out infinite;
   }
@@ -249,7 +249,7 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     font-weight: 400;
-    color: #8A8F9E;
+    color: #A2A8B8;
     padding: 6px 12px;
     border-radius: 2px;
     gap: 6px;

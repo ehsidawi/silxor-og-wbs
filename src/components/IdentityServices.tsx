@@ -215,20 +215,20 @@ const EngagementFlow = () => (
           return (
             <div key={i} className="flex items-start">
               <div style={{ width: 140, flexShrink: 0 }}>
-                <div className="font-mono font-[700]" style={{ fontSize: 32, color: '#C9A84C', opacity: 0.3, lineHeight: 1, marginBottom: 8 }}>
+                <div className="font-mono font-[700]" style={{ fontSize: 32, color: '#DDB343', opacity: 0.3, lineHeight: 1, marginBottom: 8 }}>
                   {String(i + 1).padStart(2, '0')}
                 </div>
-                <Icon style={{ width: 20, height: 20, color: '#C9A84C', marginBottom: 6 }} strokeWidth={1.5} />
-                <div className="font-body font-[500]" style={{ fontSize: 14, color: '#F0EDE8', marginBottom: 2 }}>
+                <Icon style={{ width: 20, height: 20, color: '#DDB343', marginBottom: 6 }} strokeWidth={1.5} />
+                <div className="font-body font-[500]" style={{ fontSize: 14, color: '#F7F3EC', marginBottom: 2 }}>
                   {item.label}
                 </div>
-                <div className="font-body font-[300]" style={{ fontSize: 12, color: '#8A8F9E', lineHeight: 1.5, maxWidth: 120 }}>
+                <div className="font-body font-[300]" style={{ fontSize: 12, color: '#A2A8B8', lineHeight: 1.5, maxWidth: 120 }}>
                   {item.detail.split('—')[0].trim()}
                 </div>
               </div>
               {i < engagements.length - 1 && (
                 <div className="flex items-center self-center" style={{ padding: '0 4px', marginTop: 36 }}>
-                  <ArrowRight style={{ width: 16, height: 16, color: 'rgba(201,168,76,0.3)' }} />
+                  <ArrowRight style={{ width: 16, height: 16, color: 'rgba(221,179,67,0.3)' }} />
                 </div>
               )}
             </div>
@@ -244,17 +244,17 @@ const EngagementFlow = () => (
         return (
           <div key={i} className="flex items-start gap-3">
             <div style={{ flexShrink: 0, width: 32 }}>
-              <div className="font-mono font-[700]" style={{ fontSize: 20, color: '#C9A84C', opacity: 0.3 }}>
+              <div className="font-mono font-[700]" style={{ fontSize: 20, color: '#DDB343', opacity: 0.3 }}>
                 {String(i + 1).padStart(2, '0')}
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <Icon style={{ width: 18, height: 18, color: '#C9A84C', flexShrink: 0, marginTop: 2 }} strokeWidth={1.5} />
+              <Icon style={{ width: 18, height: 18, color: '#DDB343', flexShrink: 0, marginTop: 2 }} strokeWidth={1.5} />
               <div>
-                <div className="font-body font-[500]" style={{ fontSize: 13, color: '#F0EDE8', marginBottom: 2 }}>
+                <div className="font-body font-[500]" style={{ fontSize: 13, color: '#F7F3EC', marginBottom: 2 }}>
                   {item.label}
                 </div>
-                <div className="font-body font-[300]" style={{ fontSize: 12, color: '#8A8F9E', lineHeight: 1.6 }}>
+                <div className="font-body font-[300]" style={{ fontSize: 12, color: '#A2A8B8', lineHeight: 1.6 }}>
                   {item.detail}
                 </div>
               </div>
@@ -274,20 +274,20 @@ const IdentityServices = () => {
         {/* Section Header */}
         <div style={{ marginBottom: 32 }}>
           <div className="section-eyebrow">IDENTITY & ACCESS MANAGEMENT</div>
-          <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: '#F0EDE8' }}>
+          <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: '#F7F3EC' }}>
             End-to-End Identity Services
           </h2>
-          <p className="font-body font-[300]" style={{ fontSize: 14, color: '#8A8F9E', maxWidth: 560, marginTop: 10, lineHeight: 1.7 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 14, color: '#A2A8B8', maxWidth: 560, marginTop: 10, lineHeight: 1.7 }}>
             Silxor delivers the full spectrum of identity architecture — from initial assessment and greenfield design to deployment, integration, recovery, and ongoing management. Every identity domain. Every environment. Sovereign by default.
           </p>
         </div>
 
         {/* ── Subsection 1: Radial Domain Map ── */}
         <div style={{ marginBottom: 48 }}>
-          <h3 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 6 }}>
+          <h3 className="font-body font-[500]" style={{ fontSize: 15, color: '#F7F3EC', marginBottom: 6 }}>
             Every Identity Domain. One Partner.
           </h3>
-          <p className="font-body font-[300]" style={{ fontSize: 13, color: '#8A8F9E', maxWidth: 520, marginBottom: 20, lineHeight: 1.7 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 13, color: '#A2A8B8', maxWidth: 520, marginBottom: 20, lineHeight: 1.7 }}>
             Silxor architects and operates across all identity disciplines — purpose-built for governments, financial institutions, and enterprises operating in high-stakes environments.
           </p>
           <DomainMapList />
@@ -295,10 +295,10 @@ const IdentityServices = () => {
 
         {/* ── Subsection 2: Engagement Flow ── */}
         <div style={{ marginBottom: 48 }}>
-          <h3 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 6 }}>
+          <h3 className="font-body font-[500]" style={{ fontSize: 15, color: '#F7F3EC', marginBottom: 6 }}>
             What Silxor Delivers Across Every Identity Engagement
           </h3>
-          <p className="font-body font-[300]" style={{ fontSize: 13, color: '#8A8F9E', maxWidth: 520, marginBottom: 20, lineHeight: 1.7 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 13, color: '#A2A8B8', maxWidth: 520, marginBottom: 20, lineHeight: 1.7 }}>
             We don't sell software licenses. We architect, build, deploy, and operate your identity infrastructure from the ground up — or rescue what's already broken.
           </p>
           <EngagementFlow />
@@ -306,10 +306,10 @@ const IdentityServices = () => {
 
         {/* ── Subsection 3: Categorized Environments ── */}
         <div style={{ marginBottom: 48 }}>
-          <h3 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 6 }}>
+          <h3 className="font-body font-[500]" style={{ fontSize: 15, color: '#F7F3EC', marginBottom: 6 }}>
             Every Environment. No Exceptions.
           </h3>
-          <p className="font-body font-[300]" style={{ fontSize: 13, color: '#8A8F9E', maxWidth: 480, marginBottom: 16, lineHeight: 1.7 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 13, color: '#A2A8B8', maxWidth: 480, marginBottom: 16, lineHeight: 1.7 }}>
             Silxor identity engineers operate across on-premise, cloud, hybrid, air-gapped, and sovereign-hosted environments.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -325,7 +325,7 @@ const IdentityServices = () => {
               >
                 <div
                   className="font-mono font-[400] uppercase"
-                  style={{ fontSize: 10, letterSpacing: '0.15em', color: '#C9A84C', marginBottom: 12 }}
+                  style={{ fontSize: 10, letterSpacing: '0.15em', color: '#DDB343', marginBottom: 12 }}
                 >
                   {cat.header}
                 </div>
@@ -336,9 +336,9 @@ const IdentityServices = () => {
                       className="font-mono font-[400]"
                       style={{
                         fontSize: 11,
-                        color: '#C9A84C',
-                        backgroundColor: 'rgba(201,168,76,0.06)',
-                        border: '1px solid rgba(201,168,76,0.2)',
+                        color: '#DDB343',
+                        backgroundColor: 'rgba(221,179,67,0.06)',
+                        border: '1px solid rgba(221,179,67,0.2)',
                         padding: '6px 12px',
                         borderRadius: 2,
                       }}
@@ -354,10 +354,10 @@ const IdentityServices = () => {
 
         {/* ── Subsection 4: Identity Packages ── */}
         <div style={{ marginBottom: 32 }}>
-          <h3 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 6 }}>
+          <h3 className="font-body font-[500]" style={{ fontSize: 15, color: '#F7F3EC', marginBottom: 6 }}>
             Identity Service Packages
           </h3>
-          <p className="font-body font-[300]" style={{ fontSize: 13, color: '#8A8F9E', maxWidth: 480, marginBottom: 16, lineHeight: 1.7 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 13, color: '#A2A8B8', maxWidth: 480, marginBottom: 16, lineHeight: 1.7 }}>
             Structured engagements across every stage of the identity lifecycle.
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -366,28 +366,28 @@ const IdentityServices = () => {
                 key={i}
                 className="flex flex-col"
                 style={{
-                  backgroundColor: '#1A1D26',
+                  backgroundColor: '#161A24',
                   border: '1px solid rgba(255,255,255,0.06)',
                   borderRadius: 4,
                   padding: 20,
                   transition: 'all 250ms ease',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(201,168,76,0.3)';
-                  e.currentTarget.style.backgroundColor = '#20242E';
+                  e.currentTarget.style.borderColor = 'rgba(221,179,67,0.3)';
+                  e.currentTarget.style.backgroundColor = '#1C202C';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)';
-                  e.currentTarget.style.backgroundColor = '#1A1D26';
+                  e.currentTarget.style.backgroundColor = '#161A24';
                 }}
               >
-                <h4 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 4 }}>{pkg.name}</h4>
-                <p className="font-body font-[300]" style={{ fontSize: 12, color: '#8A8F9E', marginBottom: 16 }}>{pkg.tagline}</p>
+                <h4 className="font-body font-[500]" style={{ fontSize: 15, color: '#F7F3EC', marginBottom: 4 }}>{pkg.name}</h4>
+                <p className="font-body font-[300]" style={{ fontSize: 12, color: '#A2A8B8', marginBottom: 16 }}>{pkg.tagline}</p>
                 <ul className="flex-1" style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 16 }}>
                   {pkg.specs.map((spec, j) => (
                     <li key={j} className="flex items-start gap-2">
-                      <Check style={{ width: 14, height: 14, color: '#C9A84C', flexShrink: 0, marginTop: 1 }} />
-                      <span className="font-body font-[300]" style={{ fontSize: 12, color: '#8A8F9E' }}>{spec}</span>
+                      <Check style={{ width: 14, height: 14, color: '#DDB343', flexShrink: 0, marginTop: 1 }} />
+                      <span className="font-body font-[300]" style={{ fontSize: 12, color: '#A2A8B8' }}>{spec}</span>
                     </li>
                   ))}
                 </ul>
@@ -401,17 +401,17 @@ const IdentityServices = () => {
         <div
           className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6"
           style={{
-            backgroundColor: 'rgba(201,168,76,0.05)',
-            border: '1px solid rgba(201,168,76,0.15)',
+            backgroundColor: 'rgba(221,179,67,0.05)',
+            border: '1px solid rgba(221,179,67,0.15)',
             borderRadius: 4,
             padding: '40px 48px',
           }}
         >
           <div style={{ maxWidth: 560 }}>
-            <h4 className="font-display font-[700]" style={{ fontSize: 20, color: '#F0EDE8', marginBottom: 8 }}>
+            <h4 className="font-display font-[700]" style={{ fontSize: 20, color: '#F7F3EC', marginBottom: 8 }}>
               Identity Is the Perimeter.
             </h4>
-            <p className="font-body font-[300]" style={{ fontSize: 13, color: '#8A8F9E', lineHeight: 1.7 }}>
+            <p className="font-body font-[300]" style={{ fontSize: 13, color: '#A2A8B8', lineHeight: 1.7 }}>
               Every breach starts with an identity. Silxor builds identity infrastructure that assumes compromise and enforces verification at every layer — from the endpoint to the cloud to the AI agent.
             </p>
           </div>
@@ -421,13 +421,13 @@ const IdentityServices = () => {
             style={{
               fontSize: 11,
               letterSpacing: '0.12em',
-              backgroundColor: '#C9A84C',
-              color: '#14171F',
+              backgroundColor: '#DDB343',
+              color: '#10131C',
               padding: '12px 24px',
               borderRadius: 2,
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#E2C06A')}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#C9A84C')}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#F0C95A')}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#DDB343')}
           >
             Request Identity Assessment
             <ArrowRight style={{ width: 14, height: 14 }} />

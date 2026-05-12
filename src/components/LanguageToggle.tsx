@@ -10,7 +10,7 @@ const LanguageToggle = () => {
         className="font-mono font-[400] transition-colors duration-200"
         style={{
           fontSize: 11,
-          color: language === "en" ? "#C9A84C" : "#4A5060",
+          color: language === "en" ? "#DDB343" : "#4A5060",
           background: "none",
           border: "none",
           cursor: "pointer",
@@ -27,7 +27,7 @@ const LanguageToggle = () => {
           fontSize: 13,
           fontFamily: "'Cairo', sans-serif",
           fontWeight: 400,
-          color: language === "ar" ? "#C9A84C" : "#4A5060",
+          color: language === "ar" ? "#DDB343" : "#4A5060",
           background: "none",
           border: "none",
           cursor: "pointer",
