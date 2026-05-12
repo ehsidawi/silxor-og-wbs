@@ -79,7 +79,7 @@ const StartEngagement = () => {
               fontSize: 12,
               letterSpacing: "0.12em",
               backgroundColor: "#C9A84C",
-              color: "#080A0F",
+              color: "#14171F",
               padding: "16px 32px",
               borderRadius: 2,
             }}

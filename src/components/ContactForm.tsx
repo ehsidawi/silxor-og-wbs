@@ -63,7 +63,7 @@ const ContactForm = () => {
 
   const inputStyle: React.CSSProperties = {
     width: "100%",
-    background: "#12161E",
+    background: "#20242E",
     border: "1px solid rgba(255,255,255,0.08)",
     borderRadius: 2,
     padding: "12px 16px",
@@ -96,7 +96,7 @@ const ContactForm = () => {
   return (
     <div
       style={{
-        backgroundColor: "#0D1017",
+        backgroundColor: "#1A1D26",
         border: "1px solid rgba(255,255,255,0.06)",
         borderRadius: 4,
         padding: 40,
@@ -187,7 +187,7 @@ const ContactForm = () => {
               fontSize: 11,
               letterSpacing: "0.1em",
               backgroundColor: "#C9A84C",
-              color: "#080A0F",
+              color: "#14171F",
               padding: "14px 28px",
               borderRadius: 2,
               border: "none",

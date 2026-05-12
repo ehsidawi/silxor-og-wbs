@@ -4,7 +4,7 @@
   "description": "USA's Sovereign Technology Company",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#080A0F",
+  "background_color": "#14171F",
   "theme_color": "#C9A84C",
   "icons": [
     {

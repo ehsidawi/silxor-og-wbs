@@ -16,7 +16,7 @@ const Hero = () => {
           radial-gradient(ellipse 80% 60% at 50% -10%, rgba(201,168,76,0.08) 0%, transparent 70%),
           url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 60 0 L 60 60 M 0 0 L 0 60 M 0 60 L 60 60 M 0 0 L 60 0' stroke='rgba(255,255,255,0.02)' stroke-width='1' fill='none'/%3E%3C/svg%3E"),
           url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E"),
-          #080A0F
+          #14171F
         `,
       }}
     >
@@ -107,7 +107,7 @@ const Hero = () => {
                 href="mailto:ehsan@silxor.com?subject=Silxor%20-%20Technical%20Assessment%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20request%20a%20technical%20assessment%20with%20Silxor.%0A%0AOrganization%3A%20%0AService%20Interest%3A%20%0AMessage%3A%20"
                 className="inline-flex items-center justify-center gap-2 font-body font-[500] uppercase transition-all duration-200"
                 style={{
-                  fontSize: 13, letterSpacing: "0.1em", backgroundColor: "#C9A84C", color: "#080A0F",
+                  fontSize: 13, letterSpacing: "0.1em", backgroundColor: "#C9A84C", color: "#14171F",
                   padding: "14px 28px", borderRadius: 2, fontFamily: arFont,
                 }}
                 onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#E2C06A"; e.currentTarget.style.boxShadow = "0 0 30px rgba(201,168,76,0.3)"; }}

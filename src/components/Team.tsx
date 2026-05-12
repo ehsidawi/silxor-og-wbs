@@ -56,7 +56,7 @@ const Team = () => {
               key={index}
               className="text-center"
               style={{
-                backgroundColor: "#0D1017",
+                backgroundColor: "#1A1D26",
                 border: "1px solid rgba(255,255,255,0.06)",
                 borderRadius: 4,
                 padding: 32,
