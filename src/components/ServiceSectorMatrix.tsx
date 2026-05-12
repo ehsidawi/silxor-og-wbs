@@ -25,7 +25,7 @@ const ServiceSectorMatrix = () => {
 
         <div
           style={{
-            backgroundColor: '#0D1017',
+            backgroundColor: '#1A1D26',
             border: '1px solid rgba(255,255,255,0.06)',
             borderRadius: 4,
             padding: 32,
@@ -95,7 +95,7 @@ const ServiceSectorMatrix = () => {
                             bottom: '100%',
                             left: '50%',
                             transform: 'translateX(-50%)',
-                            backgroundColor: '#12161E',
+                            backgroundColor: '#20242E',
                             border: '1px solid rgba(201,168,76,0.3)',
                             borderRadius: 4,
                             padding: '6px 10px',

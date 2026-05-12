@@ -27,11 +27,11 @@ const SLADoc = () => {
             Silxor service level commitments by infrastructure tier.
           </p>
 
-          <div style={{ backgroundColor: "#0D1017", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 4, overflow: "hidden" }}>
+          <div style={{ backgroundColor: "#1A1D26", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 4, overflow: "hidden" }}>
             <div className="overflow-x-auto">
               <table style={{ width: "100%", borderCollapse: "collapse" }}>
                 <thead>
-                  <tr style={{ backgroundColor: "#12161E" }}>
+                  <tr style={{ backgroundColor: "#20242E" }}>
                     {["Metric", "Sovereign Starter", "Sovereign Business", "Sovereign Enterprise"].map((h) => (
                       <th
                         key={h}

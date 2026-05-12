@@ -6,7 +6,7 @@ const Footer = () => {
   const { t } = useLanguage();
 
   return (
-    <footer style={{ backgroundColor: "#080A0F", borderTop: "1px solid rgba(255,255,255,0.06)", padding: "80px 0 40px" }}>
+    <footer style={{ backgroundColor: "#14171F", borderTop: "1px solid rgba(255,255,255,0.06)", padding: "80px 0 40px" }}>
       <div className="container-content">
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12" style={{ marginBottom: 48 }}>
           {/* Brand */}

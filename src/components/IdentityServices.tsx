@@ -366,7 +366,7 @@ const IdentityServices = () => {
                 key={i}
                 className="flex flex-col"
                 style={{
-                  backgroundColor: '#0D1017',
+                  backgroundColor: '#1A1D26',
                   border: '1px solid rgba(255,255,255,0.06)',
                   borderRadius: 4,
                   padding: 20,
@@ -374,11 +374,11 @@ const IdentityServices = () => {
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.borderColor = 'rgba(201,168,76,0.3)';
-                  e.currentTarget.style.backgroundColor = '#12161E';
+                  e.currentTarget.style.backgroundColor = '#20242E';
                 }}
                 onMouseLeave={(e) => {
                   e.currentTarget.style.borderColor = 'rgba(255,255,255,0.06)';
-                  e.currentTarget.style.backgroundColor = '#0D1017';
+                  e.currentTarget.style.backgroundColor = '#1A1D26';
                 }}
               >
                 <h4 className="font-body font-[500]" style={{ fontSize: 15, color: '#F0EDE8', marginBottom: 4 }}>{pkg.name}</h4>
@@ -422,7 +422,7 @@ const IdentityServices = () => {
               fontSize: 11,
               letterSpacing: '0.12em',
               backgroundColor: '#C9A84C',
-              color: '#080A0F',
+              color: '#14171F',
               padding: '12px 24px',
               borderRadius: 2,
             }}

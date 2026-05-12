@@ -14,7 +14,7 @@ const StatsBar = () => {
   return (
     <section
       style={{
-        backgroundColor: "#0D1017",
+        backgroundColor: "#1A1D26",
         borderTop: "1px solid rgba(255,255,255,0.06)",
         borderBottom: "1px solid rgba(255,255,255,0.06)",
         padding: "32px 0",
