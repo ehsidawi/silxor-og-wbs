@@ -7,32 +7,32 @@
 @layer base {
   :root {
     /* Sovereign Command Color System */
-    --background: 222 19% 10%; /* #14171F */
-    --foreground: 36 18% 93%; /* #F0EDE8 */
+    --background: 222 22% 8%; /* #10131C */
+    --foreground: 40 30% 96%; /* #F7F3EC */
 
-    --card: 225 19% 13%; /* #1A1D26 */
-    --card-foreground: 36 18% 93%;
+    --card: 225 22% 11%; /* #161A24 */
+    --card-foreground: 40 30% 96%;
 
-    --popover: 225 19% 13%;
-    --popover-foreground: 36 18% 93%;
+    --popover: 225 22% 11%;
+    --popover-foreground: 40 30% 96%;
 
-    /* Sovereign Gold Accent */
-    --primary: 43 52% 54%; /* #C9A84C */
-    --primary-foreground: 222 19% 10%;
+    /* Sovereign Gold Accent — sharpened */
+    --primary: 43 75% 58%; /* #DDB343 */
+    --primary-foreground: 222 22% 8%;
 
     /* Surface Elevations */
-    --secondary: 224 18% 16%; /* #20242E */
-    --secondary-foreground: 36 18% 93%;
+    --secondary: 224 20% 14%; /* #1C202C */
+    --secondary-foreground: 40 30% 96%;
 
-    --muted: 222 16% 19%; /* #262B36 */
-    --muted-foreground: 224 10% 58%; /* #8A8F9E */
+    --muted: 222 18% 17%; /* #232834 */
+    --muted-foreground: 224 14% 68%; /* #A2A8B8 */
 
     /* Success / Alert */
-    --accent: 150 58% 39%; /* #2A9D5C */
-    --accent-foreground: 36 18% 93%;
+    --accent: 150 70% 42%; /* #20B868 */
+    --accent-foreground: 40 30% 96%;
 
-    --destructive: 0 52% 54%; /* #C94C4C */
-    --destructive-foreground: 36 18% 93%;
+    --destructive: 0 70% 58%; /* #DC4848 */
+    --destructive-foreground: 40 30% 96%;
 
     /* Text Muted */
     --text-muted: 222 15% 33%; /* #4A5060 */
