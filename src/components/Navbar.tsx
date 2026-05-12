@@ -46,16 +46,16 @@ const Navbar = () => {
       className="sticky top-0 z-[100] transition-all duration-500"
       style={{
         height: 64,
-        backgroundColor: scrolled ? "rgba(8,10,15,0.92)" : "transparent",
+        backgroundColor: scrolled ? "rgba(16,19,28,0.92)" : "#10131C",
         backdropFilter: scrolled ? "blur(24px) saturate(180%)" : "none",
         WebkitBackdropFilter: scrolled ? "blur(24px) saturate(180%)" : "none",
-        borderBottom: scrolled ? "1px solid rgba(221,179,67,0.08)" : "1px solid transparent",
+        borderBottom: "1px solid rgba(255,255,255,0.10)",
       }}
     >
       <div className="container-content flex items-center justify-between h-full">
         <a
           href="#"
-          className="flex items-center gap-1.5 group"
+          className="flex items-center gap-1.5 group shrink-0"
           onClick={(e) => handleNavClick(e, "#")}
         >
           <span className="font-display text-[20px] font-[800] tracking-tight" style={{ color: "#F7F3EC" }}>
@@ -67,55 +67,58 @@ const Navbar = () => {
           />
         </a>
 
-        <div className="hidden xl:flex items-center">
-          <div className="flex items-center gap-0">
-            {navLinks.map((link) => (
+        <ul className="hidden xl:flex items-center h-full">
+          {navLinks.map((link, idx) => (
+            <li key={link.href} className="h-full flex items-center">
+              {idx === 1 && (
+                <span
+                  aria-hidden
+                  className="mx-1"
+                  style={{ width: 1, height: 16, backgroundColor: "rgba(255,255,255,0.10)" }}
+                />
+              )}
               <a
-                key={link.href}
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
-                className="relative font-mono uppercase px-3 py-2 transition-colors duration-200 group"
-                style={{ fontSize: 10, letterSpacing: "0.14em", color: "#FFFFFF" }}
+                className="flex items-center h-full font-mono uppercase transition-colors duration-200 whitespace-nowrap"
+                style={{
+                  fontSize: 11,
+                  letterSpacing: "0.15em",
+                  padding: "0 12px",
+                  fontWeight: idx === 0 ? 700 : 500,
+                  color: idx === 0 ? "#FFFFFF" : "rgba(255,255,255,0.6)",
+                }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#DDB343")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "#FFFFFF")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = idx === 0 ? "#FFFFFF" : "rgba(255,255,255,0.6)")}
               >
                 {link.label}
-                <span
-                  className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[1px] w-0 group-hover:w-3/4 transition-all duration-300"
-                  style={{ backgroundColor: "#DDB343" }}
-                />
               </a>
-            ))}
-          </div>
+            </li>
+          ))}
+        </ul>
 
-          <div className="mx-4" style={{ width: 1, height: 16, background: "linear-gradient(180deg, transparent, rgba(221,179,67,0.4), transparent)" }} />
-
+        <div className="hidden xl:flex items-center gap-6 shrink-0">
           <LanguageToggle />
-
-          <div className="mx-4" style={{ width: 1, height: 16, background: "linear-gradient(180deg, transparent, rgba(221,179,67,0.4), transparent)" }} />
 
           <a
             href="mailto:ehsan@silxor.com?subject=Silxor%20-%20Assessment%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20request%20a%20technical%20assessment%20with%20Silxor.%0A%0AOrganization%3A%20%0AService%20Interest%3A%20%0AMessage%3A%20"
-            className="inline-flex items-center gap-2 font-mono uppercase transition-all duration-300 hover:shadow-[0_0_20px_rgba(221,179,67,0.15)]"
+            className="group inline-flex items-center gap-4 transition-all duration-300"
             style={{
-              fontSize: 10,
-              letterSpacing: "0.12em",
-              border: "1px solid rgba(221,179,67,0.4)",
+              height: 40,
+              padding: "0 20px",
+              border: "1px solid rgba(221,179,67,0.3)",
               color: "#DDB343",
-              padding: "8px 18px",
-              borderRadius: 0,
+              fontSize: 11,
+              letterSpacing: "0.15em",
+              fontWeight: 700,
+              textTransform: "uppercase",
+              fontFamily: "'JetBrains Mono', monospace",
             }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = "#DDB343";
-              e.currentTarget.style.backgroundColor = "rgba(221,179,67,0.08)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = "rgba(221,179,67,0.4)";
-              e.currentTarget.style.backgroundColor = "transparent";
-            }}
+            onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#DDB343")}
+            onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(221,179,67,0.3)")}
           >
             {t("Request Assessment", "طلب تقييم")}
-            <ArrowRight className="w-3 h-3" />
+            <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
           </a>
         </div>
 
