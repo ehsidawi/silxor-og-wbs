@@ -104,7 +104,7 @@ const Hero = () => {
               style={{ marginTop: 40 }}
             >
               <a
-                href="mailto:ehsan@silxor.com?subject=Silxor%20-%20Technical%20Assessment%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20request%20a%20technical%20assessment%20with%20Silxor.%0A%0AOrganization%3A%20%0AService%20Interest%3A%20%0AMessage%3A%20"
+                href="mailto:contact@silxor.com?subject=Silxor%20-%20Technical%20Assessment%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20a%20technical%20assessment%20with%20Silxor.%0A%0AOrganization%3A%20%0AService%20Interest%3A%20%0AMessage%3A%20"
                 className="inline-flex items-center justify-center gap-2 font-body font-[500] uppercase transition-all duration-200"
                 style={{
                   fontSize: 13, letterSpacing: "0.1em", backgroundColor: "#DDB343", color: "#10131C",

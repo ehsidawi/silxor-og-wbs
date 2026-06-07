@@ -14,7 +14,7 @@ const StartEngagement = () => {
         "ابدأ بتقييم السيادة والامتثال لبيئة الاستضافة الحالية."
       ),
       cta: t("Request Infrastructure Assessment", "طلب تقييم البنية التحتية"),
-      mailto: "mailto:ehsan@silxor.com?subject=Silxor%20-%20Infrastructure%20Assessment%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20request%20an%20infrastructure%20and%20sovereignty%20assessment.%0A%0AOrganization%3A%20%0ACurrent%20Environment%3A%20",
+      mailto: "mailto:contact@silxor.com?subject=Silxor%20-%20Infrastructure%20Assessment%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20an%20infrastructure%20and%20sovereignty%20assessment.%0A%0AOrganization%3A%20%0ACurrent%20Environment%3A%20",
     },
     {
       icon: Code,
@@ -24,7 +24,7 @@ const StartEngagement = () => {
         "صف متطلبات منصتك أو نظام الذكاء الاصطناعي واحصل على اقتراح تسليم محدد النطاق خلال 5 أيام عمل."
       ),
       cta: t("Start a Project", "ابدأ مشروعاً"),
-      mailto: "mailto:ehsan@silxor.com?subject=Silxor%20-%20Software%20%26%20AI%20Project%20Inquiry&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20discuss%20a%20software%20or%20AI%20project.%0A%0AOrganization%3A%20%0AProject%20Description%3A%20",
+      mailto: "mailto:contact@silxor.com?subject=Silxor%20-%20Software%20%26%20AI%20Project%20Inquiry&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20discuss%20a%20software%20or%20AI%20project.%0A%0AOrganization%3A%20%0AProject%20Description%3A%20",
     },
     {
       icon: Shield,
@@ -34,7 +34,7 @@ const StartEngagement = () => {
         "احجز جلسة استشارية مدتها 60 دقيقة حول البنية المعمارية أو الأمن مع مهندس Silxor أقدم."
       ),
       cta: t("Book Advisory Session", "احجز جلسة استشارية"),
-      mailto: "mailto:ehsan@silxor.com?subject=Silxor%20-%20Strategic%20Advisory%20Session%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20book%20a%2060-minute%20advisory%20session.%0A%0AOrganization%3A%20%0AFocus%20Area%3A%20",
+      mailto: "mailto:contact@silxor.com?subject=Silxor%20-%20Strategic%20Advisory%20Session%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20book%20a%2060-minute%20advisory%20session.%0A%0AOrganization%3A%20%0AFocus%20Area%3A%20",
     },
   ];
 
@@ -73,7 +73,7 @@ const StartEngagement = () => {
 
         <div className="flex justify-center" style={{ marginTop: 48 }}>
           <a
-            href="mailto:ehsan@silxor.com?subject=Silxor%20-%20Technical%20Assessment%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20request%20a%20no-cost%20Technical%20Assessment%20with%20Silxor.%0A%0AOrganization%3A%20%0AArea%20of%20Interest%20(Infrastructure%20%2F%20Software%20%26%20AI%20%2F%20Consulting)%3A%20%0AMessage%3A%20"
+            href="mailto:contact@silxor.com?subject=Silxor%20-%20Technical%20Assessment%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20a%20no-cost%20Technical%20Assessment%20with%20Silxor.%0A%0AOrganization%3A%20%0AArea%20of%20Interest%20(Infrastructure%20%2F%20Software%20%26%20AI%20%2F%20Consulting)%3A%20%0AMessage%3A%20"
             className="font-mono font-[400] uppercase transition-all duration-200 flex items-center gap-2"
             style={{
               fontSize: 12,
