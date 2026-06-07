@@ -101,7 +101,7 @@ const Navbar = () => {
           <LanguageToggle />
 
           <a
-            href="mailto:ehsan@silxor.com?subject=Silxor%20-%20Assessment%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20request%20a%20technical%20assessment%20with%20Silxor.%0A%0AOrganization%3A%20%0AService%20Interest%3A%20%0AMessage%3A%20"
+            href="mailto:contact@silxor.com?subject=Silxor%20-%20Assessment%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20a%20technical%20assessment%20with%20Silxor.%0A%0AOrganization%3A%20%0AService%20Interest%3A%20%0AMessage%3A%20"
             className="group inline-flex items-center gap-4 transition-all duration-300"
             style={{
               height: 40,
@@ -173,7 +173,7 @@ const Navbar = () => {
             <LanguageToggle />
           </div>
           <a
-            href="mailto:ehsan@silxor.com?subject=Silxor%20-%20Assessment%20Request&body=Hello%20Ehsan%2C%0A%0AI%20would%20like%20to%20request%20a%20technical%20assessment%20with%20Silxor.%0A%0AOrganization%3A%20%0AService%20Interest%3A%20%0AMessage%3A%20"
+            href="mailto:contact@silxor.com?subject=Silxor%20-%20Assessment%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20a%20technical%20assessment%20with%20Silxor.%0A%0AOrganization%3A%20%0AService%20Interest%3A%20%0AMessage%3A%20"
             className="flex items-center justify-center gap-2 font-mono uppercase mt-4"
             style={{
               fontSize: 10,

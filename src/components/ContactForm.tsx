@@ -33,7 +33,7 @@ const ContactForm = () => {
       );
 
       const body = encodeURIComponent(
-        `Hello Ehsan,\n\n` +
+        `Hello Silxor Team,\n\n` +
         `Name: ${formState.name}\n` +
         `Organization: ${formState.organization}\n` +
         `Email: ${formState.email}\n` +
@@ -41,7 +41,7 @@ const ContactForm = () => {
         `Message:\n${formState.message}`
       );
 
-      const mailtoUrl = `mailto:ehsan@silxor.com?subject=${subject}&body=${body}`;
+      const mailtoUrl = `mailto:contact@silxor.com?subject=${subject}&body=${body}`;
       // Universal cross-client trigger: synthesized anchor click works in
       // Safari/iOS, Chrome, Firefox, and respects the user's default mail handler
       // (Gmail web, Outlook web, Apple Mail, Thunderbird, mobile clients).
@@ -218,8 +218,8 @@ const ContactForm = () => {
         {status === "error" && (
           <div className="sm:col-span-2 font-body font-[300] text-center" style={{ fontSize: 14, color: "#C94C4C" }}>
             {t(
-              "Something went wrong. Please email us directly at ehsan@silxor.com",
-              "حدث خطأ ما. يرجى مراسلتنا مباشرة على ehsan@silxor.com"
+              "Something went wrong. Please email us directly at contact@silxor.com",
+              "حدث خطأ ما. يرجى مراسلتنا مباشرة على contact@silxor.com"
             )}
           </div>
         )}
