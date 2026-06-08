@@ -140,12 +140,15 @@ const Navbar = () => {
       </div>
 
       <div
-        className="xl:hidden overflow-hidden transition-all duration-500"
+        className="xl:hidden transition-all duration-500"
         style={{
-          maxHeight: mobileOpen ? 600 : 0,
+          maxHeight: mobileOpen ? "calc(100vh - 64px)" : 0,
+          overflowY: mobileOpen ? "auto" : "hidden",
           opacity: mobileOpen ? 1 : 0,
+          pointerEvents: mobileOpen ? "auto" : "none",
           backgroundColor: "rgba(8,10,15,0.97)",
           backdropFilter: "blur(24px)",
+          WebkitOverflowScrolling: "touch",
           borderTop: mobileOpen ? "1px solid rgba(221,179,67,0.08)" : "none",
         }}
       >
@@ -174,6 +177,7 @@ const Navbar = () => {
           </div>
           <a
             href="mailto:contact@silxor.com?subject=Silxor%20-%20Assessment%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20a%20technical%20assessment%20with%20Silxor.%0A%0AOrganization%3A%20%0AService%20Interest%3A%20%0AMessage%3A%20"
+            onClick={() => setMobileOpen(false)}
             className="flex items-center justify-center gap-2 font-mono uppercase mt-4"
             style={{
               fontSize: 10,
