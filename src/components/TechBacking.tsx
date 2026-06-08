@@ -8,10 +8,7 @@ const TechBacking = () => {
     {
       icon: Globe,
       title: t("New York Point of Presence", "نقطة تواجد نيويورك"),
-      description: t(
-        "Primary sovereign data center with full operational control. All control plane operations remain within American jurisdiction.",
-        "مركز بيانات سيادي رئيسي مع تحكم تشغيلي كامل. جميع عمليات مستوى التحكم تبقى ضمن الولاية القضائية الأمريكية."
-      ),
+      description: t("Primary sovereign data center with full operational control. All control plane operations remain within American jurisdiction.", "مركز بيانات سيادي رئيسي مع تحكم تشغيلي كامل. جميع عمليات مستوى التحكم تبقى ضمن الولاية القضائية الأمريكية."),
       technical: t("Primary PoP · American Jurisdiction", "نقطة تواجد رئيسية · الولاية الأمريكية"),
       coord: { en: "33.3°N · 44.4°E", ar: "٣٣.٣° ش · ٤٤.٤° شر" },
       tag: t("ORIGIN", "المصدر"),
@@ -19,43 +16,31 @@ const TechBacking = () => {
     {
       icon: Lock,
       title: t("Encrypted Transit Path", "مسار النقل المشفر"),
-      description: t(
-        "AES-256 encryption over dedicated fiber with automatic failover in under 30 seconds. Zero data exposure in transit.",
-        "تشفير AES-256 عبر ألياف مخصصة مع تجاوز فشل تلقائي في أقل من 30 ثانية. لا تعرض للبيانات أثناء النقل."
-      ),
-      technical: t("AES-256 · Dedicated Fiber · <30s Failover", "AES-256 · ألياف مخصصة · <30 ثانية تجاوز فشل"),
+      description: t("AES 256 encryption over dedicated fiber with automatic failover in under 30 seconds. Zero data exposure in transit.", "تشفير AES 256 عبر ألياف مخصصة مع تجاوز فشل تلقائي في أقل من 30 ثانية. لا تعرض للبيانات أثناء النقل."),
+      technical: t("AES 256 · Dedicated Fiber · <30s Failover", "AES 256 · ألياف مخصصة · <30 ثانية تجاوز فشل"),
       coord: { en: "36.2°N · 44.0°E", ar: "٣٦.٢° ش · ٤٤.٠° شر" },
       tag: t("TRANSIT", "النقل"),
     },
     {
       icon: Server,
-      title: t("Ashburn Tier-IV Facility", "منشأة آشبورن Tier-IV"),
-      description: t(
-        "Uptime Institute Tier-IV certified with SOC 2 Type II attestation. Continuous compliance monitoring and annual third-party audits.",
-        "معتمدة من Uptime Institute Tier-IV مع شهادة SOC 2 Type II. مراقبة امتثال مستمرة وتدقيق سنوي من طرف ثالث."
-      ),
-      technical: t("Tier-IV · SOC 2 · 99.995% SLA", "Tier-IV · SOC 2 · 99.995% SLA"),
+      title: t("Ashburn Tier IV Facility", "منشأة آشبورن Tier IV"),
+      description: t("Uptime Institute Tier IV certified with SOC 2 Type II attestation. Continuous compliance monitoring and annual third party audits.", "معتمدة من Uptime Institute Tier IV مع شهادة SOC 2 Type II. مراقبة امتثال مستمرة وتدقيق سنوي من طرف ثالث."),
+      technical: t("Tier IV · SOC 2 · 99.995% SLA", "Tier IV · SOC 2 · 99.995% SLA"),
       coord: { en: "39.0°N · 77.5°W", ar: "٣٩.٠° ش · ٧٧.٥° غ" },
       tag: t("BACKUP", "النسخ الاحتياطي"),
     },
     {
       icon: Activity,
       title: t("American Infrastructure Standards", "معايير البنية التحتية الأمريكية"),
-      description: t(
-        "Built on Uptime Institute Tier-IV certified facilities. All systems undergo continuous compliance monitoring and annual third-party audits.",
-        "مبنية على منشآت معتمدة من Uptime Institute Tier-IV. تخضع جميع الأنظمة لمراقبة امتثال مستمرة وتدقيق سنوي."
-      ),
-      technical: t("Tier-IV Certified · Continuous Audit", "معتمد Tier-IV · تدقيق مستمر"),
+      description: t("Built on Uptime Institute Tier IV certified facilities. All systems undergo continuous compliance monitoring and annual third party audits.", "مبنية على منشآت معتمدة من Uptime Institute Tier IV. تخضع جميع الأنظمة لمراقبة امتثال مستمرة وتدقيق سنوي."),
+      technical: t("Tier IV Certified · Continuous Audit", "معتمد Tier IV · تدقيق مستمر"),
       coord: { en: "38.9°N · 77.0°W", ar: "٣٨.٩° ش · ٧٧.٠° غ" },
       tag: t("STANDARD", "المعايير"),
     },
     {
       icon: Network,
       title: t("American Operational Control", "التحكم التشغيلي الأمريكي"),
-      description: t(
-        "Local engineering teams maintain operational sovereignty while leveraging global infrastructure. U.S. infrastructure serves as resilient backing.",
-        "تحافظ الفرق الهندسية المحلية على السيادة التشغيلية مع الاستفادة من البنية التحتية العالمية."
-      ),
+      description: t("Local engineering teams maintain operational sovereignty while leveraging global infrastructure. U.S. infrastructure serves as resilient backing.", "تحافظ الفرق الهندسية المحلية على السيادة التشغيلية مع الاستفادة من البنية التحتية العالمية."),
       technical: t("Sovereign Ops · Local Control Plane", "عمليات سيادية · مستوى تحكم محلي"),
       coord: { en: "33.3°N · 44.4°E", ar: "٣٣.٣° ش · ٤٤.٤° شر" },
       tag: t("CONTROL", "التحكم"),
@@ -63,11 +48,8 @@ const TechBacking = () => {
     {
       icon: Shield,
       title: t("Compliance & Certifications", "الامتثال والشهادات"),
-      description: t(
-        "ISO/IEC 27001:2022, SOC 2 Type II, GDPR-Ready, and Tier-IV Certified. Full compliance documentation and audit support included.",
-        "ISO/IEC 27001:2022 و SOC 2 Type II و GDPR-Ready و Tier-IV Certified. توثيق امتثال كامل ودعم تدقيق مضمن."
-      ),
-      technical: t("ISO 27001 · SOC 2 · GDPR · Tier-IV", "ISO 27001 · SOC 2 · GDPR · Tier-IV"),
+      description: t("ISO/IEC 27001:2022, SOC 2 Type II, GDPR Ready, and Tier IV Certified. Full compliance documentation and audit support included.", "ISO/IEC 27001:2022 و SOC 2 Type II و GDPR Ready و Tier IV Certified. توثيق امتثال كامل ودعم تدقيق مضمن."),
+      technical: t("ISO 27001 · SOC 2 · GDPR · Tier IV", "ISO 27001 · SOC 2 · GDPR · Tier IV"),
       coord: { en: "30.5°N · 47.8°E", ar: "٣٠.٥° ش · ٤٧.٨° شر" },
       tag: t("COMPLY", "الامتثال"),
     },
@@ -79,13 +61,10 @@ const TechBacking = () => {
         <div style={{ marginBottom: 32 }}>
           <div className="section-eyebrow">{t("ARCHITECTURE", "البنية المعمارية")}</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "hsl(var(--foreground))" }}>
-            {t("Dual-Continent Resilience Architecture", "بنية مرونة عبر قارتين")}
+            {t("Dual Continent Resilience Architecture", "بنية مرونة عبر قارتين")}
           </h2>
           <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 520, marginTop: 10, lineHeight: 1.7 }}>
-            {t(
-              "Silxor operates a distributed infrastructure model ensuring data sovereignty while maintaining enterprise-grade reliability through U.S. Tier-IV certification.",
-              "تدير Silxor نموذج بنية تحتية موزع يضمن سيادة البيانات مع الحفاظ على موثوقية بمستوى المؤسسات من خلال شهادة Tier-IV الأمريكية."
-            )}
+            {t("Silxor operates a distributed infrastructure model ensuring data sovereignty while maintaining enterprise grade reliability through U.S. Tier IV certification.", "تدير Silxor نموذج بنية تحتية موزع يضمن سيادة البيانات مع الحفاظ على موثوقية بمستوى المؤسسات من خلال شهادة Tier IV الأمريكية.")}
           </p>
         </div>
 

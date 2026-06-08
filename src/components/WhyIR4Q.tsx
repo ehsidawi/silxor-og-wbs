@@ -6,24 +6,15 @@ const WhySilxor = () => {
   const pillars = [
     {
       title: t("Sovereign by Design", "سيادية بالتصميم"),
-      body: t(
-        "Every system Silxor builds, hosts, or operates is architectured for American data sovereignty. Control planes stay in-country. Data residency is enforced at the infrastructure level — not promised in a policy.",
-        "كل نظام تبنيه أو تستضيفه أو تشغله Silxor مصمم لسيادة البيانات الأمريكية. تبقى مستويات التحكم داخل البلاد. إقامة البيانات مفروضة على مستوى البنية التحتية — وليس مجرد وعد في سياسة."
-      ),
+      body: t("Every system Silxor builds, hosts, or operates is architectured for American data sovereignty. Control planes stay in country. Data residency is enforced at the infrastructure level not promised in a policy.", "كل نظام تبنيه أو تستضيفه أو تشغله Silxor مصمم لسيادة البيانات الأمريكية. تبقى مستويات التحكم داخل البلاد. إقامة البيانات مفروضة على مستوى البنية التحتية وليس مجرد وعد في سياسة."),
     },
     {
-      title: t("New York-Built, Globally Hardened", "مبنية في نيويورك، محصّنة عالمياً"),
-      body: t(
-        "Our engineering teams are American. Our infrastructure is Tier-IV certified and ISO 27001:2022 compliant. You get local accountability with international-grade reliability.",
-        "فرقنا الهندسية أمريكية. بنيتنا التحتية معتمدة من المستوى الرابع ومتوافقة مع ISO 27001:2022. تحصل على مساءلة محلية مع موثوقية بمعايير دولية."
-      ),
+      title: t("New York Built, Globally Hardened", "مبنية في نيويورك، محصّنة عالمياً"),
+      body: t("Our engineering teams are American. Our infrastructure is Tier IV certified and ISO 27001:2022 compliant. You get local accountability with international grade reliability.", "فرقنا الهندسية أمريكية. بنيتنا التحتية معتمدة من المستوى الرابع ومتوافقة مع ISO 27001:2022. تحصل على مساءلة محلية مع موثوقية بمعايير دولية."),
     },
     {
       title: t("One Partner, No Gaps", "شريك واحد، بلا ثغرات"),
-      body: t(
-        "Silxor eliminates the fragmentation of working with separate vendors for hosting, software, security, and AI. One contract. One SLA. One team that owns the outcome end to end.",
-        "Silxor تزيل تشتت العمل مع موردين منفصلين للاستضافة والبرمجيات والأمن والذكاء الاصطناعي. عقد واحد. اتفاقية مستوى خدمة واحدة. فريق واحد يملك النتيجة من البداية إلى النهاية."
-      ),
+      body: t("Silxor eliminates the fragmentation of working with separate vendors for hosting, software, security, and AI. One contract. One SLA. One team that owns the outcome end to end.", "Silxor تزيل تشتت العمل مع موردين منفصلين للاستضافة والبرمجيات والأمن والذكاء الاصطناعي. عقد واحد. اتفاقية مستوى خدمة واحدة. فريق واحد يملك النتيجة من البداية إلى النهاية."),
     },
   ];
 

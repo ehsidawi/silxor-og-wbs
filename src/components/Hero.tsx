@@ -90,10 +90,7 @@ const Hero = () => {
               className="font-body font-[300]"
               style={{ fontSize: 17, lineHeight: 1.7, color: "#A2A8B8", maxWidth: 520, marginTop: 24, fontFamily: arFont }}
             >
-              {t(
-                "Silxor architects, engineers, and operates the critical systems powering the most demanding institutions — from sovereign cloud infrastructure to enterprise software, private AI, and identity transformation.",
-                "Silxor تصمم وتهندس وتشغّل الأنظمة الحيوية التي تدعم أكثر المؤسسات صرامة في متطلباتها — من البنية التحتية السحابية السيادية إلى البرمجيات المؤسسية والذكاء الاصطناعي الخاص وتحول منظومة الهوية."
-              )}
+              {t("Silxor architects, engineers, and operates the critical systems powering the most demanding institutions from sovereign cloud infrastructure to enterprise software, private AI, and identity transformation.", "Silxor تصمم وتهندس وتشغّل الأنظمة الحيوية التي تدعم أكثر المؤسسات صرامة في متطلباتها من البنية التحتية السحابية السيادية إلى البرمجيات المؤسسية والذكاء الاصطناعي الخاص وتحول منظومة الهوية.")}
             </motion.p>
 
             <motion.div

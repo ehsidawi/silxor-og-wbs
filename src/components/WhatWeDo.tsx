@@ -8,34 +8,22 @@ const WhatWeDo = () => {
     {
       icon: Server,
       title: t("Infrastructure & Cloud", "البنية التحتية والسحابة"),
-      body: t(
-        "Tier-IV certified sovereign cloud hosting, bare-metal servers, NOC operations, and resilient U.S.-backed redundancy. Your data stays under American control.",
-        "استضافة سحابية سيادية معتمدة من المستوى الرابع، خوادم مخصصة، عمليات مركز العمليات، وتكرار مدعوم أمريكياً. بياناتك تبقى تحت السيطرة الأمريكية."
-      ),
+      body: t("Tier IV certified sovereign cloud hosting, bare metal servers, NOC operations, and resilient U.S.-backed redundancy. Your data stays under American control.", "استضافة سحابية سيادية معتمدة من المستوى الرابع، خوادم مخصصة، عمليات مركز العمليات، وتكرار مدعوم أمريكياً. بياناتك تبقى تحت السيطرة الأمريكية."),
     },
     {
       icon: Code,
       title: t("Software Development", "تطوير البرمجيات"),
-      body: t(
-        "New York-engineered custom software for government, finance, and enterprise. Web platforms, mobile applications, APIs, and system integrations built to last.",
-        "برمجيات مخصصة مهندسة في نيويورك للحكومة والمالية والمؤسسات. منصات ويب وتطبيقات جوال وواجهات برمجة وتكاملات أنظمة مبنية لتدوم."
-      ),
+      body: t("New York engineered custom software for government, finance, and enterprise. Web platforms, mobile applications, APIs, and system integrations built to last.", "برمجيات مخصصة مهندسة في نيويورك للحكومة والمالية والمؤسسات. منصات ويب وتطبيقات جوال وواجهات برمجة وتكاملات أنظمة مبنية لتدوم."),
     },
     {
       icon: Brain,
       title: t("AI & Intelligent Automation", "الذكاء الاصطناعي والأتمتة الذكية"),
-      body: t(
-        "Private large language model deployments, agentic AI workflows, RAG pipelines, and intelligent process automation — all hosted sovereignly. Your AI, your data, your control.",
-        "نشر نماذج لغوية خاصة، سير عمل ذكاء اصطناعي، خطوط أنابيب RAG، وأتمتة عمليات ذكية — مستضافة سيادياً. ذكاؤك الاصطناعي، بياناتك، سيطرتك."
-      ),
+      body: t("Private large language model deployments, agentic AI workflows, RAG pipelines, and intelligent process automation all hosted sovereignly. Your AI, your data, your control.", "نشر نماذج لغوية خاصة، سير عمل ذكاء اصطناعي، خطوط أنابيب RAG، وأتمتة عمليات ذكية مستضافة سيادياً. ذكاؤك الاصطناعي، بياناتك، سيطرتك."),
     },
     {
       icon: ShieldCheck,
       title: t("Technology Consulting", "الاستشارات التقنية"),
-      body: t(
-        "Architecture design, cybersecurity advisory, Zero Trust strategy, digital transformation roadmaps, and compliance engineering for USA's most regulated sectors.",
-        "تصميم البنية المعمارية، استشارات الأمن السيبراني، استراتيجية الثقة المعدومة، خرائط طريق التحول الرقمي، وهندسة الامتثال لأكثر القطاعات تنظيماً في الولايات المتحدة."
-      ),
+      body: t("Architecture design, cybersecurity advisory, Zero Trust strategy, digital transformation roadmaps, and compliance engineering for USA's most regulated sectors.", "تصميم البنية المعمارية، استشارات الأمن السيبراني، استراتيجية الثقة المعدومة، خرائط طريق التحول الرقمي، وهندسة الامتثال لأكثر القطاعات تنظيماً في الولايات المتحدة."),
     },
   ];
 
@@ -48,10 +36,7 @@ const WhatWeDo = () => {
             {t("One Company. Every Layer of Technology.", "شركة واحدة. كل طبقات التقنية.")}
           </h2>
           <p className="font-body font-[300]" style={{ fontSize: 14, color: "#A2A8B8", maxWidth: 520, marginTop: 10, lineHeight: 1.7 }}>
-            {t(
-              "From the physical infrastructure beneath your systems to the AI agents running inside them — Silxor owns the full stack.",
-              "من البنية التحتية المادية تحت أنظمتك إلى وكلاء الذكاء الاصطناعي داخلها — Silxor تمتلك المنظومة الكاملة."
-            )}
+            {t("From the physical infrastructure beneath your systems to the AI agents running inside them Silxor owns the full stack.", "من البنية التحتية المادية تحت أنظمتك إلى وكلاء الذكاء الاصطناعي داخلها Silxor تمتلك المنظومة الكاملة.")}
           </p>
         </div>
 

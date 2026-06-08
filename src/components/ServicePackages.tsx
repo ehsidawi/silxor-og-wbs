@@ -24,8 +24,8 @@ const allPackages: PackageItem[] = [
     nameAr: "السيادي الأساسي",
     tagline: "For startups and small teams entering sovereign hosting",
     taglineAr: "للشركات الناشئة والفرق الصغيرة التي تدخل الاستضافة السيادية",
-    specs: ["2 vCPU / 8GB RAM / 100GB SSD", "Shared NOC monitoring", "99.9% Uptime SLA", "Standard support — <4hr P1 response", "Weekly backups"],
-    specsAr: ["2 vCPU / 8GB RAM / 100GB SSD", "مراقبة NOC مشتركة", "99.9% SLA وقت التشغيل", "دعم قياسي — <4 ساعات استجابة P1", "نسخ احتياطي أسبوعي"],
+    specs: ["2 vCPU / 8GB RAM / 100GB SSD", "Shared NOC monitoring", "99.9% Uptime SLA", "Standard support <4hr P1 response", "Weekly backups"],
+    specsAr: ["2 vCPU / 8GB RAM / 100GB SSD", "مراقبة NOC مشتركة", "99.9% SLA وقت التشغيل", "دعم قياسي <4 ساعات استجابة P1", "نسخ احتياطي أسبوعي"],
     cta: "Get Started", ctaAr: "ابدأ الآن",
     domain: "INFRA", domainAr: "بنية تحتية",
     coord: { en: "33.3°N · 44.4°E", ar: "٣٣.٣° ش · ٤٤.٤° شر" },
@@ -36,8 +36,8 @@ const allPackages: PackageItem[] = [
     nameAr: "السيادي للأعمال",
     tagline: "For growing enterprises and regulated fintechs",
     taglineAr: "للمؤسسات النامية والتقنية المالية المنظمة",
-    specs: ["8 vCPU / 32GB RAM / 500GB SSD", "Dedicated NOC coverage", "99.99% Uptime SLA", "Priority support — <1hr P1 response", "Daily backups + <30s RTO", "Compliance reporting"],
-    specsAr: ["8 vCPU / 32GB RAM / 500GB SSD", "تغطية NOC مخصصة", "99.99% SLA وقت التشغيل", "دعم أولوية — <1 ساعة استجابة P1", "نسخ احتياطي يومي + <30 ثانية RTO", "تقارير الامتثال"],
+    specs: ["8 vCPU / 32GB RAM / 500GB SSD", "Dedicated NOC coverage", "99.99% Uptime SLA", "Priority support <1hr P1 response", "Daily backups + <30s RTO", "Compliance reporting"],
+    specsAr: ["8 vCPU / 32GB RAM / 500GB SSD", "تغطية NOC مخصصة", "99.99% SLA وقت التشغيل", "دعم أولوية <1 ساعة استجابة P1", "نسخ احتياطي يومي + <30 ثانية RTO", "تقارير الامتثال"],
     cta: "Get Started", ctaAr: "ابدأ الآن",
     popular: true,
     domain: "INFRA", domainAr: "بنية تحتية",
@@ -49,7 +49,7 @@ const allPackages: PackageItem[] = [
     nameAr: "السيادي المؤسسي",
     tagline: "For government, banking, and critical infrastructure",
     taglineAr: "للحكومة والبنوك والبنية التحتية الحيوية",
-    specs: ["Dedicated bare-metal or private cloud", "24/7 New York + Virginia dual-NOC", "99.995% Uptime SLA", "<15min P1 response", "Custom redundancy architecture", "Full compliance documentation + audit support", "Air-gap available on request"],
+    specs: ["Dedicated bare metal or private cloud", "24/7 New York + Virginia dual NOC", "99.995% Uptime SLA", "<15min P1 response", "Custom redundancy architecture", "Full compliance documentation + audit support", "Air gap available on request"],
     specsAr: ["خادم مخصص أو سحابة خاصة", "NOC مزدوج نيويورك + فيرجينيا 24/7", "99.995% SLA وقت التشغيل", "<15 دقيقة استجابة P1", "بنية تكرار مخصصة", "توثيق امتثال كامل + دعم تدقيق", "عزل هوائي متاح عند الطلب"],
     cta: "Request Assessment", ctaAr: "طلب تقييم",
     domain: "INFRA", domainAr: "بنية تحتية",
@@ -62,7 +62,7 @@ const allPackages: PackageItem[] = [
     nameAr: "أساسيات البناء",
     tagline: "For MVPs, internal tools, and first digital products",
     taglineAr: "للمنتجات الأولية والأدوات الداخلية والمنتجات الرقمية الأولى",
-    specs: ["Up to 5 delivery sprints", "Web or mobile platform (one)", "Basic QA and UAT", "3 months post-launch support"],
+    specs: ["Up to 5 delivery sprints", "Web or mobile platform (one)", "Basic QA and UAT", "3 months post launch support"],
     specsAr: ["حتى 5 دورات تسليم", "منصة ويب أو موبايل (واحدة)", "ضمان جودة أساسي واختبار قبول", "3 أشهر دعم بعد الإطلاق"],
     cta: "Start a Project", ctaAr: "ابدأ مشروعاً",
     domain: "SOFTWARE", domainAr: "برمجيات",
@@ -74,7 +74,7 @@ const allPackages: PackageItem[] = [
     nameAr: "البناء الاحترافي",
     tagline: "For enterprise platforms and government portals",
     taglineAr: "لمنصات المؤسسات والبوابات الحكومية",
-    specs: ["Up to 15 delivery sprints", "Web + mobile + API development", "Full QA pipeline + security review", "6 months managed support + SLA", "Integration with third-party systems"],
+    specs: ["Up to 15 delivery sprints", "Web + mobile + API development", "Full QA pipeline + security review", "6 months managed support + SLA", "Integration with third party systems"],
     specsAr: ["حتى 15 دورة تسليم", "تطوير ويب + موبايل + API", "خط ضمان جودة كامل + مراجعة أمنية", "6 أشهر دعم مُدار + SLA", "تكامل مع أنظمة الطرف الثالث"],
     cta: "Start a Project", ctaAr: "ابدأ مشروعاً",
     popular: true,
@@ -85,9 +85,9 @@ const allPackages: PackageItem[] = [
   {
     name: "Build Enterprise",
     nameAr: "البناء المؤسسي",
-    tagline: "For mission-critical national systems",
+    tagline: "For mission critical national systems",
     taglineAr: "للأنظمة الوطنية ذات المهام الحرجة",
-    specs: ["Dedicated engineering team", "Multi-platform + full systems integration", "Security audit + compliance documentation", "12 months managed support", "Custom SLA and delivery governance"],
+    specs: ["Dedicated engineering team", "Multi platform + full systems integration", "Security audit + compliance documentation", "12 months managed support", "Custom SLA and delivery governance"],
     specsAr: ["فريق هندسي مخصص", "منصات متعددة + تكامل أنظمة كامل", "تدقيق أمني + توثيق امتثال", "12 شهر دعم مُدار", "SLA مخصص وحوكمة التسليم"],
     cta: "Request Assessment", ctaAr: "طلب تقييم",
     domain: "SOFTWARE", domainAr: "برمجيات",
@@ -100,8 +100,8 @@ const allPackages: PackageItem[] = [
     nameAr: "أساس الذكاء الاصطناعي",
     tagline: "For organizations deploying their first sovereign AI system",
     taglineAr: "للمنظمات التي تنشر أول نظام ذكاء اصطناعي سيادي",
-    specs: ["1 sovereign LLM deployment (7B–14B)", "Basic RAG pipeline + document ingestion", "Hosted on Silxor sovereign infrastructure", "Standard monitoring dashboard", "No data leaves American control"],
-    specsAr: ["نشر LLM سيادي واحد (7B–14B)", "خط RAG أساسي + استيعاب المستندات", "مستضاف على بنية Silxor السيادية", "لوحة مراقبة قياسية", "لا تغادر البيانات السيطرة الأمريكية"],
+    specs: ["1 sovereign LLM deployment (7B 14B)", "Basic RAG pipeline + document ingestion", "Hosted on Silxor sovereign infrastructure", "Standard monitoring dashboard", "No data leaves American control"],
+    specsAr: ["نشر LLM سيادي واحد (7B 14B)", "خط RAG أساسي + استيعاب المستندات", "مستضاف على بنية Silxor السيادية", "لوحة مراقبة قياسية", "لا تغادر البيانات السيطرة الأمريكية"],
     cta: "Get Started", ctaAr: "ابدأ الآن",
     domain: "AI", domainAr: "ذكاء اصطناعي",
     coord: { en: "33.3°N · 44.4°E", ar: "٣٣.٣° ش · ٤٤.٤° شر" },
@@ -112,7 +112,7 @@ const allPackages: PackageItem[] = [
     nameAr: "الذكاء الاصطناعي الاحترافي",
     tagline: "For enterprise automation and intelligent operations",
     taglineAr: "لأتمتة المؤسسات والعمليات الذكية",
-    specs: ["Up to 3 LLM deployments", "Multi-source RAG + vector search", "Agentic workflow automation (up to 5 workflows)", "Model monitoring + retraining pipeline", "API integration with existing systems", "No data leaves American control"],
+    specs: ["Up to 3 LLM deployments", "Multi source RAG + vector search", "Agentic workflow automation (up to 5 workflows)", "Model monitoring + retraining pipeline", "API integration with existing systems", "No data leaves American control"],
     specsAr: ["حتى 3 عمليات نشر LLM", "RAG متعدد المصادر + بحث متجهي", "أتمتة سير عمل وكيلي (حتى 5 سير عمل)", "مراقبة النموذج + خط إعادة التدريب", "تكامل API مع الأنظمة الحالية", "لا تغادر البيانات السيطرة الأمريكية"],
     cta: "Get Started", ctaAr: "ابدأ الآن",
     popular: true,
@@ -123,9 +123,9 @@ const allPackages: PackageItem[] = [
   {
     name: "AI Sovereign Enterprise",
     nameAr: "الذكاء الاصطناعي السيادي المؤسسي",
-    tagline: "For government AI and national-scale intelligent systems",
+    tagline: "For government AI and national scale intelligent systems",
     taglineAr: "للذكاء الاصطناعي الحكومي والأنظمة الذكية الوطنية",
-    specs: ["Unlimited model deployments", "Full agentic infrastructure + orchestration layer", "Air-gap deployment available", "Custom model fine-tuning + data pipelines", "Dedicated AI engineering team", "Full audit trail and explainability reporting"],
+    specs: ["Unlimited model deployments", "Full agentic infrastructure + orchestration layer", "Air gap deployment available", "Custom model fine tuning + data pipelines", "Dedicated AI engineering team", "Full audit trail and explainability reporting"],
     specsAr: ["عمليات نشر نماذج غير محدودة", "بنية تحتية وكيلية كاملة + طبقة تنسيق", "نشر معزول هوائياً متاح", "ضبط دقيق للنموذج + خطوط بيانات مخصصة", "فريق هندسة ذكاء اصطناعي مخصص", "مسار تدقيق كامل وتقارير القابلية للتفسير"],
     cta: "Request Assessment", ctaAr: "طلب تقييم",
     domain: "AI", domainAr: "ذكاء اصطناعي",
@@ -136,9 +136,9 @@ const allPackages: PackageItem[] = [
   {
     name: "Advisory Sprint",
     nameAr: "سباق استشاري",
-    tagline: "2-week focused engagement",
+    tagline: "2 week focused engagement",
     taglineAr: "مشاركة مركزة لمدة أسبوعين",
-    specs: ["Architecture or security assessment", "Written findings and recommendations report", "Executive summary for leadership", "1 follow-up strategy session", "Deliverable: Assessment Report"],
+    specs: ["Architecture or security assessment", "Written findings and recommendations report", "Executive summary for leadership", "1 follow up strategy session", "Deliverable: Assessment Report"],
     specsAr: ["تقييم معماري أو أمني", "تقرير نتائج وتوصيات مكتوب", "ملخص تنفيذي للقيادة", "جلسة استراتيجية متابعة واحدة", "المخرج: تقرير تقييم"],
     cta: "Book a Sprint", ctaAr: "احجز سباقاً",
     domain: "CONSULT", domainAr: "استشارات",
@@ -148,7 +148,7 @@ const allPackages: PackageItem[] = [
   {
     name: "Transformation Program",
     nameAr: "برنامج التحول",
-    tagline: "3-month modernization engagement",
+    tagline: "3 month modernization engagement",
     taglineAr: "مشاركة تحديث لمدة 3 أشهر",
     specs: ["Full digital transformation roadmap", "Zero Trust and IAM architecture design", "Vendor selection and procurement advisory", "Program governance and delivery framework", "Deliverable: Transformation Playbook"],
     specsAr: ["خارطة طريق التحول الرقمي الكاملة", "تصميم بنية Zero Trust و IAM", "اختيار الموردين واستشارات المشتريات", "حوكمة البرنامج وإطار التسليم", "المخرج: دليل التحول"],
@@ -160,8 +160,8 @@ const allPackages: PackageItem[] = [
   {
     name: "Strategic Partner",
     nameAr: "شريك استراتيجي",
-    tagline: "Ongoing retainer — embedded expertise",
-    taglineAr: "عقد مستمر — خبرة مدمجة",
+    tagline: "Ongoing retainer embedded expertise",
+    taglineAr: "عقد مستمر خبرة مدمجة",
     specs: ["Dedicated senior architect on call", "Monthly security and architecture reviews", "Compliance monitoring and audit preparation", "Quarterly technology roadmap sessions", "Priority access across all Silxor business units"],
     specsAr: ["مهندس معماري أول مخصص تحت الطلب", "مراجعات أمنية ومعمارية شهرية", "مراقبة الامتثال وإعداد التدقيق", "جلسات خارطة طريق تقنية ربع سنوية", "وصول أولوية عبر جميع وحدات أعمال Silxor"],
     cta: "Become a Partner", ctaAr: "كن شريكاً",
@@ -179,7 +179,7 @@ const comparisonRows = [
   { feature: "Backups", starter: "Weekly", business: "Daily", enterprise: "Continuous" },
   { feature: "RTO", starter: "<4hr", business: "<30min", enterprise: "<30sec" },
   { feature: "RPO", starter: "24hr", business: "1hr", enterprise: "15min" },
-  { feature: "Air-Gap", starter: null, business: null, enterprise: true },
+  { feature: "Air Gap", starter: null, business: null, enterprise: true },
   { feature: "Compliance Docs", starter: null, business: true, enterprise: true },
   { feature: "Dedicated Mgr", starter: null, business: null, enterprise: true },
 ];
@@ -198,7 +198,7 @@ const TierComparisonTable = () => {
         {t("TIER COMPARISON", "مقارنة المستويات")}
       </div>
       <h3 className="font-body font-[500]" style={{ fontSize: 15, color: "hsl(var(--foreground))", marginBottom: 16 }}>
-        {t("At a Glance — What Changes Across Tiers", "نظرة سريعة — ما يتغير عبر المستويات")}
+        {t("At a Glance What Changes Across Tiers", "نظرة سريعة ما يتغير عبر المستويات")}
       </h3>
       <div style={{ overflowX: "auto" }}>
         <table style={{ width: "100%", borderCollapse: "collapse", minWidth: 520 }}>
@@ -275,10 +275,7 @@ const ServicePackages = () => {
             {t("Transparent Service Packages", "حزم خدمات شفافة")}
           </h2>
           <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 520, marginTop: 10, lineHeight: 1.7 }}>
-            {t(
-              "Every engagement starts with clarity. Choose your entry point across any of our four technology domains.",
-              "كل مشاركة تبدأ بالوضوح. اختر نقطة دخولك عبر أي من مجالاتنا التقنية الأربعة."
-            )}
+            {t("Every engagement starts with clarity. Choose your entry point across any of our four technology domains.", "كل مشاركة تبدأ بالوضوح. اختر نقطة دخولك عبر أي من مجالاتنا التقنية الأربعة.")}
           </p>
         </div>
 
@@ -450,10 +447,7 @@ const ServicePackages = () => {
             margin: "0 auto",
           }}
         >
-          {t(
-            "All packages include an initial technical discovery session. Enterprise and Government engagements begin with a formal Request for Assessment. Custom packages available for multi-domain engagements spanning infrastructure, software, AI, and consulting.",
-            "تتضمن جميع الحزم جلسة اكتشاف تقني أولية. تبدأ مشاركات المؤسسات والحكومة بطلب تقييم رسمي. حزم مخصصة متاحة للمشاركات متعددة المجالات التي تشمل البنية التحتية والبرمجيات والذكاء الاصطناعي والاستشارات."
-          )}
+          {t("All packages include an initial technical discovery session. Enterprise and Government engagements begin with a formal Request for Assessment. Custom packages available for multi domain engagements spanning infrastructure, software, AI, and consulting.", "تتضمن جميع الحزم جلسة اكتشاف تقني أولية. تبدأ مشاركات المؤسسات والحكومة بطلب تقييم رسمي. حزم مخصصة متاحة للمشاركات متعددة المجالات التي تشمل البنية التحتية والبرمجيات والذكاء الاصطناعي والاستشارات.")}
         </div>
 
         <div className="flex justify-center" style={{ marginTop: 28 }}>

@@ -6,7 +6,7 @@ const blocks = [
     title: "ISO/IEC 27001:2022",
     status: "CERTIFIED",
     statusColor: "#2A9D5C",
-    body: "Silxor Technologies holds ISO/IEC 27001:2022 certification covering information security management across all service delivery operations. Annual third-party audit conducted. Certificate available upon request under NDA.",
+    body: "Silxor Technologies holds ISO/IEC 27001:2022 certification covering information security management across all service delivery operations. Annual third party audit conducted. Certificate available upon request under NDA.",
   },
   {
     title: "SOC 2 Type II",
@@ -15,16 +15,16 @@ const blocks = [
     body: "SOC 2 Type II attestation covering Security, Availability, and Confidentiality trust service criteria. Report available to enterprise clients upon execution of NDA.",
   },
   {
-    title: "Tier-IV Infrastructure",
+    title: "Tier IV Infrastructure",
     status: "CERTIFIED",
     statusColor: "#2A9D5C",
-    body: "All production workloads are hosted on Uptime Institute Tier-IV certified infrastructure at Equinix Ashburn, VA. Fault tolerance, N+2 power redundancy, and concurrent maintainability are standard.",
+    body: "All production workloads are hosted on Uptime Institute Tier IV certified infrastructure at Equinix Ashburn, VA. Fault tolerance, N+2 power redundancy, and concurrent maintainability are standard.",
   },
   {
     title: "GDPR Readiness",
     status: "READY",
     statusColor: "#DDB343",
-    body: "Silxor data handling practices are aligned with GDPR requirements including data minimization, consent management, and data subject rights fulfillment. Applicable to engagements involving EU-resident data.",
+    body: "Silxor data handling practices are aligned with GDPR requirements including data minimization, consent management, and data subject rights fulfillment. Applicable to engagements involving EU resident data.",
   },
 ];
 

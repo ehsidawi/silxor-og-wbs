@@ -167,10 +167,7 @@ const ContactForm = () => {
           <label style={labelStyle}>{t("Message", "الرسالة")}</label>
           <textarea
             rows={4}
-            placeholder={t(
-              "Describe what you're building or the challenge you're facing",
-              "صف ما تبنيه أو التحدي الذي تواجهه"
-            )}
+            placeholder={t("Describe what you're building or the challenge you're facing", "صف ما تبنيه أو التحدي الذي تواجهه")}
             value={formState.message}
             onChange={(e) => setFormState({ ...formState, message: e.target.value })}
             onFocus={handleFocus as any}
@@ -209,18 +206,12 @@ const ContactForm = () => {
 
         {status === "success" && (
           <div className="sm:col-span-2 font-body font-[300] text-center" style={{ fontSize: 14, color: "#DDB343", animation: "fadeIn 300ms ease" }}>
-            {t(
-              "Your email client has opened with your message pre-filled. Please send it to complete your inquiry.",
-              "تم فتح عميل البريد الإلكتروني مع رسالتك المعبأة مسبقاً. يرجى إرسالها لإتمام استفسارك."
-            )}
+            {t("Your email client has opened with your message pre filled. Please send it to complete your inquiry.", "تم فتح عميل البريد الإلكتروني مع رسالتك المعبأة مسبقاً. يرجى إرسالها لإتمام استفسارك.")}
           </div>
         )}
         {status === "error" && (
           <div className="sm:col-span-2 font-body font-[300] text-center" style={{ fontSize: 14, color: "#C94C4C" }}>
-            {t(
-              "Something went wrong. Please email us directly at contact@silxor.com",
-              "حدث خطأ ما. يرجى مراسلتنا مباشرة على contact@silxor.com"
-            )}
+            {t("Something went wrong. Please email us directly at contact@silxor.com", "حدث خطأ ما. يرجى مراسلتنا مباشرة على contact@silxor.com")}
           </div>
         )}
       </form>
