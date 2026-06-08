@@ -14,8 +14,8 @@ const announcements = [
     dateAr: "فبراير 2026",
     title: "Sovereign AI Infrastructure Now Available",
     titleAr: "البنية التحتية للذكاء الاصطناعي السيادي متاحة الآن",
-    body: "Silxor launches private LLM deployment services for American enterprises and government agencies — fully air-gapped options included.",
-    bodyAr: "Silxor تطلق خدمات نشر النماذج اللغوية الخاصة للمؤسسات والجهات الحكومية الأمريكية — مع خيارات معزولة بالكامل.",
+    body: "Silxor launches private LLM deployment services for American enterprises and government agencies fully air gapped options included.",
+    bodyAr: "Silxor تطلق خدمات نشر النماذج اللغوية الخاصة للمؤسسات والجهات الحكومية الأمريكية مع خيارات معزولة بالكامل.",
   },
   {
     date: "January 2026",
@@ -39,10 +39,7 @@ const PressAnnouncements = () => {
             {t("Latest from Silxor", "آخر أخبار Silxor")}
           </h2>
           <p className="font-body font-[300]" style={{ fontSize: 14, color: "#A2A8B8", maxWidth: 520, marginTop: 10, lineHeight: 1.7 }}>
-            {t(
-              "Updates on Silxor infrastructure, partnerships, certifications, and technology developments.",
-              "تحديثات حول بنية Silxor التحتية والشراكات والشهادات والتطورات التقنية."
-            )}
+            {t("Updates on Silxor infrastructure, partnerships, certifications, and technology developments.", "تحديثات حول بنية Silxor التحتية والشراكات والشهادات والتطورات التقنية.")}
           </p>
         </div>
 

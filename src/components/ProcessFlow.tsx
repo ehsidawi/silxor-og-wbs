@@ -7,7 +7,7 @@ const ProcessFlow = () => {
     { title: t("Request Assessment", "طلب التقييم"), description: t("Technical evaluation and feasibility analysis", "التقييم التقني وتحليل الجدوى") },
     { title: t("Architect & Design", "التصميم والهندسة المعمارية"), description: t("Infrastructure planning and security review", "تخطيط البنية التحتية ومراجعة الأمن") },
     { title: t("Engineer & Build", "البناء والتطوير"), description: t("Development and integration with quality assurance", "التطوير والتكامل مع ضمان الجودة") },
-    { title: t("Deploy & Host", "النشر والاستضافة"), description: t("Production deployment to Tier-IV infrastructure", "نشر الإنتاج على بنية تحتية من المستوى الرابع") },
+    { title: t("Deploy & Host", "النشر والاستضافة"), description: t("Production deployment to Tier IV infrastructure", "نشر الإنتاج على بنية تحتية من المستوى الرابع") },
     { title: t("Manage & Iterate", "الإدارة والتحسين المستمر"), description: t("24/7 monitoring and continuous improvement", "مراقبة على مدار الساعة وتحسين مستمر") },
   ];
 
@@ -20,10 +20,7 @@ const ProcessFlow = () => {
             {t("Enterprise Delivery Process", "عملية التسليم المؤسسية")}
           </h2>
           <p className="font-body font-[300] mx-auto" style={{ fontSize: 16, color: "#A2A8B8", maxWidth: 560, marginTop: 16, lineHeight: 1.7 }}>
-            {t(
-              "Whether we're deploying cloud infrastructure, delivering a software platform, or standing up a sovereign AI system — our structured delivery process ensures precision at every stage.",
-              "سواء كنا ننشر بنية تحتية سحابية أو نسلم منصة برمجيات أو نقيم نظام ذكاء اصطناعي سيادي — عمليتنا المنظمة تضمن الدقة في كل مرحلة."
-            )}
+            {t("Whether we're deploying cloud infrastructure, delivering a software platform, or standing up a sovereign AI system our structured delivery process ensures precision at every stage.", "سواء كنا ننشر بنية تحتية سحابية أو نسلم منصة برمجيات أو نقيم نظام ذكاء اصطناعي سيادي عمليتنا المنظمة تضمن الدقة في كل مرحلة.")}
           </p>
         </div>
 

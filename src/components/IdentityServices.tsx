@@ -16,18 +16,18 @@ interface DomainCard {
 }
 
 const domains: DomainCard[] = [
-  { abbrev: "IAM", icon: Shield, title: "Identity & Access Management", body: "Core identity infrastructure — authentication, authorization, role management, and access policy enforcement across workforce and applications.", tags: "SAML • OIDC • OAuth 2.0 • RBAC • ABAC" },
-  { abbrev: "PAM", icon: Key, title: "Privileged Access Management", body: "Privileged account vaulting, session recording, just-in-time access, and credential rotation for your most sensitive systems and administrative accounts.", tags: "CyberArk • BeyondTrust • Delinea • JIT • Session Vault" },
-  { abbrev: "CIAM", icon: Users, title: "Customer Identity & Access Management", body: "Citizen and customer-facing identity systems with self-service registration, progressive profiling, consent management, and omnichannel authentication.", tags: "Auth0 • Keycloak • Okta • MFA • Passwordless" },
+  { abbrev: "IAM", icon: Shield, title: "Identity & Access Management", body: "Core identity infrastructure authentication, authorization, role management, and access policy enforcement across workforce and applications.", tags: "SAML • OIDC • OAuth 2.0 • RBAC • ABAC" },
+  { abbrev: "PAM", icon: Key, title: "Privileged Access Management", body: "Privileged account vaulting, session recording, just in time access, and credential rotation for your most sensitive systems and administrative accounts.", tags: "CyberArk • BeyondTrust • Delinea • JIT • Session Vault" },
+  { abbrev: "CIAM", icon: Users, title: "Customer Identity & Access Management", body: "Citizen and customer facing identity systems with self service registration, progressive profiling, consent management, and omnichannel authentication.", tags: "Auth0 • Keycloak • Okta • MFA • Passwordless" },
   { abbrev: "IGA", icon: GitBranch, title: "Identity Governance & Administration", body: "Automated provisioning and deprovisioning, access certification campaigns, role mining, segregation of duties, and entitlement management.", tags: "SailPoint • Saviynt • SCIM • Role Mining • Recertification" },
-  { abbrev: "ISPM", icon: Activity, title: "Identity Security Posture Management", body: "Continuous visibility into identity risk — orphaned accounts, over-provisioned access, shadow admins, credential exposure, and posture drift detection.", tags: "Posture scoring • Risk analytics • Drift detection" },
-  { abbrev: "ITDR", icon: AlertTriangle, title: "Identity Threat Detection & Response", body: "Real-time detection of identity-based attacks — credential stuffing, lateral movement, privilege escalation, and account takeover — with automated response playbooks.", tags: "UEBA • Behavioral analytics • Automated response" },
-  { abbrev: "NHI", icon: Cpu, title: "Non-Human Identity", body: "Secrets management, service account governance, API key lifecycle, and machine-to-machine authentication for workloads, pipelines, and AI agents.", tags: "SPIFFE/SPIRE • Vault • mTLS • Workload identity" },
+  { abbrev: "ISPM", icon: Activity, title: "Identity Security Posture Management", body: "Continuous visibility into identity risk orphaned accounts, over provisioned access, shadow admins, credential exposure, and posture drift detection.", tags: "Posture scoring • Risk analytics • Drift detection" },
+  { abbrev: "ITDR", icon: AlertTriangle, title: "Identity Threat Detection & Response", body: "Real time detection of identity based attacks credential stuffing, lateral movement, privilege escalation, and account takeover with automated response playbooks.", tags: "UEBA • Behavioral analytics • Automated response" },
+  { abbrev: "NHI", icon: Cpu, title: "Non Human Identity", body: "Secrets management, service account governance, API key lifecycle, and machine to machine authentication for workloads, pipelines, and AI agents.", tags: "SPIFFE/SPIRE • Vault • mTLS • Workload identity" },
   { abbrev: "DIR", icon: Database, title: "Directory Services", body: "Active Directory architecture, Entra ID design, LDAP modernization, forest consolidation, trust relationship engineering, and hybrid identity management.", tags: "Active Directory • Entra ID • LDAP • SCIM • AD Connect" },
-  { abbrev: "CLOUD IAM", icon: Cloud, title: "Cloud & Multi-Cloud IAM", body: "Identity architecture across AWS IAM, Azure AD, and GCP IAM — including cross-cloud federation, workload identity, and cloud entitlement management.", tags: "AWS IAM • Azure AD • GCP IAM • CIEM • Entra" },
-  { abbrev: "FED", icon: Link, title: "Federation & SSO", body: "Cross-domain and cross-organization identity federation, single sign-on deployment, trust chain engineering, and B2B identity integration.", tags: "SAML 2.0 • OIDC • WS-Federation • Azure B2B • IdP" },
-  { abbrev: "PKI", icon: Lock, title: "PKI & Certificate Management", body: "Certificate authority design, end-entity cert lifecycle automation, mTLS enforcement, and PKI modernization for zero-trust network architectures.", tags: "CA design • ACME • mTLS • Let's Encrypt • HSM" },
-  { abbrev: "ZTI", icon: Layers, title: "Zero Trust Identity Architecture", body: "Identity as the new perimeter — continuous verification, least-privilege enforcement, ZTNA integration, and identity-aware proxy design across your entire environment.", tags: "ZTNA • BeyondCorp • Conditional Access • CAEP • SSE" },
+  { abbrev: "CLOUD IAM", icon: Cloud, title: "Cloud & Multi Cloud IAM", body: "Identity architecture across AWS IAM, Azure AD, and GCP IAM including cross cloud federation, workload identity, and cloud entitlement management.", tags: "AWS IAM • Azure AD • GCP IAM • CIEM • Entra" },
+  { abbrev: "FED", icon: Link, title: "Federation & SSO", body: "Cross domain and cross organization identity federation, single sign on deployment, trust chain engineering, and B2B identity integration.", tags: "SAML 2.0 • OIDC • WS-Federation • Azure B2B • IdP" },
+  { abbrev: "PKI", icon: Lock, title: "PKI & Certificate Management", body: "Certificate authority design, end entity cert lifecycle automation, mTLS enforcement, and PKI modernization for zero trust network architectures.", tags: "CA design • ACME • mTLS • Let's Encrypt • HSM" },
+  { abbrev: "ZTI", icon: Layers, title: "Zero Trust Identity Architecture", body: "Identity as the new perimeter continuous verification, least privilege enforcement, ZTNA integration, and identity aware proxy design across your entire environment.", tags: "ZTNA • BeyondCorp • Conditional Access • CAEP • SSE" },
 ];
 
 /* ── SUBSECTION 2: Engagement Items ── */
@@ -38,15 +38,15 @@ interface EngagementItem {
 }
 
 const engagements: EngagementItem[] = [
-  { icon: Search, label: "Assess", detail: "Full audit of your existing identity environment — gaps, risks, misconfigurations, and attack surface." },
+  { icon: Search, label: "Assess", detail: "Full audit of your existing identity environment gaps, risks, misconfigurations, and attack surface." },
   { icon: Map, label: "Design", detail: "Greenfield and brownfield identity architecture blueprints aligned to Zero Trust and compliance requirements." },
-  { icon: Code, label: "Build", detail: "Custom identity platform build, IdP integration, connector development, and API-level access control implementation." },
-  { icon: Upload, label: "Deploy", detail: "Production deployment with zero-downtime migration from legacy systems, full cutover planning, and rollback procedures." },
-  { icon: RefreshCw, label: "Modernize", detail: "Legacy identity system modernization — replacing outdated IAM stacks with sovereign, cloud-native, or hybrid architectures." },
-  { icon: Ambulance, label: "Recover", detail: "Emergency identity recovery — AD forest rebuilds, PAM vault recovery, identity breach containment, and post-incident hardening." },
+  { icon: Code, label: "Build", detail: "Custom identity platform build, IdP integration, connector development, and API level access control implementation." },
+  { icon: Upload, label: "Deploy", detail: "Production deployment with zero downtime migration from legacy systems, full cutover planning, and rollback procedures." },
+  { icon: RefreshCw, label: "Modernize", detail: "Legacy identity system modernization replacing outdated IAM stacks with sovereign, cloud native, or hybrid architectures." },
+  { icon: Ambulance, label: "Recover", detail: "Emergency identity recovery AD forest rebuilds, PAM vault recovery, identity breach containment, and post incident hardening." },
   { icon: Settings, label: "Operate", detail: "Ongoing identity platform administration, access review campaigns, policy enforcement, and 24/7 identity operations support." },
-  { icon: FileCheck, label: "Comply", detail: "Identity controls mapping to ISO 27001, NIST SP 800-63, SOC 2, CBI frameworks, and regulatory audit evidence packages." },
-  { icon: Zap, label: "Accelerate", detail: "Time-critical identity deployments — MFA rollouts, SSO implementations, and emergency PAM deployments executed in days, not months." },
+  { icon: FileCheck, label: "Comply", detail: "Identity controls mapping to ISO 27001, NIST SP 800 63, SOC 2, CBI frameworks, and regulatory audit evidence packages." },
+  { icon: Zap, label: "Accelerate", detail: "Time critical identity deployments MFA rollouts, SSO implementations, and emergency PAM deployments executed in days, not months." },
 ];
 
 /* ── SUBSECTION 3: Environment Categories ── */
@@ -75,12 +75,12 @@ interface IdPkg { name: string; tagline: string; specs: string[]; cta: string; m
 const identityPackages: IdPkg[] = [
   {
     name: "Identity Assessment & Roadmap",
-    tagline: "2–3 week engagement",
+    tagline: "2 3 week engagement",
     specs: [
       "Full identity environment discovery and mapping",
       "Risk and gap analysis across all IAM domains",
       "Attack surface assessment (PAM, orphaned accounts, shadow admins, credential exposure)",
-      "Compliance alignment review (ISO 27001, NIST 800-63, CBI)",
+      "Compliance alignment review (ISO 27001, NIST 800 63, CBI)",
       "Written Architecture Roadmap with prioritized remediation",
       "Executive and technical findings briefing",
     ],
@@ -89,7 +89,7 @@ const identityPackages: IdPkg[] = [
   },
   {
     name: "Identity Build & Deploy",
-    tagline: "6–16 week delivery engagement",
+    tagline: "6 16 week delivery engagement",
     specs: [
       "Greenfield or brownfield identity architecture design",
       "Platform selection, procurement advisory, and vendor neutral engineering",
@@ -103,7 +103,7 @@ const identityPackages: IdPkg[] = [
   },
   {
     name: "Managed Identity Operations",
-    tagline: "Ongoing retainer — monthly",
+    tagline: "Ongoing retainer monthly",
     specs: [
       "24/7 identity platform monitoring and alerting",
       "Access review and certification campaign management",
@@ -275,10 +275,10 @@ const IdentityServices = () => {
         <div style={{ marginBottom: 32 }}>
           <div className="section-eyebrow">IDENTITY & ACCESS MANAGEMENT</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: '#F7F3EC' }}>
-            End-to-End Identity Services
+            End to End Identity Services
           </h2>
           <p className="font-body font-[300]" style={{ fontSize: 14, color: '#A2A8B8', maxWidth: 560, marginTop: 10, lineHeight: 1.7 }}>
-            Silxor delivers the full spectrum of identity architecture — from initial assessment and greenfield design to deployment, integration, recovery, and ongoing management. Every identity domain. Every environment. Sovereign by default.
+            Silxor delivers the full spectrum of identity architecture from initial assessment and greenfield design to deployment, integration, recovery, and ongoing management. Every identity domain. Every environment. Sovereign by default.
           </p>
         </div>
 
@@ -288,7 +288,7 @@ const IdentityServices = () => {
             Every Identity Domain. One Partner.
           </h3>
           <p className="font-body font-[300]" style={{ fontSize: 13, color: '#A2A8B8', maxWidth: 520, marginBottom: 20, lineHeight: 1.7 }}>
-            Silxor architects and operates across all identity disciplines — purpose-built for governments, financial institutions, and enterprises operating in high-stakes environments.
+            Silxor architects and operates across all identity disciplines purpose built for governments, financial institutions, and enterprises operating in high stakes environments.
           </p>
           <DomainMapList />
         </div>
@@ -299,7 +299,7 @@ const IdentityServices = () => {
             What Silxor Delivers Across Every Identity Engagement
           </h3>
           <p className="font-body font-[300]" style={{ fontSize: 13, color: '#A2A8B8', maxWidth: 520, marginBottom: 20, lineHeight: 1.7 }}>
-            We don't sell software licenses. We architect, build, deploy, and operate your identity infrastructure from the ground up — or rescue what's already broken.
+            We don't sell software licenses. We architect, build, deploy, and operate your identity infrastructure from the ground up or rescue what's already broken.
           </p>
           <EngagementFlow />
         </div>
@@ -310,7 +310,7 @@ const IdentityServices = () => {
             Every Environment. No Exceptions.
           </h3>
           <p className="font-body font-[300]" style={{ fontSize: 13, color: '#A2A8B8', maxWidth: 480, marginBottom: 16, lineHeight: 1.7 }}>
-            Silxor identity engineers operate across on-premise, cloud, hybrid, air-gapped, and sovereign-hosted environments.
+            Silxor identity engineers operate across on premise, cloud, hybrid, air gapped, and sovereign hosted environments.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {envCategories.map((cat) => (
@@ -412,7 +412,7 @@ const IdentityServices = () => {
               Identity Is the Perimeter.
             </h4>
             <p className="font-body font-[300]" style={{ fontSize: 13, color: '#A2A8B8', lineHeight: 1.7 }}>
-              Every breach starts with an identity. Silxor builds identity infrastructure that assumes compromise and enforces verification at every layer — from the endpoint to the cloud to the AI agent.
+              Every breach starts with an identity. Silxor builds identity infrastructure that assumes compromise and enforces verification at every layer from the endpoint to the cloud to the AI agent.
             </p>
           </div>
           <a

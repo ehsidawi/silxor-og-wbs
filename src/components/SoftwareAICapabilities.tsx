@@ -5,11 +5,11 @@ const SoftwareAICapabilities = () => {
   const { t } = useLanguage();
 
   const capabilities = [
-    { icon: Code, title: t("Custom Enterprise Software", "برمجيات مؤسسية مخصصة"), description: t("Full-cycle development for government portals, financial platforms, and operational systems.", "تطوير كامل الدورة لبوابات حكومية ومنصات مالية وأنظمة تشغيلية."), technical: "Web • Mobile • API • Integration", layer: t("BUILD", "بناء"), coord: t("33.3°N · 44.4°E", "٣٣.٣° ش · ٤٤.٤° شر") },
-    { icon: Brain, title: t("Sovereign AI Deployment", "نشر الذكاء الاصطناعي السيادي"), description: t("Private LLM hosting on Silxor infrastructure. No data leaves sovereign control.", "استضافة نماذج لغوية خاصة على بنية Silxor. لا تخرج بيانات من السيطرة السيادية."), technical: "LLMs • RAG • Vector Search • Air-gap", layer: t("BUILD", "بناء"), coord: t("36.2°N · 44.0°E", "٣٦.٢° ش · ٤٤.٠° شر") },
+    { icon: Code, title: t("Custom Enterprise Software", "برمجيات مؤسسية مخصصة"), description: t("Full cycle development for government portals, financial platforms, and operational systems.", "تطوير كامل الدورة لبوابات حكومية ومنصات مالية وأنظمة تشغيلية."), technical: "Web • Mobile • API • Integration", layer: t("BUILD", "بناء"), coord: t("33.3°N · 44.4°E", "٣٣.٣° ش · ٤٤.٤° شر") },
+    { icon: Brain, title: t("Sovereign AI Deployment", "نشر الذكاء الاصطناعي السيادي"), description: t("Private LLM hosting on Silxor infrastructure. No data leaves sovereign control.", "استضافة نماذج لغوية خاصة على بنية Silxor. لا تخرج بيانات من السيطرة السيادية."), technical: "LLMs • RAG • Vector Search • Air gap", layer: t("BUILD", "بناء"), coord: t("36.2°N · 44.0°E", "٣٦.٢° ش · ٤٤.٠° شر") },
     { icon: Bot, title: t("Agentic Automation", "الأتمتة الوكيلية"), description: t("AI agents for document processing, decision routing, and process orchestration.", "وكلاء ذكاء اصطناعي لمعالجة المستندات وتوجيه القرارات وتنسيق العمليات."), technical: "n8n • Agent workflows • API orchestration", layer: t("BUILD", "بناء"), coord: t("33.3°N · 44.4°E", "٣٣.٣° ش · ٤٤.٤° شر") },
     { icon: Database, title: t("Data Engineering", "هندسة البيانات"), description: t("Pipeline design, warehousing, and analytics with full lineage and compliance.", "خطوط بيانات ومستودعات وتحليلات مع سلالة كاملة وامتثال."), technical: "Pipelines • Warehousing • Audit trails", layer: t("ENABLE", "تمكين"), coord: t("30.5°N · 47.8°E", "٣٠.٥° ش · ٤٧.٨° شر") },
-    { icon: ShieldCheck, title: t("Cybersecurity Engineering", "هندسة الأمن السيبراني"), description: t("Zero Trust, IAM, threat modeling, and security operations for high-risk environments.", "الثقة المعدومة وإدارة الهوية ونمذجة التهديدات لبيئات عالية المخاطر."), technical: "Zero Trust • IAM • Threat modeling • SOC", layer: t("ENABLE", "تمكين"), coord: t("33.3°N · 44.4°E", "٣٣.٣° ش · ٤٤.٤° شر") },
+    { icon: ShieldCheck, title: t("Cybersecurity Engineering", "هندسة الأمن السيبراني"), description: t("Zero Trust, IAM, threat modeling, and security operations for high risk environments.", "الثقة المعدومة وإدارة الهوية ونمذجة التهديدات لبيئات عالية المخاطر."), technical: "Zero Trust • IAM • Threat modeling • SOC", layer: t("ENABLE", "تمكين"), coord: t("33.3°N · 44.4°E", "٣٣.٣° ش · ٤٤.٤° شر") },
     { icon: Compass, title: t("Digital Transformation Advisory", "استشارات التحول الرقمي"), description: t("Technology strategy, architecture, vendor selection, and program delivery.", "استراتيجية تقنية وبنية معمارية واختيار موردين وتسليم برامج."), technical: "Strategy • Architecture • Program delivery", layer: t("ENABLE", "تمكين"), coord: t("32.6°N · 44.0°E", "٣٢.٦° ش · ٤٤.٠° شر") },
   ];
 
@@ -22,7 +22,7 @@ const SoftwareAICapabilities = () => {
             {t("Build & Deliver Capabilities", "قدرات البناء والتسليم")}
           </h2>
           <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 520, marginTop: 10, lineHeight: 1.7 }}>
-            {t("From line of code to production deployment — engineered in New York, secured globally.", "من سطر الكود إلى نشر الإنتاج — مهندسة في نيويورك، مؤمنة عالمياً.")}
+            {t("From line of code to production deployment engineered in New York, secured globally.", "من سطر الكود إلى نشر الإنتاج مهندسة في نيويورك، مؤمنة عالمياً.")}
           </p>
         </div>
 

@@ -18,10 +18,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="font-body font-[300]" style={{ fontSize: 14, color: "#4A5060", lineHeight: 1.7 }}>
-              {t(
-                "Commissioned by institutions that cannot fail. Engineered to transform at scale. Silxor delivers infrastructure, software, AI, and identity management for the systems that matter most. A Silxor company.",
-                "مُكلَّفون من مؤسسات لا تتحمل الفشل. مهندَسون للتحول على نطاق واسع. Silxor تقدم البنية التحتية والبرمجيات والذكاء الاصطناعي وإدارة الهوية للأنظمة الأكثر أهمية. شركة Silxor."
-              )}
+              {t("Commissioned by institutions that cannot fail. Engineered to transform at scale. Silxor delivers infrastructure, software, AI, and identity management for the systems that matter most. A Silxor company.", "مُكلَّفون من مؤسسات لا تتحمل الفشل. مهندَسون للتحول على نطاق واسع. Silxor تقدم البنية التحتية والبرمجيات والذكاء الاصطناعي وإدارة الهوية للأنظمة الأكثر أهمية. شركة Silxor.")}
             </p>
           </div>
 
@@ -112,7 +109,7 @@ const Footer = () => {
 
         {/* Certification badges */}
         <div className="flex flex-wrap gap-3" style={{ marginTop: 48, marginBottom: 32 }}>
-          {["ISO/IEC 27001:2022", "SOC 2 Type II", "Tier-IV Certified", "GDPR-Ready"].map((cert) => (
+          {["ISO/IEC 27001:2022", "SOC 2 Type II", "Tier IV Certified", "GDPR Ready"].map((cert) => (
             <span key={cert} className="badge-pill">
               <Shield style={{ width: 10, height: 10 }} />
               {cert}

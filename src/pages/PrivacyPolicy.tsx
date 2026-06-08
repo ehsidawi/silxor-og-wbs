@@ -8,7 +8,7 @@ const sections = [
   },
   {
     title: "2. Data We Collect",
-    body: "We collect information you provide directly — name, organization, email address, and message content submitted through our assessment request and contact forms. We do not collect payment information directly on this site.",
+    body: "We collect information you provide directly name, organization, email address, and message content submitted through our assessment request and contact forms. We do not collect payment information directly on this site.",
   },
   {
     title: "3. How We Use Your Data",
@@ -16,7 +16,7 @@ const sections = [
   },
   {
     title: "4. Data Residency",
-    body: "All data submitted through Silxor systems is processed and stored within our sovereign infrastructure. No personal data is routed through international third-party cloud providers without explicit consent.",
+    body: "All data submitted through Silxor systems is processed and stored within our sovereign infrastructure. No personal data is routed through international third party cloud providers without explicit consent.",
   },
   {
     title: "5. Cookies",
@@ -28,7 +28,7 @@ const sections = [
   },
   {
     title: "7. Contact",
-    body: "For all privacy inquiries: privacy@silxor.com\nSilxor Technologies — New York, USA",
+    body: "For all privacy inquiries: privacy@silxor.com\nSilxor Technologies New York, USA",
   },
 ];
 

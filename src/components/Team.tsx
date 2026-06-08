@@ -8,28 +8,19 @@ const Team = () => {
     {
       name: "Ehsan Nidawi",
       title: "FOUNDER - SR. PRINCIPAL CYBERSECURITY",
-      bio: t(
-        "Sr. Principal Cybersecurity - Identity Ecosystem Architect | Digital Transformation Architect | Ex: CISA, Ally Financial, Meta, Google, Dell, Apple.",
-        "كبير مهندسي الأمن السيبراني - مهندس منظومة الهوية | مهندس التحول الرقمي | سابقاً: CISA، Ally Financial، Meta، Google، Dell، Apple."
-      ),
+      bio: t("Sr. Principal Cybersecurity - Identity Ecosystem Architect | Digital Transformation Architect | Ex: CISA, Ally Financial, Meta, Google, Dell, Apple.", "كبير مهندسي الأمن السيبراني - مهندس منظومة الهوية | مهندس التحول الرقمي | سابقاً: CISA، Ally Financial، Meta، Google، Dell، Apple."),
       linkedin: "https://www.linkedin.com/in/ehsidawi",
     },
     {
       name: t("To Be Announced", "سيُعلن لاحقاً"),
       title: "CHIEF TECHNOLOGY OFFICER",
-      bio: t(
-        "Infrastructure and cloud architect with international Tier-IV operations experience and deep expertise in sovereign systems design.",
-        "مهندس بنية تحتية وسحابية ذو خبرة دولية في عمليات المستوى الرابع وخبرة عميقة في تصميم الأنظمة السيادية."
-      ),
+      bio: t("Infrastructure and cloud architect with international Tier IV operations experience and deep expertise in sovereign systems design.", "مهندس بنية تحتية وسحابية ذو خبرة دولية في عمليات المستوى الرابع وخبرة عميقة في تصميم الأنظمة السيادية."),
       linkedin: "",
     },
     {
       name: t("To Be Announced", "سيُعلن لاحقاً"),
       title: "HEAD OF AI & SOFTWARE ENGINEERING",
-      bio: t(
-        "AI systems and software engineering leader specializing in sovereign LLM deployments and enterprise platform delivery.",
-        "قائد أنظمة الذكاء الاصطناعي وهندسة البرمجيات متخصص في نشر النماذج اللغوية السيادية وتسليم المنصات المؤسسية."
-      ),
+      bio: t("AI systems and software engineering leader specializing in sovereign LLM deployments and enterprise platform delivery.", "قائد أنظمة الذكاء الاصطناعي وهندسة البرمجيات متخصص في نشر النماذج اللغوية السيادية وتسليم المنصات المؤسسية."),
       linkedin: "",
     },
   ];
@@ -43,10 +34,7 @@ const Team = () => {
             {t("American Engineers. Global Standards.", "مهندسون أمريكيون. معايير عالمية.")}
           </h2>
           <p className="font-body font-[300]" style={{ fontSize: 16, color: "#A2A8B8", maxWidth: 560, marginTop: 16, lineHeight: 1.7 }}>
-            {t(
-              "Silxor is built and operated by technologists with backgrounds across international infrastructure, cybersecurity, and enterprise software — rooted in USA.",
-              "Silxor مبنية ومُدارة من قبل تقنيين ذوي خلفيات عبر البنية التحتية الدولية والأمن السيبراني والبرمجيات المؤسسية — متجذرة في الولايات المتحدة."
-            )}
+            {t("Silxor is built and operated by technologists with backgrounds across international infrastructure, cybersecurity, and enterprise software rooted in USA.", "Silxor مبنية ومُدارة من قبل تقنيين ذوي خلفيات عبر البنية التحتية الدولية والأمن السيبراني والبرمجيات المؤسسية متجذرة في الولايات المتحدة.")}
           </p>
         </div>
 
@@ -105,10 +93,7 @@ const Team = () => {
         </div>
 
         <p className="font-body font-[300] text-center" style={{ fontSize: 13, color: "#4A5060", fontStyle: "italic", marginTop: 32 }}>
-          {t(
-            "Full leadership profiles and additional team bios available upon request during the assessment engagement.",
-            "ملفات القيادة الكاملة والسير الذاتية الإضافية للفريق متاحة عند الطلب خلال التقييم."
-          )}
+          {t("Full leadership profiles and additional team bios available upon request during the assessment engagement.", "ملفات القيادة الكاملة والسير الذاتية الإضافية للفريق متاحة عند الطلب خلال التقييم.")}
         </p>
       </div>
     </section>

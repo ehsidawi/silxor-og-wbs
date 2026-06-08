@@ -5,7 +5,7 @@ const projects = [
     tag: "INFRASTRUCTURE",
     title: "Sovereign Cloud Migration",
     titleAr: "ترحيل السحابة السيادية",
-    body: "Full migration from international public cloud to Silxor sovereign infrastructure for a New York-based financial institution. Zero downtime cutover.",
+    body: "Full migration from international public cloud to Silxor sovereign infrastructure for a New York based financial institution. Zero downtime cutover.",
     bodyAr: "ترحيل كامل من السحابة العامة الدولية إلى البنية التحتية السيادية لـ Silxor لمؤسسة مالية في نيويورك. انتقال بدون أي توقف.",
     sector: "Financial Services",
     sectorAr: "الخدمات المالية",
@@ -15,8 +15,8 @@ const projects = [
     tag: "IDENTITY",
     title: "Enterprise Identity Deployment",
     titleAr: "نشر إدارة الهوية المؤسسية",
-    body: "Greenfield identity and access management architecture for a government ministry — SSO, PAM vaulting, and IGA lifecycle management.",
-    bodyAr: "بنية إدارة هوية ووصول جديدة بالكامل لوزارة حكومية — تسجيل دخول موحّد، خزنة الحسابات المميزة، وإدارة دورة حياة الهوية.",
+    body: "Greenfield identity and access management architecture for a government ministry SSO, PAM vaulting, and IGA lifecycle management.",
+    bodyAr: "بنية إدارة هوية ووصول جديدة بالكامل لوزارة حكومية تسجيل دخول موحّد، خزنة الحسابات المميزة، وإدارة دورة حياة الهوية.",
     sector: "Government",
     sectorAr: "الحكومة",
     coord: { en: "36.2°N · 44.0°E", ar: "٣٦.٢° ش · ٤٤.٠° شر" },
@@ -45,10 +45,7 @@ const SelectedWork = () => {
             {t("Engagements We Can Talk About", "مشاريع يمكننا الحديث عنها")}
           </h2>
           <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 560, marginTop: 10, lineHeight: 1.7 }}>
-            {t(
-              "A selection of infrastructure, identity, and software engagements delivered for clients across USA's government, financial, and energy sectors.",
-              "مجموعة مختارة من مشاريع البنية التحتية والهوية والبرمجيات المنجزة لعملاء في القطاعات الحكومية والمالية والطاقة في الولايات المتحدة."
-            )}
+            {t("A selection of infrastructure, identity, and software engagements delivered for clients across USA's government, financial, and energy sectors.", "مجموعة مختارة من مشاريع البنية التحتية والهوية والبرمجيات المنجزة لعملاء في القطاعات الحكومية والمالية والطاقة في الولايات المتحدة.")}
           </p>
         </div>
 
@@ -158,10 +155,7 @@ const SelectedWork = () => {
             borderTop: "1px solid rgba(255,255,255,0.06)",
           }}
         >
-          {t(
-            "Additional case studies and client references available under NDA during assessment engagement.",
-            "دراسات حالة إضافية ومراجع عملاء متاحة بموجب اتفاقية عدم إفشاء خلال التقييم."
-          )}
+          {t("Additional case studies and client references available under NDA during assessment engagement.", "دراسات حالة إضافية ومراجع عملاء متاحة بموجب اتفاقية عدم إفشاء خلال التقييم.")}
         </p>
       </div>
     </section>

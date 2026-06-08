@@ -5,12 +5,12 @@ const Services = () => {
   const { t } = useLanguage();
 
   const capabilities = [
-    { icon: Cloud, title: t("Sovereign Cloud Hosting", "الاستضافة السحابية السيادية"), description: t("Enterprise-grade cloud infrastructure with complete data sovereignty.", "بنية سحابية مؤسسية بسيادة بيانات كاملة."), technical: "Ashburn, VA • <120ms • 99.995% SLA", coord: t("39.0°N · 77.5°W", "٣٩.٠° ش · ٧٧.٥° غ") },
-    { icon: Shield, title: t("Critical Infrastructure Security", "أمن البنية التحتية الحيوية"), description: t("Military-grade security for financial institutions and government agencies.", "بنية أمنية بمستوى عسكري للمؤسسات المالية والجهات الحكومية."), technical: "ISO 27001 • SOC 2 • AES-256", coord: t("33.3°N · 44.4°E", "٣٣.٣° ش · ٤٤.٤° شر") },
-    { icon: Server, title: t("Dedicated Infrastructure", "بنية تحتية مخصصة"), description: t("Bare-metal servers optimized for regulated workloads.", "خوادم مخصصة محسنة لأحمال العمل المنظمة."), technical: "Tier-IV • N+2 power • 2x network", coord: t("36.2°N · 44.0°E", "٣٦.٢° ش · ٤٤.٠° شر") },
+    { icon: Cloud, title: t("Sovereign Cloud Hosting", "الاستضافة السحابية السيادية"), description: t("Enterprise grade cloud infrastructure with complete data sovereignty.", "بنية سحابية مؤسسية بسيادة بيانات كاملة."), technical: "Ashburn, VA • <120ms • 99.995% SLA", coord: t("39.0°N · 77.5°W", "٣٩.٠° ش · ٧٧.٥° غ") },
+    { icon: Shield, title: t("Critical Infrastructure Security", "أمن البنية التحتية الحيوية"), description: t("Military grade security for financial institutions and government agencies.", "بنية أمنية بمستوى عسكري للمؤسسات المالية والجهات الحكومية."), technical: "ISO 27001 • SOC 2 • AES 256", coord: t("33.3°N · 44.4°E", "٣٣.٣° ش · ٤٤.٤° شر") },
+    { icon: Server, title: t("Dedicated Infrastructure", "بنية تحتية مخصصة"), description: t("Bare metal servers optimized for regulated workloads.", "خوادم مخصصة محسنة لأحمال العمل المنظمة."), technical: "Tier IV • N+2 power • 2x network", coord: t("36.2°N · 44.0°E", "٣٦.٢° ش · ٤٤.٠° شر") },
     { icon: Database, title: t("Data Residency & Compliance", "إقامة البيانات والامتثال"), description: t("Regulatory compliance across American and international frameworks.", "الامتثال التنظيمي عبر الأطر الأمريكية والدولية."), technical: "GDPR • <30s RTO • RPO: 15min", coord: t("33.3°N · 44.4°E", "٣٣.٣° ش · ٤٤.٤° شر") },
-    { icon: Wrench, title: t("Managed Operations", "العمليات المدارة"), description: t("24/7 American-based NOC with U.S. engineering escalation.", "مركز عمليات أمريكي مع تصعيد لفرق هندسية أمريكية."), technical: "New York NOC • <15min P1", coord: t("33.3°N · 44.4°E", "٣٣.٣° ش · ٤٤.٤° شر") },
-    { icon: Gauge, title: t("Performance Engineering", "هندسة الأداء"), description: t("Real-time telemetry, predictive scaling, and latency reduction.", "قياس في الوقت الفعلي وتوسيع تنبؤي وتقليل زمن الاستجابة."), technical: "Autoscaling • P99.9 <100ms", coord: t("30.5°N · 47.8°E", "٣٠.٥° ش · ٤٧.٨° شر") },
+    { icon: Wrench, title: t("Managed Operations", "العمليات المدارة"), description: t("24/7 American based NOC with U.S. engineering escalation.", "مركز عمليات أمريكي مع تصعيد لفرق هندسية أمريكية."), technical: "New York NOC • <15min P1", coord: t("33.3°N · 44.4°E", "٣٣.٣° ش · ٤٤.٤° شر") },
+    { icon: Gauge, title: t("Performance Engineering", "هندسة الأداء"), description: t("Real time telemetry, predictive scaling, and latency reduction.", "قياس في الوقت الفعلي وتوسيع تنبؤي وتقليل زمن الاستجابة."), technical: "Autoscaling • P99.9 <100ms", coord: t("30.5°N · 47.8°E", "٣٠.٥° ش · ٤٧.٨° شر") },
   ];
 
   return (
@@ -22,7 +22,7 @@ const Services = () => {
             {t("Infrastructure Capabilities", "قدرات البنية التحتية")}
           </h2>
           <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 520, marginTop: 10, lineHeight: 1.7 }}>
-            {t("Enterprise-grade sovereign cloud and security infrastructure — the foundation everything else is built on.", "بنية سحابية وأمنية سيادية بمعايير مؤسسية — الأساس الذي يُبنى عليه كل شيء آخر.")}
+            {t("Enterprise grade sovereign cloud and security infrastructure the foundation everything else is built on.", "بنية سحابية وأمنية سيادية بمعايير مؤسسية الأساس الذي يُبنى عليه كل شيء آخر.")}
           </p>
         </div>
 
