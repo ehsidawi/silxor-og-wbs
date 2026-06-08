@@ -177,6 +177,7 @@ const Navbar = () => {
           </div>
           <a
             href="mailto:contact@silxor.com?subject=Silxor%20-%20Assessment%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20a%20technical%20assessment%20with%20Silxor.%0A%0AOrganization%3A%20%0AService%20Interest%3A%20%0AMessage%3A%20"
+            onClick={() => setMobileOpen(false)}
             className="flex items-center justify-center gap-2 font-mono uppercase mt-4"
             style={{
               fontSize: 10,
