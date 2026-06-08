@@ -275,10 +275,10 @@ const IdentityServices = () => {
         <div style={{ marginBottom: 32 }}>
           <div className="section-eyebrow">IDENTITY & ACCESS MANAGEMENT</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: '#F7F3EC' }}>
-            End-to-End Identity Services
+            End to End Identity Services
           </h2>
           <p className="font-body font-[300]" style={{ fontSize: 14, color: '#A2A8B8', maxWidth: 560, marginTop: 10, lineHeight: 1.7 }}>
-            Silxor delivers the full spectrum of identity architecture — from initial assessment and greenfield design to deployment, integration, recovery, and ongoing management. Every identity domain. Every environment. Sovereign by default.
+            Silxor delivers the full spectrum of identity architecture from initial assessment and greenfield design to deployment, integration, recovery, and ongoing management. Every identity domain. Every environment. Sovereign by default.
           </p>
         </div>
 
@@ -288,7 +288,7 @@ const IdentityServices = () => {
             Every Identity Domain. One Partner.
           </h3>
           <p className="font-body font-[300]" style={{ fontSize: 13, color: '#A2A8B8', maxWidth: 520, marginBottom: 20, lineHeight: 1.7 }}>
-            Silxor architects and operates across all identity disciplines — purpose-built for governments, financial institutions, and enterprises operating in high-stakes environments.
+            Silxor architects and operates across all identity disciplines purpose built for governments, financial institutions, and enterprises operating in high stakes environments.
           </p>
           <DomainMapList />
         </div>
@@ -299,7 +299,7 @@ const IdentityServices = () => {
             What Silxor Delivers Across Every Identity Engagement
           </h3>
           <p className="font-body font-[300]" style={{ fontSize: 13, color: '#A2A8B8', maxWidth: 520, marginBottom: 20, lineHeight: 1.7 }}>
-            We don't sell software licenses. We architect, build, deploy, and operate your identity infrastructure from the ground up — or rescue what's already broken.
+            We don't sell software licenses. We architect, build, deploy, and operate your identity infrastructure from the ground up or rescue what's already broken.
           </p>
           <EngagementFlow />
         </div>
@@ -310,7 +310,7 @@ const IdentityServices = () => {
             Every Environment. No Exceptions.
           </h3>
           <p className="font-body font-[300]" style={{ fontSize: 13, color: '#A2A8B8', maxWidth: 480, marginBottom: 16, lineHeight: 1.7 }}>
-            Silxor identity engineers operate across on-premise, cloud, hybrid, air-gapped, and sovereign-hosted environments.
+            Silxor identity engineers operate across on premise, cloud, hybrid, air gapped, and sovereign hosted environments.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {envCategories.map((cat) => (
@@ -412,7 +412,7 @@ const IdentityServices = () => {
               Identity Is the Perimeter.
             </h4>
             <p className="font-body font-[300]" style={{ fontSize: 13, color: '#A2A8B8', lineHeight: 1.7 }}>
-              Every breach starts with an identity. Silxor builds identity infrastructure that assumes compromise and enforces verification at every layer — from the endpoint to the cloud to the AI agent.
+              Every breach starts with an identity. Silxor builds identity infrastructure that assumes compromise and enforces verification at every layer from the endpoint to the cloud to the AI agent.
             </p>
           </div>
           <a

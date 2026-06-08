@@ -140,7 +140,7 @@ const Hero = () => {
                 ISO/IEC 27001:2022 {t("Certified", "معتمد")}
               </span>
               <span className="badge-pill">
-                Uptime Institute Tier-IV {t("Ready", "جاهز")}
+                Uptime Institute Tier IV {t("Ready", "جاهز")}
               </span>
               <span className="badge-pill">
                 <Globe className="w-3 h-3 flex-shrink-0" />

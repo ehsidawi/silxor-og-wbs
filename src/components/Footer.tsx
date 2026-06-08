@@ -109,7 +109,7 @@ const Footer = () => {
 
         {/* Certification badges */}
         <div className="flex flex-wrap gap-3" style={{ marginTop: 48, marginBottom: 32 }}>
-          {["ISO/IEC 27001:2022", "SOC 2 Type II", "Tier-IV Certified", "GDPR-Ready"].map((cert) => (
+          {["ISO/IEC 27001:2022", "SOC 2 Type II", "Tier IV Certified", "GDPR Ready"].map((cert) => (
             <span key={cert} className="badge-pill">
               <Shield style={{ width: 10, height: 10 }} />
               {cert}
