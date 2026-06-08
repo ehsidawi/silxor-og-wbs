@@ -140,12 +140,15 @@ const Navbar = () => {
       </div>
 
       <div
-        className="xl:hidden overflow-hidden transition-all duration-500"
+        className="xl:hidden transition-all duration-500"
         style={{
-          maxHeight: mobileOpen ? 600 : 0,
+          maxHeight: mobileOpen ? "calc(100vh - 64px)" : 0,
+          overflowY: mobileOpen ? "auto" : "hidden",
           opacity: mobileOpen ? 1 : 0,
+          pointerEvents: mobileOpen ? "auto" : "none",
           backgroundColor: "rgba(8,10,15,0.97)",
           backdropFilter: "blur(24px)",
+          WebkitOverflowScrolling: "touch",
           borderTop: mobileOpen ? "1px solid rgba(221,179,67,0.08)" : "none",
         }}
       >
