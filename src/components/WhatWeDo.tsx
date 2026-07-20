@@ -30,21 +30,21 @@ const WhatWeDo = () => {
   return (
     <section id="what-we-do" className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="container-content">
-        <div style={{ marginBottom: 32 }}>
+        <div style={{ marginBottom: 12 }}>
           <div className="section-eyebrow">{t("CAPABILITIES", "القدرات")}</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "#FFFFFF" }}>
             {t("One Company. Every Layer of Technology.", "شركة واحدة. كل طبقات التقنية.")}
           </h2>
-          <p className="font-body font-[300]" style={{ fontSize: 14, color: "#6E7378", maxWidth: 520, marginTop: 10, lineHeight: 1.7 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 14, color: "#6E7378", maxWidth: 520, marginTop: 6, lineHeight: 1.7 }}>
             {t("From the physical infrastructure beneath your systems to the AI agents running inside them Silxor owns the full stack.", "من البنية التحتية المادية تحت أنظمتك إلى وكلاء الذكاء الاصطناعي داخلها Silxor تمتلك المنظومة الكاملة.")}
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 gap-4">
+        <div className="grid sm:grid-cols-2 gap-2">
           {units.map((unit, index) => {
             const Icon = unit.icon;
             return (
-              <div key={index} className="surface-elevated" style={{ padding: 20 }}>
+              <div key={index} className="surface-elevated" style={{ padding: 10 }}>
                 <Icon className="mb-3" style={{ width: 24, height: 24, color: "#C5C7CB" }} strokeWidth={1.5} />
                 <h3 className="font-body font-[500]" style={{ fontSize: 15, color: "#FFFFFF", marginBottom: 6 }}>
                   {unit.title}

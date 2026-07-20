@@ -42,16 +42,16 @@ const StartEngagement = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-3">
           {paths.map((path, index) => {
             const Icon = path.icon;
             return (
-              <div key={index} className="surface-elevated flex flex-col" style={{ padding: 32 }}>
+              <div key={index} className="surface-elevated flex flex-col" style={{ padding: 14 }}>
                 <Icon className="mb-5" style={{ width: 32, height: 32, color: "#C5C7CB" }} strokeWidth={1.5} />
                 <h3 className="font-body font-[500]" style={{ fontSize: 17, color: "#FFFFFF", marginBottom: 10 }}>
                   {path.title}
                 </h3>
-                <p className="font-body font-[300] flex-1" style={{ fontSize: 14, color: "#6E7378", lineHeight: 1.7, marginBottom: 24 }}>
+                <p className="font-body font-[300] flex-1" style={{ fontSize: 14, color: "#6E7378", lineHeight: 1.7, marginBottom: 10 }}>
                   {path.description}
                 </p>
               </div>

@@ -51,7 +51,7 @@ const FAQ = () => {
   return (
     <section className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="container-content">
-        <div style={{ marginBottom: 32 }}>
+        <div style={{ marginBottom: 12 }}>
           <div className="section-eyebrow">{t("FAQ", "الأسئلة الشائعة")}</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "#FFFFFF" }}>
             {t("The Questions Our Clients Ask Before They Sign", "الأسئلة التي يطرحها عملاؤنا قبل التعاقد")}

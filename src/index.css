@@ -156,14 +156,14 @@
   }
 
   .section-spacing {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
   }
 
   @media (min-width: 768px) {
     .section-spacing {
-      padding-top: 2.25rem;
-      padding-bottom: 2.25rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
     }
   }
 

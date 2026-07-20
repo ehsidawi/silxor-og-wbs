@@ -197,7 +197,7 @@ const TierComparisonTable = () => {
       <div className="font-mono font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.15em", color: "hsl(var(--primary))", marginBottom: 8 }}>
         {t("TIER COMPARISON", "مقارنة المستويات")}
       </div>
-      <h3 className="font-body font-[500]" style={{ fontSize: 15, color: "hsl(var(--foreground))", marginBottom: 16 }}>
+      <h3 className="font-body font-[500]" style={{ fontSize: 15, color: "hsl(var(--foreground))", marginBottom: 8 }}>
         {t("At a Glance What Changes Across Tiers", "نظرة سريعة ما يتغير عبر المستويات")}
       </h3>
       <div style={{ overflowX: "auto" }}>
@@ -247,7 +247,7 @@ const TierComparisonTable = () => {
           </tbody>
         </table>
       </div>
-      <p className="font-body font-[300]" style={{ fontSize: 11, color: "hsl(var(--muted-foreground) / 0.5)", marginTop: 10, textAlign: "center" }}>
+      <p className="font-body font-[300]" style={{ fontSize: 11, color: "hsl(var(--muted-foreground) / 0.5)", marginTop: 6, textAlign: "center" }}>
         {t("Full SLA terms available at silxor.com/sla", "شروط SLA الكاملة متوفرة على silxor.com/sla")}
       </p>
     </div>
@@ -269,12 +269,12 @@ const ServicePackages = () => {
   return (
     <section id="packages" className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="container-content">
-        <div style={{ marginBottom: 32 }}>
+        <div style={{ marginBottom: 12 }}>
           <div className="section-eyebrow">{t("PACKAGES", "الحزم")}</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "hsl(var(--foreground))" }}>
             {t("Transparent Service Packages", "حزم خدمات شفافة")}
           </h2>
-          <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 520, marginTop: 10, lineHeight: 1.7 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 520, marginTop: 6, lineHeight: 1.7 }}>
             {t("Every engagement starts with clarity. Choose your entry point across any of our four technology domains.", "كل مشاركة تبدأ بالوضوح. اختر نقطة دخولك عبر أي من مجالاتنا التقنية الأربعة.")}
           </p>
         </div>
@@ -286,7 +286,7 @@ const ServicePackages = () => {
           const label = domainLabels[domain];
           return (
             <div key={domain} style={{ marginBottom: 40 }}>
-              <h3 className="font-body font-[500]" style={{ fontSize: 15, color: "hsl(var(--foreground))", marginBottom: 16 }}>
+              <h3 className="font-body font-[500]" style={{ fontSize: 15, color: "hsl(var(--foreground))", marginBottom: 8 }}>
                 {t(label.en, label.ar)}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2px]">
@@ -403,7 +403,7 @@ const ServicePackages = () => {
                           {t(pkg.tagline, pkg.taglineAr)}
                         </p>
 
-                        <ul className="flex-1" style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 16 }}>
+                        <ul className="flex-1" style={{ display: "flex", flexDirection: "column", gap: 6, marginBottom: 8 }}>
                           {(t(pkg.specs.join("|||"), pkg.specsAr.join("|||"))).split("|||").map((spec, j) => (
                             <li key={j} className="flex items-start gap-2">
                               <Check style={{ width: 13, height: 13, color: "hsl(var(--primary))", flexShrink: 0, marginTop: 1 }} />

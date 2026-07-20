@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer style={{ backgroundColor: "#0B0B0B", borderTop: "1px solid rgba(255,255,255,0.06)", padding: "40px 0 24px" }}>
       <div className="container-content">
-        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12" style={{ marginBottom: 48 }}>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-12" style={{ marginBottom: 48 }}>
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <div className="flex items-center gap-3 mb-3">
@@ -24,7 +24,7 @@ const Footer = () => {
 
           {/* Services */}
           <div>
-            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.12em", color: "#FFFFFF", marginBottom: 20 }}>
+            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.12em", color: "#FFFFFF", marginBottom: 8 }}>
               {t("Services", "الخدمات")}
             </h4>
             <nav className="space-y-3">
@@ -45,7 +45,7 @@ const Footer = () => {
 
           {/* Packages */}
           <div>
-            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.12em", color: "#FFFFFF", marginBottom: 20 }}>
+            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.12em", color: "#FFFFFF", marginBottom: 8 }}>
               {t("Packages", "الباقات")}
             </h4>
             <nav className="space-y-3">
@@ -66,7 +66,7 @@ const Footer = () => {
 
           {/* Company */}
           <div>
-            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.12em", color: "#FFFFFF", marginBottom: 20 }}>
+            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.12em", color: "#FFFFFF", marginBottom: 8 }}>
               {t("Company", "الشركة")}
             </h4>
             <nav className="space-y-3">
@@ -88,7 +88,7 @@ const Footer = () => {
 
           {/* Legal */}
           <div>
-            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.12em", color: "#FFFFFF", marginBottom: 20 }}>
+            <h4 className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.12em", color: "#FFFFFF", marginBottom: 8 }}>
               {t("Legal & Compliance", "القانوني والامتثال")}
             </h4>
             <nav className="space-y-3">
@@ -108,7 +108,7 @@ const Footer = () => {
         </div>
 
         {/* Certification badges */}
-        <div className="flex flex-wrap gap-3" style={{ marginTop: 48, marginBottom: 32 }}>
+        <div className="flex flex-wrap gap-3" style={{ marginTop: 48, marginBottom: 12 }}>
           {["ISO/IEC 27001:2022", "SOC 2 Type II", "Tier IV Certified", "GDPR Ready"].map((cert) => (
             <span key={cert} className="badge-pill">
               <Shield style={{ width: 10, height: 10 }} />

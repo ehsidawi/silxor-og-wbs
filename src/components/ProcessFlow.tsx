@@ -50,7 +50,7 @@ const ProcessFlow = () => {
         {/* Mobile */}
         <div className="lg:hidden">
           {stages.map((stage, index) => (
-            <div key={index} className="flex gap-4" style={{ marginBottom: index < stages.length - 1 ? 32 : 0 }}>
+            <div key={index} className="flex gap-2" style={{ marginBottom: index < stages.length - 1 ? 32 : 0 }}>
               <div className="flex flex-col items-center">
                 <div className="relative flex items-center justify-center flex-shrink-0" style={{ width: 32, height: 32, borderRadius: "50%", border: "1px solid rgba(197,199,203,0.4)", backgroundColor: "#0B0B0B" }}>
                   <div style={{ width: 6, height: 6, borderRadius: "50%", backgroundColor: "#C5C7CB" }} />

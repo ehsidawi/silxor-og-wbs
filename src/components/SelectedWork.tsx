@@ -44,7 +44,7 @@ const SelectedWork = () => {
           <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "hsl(var(--foreground))" }}>
             {t("Engagements We Can Talk About", "مشاريع يمكننا الحديث عنها")}
           </h2>
-          <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 560, marginTop: 10, lineHeight: 1.7 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 560, marginTop: 6, lineHeight: 1.7 }}>
             {t("A selection of infrastructure, identity, and software engagements delivered for clients across USA's government, financial, and energy sectors.", "مجموعة مختارة من مشاريع البنية التحتية والهوية والبرمجيات المنجزة لعملاء في القطاعات الحكومية والمالية والطاقة في الولايات المتحدة.")}
           </p>
         </div>

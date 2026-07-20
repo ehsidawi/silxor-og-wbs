@@ -38,7 +38,7 @@ const Team = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-3">
           {leaders.map((leader, index) => (
             <div
               key={index}
@@ -47,7 +47,7 @@ const Team = () => {
                 backgroundColor: "#25282C",
                 border: "1px solid rgba(255,255,255,0.06)",
                 borderRadius: 4,
-                padding: 32,
+                padding: 14,
               }}
             >
               <div

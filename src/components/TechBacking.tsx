@@ -58,12 +58,12 @@ const TechBacking = () => {
   return (
     <section className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="container-content">
-        <div style={{ marginBottom: 32 }}>
+        <div style={{ marginBottom: 12 }}>
           <div className="section-eyebrow">{t("ARCHITECTURE", "البنية المعمارية")}</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "hsl(var(--foreground))" }}>
             {t("Dual Continent Resilience Architecture", "بنية مرونة عبر قارتين")}
           </h2>
-          <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 520, marginTop: 10, lineHeight: 1.7 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 520, marginTop: 6, lineHeight: 1.7 }}>
             {t("Silxor operates a distributed infrastructure model ensuring data sovereignty while maintaining enterprise grade reliability through U.S. Tier IV certification.", "تدير Silxor نموذج بنية تحتية موزع يضمن سيادة البيانات مع الحفاظ على موثوقية بمستوى المؤسسات من خلال شهادة Tier IV الأمريكية.")}
           </p>
         </div>
