@@ -18,7 +18,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="font-body font-[300]" style={{ fontSize: 14, color: "#6E7378", lineHeight: 1.7 }}>
-              {t("Silxor delivers infrastructure, software, AI, and identity management for the systems that matter most. A Silxor company.", "Silxor تقدم البنية التحتية والبرمجيات والذكاء الاصطناعي وإدارة الهوية للأنظمة الأكثر أهمية. شركة Silxor.")}
+              {t("Silxor Tech and Cyber Global delivers infrastructure, software, AI, and identity management for the systems that matter most.", "تقدم سيلكسور تك وسايبر العالمية البنية التحتية والبرمجيات والذكاء الاصطناعي وإدارة الهوية للأنظمة الأكثر أهمية.")}
             </p>
           </div>
 
