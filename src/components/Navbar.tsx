@@ -11,14 +11,10 @@ const Navbar = () => {
   const { t } = useLanguage();
 
   const navLinks = [
-    { label: t("Home", "الرئيسية"), href: "#home" },
-    { label: t("Work", "أعمالنا"), href: "#work" },
     { label: t("Infrastructure", "البنية التحتية"), href: "#infrastructure" },
     { label: t("Software", "البرمجيات"), href: "#software" },
-    { label: t("AI & Automation", "الذكاء الاصطناعي"), href: "#ai" },
     { label: t("Identity", "الهوية الرقمية"), href: "#identity" },
     { label: t("Packages", "الباقات"), href: "#packages" },
-    { label: t("About", "عنا"), href: "#about" },
     { label: t("Contact", "تواصل معنا"), href: "#contact" },
   ];
 
