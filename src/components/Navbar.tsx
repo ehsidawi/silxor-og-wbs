@@ -46,7 +46,7 @@ const Navbar = () => {
       className="sticky top-0 z-[100] transition-all duration-500"
       style={{
         height: 64,
-        backgroundColor: scrolled ? "rgba(16,19,28,0.92)" : "#10131C",
+        backgroundColor: scrolled ? "rgba(16,19,28,0.92)" : "#0B0B0B",
         backdropFilter: scrolled ? "blur(24px) saturate(180%)" : "none",
         WebkitBackdropFilter: scrolled ? "blur(24px) saturate(180%)" : "none",
         borderBottom: "1px solid rgba(255,255,255,0.10)",
@@ -58,12 +58,12 @@ const Navbar = () => {
           className="flex items-center gap-1.5 group shrink-0"
           onClick={(e) => handleNavClick(e, "#")}
         >
-          <span className="font-display text-[20px] font-[800] tracking-tight" style={{ color: "#F7F3EC" }}>
+          <span className="font-display text-[20px] font-[800] tracking-tight" style={{ color: "#FFFFFF" }}>
             Silxor
           </span>
           <span
             className="inline-block transition-all duration-300 group-hover:scale-125"
-            style={{ width: 5, height: 5, backgroundColor: "#DDB343", marginBottom: 8 }}
+            style={{ width: 5, height: 5, backgroundColor: "#C5C7CB", marginBottom: 8 }}
           />
         </a>
 
@@ -88,7 +88,7 @@ const Navbar = () => {
                   fontWeight: idx === 0 ? 700 : 500,
                   color: idx === 0 ? "#FFFFFF" : "rgba(255,255,255,0.6)",
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.color = "#DDB343")}
+                onMouseEnter={(e) => (e.currentTarget.style.color = "#C5C7CB")}
                 onMouseLeave={(e) => (e.currentTarget.style.color = idx === 0 ? "#FFFFFF" : "rgba(255,255,255,0.6)")}
               >
                 {link.label}
@@ -106,16 +106,16 @@ const Navbar = () => {
             style={{
               height: 40,
               padding: "0 20px",
-              border: "1px solid rgba(221,179,67,0.3)",
-              color: "#DDB343",
+              border: "1px solid rgba(197,199,203,0.3)",
+              color: "#C5C7CB",
               fontSize: 11,
               letterSpacing: "0.15em",
               fontWeight: 700,
               textTransform: "uppercase",
               fontFamily: "'JetBrains Mono', monospace",
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#DDB343")}
-            onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(221,179,67,0.3)")}
+            onMouseEnter={(e) => (e.currentTarget.style.borderColor = "#C5C7CB")}
+            onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(197,199,203,0.3)")}
           >
             {t("Request Assessment", "طلب تقييم")}
             <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-1" />
@@ -128,12 +128,12 @@ const Navbar = () => {
           aria-label="Toggle menu"
         >
           {mobileOpen ? (
-            <X className="w-5 h-5" style={{ color: "#DDB343" }} />
+            <X className="w-5 h-5" style={{ color: "#C5C7CB" }} />
           ) : (
             <div className="flex flex-col items-end gap-[4px]">
-              <span style={{ width: 20, height: 1, backgroundColor: "#DDB343", display: "block" }} />
-              <span style={{ width: 14, height: 1, backgroundColor: "#DDB343", display: "block" }} />
-              <span style={{ width: 20, height: 1, backgroundColor: "#DDB343", display: "block" }} />
+              <span style={{ width: 20, height: 1, backgroundColor: "#C5C7CB", display: "block" }} />
+              <span style={{ width: 14, height: 1, backgroundColor: "#C5C7CB", display: "block" }} />
+              <span style={{ width: 20, height: 1, backgroundColor: "#C5C7CB", display: "block" }} />
             </div>
           )}
         </button>
@@ -149,7 +149,7 @@ const Navbar = () => {
           backgroundColor: "rgba(8,10,15,0.97)",
           backdropFilter: "blur(24px)",
           WebkitOverflowScrolling: "touch",
-          borderTop: mobileOpen ? "1px solid rgba(221,179,67,0.08)" : "none",
+          borderTop: mobileOpen ? "1px solid rgba(197,199,203,0.08)" : "none",
         }}
       >
         <div className="container-content py-6 space-y-0">
@@ -165,11 +165,11 @@ const Navbar = () => {
                 borderBottom: i < navLinks.length - 1 ? "1px solid rgba(255,255,255,0.04)" : "none",
               }}
               onClick={(e) => handleNavClick(e, link.href)}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#DDB343")}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#C5C7CB")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "#FFFFFF")}
             >
               <span>{link.label}</span>
-              <span style={{ fontSize: 9, color: "#4A5060" }}>0{i + 1}</span>
+              <span style={{ fontSize: 9, color: "#6E7378" }}>0{i + 1}</span>
             </a>
           ))}
           <div className="flex items-center justify-center py-4">
@@ -182,8 +182,8 @@ const Navbar = () => {
             style={{
               fontSize: 10,
               letterSpacing: "0.12em",
-              border: "1px solid rgba(221,179,67,0.4)",
-              color: "#DDB343",
+              border: "1px solid rgba(197,199,203,0.4)",
+              color: "#C5C7CB",
               padding: "12px 20px",
             }}
           >

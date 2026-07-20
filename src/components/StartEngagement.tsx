@@ -34,10 +34,10 @@ const StartEngagement = () => {
       <div className="container-content">
         <div className="text-center" style={{ marginBottom: 64 }}>
           <div className="section-eyebrow justify-center">{t("ENGAGE", "تعاون")}</div>
-          <h2 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: "#F7F3EC" }}>
+          <h2 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: "#FFFFFF" }}>
             {t("Ready to Build on Sovereign Infrastructure?", "هل أنت مستعد للبناء على بنية تحتية سيادية؟")}
           </h2>
-          <p className="font-body font-[300] mx-auto" style={{ fontSize: 16, color: "#A2A8B8", maxWidth: 560, marginTop: 16, lineHeight: 1.7 }}>
+          <p className="font-body font-[300] mx-auto" style={{ fontSize: 16, color: "#6E7378", maxWidth: 560, marginTop: 16, lineHeight: 1.7 }}>
             {t("Every Silxor engagement begins with a no cost Technical Assessment. Tell us what you're building and we'll tell you exactly how we can deliver it.", "كل تعاون مع Silxor يبدأ بتقييم تقني مجاني. أخبرنا بما تبنيه وسنخبرك بكيفية تسليمه.")}
           </p>
         </div>
@@ -47,11 +47,11 @@ const StartEngagement = () => {
             const Icon = path.icon;
             return (
               <div key={index} className="surface-elevated flex flex-col" style={{ padding: 32 }}>
-                <Icon className="mb-5" style={{ width: 32, height: 32, color: "#DDB343" }} strokeWidth={1.5} />
-                <h3 className="font-body font-[500]" style={{ fontSize: 17, color: "#F7F3EC", marginBottom: 10 }}>
+                <Icon className="mb-5" style={{ width: 32, height: 32, color: "#C5C7CB" }} strokeWidth={1.5} />
+                <h3 className="font-body font-[500]" style={{ fontSize: 17, color: "#FFFFFF", marginBottom: 10 }}>
                   {path.title}
                 </h3>
-                <p className="font-body font-[300] flex-1" style={{ fontSize: 14, color: "#A2A8B8", lineHeight: 1.7, marginBottom: 24 }}>
+                <p className="font-body font-[300] flex-1" style={{ fontSize: 14, color: "#6E7378", lineHeight: 1.7, marginBottom: 24 }}>
                   {path.description}
                 </p>
               </div>
@@ -66,13 +66,13 @@ const StartEngagement = () => {
             style={{
               fontSize: 12,
               letterSpacing: "0.12em",
-              backgroundColor: "#DDB343",
-              color: "#10131C",
+              backgroundColor: "#C5C7CB",
+              color: "#0B0B0B",
               padding: "16px 32px",
               borderRadius: 2,
             }}
-            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#F0C95A")}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#DDB343")}
+            onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#FFFFFF")}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#C5C7CB")}
           >
             {t("Request Technical Assessment", "طلب تقييم تقني")}
           </a>

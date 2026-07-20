@@ -53,7 +53,7 @@ const FAQ = () => {
       <div className="container-content">
         <div style={{ marginBottom: 32 }}>
           <div className="section-eyebrow">{t("FAQ", "الأسئلة الشائعة")}</div>
-          <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "#F7F3EC" }}>
+          <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "#FFFFFF" }}>
             {t("The Questions Our Clients Ask Before They Sign", "الأسئلة التي يطرحها عملاؤنا قبل التعاقد")}
           </h2>
         </div>
@@ -69,13 +69,13 @@ const FAQ = () => {
               >
                 <AccordionTrigger
                   className="hover:no-underline text-left py-0 font-body font-[500] [&[data-state=open]]:text-sovereign-gold"
-                  style={{ fontSize: 14, color: "#F7F3EC" }}
+                  style={{ fontSize: 14, color: "#FFFFFF" }}
                 >
                   {faq.q}
                 </AccordionTrigger>
                 <AccordionContent
                   className="font-body font-[300] pb-0"
-                  style={{ fontSize: 13, color: "#A2A8B8", lineHeight: 1.75, paddingTop: 12 }}
+                  style={{ fontSize: 13, color: "#6E7378", lineHeight: 1.75, paddingTop: 12 }}
                 >
                   {faq.a}
                 </AccordionContent>

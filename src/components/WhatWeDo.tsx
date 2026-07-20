@@ -32,10 +32,10 @@ const WhatWeDo = () => {
       <div className="container-content">
         <div style={{ marginBottom: 32 }}>
           <div className="section-eyebrow">{t("CAPABILITIES", "القدرات")}</div>
-          <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "#F7F3EC" }}>
+          <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "#FFFFFF" }}>
             {t("One Company. Every Layer of Technology.", "شركة واحدة. كل طبقات التقنية.")}
           </h2>
-          <p className="font-body font-[300]" style={{ fontSize: 14, color: "#A2A8B8", maxWidth: 520, marginTop: 10, lineHeight: 1.7 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 14, color: "#6E7378", maxWidth: 520, marginTop: 10, lineHeight: 1.7 }}>
             {t("From the physical infrastructure beneath your systems to the AI agents running inside them Silxor owns the full stack.", "من البنية التحتية المادية تحت أنظمتك إلى وكلاء الذكاء الاصطناعي داخلها Silxor تمتلك المنظومة الكاملة.")}
           </p>
         </div>
@@ -45,11 +45,11 @@ const WhatWeDo = () => {
             const Icon = unit.icon;
             return (
               <div key={index} className="surface-elevated" style={{ padding: 20 }}>
-                <Icon className="mb-3" style={{ width: 24, height: 24, color: "#DDB343" }} strokeWidth={1.5} />
-                <h3 className="font-body font-[500]" style={{ fontSize: 15, color: "#F7F3EC", marginBottom: 6 }}>
+                <Icon className="mb-3" style={{ width: 24, height: 24, color: "#C5C7CB" }} strokeWidth={1.5} />
+                <h3 className="font-body font-[500]" style={{ fontSize: 15, color: "#FFFFFF", marginBottom: 6 }}>
                   {unit.title}
                 </h3>
-                <p className="font-body font-[300]" style={{ fontSize: 13, color: "#A2A8B8", lineHeight: 1.65 }}>
+                <p className="font-body font-[300]" style={{ fontSize: 13, color: "#6E7378", lineHeight: 1.65 }}>
                   {unit.body}
                 </p>
               </div>
