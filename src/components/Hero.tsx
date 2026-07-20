@@ -1,4 +1,3 @@
-import { ArrowRight, Shield, Globe } from "lucide-react";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -11,123 +10,185 @@ const Hero = () => {
       className="relative overflow-hidden"
       style={{
         paddingTop: 140,
-        paddingBottom: 96,
-        background: `
-          radial-gradient(ellipse 80% 60% at 50% -10%, rgba(197,199,203,0.08) 0%, transparent 70%),
-          url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 60 0 L 60 60 M 0 0 L 0 60 M 0 60 L 60 60 M 0 0 L 60 0' stroke='rgba(255,255,255,0.02)' stroke-width='1' fill='none'/%3E%3C/svg%3E"),
-          url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E"),
-          #0B0B0B
-        `,
+        paddingBottom: 120,
+        backgroundColor: "#0B0B0B",
+        color: "#FFFFFF",
       }}
     >
-      <div className="absolute right-[-100px] top-1/2 -translate-y-1/2 hidden lg:block" style={{ zIndex: 0 }}>
-        <svg width="400" height="400" viewBox="0 0 400 400" fill="none" style={{ overflow: 'hidden' }}>
-          {/* Matrix rain columns */}
-          {Array.from({ length: 16 }).map((_, col) => {
-            const x = col * 25 + 12;
-            const chars = "01アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン";
-            return Array.from({ length: 20 }).map((_, row) => {
-              const char = chars[Math.floor(Math.random() * chars.length)];
-              const delay = (col * 0.3 + row * 0.15) % 4;
-              const y = row * 20 + 10;
-              return (
-                <text
-                  key={`${col}-${row}`}
-                  x={x}
-                  y={y}
-                  fill="rgba(197,199,203,0.15)"
-                  fontFamily="'JetBrains Mono', monospace"
-                  fontSize={12}
-                  textAnchor="middle"
-                >
-                  {char}
-                  <animate attributeName="opacity" values="0.05;0.25;0.05" dur={`${2 + delay}s`} begin={`${delay}s`} repeatCount="indefinite" />
-                  <animate attributeName="fill" values="rgba(197,199,203,0.08);rgba(197,199,203,0.3);rgba(197,199,203,0.08)" dur={`${2 + delay}s`} begin={`${delay}s`} repeatCount="indefinite" />
-                </text>
-              );
-            });
-          })}
-        </svg>
-      </div>
+      {/* Dot texture */}
+      <div
+        aria-hidden
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          opacity: 0.05,
+          backgroundImage: "radial-gradient(#C5C7CB 0.6px, transparent 0.6px)",
+          backgroundSize: "24px 24px",
+        }}
+      />
+
+      {/* Corner frame accents */}
+      <div aria-hidden className="absolute top-24 left-6 md:left-12" style={{ width: 48, height: 1, backgroundColor: "rgba(110,115,120,0.4)" }} />
+      <div aria-hidden className="absolute top-24 left-6 md:left-12" style={{ width: 1, height: 48, backgroundColor: "rgba(110,115,120,0.4)" }} />
+      <div aria-hidden className="absolute bottom-12 right-6 md:right-12" style={{ width: 48, height: 1, backgroundColor: "rgba(110,115,120,0.4)" }} />
+      <div aria-hidden className="absolute bottom-12 right-6 md:right-12" style={{ width: 1, height: 48, backgroundColor: "rgba(110,115,120,0.4)" }} />
 
       <div className="container-content relative" style={{ zIndex: 1 }}>
-        <div>
-          <div style={{ maxWidth: 900 }}>
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="font-display font-[700] hero-headline"
-              style={{ color: "#FFFFFF", lineHeight: 1.08, maxWidth: 900, fontFamily: arFont, letterSpacing: language === "ar" ? "0em" : "-0.02em" }}
+        <div className="flex flex-col items-center text-center" style={{ gap: 48 }}>
+          {/* Status Tag */}
+          <motion.div
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            className="inline-flex items-center gap-3"
+            style={{
+              padding: "6px 14px",
+              border: "1px solid rgba(110,115,120,0.35)",
+              backgroundColor: "#0B0B0B",
+            }}
+          >
+            <span
+              className="animate-pulse"
+              style={{ width: 6, height: 6, backgroundColor: "#C5C7CB", display: "inline-block" }}
+            />
+            <span
+              className="font-mono uppercase"
+              style={{ fontSize: 10, letterSpacing: "0.3em", color: "#6E7378", fontFamily: arFont }}
             >
-              {t("Silxor Tech and Cyber Global", "Silxor تك وسايبر العالمية")}
-            </motion.h1>
+              {t("System Status: Sovereign Node Active", "الحالة: العقدة السيادية نشطة")}
+            </span>
+          </motion.div>
 
-            <motion.p
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-              className="font-body font-[300]"
-              style={{ fontSize: 19, lineHeight: 1.75, color: "#6E7378", maxWidth: 620, marginTop: 32, fontFamily: arFont }}
-            >
-              {t("Silxor architects, engineers, and operates the critical systems powering the most demanding institutions from sovereign cloud infrastructure to enterprise software, private AI, and identity transformation.", "Silxor تصمم وتهندس وتشغّل الأنظمة الحيوية التي تدعم أكثر المؤسسات صرامة في متطلباتها من البنية التحتية السحابية السيادية إلى البرمجيات المؤسسية والذكاء الاصطناعي الخاص وتحول منظومة الهوية.")}
-            </motion.p>
+          {/* Headline */}
+          <motion.h1
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+            className="font-display font-[800] uppercase hero-headline"
+            style={{
+              color: "#FFFFFF",
+              lineHeight: 0.92,
+              letterSpacing: language === "ar" ? "0em" : "-0.03em",
+              maxWidth: 1100,
+              fontFamily: arFont,
+            }}
+          >
+            {t("Sovereign Intelligence.", "الذكاء السيادي.")}
+            <br />
+            <span style={{ color: "#C5C7CB" }}>
+              {t("Immutable Defense.", "دفاع لا يُخترق.")}
+            </span>
+          </motion.h1>
 
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4"
-              style={{ marginTop: 48 }}
-            >
-              <a
-                href="mailto:contact@silxor.com?subject=Silxor%20-%20Technical%20Assessment%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20a%20technical%20assessment%20with%20Silxor.%0A%0AOrganization%3A%20%0AService%20Interest%3A%20%0AMessage%3A%20"
-                className="inline-flex items-center justify-center gap-2 font-body font-[500] uppercase transition-all duration-200"
-                style={{
-                  fontSize: 13, letterSpacing: "0.1em", backgroundColor: "#C5C7CB", color: "#0B0B0B",
-                  padding: "16px 32px", borderRadius: 2, fontFamily: arFont,
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#FFFFFF"; e.currentTarget.style.boxShadow = "0 0 30px rgba(197,199,203,0.3)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#C5C7CB"; e.currentTarget.style.boxShadow = "none"; }}
-              >
-                {t("Request Technical Assessment", "طلب تقييم تقني")}
-                <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
-                href="#infrastructure"
-                className="inline-flex items-center justify-center gap-2 font-body font-[500] uppercase transition-all duration-200"
-                style={{
-                  fontSize: 13, letterSpacing: "0.1em", color: "#C5C7CB",
-                  border: "1px solid rgba(197,199,203,0.4)", backgroundColor: "transparent",
-                  padding: "16px 32px", borderRadius: 2, fontFamily: arFont,
-                }}
-                onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#C5C7CB"; e.currentTarget.style.backgroundColor = "rgba(197,199,203,0.05)"; }}
-                onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(197,199,203,0.4)"; e.currentTarget.style.backgroundColor = "transparent"; }}
-              >
-                {t("Explore Our Services", "استكشف خدماتنا")}
-              </a>
-            </motion.div>
+          {/* Sub */}
+          <motion.p
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+            className="font-body font-[300]"
+            style={{
+              fontSize: 19,
+              lineHeight: 1.7,
+              color: "#C5C7CB",
+              maxWidth: 640,
+              fontFamily: arFont,
+              opacity: 0.9,
+            }}
+          >
+            {t(
+              "Architecting critical systems, private AI, and identity transformation for global institutions that ",
+              "نصمم الأنظمة الحيوية والذكاء الاصطناعي الخاص وتحول الهوية لأكبر المؤسسات العالمية التي "
+            )}
+            <span style={{ color: "#FFFFFF", fontWeight: 500 }}>
+              {t("cannot fail.", "لا تقبل الفشل.")}
+            </span>
+          </motion.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.45 }}
-              className="flex flex-wrap gap-[10px]"
-              style={{ marginTop: 56 }}
+          {/* CTAs */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+            className="flex flex-col sm:flex-row gap-4 justify-center w-full"
+          >
+            <a
+              href="mailto:contact@silxor.com?subject=Silxor%20-%20Technical%20Assessment%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20a%20technical%20assessment%20with%20Silxor.%0A%0AOrganization%3A%20%0AService%20Interest%3A%20%0AMessage%3A%20"
+              className="inline-flex items-center justify-center gap-2 font-display font-[700] uppercase transition-all duration-300"
+              style={{
+                fontSize: 13,
+                letterSpacing: "0.12em",
+                backgroundColor: "#C5C7CB",
+                color: "#0B0B0B",
+                padding: "16px 32px",
+                fontFamily: arFont,
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#FFFFFF")}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#C5C7CB")}
             >
-              <span className="badge-pill">
-                <Shield className="w-3 h-3 flex-shrink-0" />
-                ISO/IEC 27001:2022 {t("Certified", "معتمد")}
-              </span>
-              <span className="badge-pill">
-                Uptime Institute Tier IV {t("Ready", "جاهز")}
-              </span>
-              <span className="badge-pill">
-                <Globe className="w-3 h-3 flex-shrink-0" />
-                {t("Hosted at Equinix Ashburn", "مستضاف في Equinix أشبرن")}
-              </span>
-            </motion.div>
-          </div>
+              {t("Request Technical Assessment", "طلب تقييم تقني")}
+            </a>
+            <a
+              href="#infrastructure"
+              className="inline-flex items-center justify-center gap-2 font-display font-[700] uppercase transition-all duration-300"
+              style={{
+                fontSize: 13,
+                letterSpacing: "0.12em",
+                color: "#FFFFFF",
+                border: "1px solid #6E7378",
+                backgroundColor: "transparent",
+                padding: "16px 32px",
+                fontFamily: arFont,
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.05)")}
+              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
+            >
+              {t("Explore Our Services", "استكشف خدماتنا")}
+            </a>
+          </motion.div>
+
+          {/* Compliance Bar */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.45 }}
+            className="w-full flex flex-col md:flex-row items-center justify-between gap-8"
+            style={{
+              paddingTop: 48,
+              marginTop: 16,
+              borderTop: "1px solid rgba(110,115,120,0.2)",
+              opacity: 0.75,
+            }}
+          >
+            <div className="flex flex-wrap items-center justify-center gap-x-10 gap-y-6">
+              {[
+                { k: t("Standard", "المعيار"), v: "ISO 27001" },
+                { k: t("Classification", "التصنيف"), v: t("TIER IV READY", "تير IV جاهز") },
+                { k: t("Origin", "المنشأ"), v: "EQUINIX ASHBURN" },
+              ].map((item, i, arr) => (
+                <div key={item.v} className="flex items-center gap-10">
+                  <div className="flex flex-col items-start">
+                    <span
+                      className="font-mono uppercase"
+                      style={{ fontSize: 10, color: "#6E7378", letterSpacing: "0.2em", marginBottom: 4, fontFamily: arFont }}
+                    >
+                      {item.k}
+                    </span>
+                    <span className="font-display font-[700]" style={{ fontSize: 13, color: "#FFFFFF", fontFamily: arFont }}>
+                      {item.v}
+                    </span>
+                  </div>
+                  {i < arr.length - 1 && (
+                    <span aria-hidden style={{ width: 1, height: 32, backgroundColor: "rgba(110,115,120,0.3)" }} className="hidden md:block" />
+                  )}
+                </div>
+              ))}
+            </div>
+
+            <div className="hidden lg:flex gap-1">
+              <div style={{ width: 4, height: 24, backgroundColor: "rgba(110,115,120,0.4)" }} />
+              <div style={{ width: 4, height: 24, backgroundColor: "rgba(110,115,120,0.2)" }} />
+              <div style={{ width: 4, height: 24, backgroundColor: "rgba(110,115,120,0.1)" }} />
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>
