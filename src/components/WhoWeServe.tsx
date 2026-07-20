@@ -8,25 +8,25 @@ const WhoWeServe = () => {
     {
       icon: Landmark,
       title: t("Government & Public Sector", "الحكومة والقطاع العام"),
-      description: t("Sovereign infrastructure and software for ministries, agencies, and public institutions requiring compliance, auditability, and national data residency.", "بنية تحتية وبرمجيات سيادية للوزارات والوكالات والمؤسسات العامة التي تتطلب الامتثال والتدقيق وإقامة البيانات الوطنية."),
+      description: t("Sovereign systems for ministries and public institutions.", "أنظمة سيادية للوزارات والمؤسسات العامة."),
       coord: t("33.3°N · 44.4°E", "٣٣.٣° ش · ٤٤.٤° شر"),
     },
     {
       icon: Banknote,
       title: t("Financial Services & Banking", "الخدمات المالية والمصرفية"),
-      description: t("Core banking integrations, fintech platforms, and security architecture for USA's financial sector meeting Central Bank of USA regulatory requirements.", "تكاملات مصرفية أساسية، منصات تقنية مالية، وبنية أمنية للقطاع المالي الأمريكي تلبية متطلبات الاحتياطي الفيدرالي الأمريكي التنظيمية."),
+      description: t("Core banking, fintech, and security for regulated finance.", "أنظمة مصرفية وتقنية مالية وأمن للقطاع المنظم."),
       coord: t("36.2°N · 44.0°E", "٣٦.٢° ش · ٤٤.٠° شر"),
     },
     {
       icon: Fuel,
       title: t("Energy & Critical Infrastructure", "الطاقة والبنية التحتية الحيوية"),
-      description: t("Technology systems for oil, gas, utilities, and industrial operations where availability and integrity are non negotiable.", "أنظمة تقنية للنفط والغاز والمرافق والعمليات الصناعية حيث التوفر والنزاهة غير قابلين للتفاوض."),
+      description: t("High availability systems for oil, gas, and utilities.", "أنظمة عالية التوفر للنفط والغاز والمرافق."),
       coord: t("30.5°N · 47.8°E", "٣٠.٥° ش · ٤٧.٨° شر"),
     },
     {
       icon: Building2,
       title: t("Enterprise & Private Sector", "الشركات والقطاع الخاص"),
-      description: t("End to end technology partnership for USA's largest private enterprises scaling their digital operations.", "شراكة تقنية شاملة لأكبر المؤسسات الخاصة في الولايات المتحدة التي توسع عملياتها الرقمية."),
+      description: t("Technology partnership for enterprises scaling digital ops.", "شراكة تقنية للمؤسسات في توسيع عملياتها الرقمية."),
       coord: t("32.6°N · 44.0°E", "٣٢.٦° ش · ٤٤.٠° شر"),
     },
   ];
@@ -37,11 +37,8 @@ const WhoWeServe = () => {
         <div style={{ marginBottom: 12 }}>
           <div className="section-eyebrow">{t("SECTORS", "القطاعات")}</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "hsl(var(--foreground))" }}>
-            {t("Built for USA's Most Critical Sectors", "مُصمَّم لأهم قطاعات الولايات المتحدة")}
+            {t("Built for Critical Sectors", "مُصمَّم للقطاعات الحيوية")}
           </h2>
-          <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 520, marginTop: 6, lineHeight: 1.7 }}>
-            {t("Silxor delivers across the institutions that cannot afford downtime, data loss, or compromise.", "Silxor تخدم المؤسسات التي لا تتحمل أي توقف أو فقدان بيانات أو اختراق.")}
-          </p>
         </div>
 
         {/* Map list */}
