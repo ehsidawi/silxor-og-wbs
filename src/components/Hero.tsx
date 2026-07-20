@@ -72,7 +72,7 @@ const Hero = () => {
               fontFamily: arFont,
             }}
           >
-            {t("Silxor Tech and Cyber Global", "سيلكسور تك وسايبر العالمية")}
+            {"\n"}
           </motion.h1>
 
           {/* Sub */}
