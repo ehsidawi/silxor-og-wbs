@@ -21,7 +21,7 @@ const SoftwareAICapabilities = () => {
           <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "hsl(var(--foreground))" }}>
             {t("Build & Deliver Capabilities", "قدرات البناء والتسليم")}
           </h2>
-          <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 520, marginTop: 10, lineHeight: 1.7 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 520, marginTop: 6, lineHeight: 1.7 }}>
             {t("From line of code to production deployment engineered in New York, secured globally.", "من سطر الكود إلى نشر الإنتاج مهندسة في نيويورك، مؤمنة عالمياً.")}
           </p>
         </div>

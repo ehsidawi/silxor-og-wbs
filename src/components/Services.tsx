@@ -21,7 +21,7 @@ const Services = () => {
           <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "hsl(var(--foreground))" }}>
             {t("Infrastructure Capabilities", "قدرات البنية التحتية")}
           </h2>
-          <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 520, marginTop: 10, lineHeight: 1.7 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 520, marginTop: 6, lineHeight: 1.7 }}>
             {t("Enterprise grade sovereign cloud and security infrastructure the foundation everything else is built on.", "بنية سحابية وأمنية سيادية بمعايير مؤسسية الأساس الذي يُبنى عليه كل شيء آخر.")}
           </p>
         </div>

@@ -16,7 +16,7 @@ const ServiceSectorMatrix = () => {
   return (
     <section className="section-spacing" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
       <div className="container-content">
-        <div style={{ marginBottom: 24 }}>
+        <div style={{ marginBottom: 10 }}>
           <div className="section-eyebrow">COVERAGE MATRIX</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: '#FFFFFF' }}>
             Which Services Power Which Sectors
@@ -28,14 +28,14 @@ const ServiceSectorMatrix = () => {
             backgroundColor: '#25282C',
             border: '1px solid rgba(255,255,255,0.06)',
             borderRadius: 4,
-            padding: 32,
+            padding: 14,
             overflowX: 'auto',
           }}
         >
           <table style={{ width: '100%', borderCollapse: 'collapse' }}>
             <thead>
               <tr>
-                <th style={{ textAlign: 'left', padding: '8px 12px' }} />
+                <th style={{ textAlign: 'left', padding: '4px 10px' }} />
                 {sectors.map((s) => (
                   <th
                     key={s}
@@ -44,7 +44,7 @@ const ServiceSectorMatrix = () => {
                       fontSize: 10,
                       letterSpacing: '0.15em',
                       color: '#C5C7CB',
-                      padding: '8px 12px',
+                      padding: '4px 10px',
                       textAlign: 'center',
                     }}
                   >
@@ -65,14 +65,14 @@ const ServiceSectorMatrix = () => {
                 >
                   <td
                     className="font-body font-[400]"
-                    style={{ fontSize: 13, color: '#6E7378', padding: '14px 12px', whiteSpace: 'nowrap' }}
+                    style={{ fontSize: 13, color: '#6E7378', padding: '6px 10px', whiteSpace: 'nowrap' }}
                   >
                     {service}
                   </td>
                   {sectors.map((sector, ci) => (
                     <td
                       key={sector}
-                      style={{ textAlign: 'center', padding: '14px 12px', position: 'relative' }}
+                      style={{ textAlign: 'center', padding: '6px 10px', position: 'relative' }}
                       onMouseEnter={() => setHovered({ row: ri, col: ci })}
                       onMouseLeave={() => setHovered(null)}
                     >

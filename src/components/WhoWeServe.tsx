@@ -34,12 +34,12 @@ const WhoWeServe = () => {
   return (
     <section className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="container-content">
-        <div style={{ marginBottom: 32 }}>
+        <div style={{ marginBottom: 12 }}>
           <div className="section-eyebrow">{t("SECTORS", "القطاعات")}</div>
           <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "hsl(var(--foreground))" }}>
             {t("Built for USA's Most Critical Sectors", "مُصمَّم لأهم قطاعات الولايات المتحدة")}
           </h2>
-          <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 520, marginTop: 10, lineHeight: 1.7 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 14, color: "hsl(var(--muted-foreground))", maxWidth: 520, marginTop: 6, lineHeight: 1.7 }}>
             {t("Silxor delivers across the institutions that cannot afford downtime, data loss, or compromise.", "Silxor تخدم المؤسسات التي لا تتحمل أي توقف أو فقدان بيانات أو اختراق.")}
           </p>
         </div>

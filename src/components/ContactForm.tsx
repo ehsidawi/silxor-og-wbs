@@ -103,7 +103,7 @@ const ContactForm = () => {
         marginTop: 32,
       }}
     >
-      <h3 className="font-body font-[500] text-center" style={{ fontSize: 17, color: "#FFFFFF", marginBottom: 32 }}>
+      <h3 className="font-body font-[500] text-center" style={{ fontSize: 17, color: "#FFFFFF", marginBottom: 12 }}>
         {t("Or Send Us a Direct Message", "أو أرسل لنا رسالة مباشرة")}
       </h3>
 
