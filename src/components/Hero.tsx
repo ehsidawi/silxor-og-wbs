@@ -10,8 +10,8 @@ const Hero = () => {
     <section
       className="relative overflow-hidden"
       style={{
-        paddingTop: 120,
-        paddingBottom: 80,
+        paddingTop: 140,
+        paddingBottom: 96,
         background: `
           radial-gradient(ellipse 80% 60% at 50% -10%, rgba(197,199,203,0.08) 0%, transparent 70%),
           url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M 60 0 L 60 60 M 0 0 L 0 60 M 0 60 L 60 60 M 0 0 L 60 0' stroke='rgba(255,255,255,0.02)' stroke-width='1' fill='none'/%3E%3C/svg%3E"),
@@ -52,13 +52,13 @@ const Hero = () => {
 
       <div className="container-content relative" style={{ zIndex: 1 }}>
         <div>
-          <div style={{ maxWidth: 700 }}>
+          <div style={{ maxWidth: 900 }}>
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               className="section-eyebrow blink-cursor mb-5"
-              style={{ marginBottom: 20, fontFamily: arFont }}
+              style={{ marginBottom: 24, fontFamily: arFont, fontSize: 11, letterSpacing: "0.22em" }}
             >
               {t("Silxor TECHNOLOGIES", "Silxor تكنولوجيز")}
             </motion.div>
@@ -67,18 +67,18 @@ const Hero = () => {
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="font-[800] hero-headline text-4xl font-mono"
-              style={{ lineHeight: 1.08, letterSpacing: "-0.02em", color: "#FFFFFF", maxWidth: 860, marginBottom: 28, fontFamily: arFont }}
+              className="font-[800] hero-headline font-mono"
+              style={{ lineHeight: 1.05, letterSpacing: "-0.025em", color: "#FFFFFF", maxWidth: 980, marginBottom: 32, fontFamily: arFont }}
             >
               {language === "ar" ? (
                 <>
-                  <span style={{ display: "block", marginBottom: 8 }}>مُكلَّفون من مؤسسات لا <span style={{ color: "#C5C7CB" }}>تتحمل الفشل.</span></span>
+                  <span style={{ display: "block", marginBottom: 12 }}>مُكلَّفون من مؤسسات لا <span style={{ color: "#C5C7CB" }}>تتحمل الفشل.</span></span>
                   <span style={{ display: "block" }}>مهندَسون لل<span style={{ color: "#C5C7CB" }}>تحول على نطاق واسع.</span></span>
                 </>
               ) : (
                 <>
-                  <span className="text-4xl" style={{ display: "block", marginBottom: 8 }}>Commissioned by Institutions That <span style={{ color: "#C5C7CB" }}>Cannot Fail.</span></span>
-                  <span className="text-4xl" style={{ display: "block" }}>Engineered to <span style={{ color: "#C5C7CB" }}>Transform at Scale.</span></span>
+                  <span style={{ display: "block", marginBottom: 12 }}>Commissioned by Institutions That <span style={{ color: "#C5C7CB" }}>Cannot Fail.</span></span>
+                  <span style={{ display: "block" }}>Engineered to <span style={{ color: "#C5C7CB" }}>Transform at Scale.</span></span>
                 </>
               )}
             </motion.h1>
@@ -88,7 +88,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
               className="font-body font-[300]"
-              style={{ fontSize: 17, lineHeight: 1.7, color: "#6E7378", maxWidth: 520, marginTop: 24, fontFamily: arFont }}
+              style={{ fontSize: 19, lineHeight: 1.75, color: "#6E7378", maxWidth: 580, marginTop: 28, fontFamily: arFont }}
             >
               {t("Silxor architects, engineers, and operates the critical systems powering the most demanding institutions from sovereign cloud infrastructure to enterprise software, private AI, and identity transformation.", "Silxor تصمم وتهندس وتشغّل الأنظمة الحيوية التي تدعم أكثر المؤسسات صرامة في متطلباتها من البنية التحتية السحابية السيادية إلى البرمجيات المؤسسية والذكاء الاصطناعي الخاص وتحول منظومة الهوية.")}
             </motion.p>
@@ -98,14 +98,14 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
               className="flex flex-col sm:flex-row gap-4"
-              style={{ marginTop: 40 }}
+              style={{ marginTop: 48 }}
             >
               <a
                 href="mailto:contact@silxor.com?subject=Silxor%20-%20Technical%20Assessment%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20a%20technical%20assessment%20with%20Silxor.%0A%0AOrganization%3A%20%0AService%20Interest%3A%20%0AMessage%3A%20"
                 className="inline-flex items-center justify-center gap-2 font-body font-[500] uppercase transition-all duration-200"
                 style={{
                   fontSize: 13, letterSpacing: "0.1em", backgroundColor: "#C5C7CB", color: "#0B0B0B",
-                  padding: "14px 28px", borderRadius: 2, fontFamily: arFont,
+                  padding: "16px 32px", borderRadius: 2, fontFamily: arFont,
                 }}
                 onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = "#FFFFFF"; e.currentTarget.style.boxShadow = "0 0 30px rgba(197,199,203,0.3)"; }}
                 onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = "#C5C7CB"; e.currentTarget.style.boxShadow = "none"; }}
@@ -119,7 +119,7 @@ const Hero = () => {
                 style={{
                   fontSize: 13, letterSpacing: "0.1em", color: "#C5C7CB",
                   border: "1px solid rgba(197,199,203,0.4)", backgroundColor: "transparent",
-                  padding: "14px 28px", borderRadius: 2, fontFamily: arFont,
+                  padding: "16px 32px", borderRadius: 2, fontFamily: arFont,
                 }}
                 onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#C5C7CB"; e.currentTarget.style.backgroundColor = "rgba(197,199,203,0.05)"; }}
                 onMouseLeave={(e) => { e.currentTarget.style.borderColor = "rgba(197,199,203,0.4)"; e.currentTarget.style.backgroundColor = "transparent"; }}
@@ -133,7 +133,7 @@ const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.45 }}
               className="flex flex-wrap gap-[10px]"
-              style={{ marginTop: 48 }}
+              style={{ marginTop: 56 }}
             >
               <span className="badge-pill">
                 <Shield className="w-3 h-3 flex-shrink-0" />
