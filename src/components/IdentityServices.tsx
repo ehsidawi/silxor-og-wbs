@@ -342,12 +342,9 @@ const IdentityServices = () => {
 
         {/* ── Subsection 4: Identity Packages ── */}
         <div style={{ marginBottom: 12 }}>
-          <h3 className="font-body font-[500]" style={{ fontSize: 15, color: '#FFFFFF', marginBottom: 6 }}>
+          <h3 className="font-body font-[500]" style={{ fontSize: 15, color: '#FFFFFF', marginBottom: 8 }}>
             Identity Service Packages
           </h3>
-          <p className="font-body font-[300]" style={{ fontSize: 13, color: '#6E7378', maxWidth: 480, marginBottom: 8, lineHeight: 1.7 }}>
-            Structured engagements across every stage of the identity lifecycle.
-          </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
             {identityPackages.map((pkg, i) => (
               <div
@@ -396,11 +393,11 @@ const IdentityServices = () => {
           }}
         >
           <div style={{ maxWidth: 560 }}>
-            <h4 className="font-display font-[700]" style={{ fontSize: 20, color: '#FFFFFF', marginBottom: 8 }}>
+            <h4 className="font-display font-[700]" style={{ fontSize: 20, color: '#FFFFFF', marginBottom: 6 }}>
               Identity Is the Perimeter.
             </h4>
-            <p className="font-body font-[300]" style={{ fontSize: 13, color: '#6E7378', lineHeight: 1.7 }}>
-              Every breach starts with an identity. Silxor builds identity infrastructure that assumes compromise and enforces verification at every layer from the endpoint to the cloud to the AI agent.
+            <p className="font-body font-[300]" style={{ fontSize: 13, color: '#6E7378', lineHeight: 1.6 }}>
+              Every breach starts with an identity. Silxor enforces verification at every layer.
             </p>
           </div>
           <a
