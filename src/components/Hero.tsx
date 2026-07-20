@@ -30,7 +30,7 @@ const Hero = () => {
       <div className="container-content relative" style={{ zIndex: 1 }}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
           {/* LEFT: Content */}
-          <div className="flex flex-col" style={{ gap: 32 }}>
+          <div className="flex flex-col" style={{ gap: 20 }}>
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
