@@ -14,7 +14,7 @@ const StatsBar = () => {
   return (
     <section
       style={{
-        backgroundColor: "#161A24",
+        backgroundColor: "#25282C",
         borderTop: "1px solid rgba(255,255,255,0.06)",
         borderBottom: "1px solid rgba(255,255,255,0.06)",
         padding: "32px 0",
@@ -25,10 +25,10 @@ const StatsBar = () => {
           {stats.map((stat, index) => (
             <div key={index} className="flex items-center">
               <div className="flex flex-col items-center text-center group cursor-default" style={{ minWidth: 100 }}>
-                <span className="font-mono font-[700] transition-colors duration-200 group-hover:text-sovereign-gold" style={{ fontSize: 28, color: "#F7F3EC" }}>
+                <span className="font-mono font-[700] transition-colors duration-200 group-hover:text-sovereign-gold" style={{ fontSize: 28, color: "#FFFFFF" }}>
                   {stat.value}
                 </span>
-                <span className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.1em", color: "#A2A8B8", marginTop: 6 }}>
+                <span className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.1em", color: "#6E7378", marginTop: 6 }}>
                   {stat.label}
                 </span>
               </div>

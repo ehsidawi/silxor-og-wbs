@@ -23,7 +23,7 @@ const WhySilxor = () => {
       <div className="container-content">
         <div style={{ marginBottom: 32 }}>
           <div className="section-eyebrow">{t("WHY Silxor", "لماذا Silxor")}</div>
-          <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "#F7F3EC" }}>
+          <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "#FFFFFF" }}>
             {t("The Only Technology Company That Owns the Full Stack", "الشركة التقنية الوحيدة التي تمتلك المنظومة الكاملة")}
           </h2>
         </div>
@@ -31,10 +31,10 @@ const WhySilxor = () => {
         <div className="grid md:grid-cols-3 gap-4">
           {pillars.map((pillar, index) => (
             <div key={index} className="surface-elevated" style={{ padding: 20 }}>
-              <h3 className="font-body font-[500]" style={{ fontSize: 15, color: "#F7F3EC", marginBottom: 6 }}>
+              <h3 className="font-body font-[500]" style={{ fontSize: 15, color: "#FFFFFF", marginBottom: 6 }}>
                 {pillar.title}
               </h3>
-              <p className="font-body font-[300]" style={{ fontSize: 13, color: "#A2A8B8", lineHeight: 1.65 }}>
+              <p className="font-body font-[300]" style={{ fontSize: 13, color: "#6E7378", lineHeight: 1.65 }}>
                 {pillar.body}
               </p>
             </div>

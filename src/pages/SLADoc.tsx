@@ -20,18 +20,18 @@ const SLADoc = () => {
       <section className="section-spacing" style={{ paddingTop: 120 }}>
         <div className="container-content" style={{ maxWidth: 900, margin: "0 auto" }}>
           <div className="section-eyebrow">SERVICE LEVELS</div>
-          <h1 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: "#F7F3EC", marginBottom: 8 }}>
+          <h1 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: "#FFFFFF", marginBottom: 8 }}>
             SLA Documentation
           </h1>
-          <p className="font-body font-[300]" style={{ fontSize: 16, color: "#A2A8B8", lineHeight: 1.7, marginBottom: 48 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 16, color: "#6E7378", lineHeight: 1.7, marginBottom: 48 }}>
             Silxor service level commitments by infrastructure tier.
           </p>
 
-          <div style={{ backgroundColor: "#161A24", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 4, overflow: "hidden" }}>
+          <div style={{ backgroundColor: "#25282C", border: "1px solid rgba(255,255,255,0.06)", borderRadius: 4, overflow: "hidden" }}>
             <div className="overflow-x-auto">
               <table style={{ width: "100%", borderCollapse: "collapse" }}>
                 <thead>
-                  <tr style={{ backgroundColor: "#1C202C" }}>
+                  <tr style={{ backgroundColor: "#25282C" }}>
                     {["Metric", "Sovereign Starter", "Sovereign Business", "Sovereign Enterprise"].map((h) => (
                       <th
                         key={h}
@@ -39,7 +39,7 @@ const SLADoc = () => {
                         style={{
                           fontSize: 11,
                           letterSpacing: "0.1em",
-                          color: "#DDB343",
+                          color: "#C5C7CB",
                           padding: "14px 20px",
                           borderBottom: "1px solid rgba(255,255,255,0.06)",
                         }}
@@ -57,16 +57,16 @@ const SLADoc = () => {
                       onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "rgba(255,255,255,0.02)")}
                       onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
                     >
-                      <td className="font-body font-[400]" style={{ fontSize: 14, color: "#F7F3EC", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+                      <td className="font-body font-[400]" style={{ fontSize: 14, color: "#FFFFFF", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
                         {row.metric}
                       </td>
-                      <td className="font-body font-[300]" style={{ fontSize: 14, color: "#A2A8B8", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+                      <td className="font-body font-[300]" style={{ fontSize: 14, color: "#6E7378", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
                         {row.starter}
                       </td>
-                      <td className="font-body font-[300]" style={{ fontSize: 14, color: "#A2A8B8", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+                      <td className="font-body font-[300]" style={{ fontSize: 14, color: "#6E7378", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
                         {row.business}
                       </td>
-                      <td className="font-body font-[300]" style={{ fontSize: 14, color: "#A2A8B8", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
+                      <td className="font-body font-[300]" style={{ fontSize: 14, color: "#6E7378", padding: "12px 20px", borderBottom: "1px solid rgba(255,255,255,0.06)" }}>
                         {row.enterprise}
                       </td>
                     </tr>
@@ -76,7 +76,7 @@ const SLADoc = () => {
             </div>
           </div>
 
-          <p className="font-body font-[300] text-center" style={{ fontSize: 13, color: "#4A5060", fontStyle: "italic", marginTop: 48 }}>
+          <p className="font-body font-[300] text-center" style={{ fontSize: 13, color: "#6E7378", fontStyle: "italic", marginTop: 48 }}>
             SLA credits apply for downtime exceeding committed thresholds. Full SLA terms and credit calculation methodology available upon contract execution. Contact: sla@silxor.com
           </p>
         </div>

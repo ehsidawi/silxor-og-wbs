@@ -6,46 +6,42 @@
 
 @layer base {
   :root {
-    /* Sovereign Command Color System */
-    --background: 222 22% 8%; /* #10131C */
-    --foreground: 40 30% 96%; /* #F7F3EC */
+    /* Titanium / Stainless / Matte Black */
+    --background: 0 0% 4%; /* #0B0B0B */
+    --foreground: 0 0% 100%; /* #FFFFFF */
 
-    --card: 225 22% 11%; /* #161A24 */
-    --card-foreground: 40 30% 96%;
+    --card: 220 7% 16%; /* #25282C */
+    --card-foreground: 0 0% 100%;
 
-    --popover: 225 22% 11%;
-    --popover-foreground: 40 30% 96%;
+    --popover: 220 7% 16%;
+    --popover-foreground: 0 0% 100%;
 
-    /* Sovereign Gold Accent — sharpened */
-    --primary: 43 75% 58%; /* #DDB343 */
-    --primary-foreground: 222 22% 8%;
+    /* Stainless Steel Silver */
+    --primary: 220 5% 79%; /* #C5C7CB */
+    --primary-foreground: 0 0% 4%;
 
-    /* Surface Elevations */
-    --secondary: 224 20% 14%; /* #1C202C */
-    --secondary-foreground: 40 30% 96%;
+    --secondary: 220 7% 16%;
+    --secondary-foreground: 0 0% 100%;
 
-    --muted: 222 18% 17%; /* #232834 */
-    --muted-foreground: 224 14% 68%; /* #A2A8B8 */
+    --muted: 220 7% 16%;
+    --muted-foreground: 214 4% 45%; /* #6E7378 */
 
-    /* Success / Alert */
-    --accent: 150 70% 42%; /* #20B868 */
-    --accent-foreground: 40 30% 96%;
+    --accent: 220 5% 79%;
+    --accent-foreground: 0 0% 4%;
 
-    --destructive: 0 70% 58%; /* #DC4848 */
-    --destructive-foreground: 40 30% 96%;
+    --destructive: 0 70% 58%;
+    --destructive-foreground: 0 0% 100%;
 
-    /* Text Muted */
-    --text-muted: 222 15% 33%; /* #4A5060 */
+    --text-muted: 214 4% 45%;
 
     --border: 0 0% 100% / 0.10;
     --border-highlight: 0 0% 100% / 0.18;
     --input: 0 0% 100% / 0.10;
-    --ring: 43 75% 58%;
+    --ring: 220 5% 79%;
 
     --radius: 0.25rem;
 
-    /* Accent Glow */
-    --accent-glow: 43 75% 58% / 0.25;
+    --accent-glow: 220 5% 79% / 0.20;
 
     /* Spacing */
     --space-1: 0.25rem;
@@ -75,7 +71,7 @@
 
   body {
     @apply bg-background text-foreground font-body antialiased;
-    background: #10131C;
+    background: #0B0B0B;
     min-height: 100vh;
     font-weight: 300;
   }
@@ -86,8 +82,8 @@
 
   /* Selection */
   ::selection {
-    background: rgba(201, 168, 76, 0.3);
-    color: #F7F3EC;
+    background: rgba(197, 199, 203, 0.3);
+    color: #FFFFFF;
   }
 
   /* Scrollbar */
@@ -95,29 +91,29 @@
     width: 6px;
   }
   ::-webkit-scrollbar-track {
-    background: #10131C;
+    background: #0B0B0B;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(201, 168, 76, 0.4);
+    background: rgba(197, 199, 203, 0.4);
     border-radius: 0;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(201, 168, 76, 0.8);
+    background: rgba(197, 199, 203, 0.8);
   }
 }
 
 @layer utilities {
   .surface-elevated {
-    background: #161A24;
+    background: #25282C;
     border: 1px solid rgba(255, 255, 255, 0.06);
     border-radius: 4px;
     transition: all 250ms ease;
   }
 
   .surface-elevated:hover {
-    border-color: rgba(201, 168, 76, 0.3);
-    background: #1C202C;
-    border-top-color: rgba(201, 168, 76, 0.5);
+    border-color: rgba(197, 199, 203, 0.3);
+    background: #25282C;
+    border-top-color: rgba(197, 199, 203, 0.5);
   }
 
   .functional-glass {
@@ -127,14 +123,14 @@
   }
 
   .text-institutional {
-    color: #A2A8B8;
+    color: #6E7378;
     font-size: 14px;
     line-height: 1.7;
     font-weight: 300;
   }
 
   .accent-border {
-    border-left: 2px solid rgba(201, 168, 76, 0.4);
+    border-left: 2px solid rgba(197, 199, 203, 0.4);
   }
 
   .container-content {
@@ -185,7 +181,7 @@
     font-size: 10px;
     font-weight: 400;
     letter-spacing: 0.2em;
-    color: #DDB343;
+    color: #C5C7CB;
     text-transform: uppercase;
     margin-bottom: 16px;
   }
@@ -195,7 +191,7 @@
     display: block;
     width: 24px;
     height: 1px;
-    background: #DDB343;
+    background: #C5C7CB;
   }
 
   /* Blinking cursor animation */
@@ -231,7 +227,7 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 1px solid #DDB343;
+    border: 1px solid #C5C7CB;
     transform: translate(-50%, -50%);
     animation: pulse-ring 2s ease-out infinite;
   }
@@ -249,7 +245,7 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     font-weight: 400;
-    color: #A2A8B8;
+    color: #6E7378;
     padding: 6px 12px;
     border-radius: 2px;
     gap: 6px;

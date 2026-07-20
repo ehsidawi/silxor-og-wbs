@@ -18,14 +18,14 @@ const ServiceSectorMatrix = () => {
       <div className="container-content">
         <div style={{ marginBottom: 24 }}>
           <div className="section-eyebrow">COVERAGE MATRIX</div>
-          <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: '#F7F3EC' }}>
+          <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: '#FFFFFF' }}>
             Which Services Power Which Sectors
           </h2>
         </div>
 
         <div
           style={{
-            backgroundColor: '#161A24',
+            backgroundColor: '#25282C',
             border: '1px solid rgba(255,255,255,0.06)',
             borderRadius: 4,
             padding: 32,
@@ -43,7 +43,7 @@ const ServiceSectorMatrix = () => {
                     style={{
                       fontSize: 10,
                       letterSpacing: '0.15em',
-                      color: '#DDB343',
+                      color: '#C5C7CB',
                       padding: '8px 12px',
                       textAlign: 'center',
                     }}
@@ -65,7 +65,7 @@ const ServiceSectorMatrix = () => {
                 >
                   <td
                     className="font-body font-[400]"
-                    style={{ fontSize: 13, color: '#A2A8B8', padding: '14px 12px', whiteSpace: 'nowrap' }}
+                    style={{ fontSize: 13, color: '#6E7378', padding: '14px 12px', whiteSpace: 'nowrap' }}
                   >
                     {service}
                   </td>
@@ -81,7 +81,7 @@ const ServiceSectorMatrix = () => {
                           width: 10,
                           height: 10,
                           borderRadius: '50%',
-                          backgroundColor: '#DDB343',
+                          backgroundColor: '#C5C7CB',
                           margin: '0 auto',
                           transition: 'transform 200ms',
                           transform: hovered?.row === ri && hovered?.col === ci ? 'scale(1.4)' : 'scale(1)',
@@ -95,12 +95,12 @@ const ServiceSectorMatrix = () => {
                             bottom: '100%',
                             left: '50%',
                             transform: 'translateX(-50%)',
-                            backgroundColor: '#1C202C',
-                            border: '1px solid rgba(221,179,67,0.3)',
+                            backgroundColor: '#25282C',
+                            border: '1px solid rgba(197,199,203,0.3)',
                             borderRadius: 4,
                             padding: '6px 10px',
                             fontSize: 11,
-                            color: '#A2A8B8',
+                            color: '#6E7378',
                             whiteSpace: 'nowrap',
                             zIndex: 10,
                             pointerEvents: 'none',

@@ -63,11 +63,11 @@ const ContactForm = () => {
 
   const inputStyle: React.CSSProperties = {
     width: "100%",
-    background: "#1C202C",
+    background: "#25282C",
     border: "1px solid rgba(255,255,255,0.08)",
     borderRadius: 2,
     padding: "12px 16px",
-    color: "#F7F3EC",
+    color: "#FFFFFF",
     fontFamily: "'DM Sans', sans-serif",
     fontWeight: 300,
     fontSize: 14,
@@ -81,13 +81,13 @@ const ContactForm = () => {
     fontSize: 11,
     textTransform: "uppercase",
     letterSpacing: "0.08em",
-    color: "#A2A8B8",
+    color: "#6E7378",
     marginBottom: 8,
     display: "block",
   };
 
   const handleFocus = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    e.currentTarget.style.borderColor = "rgba(221,179,67,0.4)";
+    e.currentTarget.style.borderColor = "rgba(197,199,203,0.4)";
   };
   const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
@@ -96,14 +96,14 @@ const ContactForm = () => {
   return (
     <div
       style={{
-        backgroundColor: "#161A24",
+        backgroundColor: "#25282C",
         border: "1px solid rgba(255,255,255,0.06)",
         borderRadius: 4,
         padding: 40,
         marginTop: 32,
       }}
     >
-      <h3 className="font-body font-[500] text-center" style={{ fontSize: 17, color: "#F7F3EC", marginBottom: 32 }}>
+      <h3 className="font-body font-[500] text-center" style={{ fontSize: 17, color: "#FFFFFF", marginBottom: 32 }}>
         {t("Or Send Us a Direct Message", "أو أرسل لنا رسالة مباشرة")}
       </h3>
 
@@ -183,8 +183,8 @@ const ContactForm = () => {
             style={{
               fontSize: 11,
               letterSpacing: "0.1em",
-              backgroundColor: "#DDB343",
-              color: "#10131C",
+              backgroundColor: "#C5C7CB",
+              color: "#0B0B0B",
               padding: "14px 28px",
               borderRadius: 2,
               border: "none",
@@ -193,11 +193,11 @@ const ContactForm = () => {
             }}
             onMouseEnter={(e) => {
               if (!submitting) {
-                e.currentTarget.style.backgroundColor = "#F0C95A";
+                e.currentTarget.style.backgroundColor = "#FFFFFF";
               }
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "#DDB343";
+              e.currentTarget.style.backgroundColor = "#C5C7CB";
             }}
           >
             {submitting ? t("Sending...", "جارٍ الإرسال...") : t("Send Message", "إرسال الرسالة")}
@@ -205,7 +205,7 @@ const ContactForm = () => {
         </div>
 
         {status === "success" && (
-          <div className="sm:col-span-2 font-body font-[300] text-center" style={{ fontSize: 14, color: "#DDB343", animation: "fadeIn 300ms ease" }}>
+          <div className="sm:col-span-2 font-body font-[300] text-center" style={{ fontSize: 14, color: "#C5C7CB", animation: "fadeIn 300ms ease" }}>
             {t("Your email client has opened with your message pre filled. Please send it to complete your inquiry.", "تم فتح عميل البريد الإلكتروني مع رسالتك المعبأة مسبقاً. يرجى إرسالها لإتمام استفسارك.")}
           </div>
         )}
