@@ -18,7 +18,7 @@ const Footer = () => {
               </span>
             </div>
             <p className="font-body font-[300]" style={{ fontSize: 14, color: "#6E7378", lineHeight: 1.7 }}>
-              {t("Silxor delivers infrastructure, software, AI, and identity management for the systems that matter most. A Silxor company.", "Silxor تقدم البنية التحتية والبرمجيات والذكاء الاصطناعي وإدارة الهوية للأنظمة الأكثر أهمية. شركة Silxor.")}
+              {t("Silxor Tech and Cyber Global delivers infrastructure, software, AI, and identity management for the systems that matter most.", "تقدم سيلكسور تك وسايبر العالمية البنية التحتية والبرمجيات والذكاء الاصطناعي وإدارة الهوية للأنظمة الأكثر أهمية.")}
             </p>
           </div>
 
@@ -120,7 +120,7 @@ const Footer = () => {
         {/* Copyright */}
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 24 }}>
           <p className="font-body font-[300]" style={{ fontSize: 12, color: "#6E7378" }}>
-            {t("© 2026 Silxor Technologies. A Silxor company.", "© 2026 Silxor Technologies. شركة Silxor.")}
+            {t("© 2026 Silxor Tech and Cyber Global.", "© 2026 سيلكسور تك وسايبر العالمية.")}
           </p>
         </div>
       </div>

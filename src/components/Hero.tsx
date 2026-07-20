@@ -72,11 +72,7 @@ const Hero = () => {
               fontFamily: arFont,
             }}
           >
-            {t("Sovereign Intelligence.", "الذكاء السيادي.")}
-            <br />
-            <span style={{ color: "#C5C7CB" }}>
-              {t("Immutable Defense.", "دفاع لا يُخترق.")}
-            </span>
+            {"\n"}
           </motion.h1>
 
           {/* Sub */}
