@@ -72,7 +72,11 @@ const Hero = () => {
               fontFamily: arFont,
             }}
           >
-            {"\n"}
+            {t("Silxor Tech", "سيلكسور تك")}
+            <br />
+            <span style={{ color: "#C5C7CB" }}>
+              {t("and Cyber Global", "وسايبر العالمية")}
+            </span>
           </motion.h1>
 
           {/* Sub */}
