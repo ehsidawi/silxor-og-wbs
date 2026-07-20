@@ -9,10 +9,11 @@ const Hero = () => {
     <section
       className="relative overflow-hidden"
       style={{
-        paddingTop: 120,
-        paddingBottom: 100,
+        paddingTop: 72,
+        paddingBottom: 48,
         backgroundColor: "#0B0B0B",
         color: "#FFFFFF",
+
       }}
     >
       {/* Dot texture */}
