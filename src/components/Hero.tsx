@@ -171,11 +171,12 @@ const Hero = () => {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.45 }}
               className="flex flex-wrap items-center gap-x-8 gap-y-4"
               style={{
-                paddingTop: 32,
-                marginTop: 8,
+                paddingTop: 20,
+                marginTop: 4,
                 borderTop: "1px solid rgba(110,115,120,0.2)",
                 opacity: 0.85,
               }}
+
             >
               {[
                 { k: t("Standard", "المعيار"), v: "ISO 27001" },
