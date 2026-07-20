@@ -53,22 +53,22 @@ const Hero = () => {
       <div className="container-content relative" style={{ zIndex: 1 }}>
         <div>
           <div style={{ maxWidth: 900 }}>
-            <motion.div
+            <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="section-eyebrow blink-cursor mb-5"
-              style={{ marginBottom: 24, fontFamily: arFont, fontSize: 11, letterSpacing: "0.22em" }}
+              className="font-display font-[700] hero-headline"
+              style={{ color: "#FFFFFF", lineHeight: 1.08, maxWidth: 900, fontFamily: arFont, letterSpacing: language === "ar" ? "0em" : "-0.02em" }}
             >
               {t("Silxor Tech and Cyber Global", "Silxor تك وسايبر العالمية")}
-            </motion.div>
+            </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
               className="font-body font-[300]"
-              style={{ fontSize: 19, lineHeight: 1.75, color: "#6E7378", maxWidth: 580, marginTop: 28, fontFamily: arFont }}
+              style={{ fontSize: 19, lineHeight: 1.75, color: "#6E7378", maxWidth: 620, marginTop: 32, fontFamily: arFont }}
             >
               {t("Silxor architects, engineers, and operates the critical systems powering the most demanding institutions from sovereign cloud infrastructure to enterprise software, private AI, and identity transformation.", "Silxor تصمم وتهندس وتشغّل الأنظمة الحيوية التي تدعم أكثر المؤسسات صرامة في متطلباتها من البنية التحتية السحابية السيادية إلى البرمجيات المؤسسية والذكاء الاصطناعي الخاص وتحول منظومة الهوية.")}
             </motion.p>
