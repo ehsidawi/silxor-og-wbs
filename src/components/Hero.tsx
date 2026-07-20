@@ -60,28 +60,8 @@ const Hero = () => {
               className="section-eyebrow blink-cursor mb-5"
               style={{ marginBottom: 24, fontFamily: arFont, fontSize: 11, letterSpacing: "0.22em" }}
             >
-              {t("Silxor TECHNOLOGIES", "Silxor تكنولوجيز")}
+              {t("Silxor Tech and Cyber Global", "Silxor تك وسايبر العالمية")}
             </motion.div>
-
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="font-[800] hero-headline font-mono"
-              style={{ lineHeight: 1.05, letterSpacing: "-0.025em", color: "#FFFFFF", maxWidth: 980, marginBottom: 32, fontFamily: arFont }}
-            >
-              {language === "ar" ? (
-                <>
-                  <span style={{ display: "block", marginBottom: 12 }}>مُكلَّفون من مؤسسات لا <span style={{ color: "#C5C7CB" }}>تتحمل الفشل.</span></span>
-                  <span style={{ display: "block" }}>مهندَسون لل<span style={{ color: "#C5C7CB" }}>تحول على نطاق واسع.</span></span>
-                </>
-              ) : (
-                <>
-                  <span style={{ display: "block", marginBottom: 12 }}>Commissioned by Institutions That <span style={{ color: "#C5C7CB" }}>Cannot Fail.</span></span>
-                  <span style={{ display: "block" }}>Engineered to <span style={{ color: "#C5C7CB" }}>Transform at Scale.</span></span>
-                </>
-              )}
-            </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 24 }}
