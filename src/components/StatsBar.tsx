@@ -1,15 +1,41 @@
 import { useLanguage } from "@/context/LanguageContext";
 
-const StatsBar = () => {
-  const { t } = useLanguage();
+const companies = [
+  "Microsoft",
+  "Google",
+  "Amazon",
+  "IBM",
+  "Oracle",
+  "SAP",
+  "Cisco",
+  "Dell",
+  "HPE",
+  "VMware",
+  "Red Hat",
+  "Salesforce",
+  "ServiceNow",
+  "Workday",
+  "Adobe",
+  "Intel",
+  "NVIDIA",
+  "AMD",
+  "Palantir",
+  "Snowflake",
+  "MongoDB",
+  "CrowdStrike",
+  "Cloudflare",
+  "Akamai",
+  "Equinix",
+  "Veeam",
+  "Commvault",
+  "Veritas",
+  "Fortinet",
+  "Palo Alto Networks",
+];
 
-  const stats = [
-    { value: "99.995%", label: t("Uptime SLA", "اتفاقية مستوى الخدمة") },
-    { value: "<120ms", label: t("New York Latency", "زمن الاستجابة نيويورك") },
-    { value: "4", label: t("Business Units", "وحدات أعمال") },
-    { value: "24/7", label: t("NOC Coverage", "تغطية مركز العمليات") },
-    { value: "ISO 27001:2022", label: t("Certified", "معتمد") },
-  ];
+const StatsBar = () => {
+  const { language } = useLanguage();
+  const arFont = language === "ar" ? "'Cairo', sans-serif" : undefined;
 
   return (
     <section
@@ -17,28 +43,52 @@ const StatsBar = () => {
         backgroundColor: "#25282C",
         borderTop: "1px solid rgba(255,255,255,0.06)",
         borderBottom: "1px solid rgba(255,255,255,0.06)",
-        padding: "32px 0",
+        padding: "28px 0",
+        overflow: "hidden",
       }}
     >
-      <div className="container-content">
-        <div className="flex flex-wrap justify-between items-center gap-6">
-          {stats.map((stat, index) => (
+      <div className="relative w-full">
+        <div
+          className="flex items-center whitespace-nowrap"
+          style={{
+            animation: "marquee 50s linear infinite",
+            width: "max-content",
+          }}
+        >
+          {[...companies, ...companies].map((name, index) => (
             <div key={index} className="flex items-center">
-              <div className="flex flex-col items-center text-center group cursor-default" style={{ minWidth: 100 }}>
-                <span className="font-mono font-[700] transition-colors duration-200 group-hover:text-sovereign-gold" style={{ fontSize: 28, color: "#FFFFFF" }}>
-                  {stat.value}
-                </span>
-                <span className="font-body font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.1em", color: "#6E7378", marginTop: 6 }}>
-                  {stat.label}
-                </span>
-              </div>
-              {index < stats.length - 1 && (
-                <div className="hidden lg:block ml-6" style={{ width: 1, height: 40, backgroundColor: "rgba(255,255,255,0.06)" }} />
-              )}
+              <span
+                className="font-mono font-[500] uppercase transition-colors duration-200 hover:text-white"
+                style={{
+                  fontSize: 15,
+                  letterSpacing: "0.12em",
+                  color: "#6E7378",
+                  fontFamily: arFont,
+                  padding: "0 40px",
+                }}
+              >
+                {name}
+              </span>
+              <span
+                style={{
+                  width: 5,
+                  height: 5,
+                  borderRadius: "50%",
+                  backgroundColor: "rgba(197,199,203,0.35)",
+                  flexShrink: 0,
+                }}
+              />
             </div>
           ))}
         </div>
       </div>
+
+      <style>{`
+        @keyframes marquee {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      `}</style>
     </section>
   );
 };
