@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import SideRail from "@/components/SideRail";
 import Hero from "@/components/Hero";
 import StatsBar from "@/components/StatsBar";
 import WhoWeServe from "@/components/WhoWeServe";
@@ -20,65 +21,68 @@ const Index = () => {
   return (
     <div className="min-h-screen">
       <Navbar />
-      <div id="home">
-        <Hero />
-      </div>
-      <AnimatedSection delay={0.1}>
-        <StatsBar />
-      </AnimatedSection>
-      <AnimatedSection>
-        <WhoWeServe />
-      </AnimatedSection>
-      <AnimatedSection>
-        <ServiceSectorMatrix />
-      </AnimatedSection>
-      <AnimatedSection>
-        <SelectedWork />
-      </AnimatedSection>
-      <div id="infrastructure">
-        <AnimatedSection>
-          <Services />
+      <SideRail />
+      <div className="lg:pl-24">
+        <div id="home">
+          <Hero />
+        </div>
+        <AnimatedSection delay={0.1}>
+          <StatsBar />
         </AnimatedSection>
-      </div>
-      <div id="software">
-        <div id="ai">
+        <AnimatedSection>
+          <WhoWeServe />
+        </AnimatedSection>
+        <AnimatedSection>
+          <ServiceSectorMatrix />
+        </AnimatedSection>
+        <AnimatedSection>
+          <SelectedWork />
+        </AnimatedSection>
+        <div id="infrastructure">
           <AnimatedSection>
-            <SoftwareAICapabilities />
+            <Services />
           </AnimatedSection>
         </div>
-      </div>
-      <div id="identity">
-        <AnimatedSection>
-          <IdentityServices />
-        </AnimatedSection>
-      </div>
-      <div id="consulting">
-        <div id="packages">
+        <div id="software">
+          <div id="ai">
+            <AnimatedSection>
+              <SoftwareAICapabilities />
+            </AnimatedSection>
+          </div>
+        </div>
+        <div id="identity">
           <AnimatedSection>
-            <ServicePackages />
+            <IdentityServices />
           </AnimatedSection>
         </div>
-      </div>
-      <AnimatedSection>
-        <ProcessFlow />
-      </AnimatedSection>
-      <AnimatedSection>
-        <TechBacking />
-      </AnimatedSection>
-      <div id="about">
+        <div id="consulting">
+          <div id="packages">
+            <AnimatedSection>
+              <ServicePackages />
+            </AnimatedSection>
+          </div>
+        </div>
         <AnimatedSection>
-          <FAQ />
+          <ProcessFlow />
         </AnimatedSection>
-      </div>
-      <AnimatedSection>
-        <Team />
-      </AnimatedSection>
-      <div id="contact">
         <AnimatedSection>
-          <StartEngagement />
+          <TechBacking />
         </AnimatedSection>
+        <div id="about">
+          <AnimatedSection>
+            <FAQ />
+          </AnimatedSection>
+        </div>
+        <AnimatedSection>
+          <Team />
+        </AnimatedSection>
+        <div id="contact">
+          <AnimatedSection>
+            <StartEngagement />
+          </AnimatedSection>
+        </div>
+        <Footer />
       </div>
-      <Footer />
     </div>
   );
 };

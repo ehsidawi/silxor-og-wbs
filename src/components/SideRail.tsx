@@ -1,0 +1,97 @@
+import { useEffect, useState } from "react";
+import { useLanguage } from "@/context/LanguageContext";
+
+const NAV_HEIGHT = 80;
+
+const SideRail = () => {
+  const { t } = useLanguage();
+  const [active, setActive] = useState<string>("#infrastructure");
+
+  const items = [
+    { i: "01", label: t("Capabilities", "القدرات"), href: "#infrastructure" },
+    { i: "02", label: t("Software", "البرمجيات"), href: "#software" },
+    { i: "03", label: t("Identity", "الهوية"), href: "#identity" },
+    { i: "04", label: t("Contact", "تواصل"), href: "#contact" },
+  ];
+
+  useEffect(() => {
+    const onScroll = () => {
+      let cur = items[0].href;
+      for (const it of items) {
+        const el = document.querySelector(it.href) as HTMLElement | null;
+        if (!el) continue;
+        if (el.getBoundingClientRect().top - NAV_HEIGHT - 24 <= 0) cur = it.href;
+      }
+      setActive(cur);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handle = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const el = document.querySelector(href);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.scrollY - NAV_HEIGHT;
+    window.scrollTo({ top, behavior: "smooth" });
+  };
+
+  return (
+    <aside
+      className="hidden lg:flex fixed z-40 flex-col justify-between items-center"
+      style={{
+        top: NAV_HEIGHT,
+        bottom: 0,
+        left: 0,
+        width: 96,
+        borderRight: "1px solid #25282C",
+        backgroundColor: "#0B0B0B",
+        padding: "40px 0",
+      }}
+    >
+      <div className="flex flex-col items-center gap-12">
+        <div
+          className="flex items-center justify-center"
+          style={{ width: 36, height: 36, border: "2px solid #C5C7CB" }}
+        >
+          <div className="animate-pulse" style={{ width: 14, height: 14, backgroundColor: "#FFFFFF" }} />
+        </div>
+        <nav
+          className="font-mono uppercase"
+          style={{
+            writingMode: "vertical-lr",
+            transform: "rotate(180deg)",
+            display: "flex",
+            flexDirection: "column",
+            gap: 28,
+            fontSize: 10,
+            letterSpacing: "0.3em",
+            fontWeight: 700,
+          }}
+        >
+          {items.map((it) => {
+            const isActive = active === it.href;
+            return (
+              <a
+                key={it.href}
+                href={it.href}
+                onClick={(e) => handle(e, it.href)}
+                className="transition-colors"
+                style={{ color: isActive ? "#FFFFFF" : "#6E7378" }}
+              >
+                {it.i} / {it.label}
+              </a>
+            );
+          })}
+        </nav>
+      </div>
+      <div className="font-mono" style={{ fontSize: 10, fontWeight: 700, color: "#6E7378" }}>
+        SLXR // 2026
+      </div>
+    </aside>
+  );
+};
+
+export default SideRail;
