@@ -8,6 +8,8 @@ const NAV_HEIGHT = 80;
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [scrollPct, setScrollPct] = useState(0);
+  const [activeHref, setActiveHref] = useState<string>("#infrastructure");
   const { t } = useLanguage();
 
   const navLinks = [
@@ -19,9 +21,26 @@ const Navbar = () => {
   ];
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    const onScroll = () => {
+      const y = window.scrollY;
+      setScrolled(y > 20);
+      const h = document.documentElement.scrollHeight - window.innerHeight;
+      setScrollPct(h > 0 ? Math.min(100, (y / h) * 100) : 0);
+
+      // Scroll spy — pick the section whose top is closest above the nav
+      let current = navLinks[0].href;
+      for (const link of navLinks) {
+        const el = document.querySelector(link.href) as HTMLElement | null;
+        if (!el) continue;
+        const top = el.getBoundingClientRect().top;
+        if (top - NAV_HEIGHT - 24 <= 0) current = link.href;
+      }
+      setActiveHref(current);
+    };
+    onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -53,19 +72,7 @@ const Navbar = () => {
         borderBottom: "1px solid #25282C",
       }}
     >
-      <div className="relative h-full flex items-center justify-between px-6 lg:px-8 overflow-hidden">
-        {/* Industrial grid overlay */}
-        <div
-          className="absolute top-0 right-0 h-full opacity-[0.08] pointer-events-none hidden md:block"
-          style={{ width: 128 }}
-          aria-hidden
-        >
-          <div className="w-full h-full border-l flex flex-col" style={{ borderColor: "#C5C7CB" }}>
-            <div className="h-1/3 border-b" style={{ borderColor: "#C5C7CB" }} />
-            <div className="h-1/3 border-b" style={{ borderColor: "#C5C7CB" }} />
-          </div>
-        </div>
-
+      <div className="relative h-full flex items-center justify-between px-6 lg:px-8">
         {/* Left: Brand */}
         <a
           href="#"
@@ -73,12 +80,18 @@ const Navbar = () => {
           className="flex items-center gap-3 shrink-0 z-10 group"
         >
           <div
-            className="relative transition-transform duration-300 group-hover:scale-110"
-            style={{ width: 20, height: 20, backgroundColor: "#C5C7CB" }}
+            className="relative transition-transform duration-500 group-hover:rotate-45"
+            style={{
+              width: 28,
+              height: 28,
+              background:
+                "linear-gradient(135deg, #C5C7CB 0%, #6E7378 55%, #25282C 100%)",
+            }}
           >
+            <div className="absolute" style={{ inset: 1, backgroundColor: "#0B0B0B" }} />
             <div
               className="absolute"
-              style={{ inset: 2, border: "1px solid #0B0B0B" }}
+              style={{ inset: 6, backgroundColor: "#C5C7CB" }}
             />
           </div>
           <span
@@ -89,55 +102,54 @@ const Navbar = () => {
           </span>
         </a>
 
-        {/* Center: Segmented monospaced nav */}
-        <div className="hidden xl:flex items-center h-full z-10">
-          {navLinks.map((link, i) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className="group relative flex flex-col items-center justify-center h-full transition-colors duration-200"
-              style={{
-                padding: "0 14px",
-                borderLeft: i === 0 ? "1px solid transparent" : "1px solid #25282C",
-                borderRight: i === navLinks.length - 1 ? "1px solid transparent" : "none",
-                fontFamily: "'JetBrains Mono', monospace",
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#111111")}
-              onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
-            >
-              <span
-                className="transition-opacity duration-200"
-                style={{
-                  fontSize: 8,
-                  color: "#6E7378",
-                  marginBottom: 4,
-                  letterSpacing: "0.1em",
-                  opacity: i === 0 ? 1 : 0,
-                }}
-                data-hover-index
+        {/* Center: Interactive nav */}
+        <div className="hidden xl:flex items-center gap-8 h-full z-10">
+          {navLinks.map((link, i) => {
+            const isActive = activeHref === link.href;
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="group flex flex-col items-center justify-center h-full"
+                style={{ fontFamily: "'JetBrains Mono', monospace" }}
               >
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <span
-                className="uppercase whitespace-nowrap transition-colors duration-200 group-hover:text-white"
-                style={{
-                  fontSize: 11,
-                  letterSpacing: "0.15em",
-                  color: "#C5C7CB",
-                  fontWeight: 500,
-                }}
-              >
-                {link.label}
-              </span>
-              {/* Bottom active indicator */}
-              <span
-                className="absolute left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-200"
-                style={{ bottom: -1, height: 1, backgroundColor: "#C5C7CB" }}
-                aria-hidden
-              />
-            </a>
-          ))}
+                <span
+                  className="transition-all duration-300"
+                  style={{
+                    fontSize: 8,
+                    letterSpacing: "0.15em",
+                    color: isActive ? "#C5C7CB" : "#6E7378",
+                    marginBottom: 3,
+                  }}
+                >
+                  {String(i + 1).padStart(2, "0")}.
+                </span>
+                <span
+                  className="uppercase whitespace-nowrap transition-colors duration-300 group-hover:text-white"
+                  style={{
+                    fontSize: 11,
+                    letterSpacing: "0.2em",
+                    color: isActive ? "#FFFFFF" : "#6E7378",
+                    fontWeight: 500,
+                  }}
+                >
+                  {link.label}
+                </span>
+                <span
+                  className="transition-all duration-300 group-hover:w-full"
+                  style={{
+                    height: 2,
+                    marginTop: 4,
+                    width: isActive ? "100%" : 0,
+                    backgroundColor: "#C5C7CB",
+                    boxShadow: isActive ? "0 0 8px rgba(197,199,203,0.5)" : "none",
+                  }}
+                  aria-hidden
+                />
+              </a>
+            );
+          })}
         </div>
 
         {/* Right: Utils + CTA */}
@@ -145,9 +157,9 @@ const Navbar = () => {
           <div
             className="flex items-center"
             style={{
-              border: "1px solid #25282C",
-              borderRadius: 2,
-              padding: "4px 6px",
+              borderLeft: "1px solid #25282C",
+              borderRight: "1px solid #25282C",
+              padding: "4px 12px",
             }}
           >
             <LanguageToggle />
@@ -155,7 +167,7 @@ const Navbar = () => {
 
           <a
             href={assessmentMailto}
-            className="relative group overflow-hidden transition-all duration-300"
+            className="relative group overflow-hidden transition-all duration-300 active:scale-95 hover:bg-white"
             style={{
               padding: "12px 22px",
               backgroundColor: "#C5C7CB",
@@ -168,12 +180,30 @@ const Navbar = () => {
               borderRadius: 2,
             }}
           >
-            <span className="relative z-10">{t("Request Assessment", "طلب تقييم")}</span>
+            {/* Metallic shimmer sweep */}
             <span
-              className="absolute inset-0 translate-y-full group-hover:translate-y-0 transition-transform duration-300"
-              style={{ backgroundColor: "#FFFFFF" }}
+              className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none"
+              style={{
+                background:
+                  "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.6) 50%, transparent 100%)",
+              }}
               aria-hidden
             />
+            <span className="relative z-10 flex items-center gap-2">
+              {t("Request Assessment", "طلب تقييم")}
+              <svg
+                width="12"
+                height="12"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className="transition-transform duration-300 group-hover:translate-x-1"
+                aria-hidden
+              >
+                <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="square" />
+              </svg>
+            </span>
           </a>
         </div>
 
@@ -195,6 +225,24 @@ const Navbar = () => {
         </button>
       </div>
 
+      {/* Scroll progress hairline */}
+      <div
+        className="absolute left-0 right-0 pointer-events-none"
+        style={{ bottom: -1, height: 1, backgroundColor: "transparent" }}
+        aria-hidden
+      >
+        <div
+          style={{
+            height: "100%",
+            width: `${scrollPct}%`,
+            background:
+              "linear-gradient(90deg, transparent 0%, #C5C7CB 50%, transparent 100%)",
+            boxShadow: "0 0 8px rgba(197,199,203,0.5)",
+            transition: "width 120ms linear",
+          }}
+        />
+      </div>
+
       {/* Mobile panel */}
       <div
         className="xl:hidden transition-all duration-500"
@@ -210,31 +258,45 @@ const Navbar = () => {
         }}
       >
         <div className="px-6 py-6">
-          {navLinks.map((link, i) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={(e) => handleNavClick(e, link.href)}
-              className="flex items-center justify-between py-4 uppercase transition-colors duration-200"
-              style={{
-                fontFamily: "'JetBrains Mono', monospace",
-                fontSize: 12,
-                letterSpacing: "0.15em",
-                color: "#C5C7CB",
-                borderBottom: "1px solid #25282C",
-              }}
-            >
-              <span>{link.label}</span>
-              <span style={{ fontSize: 9, color: "#6E7378" }}>{String(i + 1).padStart(2, "0")}</span>
-            </a>
-          ))}
+          {navLinks.map((link, i) => {
+            const isActive = activeHref === link.href;
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                onClick={(e) => handleNavClick(e, link.href)}
+                className="flex items-center justify-between py-4 uppercase transition-colors duration-200"
+                style={{
+                  fontFamily: "'JetBrains Mono', monospace",
+                  fontSize: 12,
+                  letterSpacing: "0.15em",
+                  color: isActive ? "#FFFFFF" : "#C5C7CB",
+                  borderBottom: "1px solid #25282C",
+                }}
+              >
+                <span className="flex items-center gap-3">
+                  <span
+                    style={{
+                      display: "inline-block",
+                      width: 6,
+                      height: 6,
+                      backgroundColor: isActive ? "#C5C7CB" : "transparent",
+                      border: "1px solid #C5C7CB",
+                    }}
+                  />
+                  {link.label}
+                </span>
+                <span style={{ fontSize: 9, color: "#6E7378" }}>{String(i + 1).padStart(2, "0")}</span>
+              </a>
+            );
+          })}
           <div className="flex items-center justify-center py-6">
             <LanguageToggle />
           </div>
           <a
             href={assessmentMailto}
             onClick={() => setMobileOpen(false)}
-            className="flex items-center justify-center uppercase"
+            className="flex items-center justify-center gap-2 uppercase"
             style={{
               fontFamily: "'DM Sans', sans-serif",
               fontSize: 12,
@@ -247,6 +309,9 @@ const Navbar = () => {
             }}
           >
             {t("Request Assessment", "طلب تقييم")}
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
+              <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="square" />
+            </svg>
           </a>
         </div>
       </div>
