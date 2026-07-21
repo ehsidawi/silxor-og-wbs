@@ -1,359 +1,177 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 
+const ASSESSMENT_MAILTO =
+  "mailto:contact@silxor.com?subject=Silxor%20-%20Technical%20Assessment%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20a%20technical%20assessment%20with%20Silxor.%0A%0AOrganization%3A%20%0AService%20Interest%3A%20%0AMessage%3A%20";
+
 const Hero = () => {
   const { t, language } = useLanguage();
   const arFont = language === "ar" ? "'Cairo', sans-serif" : undefined;
 
   return (
     <section
-      className="relative overflow-hidden"
+      className="relative overflow-hidden border-b"
       style={{
-        paddingTop: 72,
-        paddingBottom: 48,
+        minHeight: "calc(100vh - 80px)",
         backgroundColor: "#0B0B0B",
         color: "#FFFFFF",
-
+        borderColor: "#25282C",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-end",
+        padding: "clamp(24px, 5vw, 80px)",
       }}
     >
-      {/* Dot texture */}
+      {/* Technical Header */}
+      <div className="absolute flex flex-col gap-2" style={{ top: 40, left: "clamp(24px, 5vw, 80px)" }}>
+        <span
+          className="uppercase font-mono"
+          style={{ fontSize: 11, letterSpacing: "0.2em", color: "#6E7378", fontWeight: 700 }}
+        >
+          {t("Status: Operational // Build v4.2", "الحالة: تشغيلية // إصدار 4.2")}
+        </span>
+        <div style={{ height: 1, width: 128, backgroundColor: "#25282C" }} />
+      </div>
+
+      {/* Diagonal texture */}
       <div
         aria-hidden
-        className="absolute inset-0 pointer-events-none"
+        className="absolute pointer-events-none"
         style={{
-          opacity: 0.05,
-          backgroundImage: "radial-gradient(#C5C7CB 0.6px, transparent 0.6px)",
-          backgroundSize: "24px 24px",
+          bottom: 0,
+          right: 0,
+          width: "33%",
+          height: "50%",
+          opacity: 0.1,
+          backgroundImage:
+            "linear-gradient(to bottom right, transparent 49.5%, #25282C 50%, transparent 50.5%)",
+          backgroundSize: "20px 20px",
         }}
       />
 
-      <div className="container-content relative" style={{ zIndex: 1 }}>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24 items-center">
-          {/* LEFT: Content */}
-          <div className="flex flex-col" style={{ gap: 20 }}>
-            <motion.div
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="inline-flex items-center gap-2 w-fit"
-              style={{
-                padding: "6px 14px",
-                border: "1px solid #25282C",
-                backgroundColor: "#0B0B0B",
-                borderRadius: 9999,
-              }}
-            >
-              <span
-                className="animate-pulse"
-                style={{
-                  width: 6,
-                  height: 6,
-                  backgroundColor: "#C5C7CB",
-                  borderRadius: 9999,
-                  display: "inline-block",
-                }}
-              />
-              <span
-                className="font-body uppercase"
-                style={{
-                  fontSize: 10,
-                  letterSpacing: "0.2em",
-                  color: "#6E7378",
-                  fontWeight: 500,
-                  fontFamily: arFont,
-                }}
-              >
-                {t("System Status: Sovereign Node Active", "الحالة: العقدة السيادية نشطة")}
-              </span>
-            </motion.div>
+      <div className="relative" style={{ maxWidth: 1200, width: "100%", zIndex: 1 }}>
+        <motion.h1
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
+          className="font-mono font-[700]"
+          style={{
+            color: "#C5C7CB",
+            lineHeight: 0.85,
+            letterSpacing: "-0.04em",
+            fontSize: "clamp(4.5rem, 14vw, 10rem)",
+            marginBottom: 32,
+          }}
+        >
+          SIL<span style={{ color: "#FFFFFF" }}>XOR</span>
+        </motion.h1>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-              className="font-display font-[700]"
-              style={{
-                color: "#FFFFFF",
-                lineHeight: 1.1,
-                letterSpacing: language === "ar" ? "0em" : "-0.02em",
-                fontFamily: arFont,
-                fontSize: "clamp(2.25rem, 5vw, 4.25rem)",
-              }}
-            >
-              {t("Precision ", "الدقة ")}
-              <span style={{ color: "#C5C7CB" }}>
-                {t("Engineered", "المهندسة")}
-              </span>
-              {t(" For The Future.", " للمستقبل.")}
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-end">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
+            className="flex flex-col gap-6"
+          >
+            <p
               className="font-body"
               style={{
-                fontSize: 18,
-                lineHeight: 1.7,
-                color: "#6E7378",
-                maxWidth: 480,
-                fontWeight: 400,
+                fontSize: "clamp(16px, 1.6vw, 22px)",
+                lineHeight: 1.55,
+                color: "#C5C7CB",
+                maxWidth: 460,
+                fontWeight: 300,
                 fontFamily: arFont,
               }}
             >
               {t(
-                "Architecting critical systems, private AI, and identity transformation for global institutions that ",
-                "نصمم الأنظمة الحيوية والذكاء الاصطناعي الخاص وتحول الهوية لأكبر المؤسسات العالمية التي "
+                "Forging high-performance digital infrastructure with surgical precision and industrial durability.",
+                "نصمم بنية تحتية رقمية عالية الأداء بدقة جراحية ومتانة صناعية."
               )}
-              <span style={{ color: "#C5C7CB", fontWeight: 500 }}>
-                {t("cannot fail.", "لا تقبل الفشل.")}
-              </span>
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-              className="flex flex-col sm:flex-row gap-4"
-              style={{ paddingTop: 8 }}
-            >
+            </p>
+            <div className="flex flex-wrap items-center gap-4">
               <a
-                href="mailto:contact@silxor.com?subject=Silxor%20-%20Technical%20Assessment%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20a%20technical%20assessment%20with%20Silxor.%0A%0AOrganization%3A%20%0AService%20Interest%3A%20%0AMessage%3A%20"
-                className="inline-flex items-center justify-center gap-2 font-display font-[700] uppercase transition-all duration-300"
+                href={ASSESSMENT_MAILTO}
+                className="inline-flex items-center justify-center uppercase transition-colors"
                 style={{
-                  fontSize: 13,
-                  letterSpacing: "0.12em",
-                  backgroundColor: "#C5C7CB",
+                  fontSize: 12,
+                  letterSpacing: "0.2em",
+                  backgroundColor: "#FFFFFF",
                   color: "#0B0B0B",
                   padding: "16px 32px",
+                  fontWeight: 700,
                   fontFamily: arFont,
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = "#FFFFFF";
-                  e.currentTarget.style.boxShadow = "0 0 20px rgba(197,199,203,0.3)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = "#C5C7CB";
-                  e.currentTarget.style.boxShadow = "none";
-                }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#C5C7CB")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#FFFFFF")}
               >
-                {t("Request Technical Assessment", "طلب تقييم تقني")}
+                {t("Start Build", "ابدأ المشروع")}
               </a>
               <a
                 href="#infrastructure"
-                className="inline-flex items-center justify-center gap-2 font-display font-[700] uppercase transition-all duration-300"
+                className="inline-flex items-center justify-center uppercase transition-colors"
                 style={{
-                  fontSize: 13,
-                  letterSpacing: "0.12em",
-                  color: "#C5C7CB",
+                  fontSize: 12,
+                  letterSpacing: "0.2em",
                   border: "1px solid #25282C",
-                  backgroundColor: "transparent",
+                  color: "#FFFFFF",
                   padding: "16px 32px",
+                  fontWeight: 700,
                   fontFamily: arFont,
                 }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.backgroundColor = "#25282C";
-                  e.currentTarget.style.color = "#FFFFFF";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.backgroundColor = "transparent";
-                  e.currentTarget.style.color = "#C5C7CB";
-                }}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#25282C")}
+                onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "transparent")}
               >
-                {t("Explore Our Services", "استكشف خدماتنا")}
+                {t("View Spec", "عرض المواصفات")}
               </a>
-            </motion.div>
+            </div>
+          </motion.div>
 
-            {/* Compliance strip */}
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.45 }}
-              className="flex flex-wrap items-center gap-x-8 gap-y-4"
-              style={{
-                paddingTop: 20,
-                marginTop: 4,
-                borderTop: "1px solid rgba(110,115,120,0.2)",
-                opacity: 0.85,
-              }}
-
-            >
+          {/* Spec Sheet Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+            className="flex flex-col gap-4"
+            style={{
+              backgroundColor: "#25282C",
+              padding: 24,
+              border: "1px solid rgba(110,115,120,0.2)",
+            }}
+          >
+            <div className="flex justify-between items-center font-mono" style={{ fontSize: 10, color: "#6E7378" }}>
+              <span>{t("ENGINEERING LOGS", "سجلات الهندسة")}</span>
+              <span className="animate-pulse" style={{ color: "#C5C7CB" }}>REC ●</span>
+            </div>
+            <div className="flex flex-col gap-3">
               {[
+                { k: t("Architecture", "الهيكلية"), v: "D-Modular" },
+                { k: t("Integrity", "السلامة"), v: "99.98%" },
+                { k: t("Latency", "زمن الاستجابة"), v: "14ms" },
                 { k: t("Standard", "المعيار"), v: "ISO 27001" },
-                { k: t("Classification", "التصنيف"), v: t("TIER IV READY", "تير IV جاهز") },
-                { k: t("Origin", "المنشأ"), v: "EQUINIX ASHBURN" },
-              ].map((item) => (
-                <div key={item.v} className="flex flex-col items-start">
+              ].map((row) => (
+                <div
+                  key={row.v}
+                  className="flex justify-between items-end"
+                  style={{ borderBottom: "1px solid rgba(110,115,120,0.2)", paddingBottom: 4 }}
+                >
                   <span
-                    className="font-body uppercase"
+                    className="uppercase"
                     style={{
-                      fontSize: 10,
+                      fontSize: 11,
                       color: "#6E7378",
-                      letterSpacing: "0.2em",
-                      marginBottom: 4,
+                      fontWeight: 700,
+                      letterSpacing: "0.1em",
                       fontFamily: arFont,
                     }}
                   >
-                    {item.k}
+                    {row.k}
                   </span>
-                  <span
-                    className="font-display font-[700]"
-                    style={{ fontSize: 12, color: "#FFFFFF", fontFamily: arFont }}
-                  >
-                    {item.v}
+                  <span className="font-mono" style={{ fontSize: 13, color: "#FFFFFF" }}>
+                    {row.v}
                   </span>
                 </div>
               ))}
-            </motion.div>
-          </div>
-
-          {/* RIGHT: Visual Asset */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.25 }}
-            className="relative"
-          >
-            <div className="relative aspect-square w-full max-w-[520px] mx-auto">
-              {/* Structural frames */}
-              <div
-                aria-hidden
-                className="absolute inset-0"
-                style={{
-                  border: "1px solid #25282C",
-                  borderRadius: 16,
-                  transform: "rotate(3deg) scale(0.96)",
-                }}
-              />
-              <div
-                aria-hidden
-                className="absolute inset-0"
-                style={{
-                  border: "1px solid #6E7378",
-                  borderRadius: 16,
-                  transform: "rotate(-2deg)",
-                  opacity: 0.3,
-                }}
-              />
-
-              {/* Main visual */}
-              <div
-                className="absolute inset-0 overflow-hidden flex items-center justify-center"
-                style={{
-                  backgroundColor: "#25282C",
-                  borderRadius: 16,
-                  boxShadow: "0 25px 50px -12px rgba(0,0,0,0.6)",
-                }}
-              >
-                <div
-                  className="relative w-full h-full"
-                  style={{
-                    background: "linear-gradient(135deg, #25282C 0%, #0B0B0B 50%, #25282C 100%)",
-                  }}
-                >
-                  {/* Dot grid */}
-                  <div
-                    aria-hidden
-                    className="absolute inset-0"
-                    style={{
-                      opacity: 0.1,
-                      backgroundImage: "radial-gradient(#6E7378 0.5px, transparent 0.5px)",
-                      backgroundSize: "20px 20px",
-                    }}
-                  />
-
-                  {/* Inner corner frame */}
-                  <div
-                    aria-hidden
-                    className="absolute"
-                    style={{
-                      inset: 48,
-                      borderLeft: "1px solid rgba(110,115,120,0.4)",
-                      borderTop: "1px solid rgba(110,115,120,0.4)",
-                    }}
-                  />
-
-                  {/* Cross lines + node */}
-                  <div className="absolute flex items-center justify-center" style={{ inset: 80 }}>
-                    <div
-                      className="w-full"
-                      style={{
-                        height: 1,
-                        background:
-                          "linear-gradient(to right, transparent, #C5C7CB, transparent)",
-                      }}
-                    />
-                    <div
-                      className="absolute h-full"
-                      style={{
-                        width: 1,
-                        background:
-                          "linear-gradient(to bottom, transparent, #C5C7CB, transparent)",
-                      }}
-                    />
-                    <div
-                      className="absolute flex items-center justify-center"
-                      style={{
-                        width: 64,
-                        height: 64,
-                        backgroundColor: "#C5C7CB",
-                        transform: "rotate(45deg)",
-                        border: "4px solid #0B0B0B",
-                        boxShadow: "0 0 40px rgba(197,199,203,0.2)",
-                      }}
-                    >
-                      <div style={{ width: 8, height: 8, backgroundColor: "#0B0B0B" }} />
-                    </div>
-                  </div>
-
-                  {/* Callout */}
-                  <div
-                    className="absolute flex flex-col gap-1"
-                    style={{ bottom: 32, left: 32 }}
-                  >
-                    <div style={{ height: 1, width: 32, backgroundColor: "#C5C7CB" }} />
-                    <span
-                      className="uppercase font-body"
-                      style={{
-                        fontSize: 9,
-                        letterSpacing: "0.3em",
-                        color: "#C5C7CB",
-                        fontFamily: arFont,
-                      }}
-                    >
-                      {t("Structural Lock", "قفل هيكلي")}
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              {/* Ambient glows */}
-              <div
-                aria-hidden
-                className="absolute pointer-events-none"
-                style={{
-                  top: -16,
-                  right: -16,
-                  width: 96,
-                  height: 96,
-                  backgroundColor: "#C5C7CB",
-                  filter: "blur(80px)",
-                  opacity: 0.1,
-                }}
-              />
-              <div
-                aria-hidden
-                className="absolute pointer-events-none"
-                style={{
-                  bottom: -32,
-                  left: -32,
-                  width: 128,
-                  height: 128,
-                  backgroundColor: "#6E7378",
-                  filter: "blur(100px)",
-                  opacity: 0.1,
-                }}
-              />
             </div>
           </motion.div>
         </div>
