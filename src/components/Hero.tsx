@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { useLanguage } from "@/context/LanguageContext";
 
-const ASSESSMENT_MAILTO =
-  "mailto:contact@silxor.com?subject=Silxor%20-%20Technical%20Assessment%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20a%20technical%20assessment%20with%20Silxor.%0A%0AOrganization%3A%20%0AService%20Interest%3A%20%0AMessage%3A%20";
+const ASSESSMENT_MAILTO = "https://cal.com/silxor/technical-assessment";
 
 const Hero = () => {
   const { t, language } = useLanguage();
