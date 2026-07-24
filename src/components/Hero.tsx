@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/context/LanguageContext";
-
-const ASSESSMENT_MAILTO = "https://cal.com/silxor/technical-assessment";
 
 const Hero = () => {
   const { t, language } = useLanguage();
