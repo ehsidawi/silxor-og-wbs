@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ComplianceDoc from "./pages/ComplianceDoc";
 import SLADoc from "./pages/SLADoc";
+import BookAssessment from "./pages/BookAssessment";
 
 const queryClient = new QueryClient();
 
