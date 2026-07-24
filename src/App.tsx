@@ -23,6 +23,7 @@ const App = () => (
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/compliance" element={<ComplianceDoc />} />
           <Route path="/sla" element={<SLADoc />} />
+          <Route path="/book" element={<BookAssessment />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
