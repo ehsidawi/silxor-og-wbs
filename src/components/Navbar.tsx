@@ -166,7 +166,7 @@ const Navbar = () => {
           </div>
 
           <a
-            href={assessmentMailto}
+            href="/book"
             className="relative group overflow-hidden transition-all duration-300 active:scale-95 hover:bg-white"
             style={{
               padding: "12px 22px",
@@ -190,7 +190,7 @@ const Navbar = () => {
               aria-hidden
             />
             <span className="relative z-10 flex items-center gap-2">
-              {t("Request Assessment", "طلب تقييم")}
+              {t("Book an Assessment", "احجز تقييماً")}
               <svg
                 width="12"
                 height="12"
@@ -294,7 +294,7 @@ const Navbar = () => {
             <LanguageToggle />
           </div>
           <a
-            href={assessmentMailto}
+            href="/book"
             onClick={() => setMobileOpen(false)}
             className="flex items-center justify-center gap-2 uppercase"
             style={{
@@ -308,7 +308,7 @@ const Navbar = () => {
               borderRadius: 2,
             }}
           >
-            {t("Request Assessment", "طلب تقييم")}
+            {t("Book an Assessment", "احجز تقييماً")}
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
               <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="square" />
             </svg>

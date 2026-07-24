@@ -61,7 +61,7 @@ const StartEngagement = () => {
 
         <div className="flex justify-center" style={{ marginTop: 48 }}>
           <a
-            href="mailto:contact@silxor.com?subject=Silxor%20-%20Technical%20Assessment%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20a%20no-cost%20Technical%20Assessment%20with%20Silxor.%0A%0AOrganization%3A%20%0AArea%20of%20Interest%20(Infrastructure%20%2F%20Software%20%26%20AI%20%2F%20Consulting)%3A%20%0AMessage%3A%20"
+            href="/book"
             className="font-mono font-[400] uppercase transition-all duration-200 flex items-center gap-2"
             style={{
               fontSize: 12,
@@ -74,7 +74,7 @@ const StartEngagement = () => {
             onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#FFFFFF")}
             onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#C5C7CB")}
           >
-            {t("Request Technical Assessment", "طلب تقييم تقني")}
+            {t("Book an Assessment", "احجز تقييماً")}
           </a>
         </div>
         

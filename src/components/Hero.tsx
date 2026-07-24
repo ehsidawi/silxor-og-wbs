@@ -1,7 +1,6 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/context/LanguageContext";
-
-const ASSESSMENT_MAILTO = "https://cal.com/silxor/technical-assessment";
 
 const Hero = () => {
   const { t, language } = useLanguage();
@@ -89,10 +88,8 @@ const Hero = () => {
               )}
             </p>
             <div className="flex flex-wrap items-center gap-4">
-              <a
-                href={ASSESSMENT_MAILTO}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                to="/book"
                 className="inline-flex items-center justify-center uppercase transition-colors"
                 style={{
                   fontSize: 12,
@@ -106,8 +103,8 @@ const Hero = () => {
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#C5C7CB")}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#FFFFFF")}
               >
-                {t("Start Build", "ابدأ المشروع")}
-              </a>
+                {t("Book an Assessment", "احجز تقييماً")}
+              </Link>
               <a
                 href="#infrastructure"
                 className="inline-flex items-center justify-center uppercase transition-colors"

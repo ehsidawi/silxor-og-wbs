@@ -8,6 +8,7 @@ import NotFound from "./pages/NotFound";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ComplianceDoc from "./pages/ComplianceDoc";
 import SLADoc from "./pages/SLADoc";
+import BookAssessment from "./pages/BookAssessment";
 
 const queryClient = new QueryClient();
 
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/compliance" element={<ComplianceDoc />} />
           <Route path="/sla" element={<SLADoc />} />
+          <Route path="/book" element={<BookAssessment />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
