@@ -78,7 +78,7 @@ const Navbar = () => {
       className="sticky top-0 z-[100] transition-colors duration-500"
       style={{
         height: NAV_HEIGHT,
-        backgroundColor: scrolled ? "rgba(11,11,11,0.94)" : "#0B0B0B",
+        backgroundColor: scrolled ? "rgba(20,20,20,0.94)" : "#0B0B0B",
         backdropFilter: scrolled ? "blur(20px) saturate(160%)" : "none",
         WebkitBackdropFilter: scrolled ? "blur(20px) saturate(160%)" : "none",
         borderTop: "1px solid #25282C",
@@ -96,7 +96,7 @@ const Navbar = () => {
               background: "linear-gradient(135deg, #C5C7CB 0%, #6E7378 55%, #25282C 100%)",
             }}
           >
-            <div className="absolute" style={{ inset: 1, backgroundColor: "#0B0B0B" }} />
+            <div className="absolute" style={{ inset: 1, backgroundColor: "#141414" }} />
             <div className="absolute" style={{ inset: 6, backgroundColor: "#C5C7CB" }} />
           </div>
           <span

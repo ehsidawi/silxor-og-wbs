@@ -31,7 +31,7 @@ const ProcessFlow = () => {
             <div className="flex justify-between">
               {stages.map((stage, index) => (
                 <div key={index} className="relative flex flex-col items-center" style={{ flex: 1, maxWidth: 200 }}>
-                  <div className="relative z-10 flex items-center justify-center" style={{ width: 32, height: 32, borderRadius: "50%", border: "1px solid rgba(197,199,203,0.4)", backgroundColor: "#0B0B0B" }}>
+                  <div className="relative z-10 flex items-center justify-center" style={{ width: 32, height: 32, borderRadius: "50%", border: "1px solid rgba(197,199,203,0.4)", backgroundColor: "#141414" }}>
                     <div style={{ width: 6, height: 6, borderRadius: "50%", backgroundColor: "#C5C7CB" }} />
                   </div>
                   <div className="text-center" style={{ marginTop: 24 }}>
@@ -52,7 +52,7 @@ const ProcessFlow = () => {
           {stages.map((stage, index) => (
             <div key={index} className="flex gap-2" style={{ marginBottom: index < stages.length - 1 ? 32 : 0 }}>
               <div className="flex flex-col items-center">
-                <div className="relative flex items-center justify-center flex-shrink-0" style={{ width: 32, height: 32, borderRadius: "50%", border: "1px solid rgba(197,199,203,0.4)", backgroundColor: "#0B0B0B" }}>
+                <div className="relative flex items-center justify-center flex-shrink-0" style={{ width: 32, height: 32, borderRadius: "50%", border: "1px solid rgba(197,199,203,0.4)", backgroundColor: "#141414" }}>
                   <div style={{ width: 6, height: 6, borderRadius: "50%", backgroundColor: "#C5C7CB" }} />
                 </div>
                 {index < stages.length - 1 && (

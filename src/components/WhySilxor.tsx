@@ -35,7 +35,7 @@ const WhySilxor = () => {
               <div
                 key={r.label}
                 style={{
-                  background: "#0B0B0B",
+                  background: "#141414",
                   padding: "16px 18px",
                   display: "flex",
                   alignItems: "center",

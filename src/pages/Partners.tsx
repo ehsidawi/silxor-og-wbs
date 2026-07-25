@@ -42,7 +42,7 @@ const Partners = () => {
               key={name}
               className="group"
               style={{
-                background: "#0B0B0B",
+                background: "#141414",
                 padding: "28px 16px",
                 display: "flex",
                 alignItems: "center",

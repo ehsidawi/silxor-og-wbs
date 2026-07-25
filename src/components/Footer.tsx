@@ -48,7 +48,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer style={{ backgroundColor: "#0B0B0B", borderTop: "1px solid rgba(255,255,255,0.06)", padding: "40px 0 24px" }}>
+    <footer style={{ backgroundColor: "#141414", borderTop: "1px solid rgba(255,255,255,0.06)", padding: "40px 0 24px" }}>
       <div className="container-content">
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4 md:gap-12" style={{ marginBottom: 48 }}>
           <div className="sm:col-span-2 lg:col-span-1">

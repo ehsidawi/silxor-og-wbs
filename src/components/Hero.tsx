@@ -11,7 +11,7 @@ const Hero = () => {
       className="relative overflow-hidden border-b"
       style={{
         minHeight: "calc(100vh - 80px)",
-        backgroundColor: "#0B0B0B",
+        backgroundColor: "#141414",
         color: "#FFFFFF",
         borderColor: "#25282C",
         display: "flex",
