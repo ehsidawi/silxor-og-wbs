@@ -47,6 +47,9 @@ const BookAssessment = () => {
     const Cal = (window as any).Cal;
     Cal("init", CAL_NAMESPACE, { origin: "https://app.cal.com" });
 
+    Cal.config = Cal.config || {};
+    Cal.config.forwardQueryParams = true;
+
     Cal.ns[CAL_NAMESPACE]("inline", {
       elementOrSelector: "#silxor-cal-inline",
       config: { layout: "month_view", useSlotsViewOnSmallScreen: "true" },
