@@ -5,6 +5,7 @@ import { useEffect } from "react";
 
 interface Card {
   org: string;
+  year: number;
   title?: string;
   industry: string;
   technology: string;
@@ -26,6 +27,7 @@ const Experience = () => {
   const cards: Card[] = [
     {
       org: "Ally Financial",
+      year: 2024,
       title: "Enterprise Identity Transformation for Digital Banking",
       industry: "Digital Banking",
       technology: "Enterprise IAM · CIAM · IGA · PAM · SSO · MFA · Passwordless",
@@ -44,6 +46,7 @@ const Experience = () => {
     },
     {
       org: "IQ Group Holding",
+      year: 2024,
       industry: "Enterprise AI Infrastructure",
       technology: "Government AI · Sovereign Cloud",
       outcome: "Infrastructure Modernization",
@@ -51,34 +54,15 @@ const Experience = () => {
     },
     {
       org: "U.S. DHS — CISA",
+      year: 2023,
       industry: "Federal / Homeland Security",
       technology: "Federal Identity · Zero Trust · AI Identity",
       outcome: "FedRAMP High Readiness",
       compliance: "FedRAMP High",
     },
     {
-      org: "Austin International Airport",
-      industry: "Aviation / Critical Infrastructure",
-      technology: "Physical + Logical Identity",
-      outcome: "Airport Security Modernization",
-      architecture: "Converged Identity",
-    },
-    {
-      org: "Tesla Gigafactory",
-      industry: "Advanced Manufacturing",
-      technology: "Identity Platform · Industrial Security",
-      outcome: "Greenfield Infrastructure Deployment",
-      architecture: "OT / IT Convergence",
-    },
-    {
-      org: "National Youth Week",
-      industry: "Public Sector Program",
-      technology: "Multi-cloud Identity · Zero Trust",
-      outcome: "Regional Infrastructure Delivery",
-      architecture: "Multi-cloud",
-    },
-    {
       org: "Meta",
+      year: 2023,
       industry: "Hyperscale Technology",
       technology: "OAuth · AI Security",
       outcome: "Hyperscale Identity Program",
@@ -87,31 +71,59 @@ const Experience = () => {
     },
     {
       org: "Google",
+      year: 2022,
       industry: "Hyperscale Technology",
       technology: "Identity Lifecycle · CIAM · Automation",
       outcome: "Hybrid Cloud Identity Operations",
       architecture: "Hybrid Cloud",
     },
     {
-      org: "Dell Technologies",
-      industry: "Enterprise Technology",
-      technology: "CyberArk · SailPoint · PAM · IGA",
-      outcome: "Enterprise IAM Program",
+      org: "Austin International Airport",
+      year: 2022,
+      industry: "Aviation / Critical Infrastructure",
+      technology: "Physical + Logical Identity",
+      outcome: "Airport Security Modernization",
+      architecture: "Converged Identity",
+    },
+    {
+      org: "Tesla Gigafactory",
+      year: 2021,
+      industry: "Advanced Manufacturing",
+      technology: "Identity Platform · Industrial Security",
+      outcome: "Greenfield Infrastructure Deployment",
+      architecture: "OT / IT Convergence",
     },
     {
       org: "Apple",
+      year: 2020,
       industry: "Consumer Technology",
       technology: "Federated Identity · SSO · PKI · MDM",
       outcome: "Enterprise Federation",
     },
     {
+      org: "National Youth Week",
+      year: 2020,
+      industry: "Public Sector Program",
+      technology: "Multi-cloud Identity · Zero Trust",
+      outcome: "Regional Infrastructure Delivery",
+      architecture: "Multi-cloud",
+    },
+    {
+      org: "Dell Technologies",
+      year: 2019,
+      industry: "Enterprise Technology",
+      technology: "CyberArk · SailPoint · PAM · IGA",
+      outcome: "Enterprise IAM Program",
+    },
+    {
       org: "U.S. Marine Corps",
+      year: 2018,
       industry: "Defense",
       technology: "Mission Critical Systems · Identity · Cyber Ops",
       outcome: "Secure Infrastructure Modernization",
       compliance: "DoD",
     },
-  ];
+  ].sort((a, b) => b.year - a.year);
 
   const Row = ({ k, v }: { k: string; v?: string }) =>
     v ? (
@@ -191,7 +203,7 @@ const Experience = () => {
                           className="font-mono uppercase"
                           style={{ fontSize: 9, letterSpacing: "0.2em", color: "#6E7378" }}
                         >
-                          ENG {String(i + 1).padStart(2, "0")}
+                          {c.year} · ENG {String(i + 1).padStart(2, "0")}
                         </span>
                         {c.featured && (
                           <span

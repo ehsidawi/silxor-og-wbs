@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/context/LanguageContext";
 
-const CAL_LINK = "silxor/technical-assessment";
-const CAL_NAMESPACE = "technical-assessment";
+const CAL_LINK = "silxor/assessment";
+const CAL_NAMESPACE = "assessment";
 
 const BookAssessment = () => {
   const { t, language } = useLanguage();
@@ -47,6 +47,9 @@ const BookAssessment = () => {
     const Cal = (window as any).Cal;
     Cal("init", CAL_NAMESPACE, { origin: "https://app.cal.com" });
 
+    Cal.config = Cal.config || {};
+    Cal.config.forwardQueryParams = true;
+
     Cal.ns[CAL_NAMESPACE]("inline", {
       elementOrSelector: "#silxor-cal-inline",
       config: { layout: "month_view", useSlotsViewOnSmallScreen: "true" },
@@ -55,12 +58,11 @@ const BookAssessment = () => {
 
     Cal.ns[CAL_NAMESPACE]("ui", {
       cssVarsPerTheme: {
-        light: { "cal-brand": "#0B0B0B" },
-        dark: { "cal-brand": "#C5C7CB" },
+        light: { "cal-brand": "#000000" },
+        dark: { "cal-brand": "#ffffff" },
       },
       hideEventTypeDetails: false,
       layout: "month_view",
-      theme: "dark",
     });
   }, []);
 
@@ -166,7 +168,7 @@ const BookAssessment = () => {
               marginBottom: 12,
             }}
           >
-            <span>{t("CAL // TECHNICAL ASSESSMENT", "CAL // تقييم تقني")}</span>
+            <span>{t("CAL // ASSESSMENT", "CAL // تقييم")}</span>
             <span style={{ color: "#C5C7CB" }} className="animate-pulse">
               LIVE ●
             </span>
