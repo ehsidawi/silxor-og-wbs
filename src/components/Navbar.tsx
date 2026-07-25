@@ -78,7 +78,7 @@ const Navbar = () => {
       className="sticky top-0 z-[100] transition-colors duration-500"
       style={{
         height: NAV_HEIGHT,
-        backgroundColor: scrolled ? "rgba(20,20,20,0.94)" : "#0B0B0B",
+        backgroundColor: scrolled ? "rgba(20,20,20,0.94)" : "#141414",
         backdropFilter: scrolled ? "blur(20px) saturate(160%)" : "none",
         WebkitBackdropFilter: scrolled ? "blur(20px) saturate(160%)" : "none",
         borderTop: "1px solid #25282C",
