@@ -28,7 +28,7 @@ const Footer = () => {
       title: t("Company", "الشركة"),
       links: [
         { label: t("Partners", "الشركاء"), to: "/partners" },
-        { label: t("Experience", "الخبرة"), to: "/experience" },
+        
         { label: t("Insights", "الرؤى"), to: "/#insights" },
         { label: t("Careers", "الوظائف"), to: "/#contact" },
         { label: t("About", "من نحن"), to: "/#about" },

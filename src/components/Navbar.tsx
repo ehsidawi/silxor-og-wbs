@@ -21,7 +21,7 @@ const Navbar = () => {
     { label: t("Services", "الخدمات"), to: "/", hash: "#services" },
     { label: t("Industries", "القطاعات"), to: "/", hash: "#industries" },
     { label: t("Partners", "الشركاء"), to: "/partners" },
-    { label: t("Experience", "الخبرة"), to: "/experience" },
+    
     { label: t("Insights", "الرؤى"), to: "/", hash: "#insights" },
     { label: t("About", "من نحن"), to: "/", hash: "#about" },
     { label: t("Contact", "تواصل"), to: "/", hash: "#contact" },
