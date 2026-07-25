@@ -47,7 +47,7 @@ const SideRail = () => {
         left: 0,
         width: 96,
         borderRight: "1px solid #25282C",
-        backgroundColor: "#0B0B0B",
+        backgroundColor: "#141414",
         padding: "40px 0",
       }}
     >

@@ -61,7 +61,7 @@ export default {
           gold: "#C5C7CB",
           "gold-hover": "#FFFFFF",
           "gold-glow": "rgba(197,199,203,0.15)",
-          dark: "#0B0B0B",
+          dark: "#141414",
           "surface-1": "#25282C",
           "surface-2": "#25282C",
           "surface-3": "#25282C",

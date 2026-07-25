@@ -67,7 +67,7 @@ const BookAssessment = () => {
   }, []);
 
   return (
-    <div style={{ minHeight: "100vh", backgroundColor: "#0B0B0B", color: "#FFFFFF" }}>
+    <div style={{ minHeight: "100vh", backgroundColor: "#141414", color: "#FFFFFF" }}>
       {/* Header bar */}
       <header
         className="functional-glass"
@@ -180,7 +180,7 @@ const BookAssessment = () => {
               width: "100%",
               minHeight: 720,
               overflow: "auto",
-              backgroundColor: "#0B0B0B",
+              backgroundColor: "#141414",
             }}
           />
         </div>

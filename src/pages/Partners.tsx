@@ -42,7 +42,7 @@ const Partners = () => {
               key={name}
               className="group"
               style={{
-                background: "#0B0B0B",
+                background: "#141414",
                 padding: "28px 16px",
                 display: "flex",
                 alignItems: "center",
@@ -52,7 +52,7 @@ const Partners = () => {
                 cursor: "default",
               }}
               onMouseEnter={(e) => (e.currentTarget.style.background = "#14171F")}
-              onMouseLeave={(e) => (e.currentTarget.style.background = "#0B0B0B")}
+              onMouseLeave={(e) => (e.currentTarget.style.background = "#141414")}
             >
               <span
                 className="font-display font-[700] text-center transition-all duration-300 group-hover:text-white group-hover:scale-105"
