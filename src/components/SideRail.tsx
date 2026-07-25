@@ -54,7 +54,7 @@ const SideRail = () => {
       <div className="flex flex-col items-center gap-12">
         <div
           className="flex items-center justify-center"
-          style={{ width: 36, height: 36, border: "2px solid #C5C7CB" }}
+          style={{ width: 36, height: 36, border: "2px solid #F0F1F3" }}
         >
           <div className="animate-pulse" style={{ width: 14, height: 14, backgroundColor: "#FFFFFF" }} />
         </div>
@@ -79,7 +79,7 @@ const SideRail = () => {
                 href={it.href}
                 onClick={(e) => handle(e, it.href)}
                 className="transition-colors"
-                style={{ color: isActive ? "#FFFFFF" : "#6E7378" }}
+                style={{ color: isActive ? "#FFFFFF" : "#B8BCC2" }}
               >
                 {it.i} / {it.label}
               </a>
@@ -87,7 +87,7 @@ const SideRail = () => {
           })}
         </nav>
       </div>
-      <div className="font-mono" style={{ fontSize: 10, fontWeight: 700, color: "#6E7378" }}>
+      <div className="font-mono" style={{ fontSize: 10, fontWeight: 700, color: "#B8BCC2" }}>
         SLXR // 2026
       </div>
     </aside>

@@ -75,7 +75,7 @@ const FAQ = () => {
                 </AccordionTrigger>
                 <AccordionContent
                   className="font-body font-[300] pb-0"
-                  style={{ fontSize: 13, color: "#6E7378", lineHeight: 1.75, paddingTop: 12 }}
+                  style={{ fontSize: 13, color: "#B8BCC2", lineHeight: 1.75, paddingTop: 12 }}
                 >
                   {faq.a}
                 </AccordionContent>

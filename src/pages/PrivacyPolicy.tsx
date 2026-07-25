@@ -42,7 +42,7 @@ const PrivacyPolicy = () => {
           <h1 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: "#FFFFFF", marginBottom: 8 }}>
             Privacy Policy
           </h1>
-          <p className="font-body font-[300]" style={{ fontSize: 13, color: "#6E7378", marginBottom: 48 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 13, color: "#B8BCC2", marginBottom: 48 }}>
             Last updated: March 2026
           </p>
 
@@ -51,7 +51,7 @@ const PrivacyPolicy = () => {
               <h2 className="font-body font-[500]" style={{ fontSize: 17, color: "#FFFFFF", marginBottom: 12 }}>
                 {section.title}
               </h2>
-              <p className="font-body font-[300]" style={{ fontSize: 15, color: "#6E7378", lineHeight: 1.8, whiteSpace: "pre-line" }}>
+              <p className="font-body font-[300]" style={{ fontSize: 15, color: "#B8BCC2", lineHeight: 1.8, whiteSpace: "pre-line" }}>
                 {section.body}
               </p>
             </div>

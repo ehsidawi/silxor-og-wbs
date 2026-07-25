@@ -11,7 +11,7 @@ const blocks = [
   {
     title: "SOC 2 Type II",
     status: "ATTESTED",
-    statusColor: "#C5C7CB",
+    statusColor: "#F0F1F3",
     body: "SOC 2 Type II attestation covering Security, Availability, and Confidentiality trust service criteria. Report available to enterprise clients upon execution of NDA.",
   },
   {
@@ -23,7 +23,7 @@ const blocks = [
   {
     title: "GDPR Readiness",
     status: "READY",
-    statusColor: "#C5C7CB",
+    statusColor: "#F0F1F3",
     body: "Silxor data handling practices are aligned with GDPR requirements including data minimization, consent management, and data subject rights fulfillment. Applicable to engagements involving EU resident data.",
   },
 ];
@@ -38,7 +38,7 @@ const ComplianceDoc = () => {
           <h1 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: "#FFFFFF", marginBottom: 8 }}>
             Compliance Documentation
           </h1>
-          <p className="font-body font-[300]" style={{ fontSize: 16, color: "#6E7378", lineHeight: 1.7, marginBottom: 48 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 16, color: "#B8BCC2", lineHeight: 1.7, marginBottom: 48 }}>
             Silxor maintains a comprehensive compliance posture across information security, data residency, and operational standards.
           </p>
 
@@ -63,14 +63,14 @@ const ComplianceDoc = () => {
                     {block.status}
                   </span>
                 </div>
-                <p className="font-body font-[300]" style={{ fontSize: 15, color: "#6E7378", lineHeight: 1.8 }}>
+                <p className="font-body font-[300]" style={{ fontSize: 15, color: "#B8BCC2", lineHeight: 1.8 }}>
                   {block.body}
                 </p>
               </div>
             ))}
           </div>
 
-          <p className="font-body font-[300] text-center" style={{ fontSize: 13, color: "#6E7378", fontStyle: "italic", marginTop: 48 }}>
+          <p className="font-body font-[300] text-center" style={{ fontSize: 13, color: "#B8BCC2", fontStyle: "italic", marginTop: 48 }}>
             For compliance documentation requests, audit support, or to obtain certificates under NDA, contact: compliance@silxor.com
           </p>
         </div>

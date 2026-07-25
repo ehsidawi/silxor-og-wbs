@@ -43,7 +43,7 @@ const ServiceSectorMatrix = () => {
                     style={{
                       fontSize: 10,
                       letterSpacing: '0.15em',
-                      color: '#C5C7CB',
+                      color: '#F0F1F3',
                       padding: '4px 10px',
                       textAlign: 'center',
                     }}
@@ -65,7 +65,7 @@ const ServiceSectorMatrix = () => {
                 >
                   <td
                     className="font-body font-[400]"
-                    style={{ fontSize: 13, color: '#6E7378', padding: '6px 10px', whiteSpace: 'nowrap' }}
+                    style={{ fontSize: 13, color: '#B8BCC2', padding: '6px 10px', whiteSpace: 'nowrap' }}
                   >
                     {service}
                   </td>
@@ -81,7 +81,7 @@ const ServiceSectorMatrix = () => {
                           width: 10,
                           height: 10,
                           borderRadius: '50%',
-                          backgroundColor: '#C5C7CB',
+                          backgroundColor: '#F0F1F3',
                           margin: '0 auto',
                           transition: 'transform 200ms',
                           transform: hovered?.row === ri && hovered?.col === ci ? 'scale(1.4)' : 'scale(1)',
@@ -96,11 +96,11 @@ const ServiceSectorMatrix = () => {
                             left: '50%',
                             transform: 'translateX(-50%)',
                             backgroundColor: '#25282C',
-                            border: '1px solid rgba(197,199,203,0.3)',
+                            border: '1px solid rgba(240, 241, 243,0.3)',
                             borderRadius: 4,
                             padding: '6px 10px',
                             fontSize: 11,
-                            color: '#6E7378',
+                            color: '#B8BCC2',
                             whiteSpace: 'nowrap',
                             zIndex: 10,
                             pointerEvents: 'none',

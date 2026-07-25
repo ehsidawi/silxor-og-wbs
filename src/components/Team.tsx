@@ -33,7 +33,7 @@ const Team = () => {
           <h2 className="font-display font-[700]" style={{ fontSize: 42, lineHeight: 1.15, color: "#FFFFFF" }}>
             {t("American Engineers. Global Standards.", "مهندسون أمريكيون. معايير عالمية.")}
           </h2>
-          <p className="font-body font-[300]" style={{ fontSize: 16, color: "#6E7378", maxWidth: 560, marginTop: 16, lineHeight: 1.7 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 16, color: "#B8BCC2", maxWidth: 560, marginTop: 16, lineHeight: 1.7 }}>
             {t("Silxor is built and operated by technologists with backgrounds across international infrastructure, cybersecurity, and enterprise software rooted in USA.", "Silxor مبنية ومُدارة من قبل تقنيين ذوي خلفيات عبر البنية التحتية الدولية والأمن السيبراني والبرمجيات المؤسسية متجذرة في الولايات المتحدة.")}
           </p>
         </div>
@@ -56,14 +56,14 @@ const Team = () => {
                   width: 72,
                   height: 72,
                   borderRadius: "50%",
-                  background: "linear-gradient(135deg, rgba(197,199,203,0.13), rgba(197,199,203,0.03))",
-                  border: "1px solid rgba(197,199,203,0.2)",
+                  background: "linear-gradient(135deg, rgba(240, 241, 243,0.13), rgba(240, 241, 243,0.03))",
+                  border: "1px solid rgba(240, 241, 243,0.2)",
                 }}
               >
-                <User style={{ width: 28, height: 28, color: "#C5C7CB" }} />
+                <User style={{ width: 28, height: 28, color: "#F0F1F3" }} />
               </div>
 
-              <div className="font-mono font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.15em", color: "#C5C7CB", marginTop: 16 }}>
+              <div className="font-mono font-[400] uppercase" style={{ fontSize: 11, letterSpacing: "0.15em", color: "#F0F1F3", marginTop: 16 }}>
                 {leader.title}
               </div>
 
@@ -74,9 +74,9 @@ const Team = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="transition-colors duration-200"
-                    style={{ color: "#C5C7CB" }}
+                    style={{ color: "#F0F1F3" }}
                     onMouseEnter={(e) => (e.currentTarget.style.color = "#FFFFFF")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "#C5C7CB")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "#F0F1F3")}
                   >
                     {leader.name}
                   </a>
@@ -85,14 +85,14 @@ const Team = () => {
                 )}
               </h4>
 
-              <p className="font-body font-[300]" style={{ fontSize: 14, color: "#6E7378", lineHeight: 1.7, marginTop: 12 }}>
+              <p className="font-body font-[300]" style={{ fontSize: 14, color: "#B8BCC2", lineHeight: 1.7, marginTop: 12 }}>
                 {leader.bio}
               </p>
             </div>
           ))}
         </div>
 
-        <p className="font-body font-[300] text-center" style={{ fontSize: 13, color: "#6E7378", fontStyle: "italic", marginTop: 32 }}>
+        <p className="font-body font-[300] text-center" style={{ fontSize: 13, color: "#B8BCC2", fontStyle: "italic", marginTop: 32 }}>
           {t("Full leadership profiles and additional team bios available upon request during the assessment engagement.", "ملفات القيادة الكاملة والسير الذاتية الإضافية للفريق متاحة عند الطلب خلال التقييم.")}
         </p>
       </div>

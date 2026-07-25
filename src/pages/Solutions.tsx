@@ -75,7 +75,7 @@ const Solutions = () => {
             </h1>
             <p
               className="font-body font-[300] mt-4"
-              style={{ fontSize: 16, color: "#6E7378", maxWidth: 720, lineHeight: 1.7 }}
+              style={{ fontSize: 16, color: "#B8BCC2", maxWidth: 720, lineHeight: 1.7 }}
             >
               {t(
                 "Designing secure, compliant, AI powered digital ecosystems for financial institutions and public sector organizations.",
@@ -96,7 +96,7 @@ const Solutions = () => {
                   </div>
                   <div
                     className="font-mono uppercase mt-2"
-                    style={{ fontSize: 9, letterSpacing: "0.18em", color: "#6E7378" }}
+                    style={{ fontSize: 9, letterSpacing: "0.18em", color: "#B8BCC2" }}
                   >
                     {k.label}
                   </div>
@@ -120,14 +120,14 @@ const Solutions = () => {
                           width: 36,
                           height: 36,
                           borderRadius: 4,
-                          border: "1px solid rgba(197,199,203,0.25)",
-                          background: "rgba(197,199,203,0.06)",
+                          border: "1px solid rgba(240, 241, 243,0.25)",
+                          background: "rgba(240, 241, 243,0.06)",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",
                         }}
                       >
-                        <Icon style={{ width: 16, height: 16, color: "#C5C7CB" }} strokeWidth={1.5} />
+                        <Icon style={{ width: 16, height: 16, color: "#F0F1F3" }} strokeWidth={1.5} />
                       </div>
                       <h3 className="font-display font-[600]" style={{ fontSize: 16, color: "#FFFFFF" }}>
                         {c.title}
@@ -140,7 +140,7 @@ const Solutions = () => {
                           className="font-mono"
                           style={{
                             fontSize: 11,
-                            color: "#C5C7CB",
+                            color: "#F0F1F3",
                             letterSpacing: "0.05em",
                             paddingLeft: 12,
                             position: "relative",
@@ -153,7 +153,7 @@ const Solutions = () => {
                               top: 8,
                               width: 6,
                               height: 1,
-                              background: "#6E7378",
+                              background: "#B8BCC2",
                             }}
                           />
                           {it}
@@ -177,7 +177,7 @@ const Solutions = () => {
                   style={{
                     position: "absolute",
                     inset: 0,
-                    background: "linear-gradient(90deg, #6E7378, #C5C7CB, #FFFFFF)",
+                    background: "linear-gradient(90deg, #B8BCC2, #F0F1F3, #FFFFFF)",
                     borderRadius: 3,
                   }}
                 />
@@ -194,7 +194,7 @@ const Solutions = () => {
                   <div key={s.n} className="flex flex-col items-start">
                     <div
                       className="font-mono"
-                      style={{ fontSize: 9, letterSpacing: "0.2em", color: "#6E7378" }}
+                      style={{ fontSize: 9, letterSpacing: "0.2em", color: "#B8BCC2" }}
                     >
                       STEP {String(s.n).padStart(2, "0")}
                     </div>
@@ -211,7 +211,7 @@ const Solutions = () => {
                   className="font-display font-[700]"
                   style={{ fontSize: 36, color: "#FFFFFF" }}
                 />
-                <span className="font-mono uppercase" style={{ fontSize: 10, letterSpacing: "0.2em", color: "#6E7378" }}>
+                <span className="font-mono uppercase" style={{ fontSize: 10, letterSpacing: "0.2em", color: "#B8BCC2" }}>
                   {t("Enterprise Technologies Integrated", "تقنيات مؤسسية مدمجة")}
                 </span>
               </div>

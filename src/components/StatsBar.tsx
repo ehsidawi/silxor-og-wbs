@@ -62,7 +62,7 @@ const StatsBar = () => {
                 style={{
                   fontSize: 15,
                   letterSpacing: "0.12em",
-                  color: "#6E7378",
+                  color: "#B8BCC2",
                   fontFamily: arFont,
                   padding: "0 40px",
                 }}
@@ -74,7 +74,7 @@ const StatsBar = () => {
                   width: 5,
                   height: 5,
                   borderRadius: "50%",
-                  backgroundColor: "rgba(197,199,203,0.35)",
+                  backgroundColor: "rgba(240, 241, 243,0.35)",
                   flexShrink: 0,
                 }}
               />

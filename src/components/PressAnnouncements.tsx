@@ -38,7 +38,7 @@ const PressAnnouncements = () => {
           <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "#FFFFFF" }}>
             {t("Latest from Silxor", "آخر أخبار Silxor")}
           </h2>
-          <p className="font-body font-[300]" style={{ fontSize: 14, color: "#6E7378", maxWidth: 520, marginTop: 6, lineHeight: 1.7 }}>
+          <p className="font-body font-[300]" style={{ fontSize: 14, color: "#B8BCC2", maxWidth: 520, marginTop: 6, lineHeight: 1.7 }}>
             {t("Updates on Silxor infrastructure, partnerships, certifications, and technology developments.", "تحديثات حول بنية Silxor التحتية والشراكات والشهادات والتطورات التقنية.")}
           </p>
         </div>
@@ -50,21 +50,21 @@ const PressAnnouncements = () => {
               className="surface-elevated flex flex-col"
               style={{ padding: 12 }}
             >
-              <div className="font-mono font-[400]" style={{ fontSize: 11, color: "#C5C7CB", marginBottom: 12 }}>
+              <div className="font-mono font-[400]" style={{ fontSize: 11, color: "#F0F1F3", marginBottom: 12 }}>
                 {t(item.date, item.dateAr)}
               </div>
               <h3 className="font-body font-[500]" style={{ fontSize: 15, color: "#FFFFFF", marginBottom: 10 }}>
                 {t(item.title, item.titleAr)}
               </h3>
-              <p className="font-body font-[300] flex-1" style={{ fontSize: 14, color: "#6E7378", lineHeight: 1.7, marginBottom: 8 }}>
+              <p className="font-body font-[300] flex-1" style={{ fontSize: 14, color: "#B8BCC2", lineHeight: 1.7, marginBottom: 8 }}>
                 {t(item.body, item.bodyAr)}
               </p>
               <a
                 href="mailto:contact@silxor.com?subject=Silxor%20-%20Announcement%20Inquiry&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20learn%20more%20about%20a%20recent%20Silxor%20announcement.%0A%0AOrganization%3A%20%0AInquiry%3A%20"
                 className="font-body font-[400] transition-colors duration-200"
-                style={{ fontSize: 13, color: "#C5C7CB" }}
+                style={{ fontSize: 13, color: "#F0F1F3" }}
                 onMouseEnter={(e) => (e.currentTarget.style.color = "#FFFFFF")}
-                onMouseLeave={(e) => (e.currentTarget.style.color = "#C5C7CB")}
+                onMouseLeave={(e) => (e.currentTarget.style.color = "#F0F1F3")}
               >
                 {t("Read Announcement →", "اقرأ الإعلان ←")}
               </a>

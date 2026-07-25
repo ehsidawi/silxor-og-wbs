@@ -24,7 +24,7 @@ const Hero = () => {
       <div className="absolute flex flex-col gap-2" style={{ top: 40, left: "clamp(24px, 5vw, 80px)" }}>
         <span
           className="uppercase font-mono"
-          style={{ fontSize: 11, letterSpacing: "0.2em", color: "#6E7378", fontWeight: 700 }}
+          style={{ fontSize: 11, letterSpacing: "0.2em", color: "#B8BCC2", fontWeight: 700 }}
         >
           {t("Status: Operational // Build v4.2", "الحالة: تشغيلية // إصدار 4.2")}
         </span>
@@ -54,7 +54,7 @@ const Hero = () => {
           transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
           className="font-mono font-[700]"
           style={{
-            color: "#C5C7CB",
+            color: "#F0F1F3",
             lineHeight: 0.85,
             letterSpacing: "-0.04em",
             fontSize: "clamp(4.5rem, 14vw, 10rem)",
@@ -76,7 +76,7 @@ const Hero = () => {
               style={{
                 fontSize: "clamp(16px, 1.6vw, 22px)",
                 lineHeight: 1.55,
-                color: "#C5C7CB",
+                color: "#F0F1F3",
                 maxWidth: 460,
                 fontWeight: 300,
                 fontFamily: arFont,
@@ -100,7 +100,7 @@ const Hero = () => {
                   fontWeight: 700,
                   fontFamily: arFont,
                 }}
-                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#C5C7CB")}
+                onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#F0F1F3")}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#FFFFFF")}
               >
                 {t("Book an Assessment", "احجز تقييماً")}
@@ -134,12 +134,12 @@ const Hero = () => {
             style={{
               backgroundColor: "#25282C",
               padding: 24,
-              border: "1px solid rgba(110,115,120,0.2)",
+              border: "1px solid rgba(184, 188, 194,0.2)",
             }}
           >
-            <div className="flex justify-between items-center font-mono" style={{ fontSize: 10, color: "#6E7378" }}>
+            <div className="flex justify-between items-center font-mono" style={{ fontSize: 10, color: "#B8BCC2" }}>
               <span>{t("ENGINEERING LOGS", "سجلات الهندسة")}</span>
-              <span className="animate-pulse" style={{ color: "#C5C7CB" }}>REC ●</span>
+              <span className="animate-pulse" style={{ color: "#F0F1F3" }}>REC ●</span>
             </div>
             <div className="flex flex-col gap-3">
               {[
@@ -151,13 +151,13 @@ const Hero = () => {
                 <div
                   key={row.v}
                   className="flex justify-between items-end"
-                  style={{ borderBottom: "1px solid rgba(110,115,120,0.2)", paddingBottom: 4 }}
+                  style={{ borderBottom: "1px solid rgba(184, 188, 194,0.2)", paddingBottom: 4 }}
                 >
                   <span
                     className="uppercase"
                     style={{
                       fontSize: 11,
-                      color: "#6E7378",
+                      color: "#B8BCC2",
                       fontWeight: 700,
                       letterSpacing: "0.1em",
                       fontFamily: arFont,
