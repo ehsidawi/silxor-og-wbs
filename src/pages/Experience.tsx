@@ -203,7 +203,7 @@ const Experience = () => {
                           className="font-mono uppercase"
                           style={{ fontSize: 9, letterSpacing: "0.2em", color: "#6E7378" }}
                         >
-                          ENG {String(i + 1).padStart(2, "0")}
+                          {c.year} · ENG {String(i + 1).padStart(2, "0")}
                         </span>
                         {c.featured && (
                           <span
