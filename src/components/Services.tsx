@@ -1,44 +1,93 @@
-import { Cloud, Shield, Server, Wrench, Database, Gauge } from "lucide-react";
+import { Compass, Server, ShieldCheck, Activity } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 const Services = () => {
   const { t } = useLanguage();
 
-  const capabilities = [
-    { icon: Cloud, title: t("Sovereign Cloud Hosting", "الاستضافة السحابية السيادية"), description: t("Enterprise cloud with full data sovereignty.", "سحابة مؤسسية بسيادة بيانات كاملة."), technical: "Ashburn, VA • <120ms • 99.995% SLA", coord: t("39.0°N · 77.5°W", "٣٩.٠° ش · ٧٧.٥° غ") },
-    { icon: Shield, title: t("Critical Infrastructure Security", "أمن البنية التحتية الحيوية"), description: t("Military grade security for finance and government.", "أمن عسكري للمالية والحكومة."), technical: "ISO 27001 • SOC 2 • AES 256", coord: t("33.3°N · 44.4°E", "٣٣.٣° ش · ٤٤.٤° شر") },
-    { icon: Server, title: t("Dedicated Infrastructure", "بنية تحتية مخصصة"), description: t("Bare metal for regulated workloads.", "خوادم مخصصة للأحمال المنظمة."), technical: "Tier IV • N+2 power • 2x network", coord: t("36.2°N · 44.0°E", "٣٦.٢° ش · ٤٤.٠° شر") },
-    { icon: Database, title: t("Data Residency & Compliance", "إقامة البيانات والامتثال"), description: t("Compliance across U.S. and international frameworks.", "امتثال عبر الأطر الأمريكية والدولية."), technical: "GDPR • <30s RTO • RPO: 15min", coord: t("33.3°N · 44.4°E", "٣٣.٣° ش · ٤٤.٤° شر") },
-    { icon: Wrench, title: t("Managed Operations", "العمليات المدارة"), description: t("24/7 U.S. NOC with engineering escalation.", "NOC أمريكي 24/7 مع تصعيد هندسي."), technical: "New York NOC • <15min P1", coord: t("33.3°N · 44.4°E", "٣٣.٣° ش · ٤٤.٤° شر") },
-    { icon: Gauge, title: t("Performance Engineering", "هندسة الأداء"), description: t("Telemetry, predictive scaling, low latency.", "قياس، توسيع تنبؤي، زمن استجابة منخفض."), technical: "Autoscaling • P99.9 <100ms", coord: t("30.5°N · 47.8°E", "٣٠.٥° ش · ٤٧.٨° شر") },
+  const practices = [
+    {
+      icon: Compass,
+      title: t("Advisory & Strategy", "الاستشارات والاستراتيجية"),
+      summary: t("Executive advisory for the transformation agenda.", "استشارات تنفيذية لأجندة التحول."),
+      items: [
+        "Digital Transformation",
+        "Enterprise Architecture",
+        "AI Strategy",
+        "CIO Advisory",
+        "CISO Advisory",
+        "Technology Roadmaps",
+        "Operating Model",
+        "Business Continuity",
+        "Enterprise Assessment",
+      ],
+    },
+    {
+      icon: Server,
+      title: t("Infrastructure & Cloud", "البنية التحتية والسحابة"),
+      summary: t("Multi-cloud, hybrid, and data center engineering.", "هندسة سحابية متعددة وبنية هجينة."),
+      items: [
+        "Enterprise Infrastructure",
+        "Cloud Architecture",
+        "Azure · AWS · Google Cloud",
+        "Hybrid Cloud",
+        "Data Center Modernization",
+        "Kubernetes · VMware",
+        "Networking · Storage",
+        "High Availability · DR",
+        "DevSecOps",
+      ],
+    },
+    {
+      icon: ShieldCheck,
+      title: t("Cybersecurity & GRC", "الأمن السيبراني والحوكمة"),
+      summary: t("Zero Trust security and regulated compliance programs.", "أمن الثقة الصفرية وبرامج الامتثال."),
+      items: [
+        "Security Architecture · Zero Trust",
+        "Identity & Access Management",
+        "PAM · IGA · PKI",
+        "SOC · MDR · Incident Response",
+        "Threat Hunting · Pen Testing",
+        "Vulnerability Management",
+        "Governance · Risk · Compliance",
+        "NIST · ISO 27001 · SOC 2",
+        "PCI DSS · HIPAA · FedRAMP · CMMC",
+      ],
+    },
+    {
+      icon: Activity,
+      title: t("Managed Services", "الخدمات المدارة"),
+      summary: t("Enterprise-grade operations, 24×7.", "عمليات مؤسسية على مدار الساعة."),
+      items: [
+        "Managed Infrastructure",
+        "Managed Security",
+        "Managed Cloud",
+        "SOC as a Service",
+        "NOC · Service Desk",
+        "Monitoring · Observability",
+        "Backup · Disaster Recovery",
+        "Continuous Optimization",
+      ],
+    },
   ];
 
   return (
     <section className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
       <div className="container-content">
         <div style={{ marginBottom: 20 }}>
-          <div className="section-eyebrow">{t("INFRASTRUCTURE", "البنية التحتية")}</div>
-          <h2 className="font-display font-[700]" style={{ fontSize: 32, lineHeight: 1.15, color: "hsl(var(--foreground))" }}>
-            {t("Infrastructure Capabilities", "قدرات البنية التحتية")}
+          <div className="section-eyebrow">{t("SERVICES", "الخدمات")}</div>
+          <h2
+            className="font-display font-[700]"
+            style={{ fontSize: 32, lineHeight: 1.15, color: "hsl(var(--foreground))" }}
+          >
+            {t("Four Executive Practices", "أربع ممارسات تنفيذية")}
           </h2>
         </div>
 
-        {/* Map list grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2px]">
-          {capabilities.map((cap, index) => {
-            const Icon = cap.icon;
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[2px]">
+          {practices.map((p, index) => {
+            const Icon = p.icon;
             return (
-              <div
-                key={index}
-                className="group relative surface-elevated"
-                style={{
-                  borderRadius: 2,
-                  padding: "24px 22px",
-                  overflow: "hidden",
-                  transition: "background 0.3s ease",
-                }}
-              >
-                {/* Grid overlay pattern */}
+              <div key={p.title} className="surface-elevated relative overflow-hidden" style={{ padding: 22 }}>
                 <div
                   className="absolute inset-0 opacity-[0.03] pointer-events-none"
                   style={{
@@ -47,70 +96,67 @@ const Services = () => {
                     backgroundSize: "40px 40px",
                   }}
                 />
-
-                {/* Header: pin + coord */}
-                <div className="flex items-center justify-between mb-4 relative z-10">
-                  <div className="flex items-center gap-2">
+                <div className="flex items-center justify-between mb-3 relative z-10">
+                  <div className="flex items-center gap-3">
                     <div
                       style={{
-                        width: 8,
-                        height: 8,
-                        borderRadius: "50%",
-                        backgroundColor: "hsl(var(--primary))",
-                        boxShadow: "0 0 8px hsl(var(--primary) / 0.5)",
+                        width: 36,
+                        height: 36,
+                        borderRadius: 4,
+                        border: "1px solid rgba(197,199,203,0.25)",
+                        background: "rgba(197,199,203,0.06)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
                       }}
-                    />
-                    <span
-                      className="font-mono font-[400] uppercase"
-                      style={{ fontSize: 9, letterSpacing: "0.15em", color: "hsl(var(--primary))" }}
                     >
-                      {t("PIN", "موقع")} {String(index + 1).padStart(2, "0")}
-                    </span>
+                      <Icon style={{ width: 16, height: 16, color: "#C5C7CB" }} strokeWidth={1.5} />
+                    </div>
+                    <div>
+                      <div
+                        className="font-mono uppercase"
+                        style={{ fontSize: 9, letterSpacing: "0.2em", color: "#6E7378" }}
+                      >
+                        {t("PRACTICE", "ممارسة")} {String(index + 1).padStart(2, "0")}
+                      </div>
+                      <h3 className="font-display font-[600]" style={{ fontSize: 18, color: "#FFFFFF" }}>
+                        {p.title}
+                      </h3>
+                    </div>
                   </div>
-                  <span
-                    className="font-mono font-[300]"
-                    style={{ fontSize: 9, color: "hsl(var(--muted-foreground))", letterSpacing: "0.05em" }}
-                  >
-                    {cap.coord}
-                  </span>
                 </div>
-
-                {/* Icon box */}
-                <div className="relative z-10">
-                  <div
-                    className="mb-3"
-                    style={{
-                      width: 36,
-                      height: 36,
-                      borderRadius: 4,
-                      border: "1px solid hsl(var(--primary) / 0.25)",
-                      backgroundColor: "hsl(var(--primary) / 0.06)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <Icon style={{ width: 16, height: 16, color: "hsl(var(--primary))" }} strokeWidth={1.5} />
-                  </div>
-
-                  <h3 className="font-body font-[500]" style={{ fontSize: 15, color: "hsl(var(--foreground))", marginBottom: 4 }}>
-                    {cap.title}
-                  </h3>
-                  <p className="font-body font-[300]" style={{ fontSize: 13, color: "hsl(var(--muted-foreground))", lineHeight: 1.65, marginBottom: 8 }}>
-                    {cap.description}
-                  </p>
-                  <p className="font-mono font-[400]" style={{ fontSize: 10, color: "hsl(var(--primary))", opacity: 0.7, letterSpacing: "0.05em" }}>
-                    {cap.technical}
-                  </p>
-                </div>
-
-                {/* Corner crosshair */}
-                <div
-                  className="absolute pointer-events-none"
-                  style={{ top: 10, right: 10, width: 14, height: 14, opacity: 0.15 }}
+                <p
+                  className="font-body font-[300] relative z-10"
+                  style={{ fontSize: 13, color: "#C5C7CB", marginBottom: 14, lineHeight: 1.6 }}
                 >
-                  <div style={{ position: "absolute", top: 6, left: 0, width: 14, height: 1, backgroundColor: "hsl(var(--primary))" }} />
-                  <div style={{ position: "absolute", top: 0, left: 6, width: 1, height: 14, backgroundColor: "hsl(var(--primary))" }} />
+                  {p.summary}
+                </p>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5 relative z-10">
+                  {p.items.map((it) => (
+                    <div
+                      key={it}
+                      className="font-mono"
+                      style={{
+                        fontSize: 11,
+                        color: "#C5C7CB",
+                        letterSpacing: "0.03em",
+                        paddingLeft: 12,
+                        position: "relative",
+                      }}
+                    >
+                      <span
+                        style={{
+                          position: "absolute",
+                          left: 0,
+                          top: 8,
+                          width: 6,
+                          height: 1,
+                          background: "#6E7378",
+                        }}
+                      />
+                      {it}
+                    </div>
+                  ))}
                 </div>
               </div>
             );

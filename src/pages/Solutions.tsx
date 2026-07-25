@@ -1,0 +1,227 @@
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import AnimatedCounter from "@/components/AnimatedCounter";
+import { useLanguage } from "@/context/LanguageContext";
+import { useEffect } from "react";
+import {
+  Smartphone, Landmark, ShieldCheck, Cpu, Server, Fingerprint,
+} from "lucide-react";
+
+const Solutions = () => {
+  const { t } = useLanguage();
+
+  useEffect(() => {
+    document.title = "Banking & Government Solutions — Silxor";
+  }, []);
+
+  const cards = [
+    {
+      icon: Smartphone,
+      title: t("Digital Banking", "الخدمات المصرفية الرقمية"),
+      items: ["Core Banking", "Identity Platform", "Fraud Detection", "Cyber Defense", "Cloud Modernization"],
+    },
+    {
+      icon: Landmark,
+      title: t("Government", "الحكومة"),
+      items: ["Citizen Identity", "National Digital Identity", "Zero Trust", "Sovereign Cloud", "FedRAMP", "Mission Critical Systems"],
+    },
+    {
+      icon: ShieldCheck,
+      title: t("Financial Compliance", "الامتثال المالي"),
+      items: ["PCI DSS", "GLBA", "SOX", "AML", "KYC", "Risk", "Audit"],
+    },
+    {
+      icon: Cpu,
+      title: t("AI Platform", "منصة الذكاء الاصطناعي"),
+      items: ["Enterprise AI", "Private AI", "AI Governance", "LLM Security", "Agentic AI", "Automation"],
+    },
+    {
+      icon: Server,
+      title: t("Infrastructure", "البنية التحتية"),
+      items: ["Data Centers", "Hybrid Cloud", "Networking", "Storage", "Disaster Recovery", "Business Continuity"],
+    },
+    {
+      icon: Fingerprint,
+      title: t("Identity", "الهوية"),
+      items: ["CIAM", "IAM", "IGA", "PAM", "SSO", "MFA", "Passwordless"],
+    },
+  ];
+
+  const kpis = [
+    { value: "100%", label: t("Digital Operations", "عمليات رقمية") },
+    { value: "99.99%", label: t("Availability", "التوفر") },
+    { value: "24×7", label: t("Operations", "العمليات") },
+    { value: "Zero Trust", label: t("Security First", "الأمن أولاً") },
+    { value: "AI", label: t("Powered Automation", "أتمتة ذكية") },
+    { value: "40+", label: t("Enterprise Technologies", "تقنيات مؤسسية") },
+  ];
+
+  return (
+    <div className="min-h-screen">
+      <Navbar />
+      <main>
+        {/* Hero */}
+        <section className="section-spacing" style={{ paddingTop: 56 }}>
+          <div className="container-content">
+            <div className="section-eyebrow">{t("SOLUTIONS", "الحلول")}</div>
+            <h1
+              className="font-display font-[700]"
+              style={{ fontSize: 40, lineHeight: 1.1, color: "#FFFFFF", maxWidth: 900 }}
+            >
+              {t(
+                "Enterprise Solutions for Banking, Digital Banking & Government",
+                "حلول مؤسسية للمصارف والحكومة"
+              )}
+            </h1>
+            <p
+              className="font-body font-[300] mt-4"
+              style={{ fontSize: 16, color: "#6E7378", maxWidth: 720, lineHeight: 1.7 }}
+            >
+              {t(
+                "Designing secure, compliant, AI powered digital ecosystems for financial institutions and public sector organizations.",
+                "تصميم منظومات رقمية آمنة ومتوافقة ومدعومة بالذكاء الاصطناعي للمؤسسات المالية والقطاع العام."
+              )}
+            </p>
+          </div>
+        </section>
+
+        {/* KPI counters */}
+        <section className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+          <div className="container-content">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-[2px]">
+              {kpis.map((k) => (
+                <div key={k.label} className="surface-elevated" style={{ padding: "18px 16px" }}>
+                  <div className="font-display font-[700]" style={{ fontSize: 22, color: "#FFFFFF" }}>
+                    {k.value}
+                  </div>
+                  <div
+                    className="font-mono uppercase mt-2"
+                    style={{ fontSize: 9, letterSpacing: "0.18em", color: "#6E7378" }}
+                  >
+                    {k.label}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Solution cards */}
+        <section className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+          <div className="container-content">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[2px]">
+              {cards.map((c) => {
+                const Icon = c.icon;
+                return (
+                  <div key={c.title} className="surface-elevated" style={{ padding: 20 }}>
+                    <div className="flex items-center gap-3 mb-3">
+                      <div
+                        style={{
+                          width: 36,
+                          height: 36,
+                          borderRadius: 4,
+                          border: "1px solid rgba(197,199,203,0.25)",
+                          background: "rgba(197,199,203,0.06)",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                        }}
+                      >
+                        <Icon style={{ width: 16, height: 16, color: "#C5C7CB" }} strokeWidth={1.5} />
+                      </div>
+                      <h3 className="font-display font-[600]" style={{ fontSize: 16, color: "#FFFFFF" }}>
+                        {c.title}
+                      </h3>
+                    </div>
+                    <ul className="flex flex-col gap-1.5">
+                      {c.items.map((it) => (
+                        <li
+                          key={it}
+                          className="font-mono"
+                          style={{
+                            fontSize: 11,
+                            color: "#C5C7CB",
+                            letterSpacing: "0.05em",
+                            paddingLeft: 12,
+                            position: "relative",
+                          }}
+                        >
+                          <span
+                            style={{
+                              position: "absolute",
+                              left: 0,
+                              top: 8,
+                              width: 6,
+                              height: 1,
+                              background: "#6E7378",
+                            }}
+                          />
+                          {it}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        {/* Horizontal capability rail */}
+        <section className="section-spacing" style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+          <div className="container-content">
+            <div className="section-eyebrow">{t("CAPABILITY RAIL", "خط القدرات")}</div>
+            <div className="surface-elevated" style={{ padding: 22 }}>
+              <div className="relative" style={{ height: 6, background: "#25282C", borderRadius: 3 }}>
+                <div
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background: "linear-gradient(90deg, #6E7378, #C5C7CB, #FFFFFF)",
+                    borderRadius: 3,
+                  }}
+                />
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-6 gap-4 mt-6">
+                {[
+                  { n: 1, k: t("Advise", "استشارة") },
+                  { n: 2, k: t("Architect", "تصميم") },
+                  { n: 3, k: t("Engineer", "هندسة") },
+                  { n: 4, k: t("Secure", "تأمين") },
+                  { n: 5, k: t("Operate", "تشغيل") },
+                  { n: 6, k: t("Optimize", "تحسين") },
+                ].map((s) => (
+                  <div key={s.n} className="flex flex-col items-start">
+                    <div
+                      className="font-mono"
+                      style={{ fontSize: 9, letterSpacing: "0.2em", color: "#6E7378" }}
+                    >
+                      STEP {String(s.n).padStart(2, "0")}
+                    </div>
+                    <div className="font-display font-[600]" style={{ fontSize: 16, color: "#FFFFFF" }}>
+                      {s.k}
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 flex items-baseline gap-3">
+                <AnimatedCounter
+                  value={40}
+                  suffix="+"
+                  className="font-display font-[700]"
+                  style={{ fontSize: 36, color: "#FFFFFF" }}
+                />
+                <span className="font-mono uppercase" style={{ fontSize: 10, letterSpacing: "0.2em", color: "#6E7378" }}>
+                  {t("Enterprise Technologies Integrated", "تقنيات مؤسسية مدمجة")}
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default Solutions;

@@ -1,23 +1,30 @@
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import LanguageToggle from "./LanguageToggle";
 import { useLanguage } from "@/context/LanguageContext";
 
 const NAV_HEIGHT = 80;
 
+type NavItem = { label: string; to: string; hash?: string };
+
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [scrollPct, setScrollPct] = useState(0);
-  const [activeHref, setActiveHref] = useState<string>("#infrastructure");
+  const [activeKey, setActiveKey] = useState<string>("");
   const { t } = useLanguage();
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  const navLinks = [
-    { label: t("Infrastructure", "البنية التحتية"), href: "#infrastructure" },
-    { label: t("Software", "البرمجيات"), href: "#software" },
-    { label: t("Identity", "الهوية الرقمية"), href: "#identity" },
-    { label: t("Packages", "الباقات"), href: "#packages" },
-    { label: t("Contact", "تواصل معنا"), href: "#contact" },
+  const navLinks: NavItem[] = [
+    { label: t("Services", "الخدمات"), to: "/", hash: "#services" },
+    { label: t("Industries", "القطاعات"), to: "/", hash: "#industries" },
+    { label: t("Partners", "الشركاء"), to: "/partners" },
+    { label: t("Experience", "الخبرة"), to: "/experience" },
+    { label: t("Insights", "الرؤى"), to: "/", hash: "#insights" },
+    { label: t("About", "من نحن"), to: "/", hash: "#about" },
+    { label: t("Contact", "تواصل"), to: "/", hash: "#contact" },
   ];
 
   useEffect(() => {
@@ -27,38 +34,44 @@ const Navbar = () => {
       const h = document.documentElement.scrollHeight - window.innerHeight;
       setScrollPct(h > 0 ? Math.min(100, (y / h) * 100) : 0);
 
-      // Scroll spy — pick the section whose top is closest above the nav
-      let current = navLinks[0].href;
+      if (location.pathname !== "/") return;
+      let current = "";
       for (const link of navLinks) {
-        const el = document.querySelector(link.href) as HTMLElement | null;
+        if (!link.hash) continue;
+        const el = document.querySelector(link.hash) as HTMLElement | null;
         if (!el) continue;
         const top = el.getBoundingClientRect().top;
-        if (top - NAV_HEIGHT - 24 <= 0) current = link.href;
+        if (top - NAV_HEIGHT - 24 <= 0) current = link.hash;
       }
-      setActiveHref(current);
+      setActiveKey(current);
     };
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [location.pathname]);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
+  const handleNavClick = (e: React.MouseEvent, item: NavItem) => {
     setMobileOpen(false);
-    if (href === "#" || href === "#home") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      return;
-    }
-    const el = document.querySelector(href);
-    if (el) {
-      const top = el.getBoundingClientRect().top + window.scrollY - NAV_HEIGHT;
-      window.scrollTo({ top, behavior: "smooth" });
+    if (item.hash) {
+      if (location.pathname !== "/") {
+        e.preventDefault();
+        navigate("/" + item.hash);
+        return;
+      }
+      e.preventDefault();
+      const el = document.querySelector(item.hash);
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.scrollY - NAV_HEIGHT;
+        window.scrollTo({ top, behavior: "smooth" });
+      }
     }
   };
 
-  const assessmentMailto =
-    "mailto:contact@silxor.com?subject=Silxor%20-%20Assessment%20Request&body=Hello%20Silxor%20Team%2C%0A%0AI%20would%20like%20to%20request%20a%20technical%20assessment%20with%20Silxor.%0A%0AOrganization%3A%20%0AService%20Interest%3A%20%0AMessage%3A%20";
+  const isActive = (item: NavItem) => {
+    if (item.hash) return location.pathname === "/" && activeKey === item.hash;
+    return location.pathname === item.to;
+  };
 
   return (
     <nav
@@ -73,26 +86,18 @@ const Navbar = () => {
       }}
     >
       <div className="relative h-full flex items-center justify-between px-6 lg:px-8">
-        {/* Left: Brand */}
-        <a
-          href="#"
-          onClick={(e) => handleNavClick(e, "#")}
-          className="flex items-center gap-3 shrink-0 z-10 group"
-        >
+        {/* Brand */}
+        <Link to="/" className="flex items-center gap-3 shrink-0 z-10 group">
           <div
             className="relative transition-transform duration-500 group-hover:rotate-45"
             style={{
               width: 28,
               height: 28,
-              background:
-                "linear-gradient(135deg, #C5C7CB 0%, #6E7378 55%, #25282C 100%)",
+              background: "linear-gradient(135deg, #C5C7CB 0%, #6E7378 55%, #25282C 100%)",
             }}
           >
             <div className="absolute" style={{ inset: 1, backgroundColor: "#0B0B0B" }} />
-            <div
-              className="absolute"
-              style={{ inset: 6, backgroundColor: "#C5C7CB" }}
-            />
+            <div className="absolute" style={{ inset: 6, backgroundColor: "#C5C7CB" }} />
           </div>
           <span
             className="font-display font-[800] text-white tracking-tight"
@@ -100,26 +105,20 @@ const Navbar = () => {
           >
             SILXOR
           </span>
-        </a>
+        </Link>
 
-        {/* Center: Interactive nav */}
-        <div className="hidden xl:flex items-center gap-8 h-full z-10">
+        {/* Center nav */}
+        <div className="hidden xl:flex items-center gap-6 h-full z-10">
           {navLinks.map((link, i) => {
-            const isActive = activeHref === link.href;
-            return (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className="group flex flex-col items-center justify-center h-full"
-                style={{ fontFamily: "'JetBrains Mono', monospace" }}
-              >
+            const active = isActive(link);
+            const content = (
+              <>
                 <span
                   className="transition-all duration-300"
                   style={{
                     fontSize: 8,
                     letterSpacing: "0.15em",
-                    color: isActive ? "#C5C7CB" : "#6E7378",
+                    color: active ? "#C5C7CB" : "#6E7378",
                     marginBottom: 3,
                   }}
                 >
@@ -130,7 +129,7 @@ const Navbar = () => {
                   style={{
                     fontSize: 11,
                     letterSpacing: "0.2em",
-                    color: isActive ? "#FFFFFF" : "#6E7378",
+                    color: active ? "#FFFFFF" : "#FFFFFF",
                     fontWeight: 500,
                   }}
                 >
@@ -141,18 +140,41 @@ const Navbar = () => {
                   style={{
                     height: 2,
                     marginTop: 4,
-                    width: isActive ? "100%" : 0,
+                    width: active ? "100%" : 0,
                     backgroundColor: "#C5C7CB",
-                    boxShadow: isActive ? "0 0 8px rgba(197,199,203,0.5)" : "none",
+                    boxShadow: active ? "0 0 8px rgba(197,199,203,0.5)" : "none",
                   }}
                   aria-hidden
                 />
+              </>
+            );
+            const cls = "group flex flex-col items-center justify-center h-full";
+            const st: React.CSSProperties = { fontFamily: "'JetBrains Mono', monospace" };
+            return link.hash ? (
+              <a
+                key={i}
+                href={link.hash}
+                onClick={(e) => handleNavClick(e, link)}
+                className={cls}
+                style={st}
+              >
+                {content}
               </a>
+            ) : (
+              <Link
+                key={i}
+                to={link.to}
+                onClick={(e) => handleNavClick(e, link)}
+                className={cls}
+                style={st}
+              >
+                {content}
+              </Link>
             );
           })}
         </div>
 
-        {/* Right: Utils + CTA */}
+        {/* Right */}
         <div className="hidden xl:flex items-center gap-5 shrink-0 z-10">
           <div
             className="flex items-center"
@@ -165,8 +187,8 @@ const Navbar = () => {
             <LanguageToggle />
           </div>
 
-          <a
-            href="/book"
+          <Link
+            to="/book"
             className="relative group overflow-hidden transition-all duration-300 active:scale-95 hover:bg-white"
             style={{
               padding: "12px 22px",
@@ -180,7 +202,6 @@ const Navbar = () => {
               borderRadius: 2,
             }}
           >
-            {/* Metallic shimmer sweep */}
             <span
               className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 pointer-events-none"
               style={{
@@ -191,20 +212,11 @@ const Navbar = () => {
             />
             <span className="relative z-10 flex items-center gap-2">
               {t("Book an Assessment", "احجز تقييماً")}
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                className="transition-transform duration-300 group-hover:translate-x-1"
-                aria-hidden
-              >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="transition-transform duration-300 group-hover:translate-x-1" aria-hidden>
                 <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="square" />
               </svg>
             </span>
-          </a>
+          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -225,7 +237,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Scroll progress hairline */}
+      {/* Scroll progress */}
       <div
         className="absolute left-0 right-0 pointer-events-none"
         style={{ bottom: -1, height: 1, backgroundColor: "transparent" }}
@@ -235,8 +247,7 @@ const Navbar = () => {
           style={{
             height: "100%",
             width: `${scrollPct}%`,
-            background:
-              "linear-gradient(90deg, transparent 0%, #C5C7CB 50%, transparent 100%)",
+            background: "linear-gradient(90deg, transparent 0%, #C5C7CB 50%, transparent 100%)",
             boxShadow: "0 0 8px rgba(197,199,203,0.5)",
             transition: "width 120ms linear",
           }}
@@ -259,42 +270,46 @@ const Navbar = () => {
       >
         <div className="px-6 py-6">
           {navLinks.map((link, i) => {
-            const isActive = activeHref === link.href;
-            return (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={(e) => handleNavClick(e, link.href)}
-                className="flex items-center justify-between py-4 uppercase transition-colors duration-200"
-                style={{
-                  fontFamily: "'JetBrains Mono', monospace",
-                  fontSize: 12,
-                  letterSpacing: "0.15em",
-                  color: isActive ? "#FFFFFF" : "#C5C7CB",
-                  borderBottom: "1px solid #25282C",
-                }}
-              >
-                <span className="flex items-center gap-3">
-                  <span
-                    style={{
-                      display: "inline-block",
-                      width: 6,
-                      height: 6,
-                      backgroundColor: isActive ? "#C5C7CB" : "transparent",
-                      border: "1px solid #C5C7CB",
-                    }}
-                  />
-                  {link.label}
-                </span>
+            const active = isActive(link);
+            const inner = (
+              <span className="flex items-center gap-3">
+                <span
+                  style={{
+                    display: "inline-block",
+                    width: 6,
+                    height: 6,
+                    backgroundColor: active ? "#C5C7CB" : "transparent",
+                    border: "1px solid #C5C7CB",
+                  }}
+                />
+                {link.label}
+              </span>
+            );
+            const cls = "flex items-center justify-between py-4 uppercase transition-colors duration-200";
+            const st: React.CSSProperties = {
+              fontFamily: "'JetBrains Mono', monospace",
+              fontSize: 12,
+              letterSpacing: "0.15em",
+              color: active ? "#FFFFFF" : "#C5C7CB",
+              borderBottom: "1px solid #25282C",
+            };
+            return link.hash ? (
+              <a key={i} href={link.hash} onClick={(e) => handleNavClick(e, link)} className={cls} style={st}>
+                {inner}
                 <span style={{ fontSize: 9, color: "#6E7378" }}>{String(i + 1).padStart(2, "0")}</span>
               </a>
+            ) : (
+              <Link key={i} to={link.to} onClick={(e) => handleNavClick(e, link)} className={cls} style={st}>
+                {inner}
+                <span style={{ fontSize: 9, color: "#6E7378" }}>{String(i + 1).padStart(2, "0")}</span>
+              </Link>
             );
           })}
           <div className="flex items-center justify-center py-6">
             <LanguageToggle />
           </div>
-          <a
-            href="/book"
+          <Link
+            to="/book"
             onClick={() => setMobileOpen(false)}
             className="flex items-center justify-center gap-2 uppercase"
             style={{
@@ -312,7 +327,7 @@ const Navbar = () => {
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
               <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="square" />
             </svg>
-          </a>
+          </Link>
         </div>
       </div>
     </nav>

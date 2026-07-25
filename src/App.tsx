@@ -9,6 +9,9 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import ComplianceDoc from "./pages/ComplianceDoc";
 import SLADoc from "./pages/SLADoc";
 import BookAssessment from "./pages/BookAssessment";
+import Solutions from "./pages/Solutions";
+import Experience from "./pages/Experience";
+import Partners from "./pages/Partners";
 
 const queryClient = new QueryClient();
 
@@ -20,6 +23,9 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/solutions" element={<Solutions />} />
+          <Route path="/experience" element={<Experience />} />
+          <Route path="/partners" element={<Partners />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
           <Route path="/compliance" element={<ComplianceDoc />} />
           <Route path="/sla" element={<SLADoc />} />
