@@ -103,19 +103,19 @@ const Services = () => {
                         width: 36,
                         height: 36,
                         borderRadius: 4,
-                        border: "1px solid rgba(197,199,203,0.25)",
-                        background: "rgba(197,199,203,0.06)",
+                        border: "1px solid rgba(240, 241, 243,0.25)",
+                        background: "rgba(240, 241, 243,0.06)",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                       }}
                     >
-                      <Icon style={{ width: 16, height: 16, color: "#C5C7CB" }} strokeWidth={1.5} />
+                      <Icon style={{ width: 16, height: 16, color: "#F0F1F3" }} strokeWidth={1.5} />
                     </div>
                     <div>
                       <div
                         className="font-mono uppercase"
-                        style={{ fontSize: 9, letterSpacing: "0.2em", color: "#6E7378" }}
+                        style={{ fontSize: 9, letterSpacing: "0.2em", color: "#B8BCC2" }}
                       >
                         {t("PRACTICE", "ممارسة")} {String(index + 1).padStart(2, "0")}
                       </div>
@@ -127,7 +127,7 @@ const Services = () => {
                 </div>
                 <p
                   className="font-body font-[300] relative z-10"
-                  style={{ fontSize: 13, color: "#C5C7CB", marginBottom: 14, lineHeight: 1.6 }}
+                  style={{ fontSize: 13, color: "#F0F1F3", marginBottom: 14, lineHeight: 1.6 }}
                 >
                   {p.summary}
                 </p>
@@ -138,7 +138,7 @@ const Services = () => {
                       className="font-mono"
                       style={{
                         fontSize: 11,
-                        color: "#C5C7CB",
+                        color: "#F0F1F3",
                         letterSpacing: "0.03em",
                         paddingLeft: 12,
                         position: "relative",
@@ -151,7 +151,7 @@ const Services = () => {
                           top: 8,
                           width: 6,
                           height: 1,
-                          background: "#6E7378",
+                          background: "#B8BCC2",
                         }}
                       />
                       {it}

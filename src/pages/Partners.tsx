@@ -25,7 +25,7 @@ const Partners = () => {
           <h1 className="font-display font-[700]" style={{ fontSize: 40, color: "#FFFFFF", lineHeight: 1.1 }}>
             {t("Technology Partners", "شركاء التقنية")}
           </h1>
-          <p className="font-body font-[300] mt-3" style={{ fontSize: 15, color: "#6E7378", maxWidth: 620 }}>
+          <p className="font-body font-[300] mt-3" style={{ fontSize: 15, color: "#B8BCC2", maxWidth: 620 }}>
             {t(
               "An enterprise ecosystem of hyperscalers, security leaders, and platform vendors integrated across every Silxor engagement.",
               "منظومة مؤسسية من مزودي السحابة الكبرى وقادة الأمن والمنصات."
@@ -59,7 +59,7 @@ const Partners = () => {
                 style={{
                   fontSize: 15,
                   letterSpacing: "-0.01em",
-                  color: "#6E7378",
+                  color: "#B8BCC2",
                   filter: "grayscale(100%)",
                 }}
               >

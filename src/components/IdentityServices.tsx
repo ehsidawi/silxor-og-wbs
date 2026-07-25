@@ -215,20 +215,20 @@ const EngagementFlow = () => (
           return (
             <div key={i} className="flex items-start">
               <div style={{ width: 140, flexShrink: 0 }}>
-                <div className="font-mono font-[700]" style={{ fontSize: 32, color: '#C5C7CB', opacity: 0.3, lineHeight: 1, marginBottom: 8 }}>
+                <div className="font-mono font-[700]" style={{ fontSize: 32, color: '#F0F1F3', opacity: 0.3, lineHeight: 1, marginBottom: 8 }}>
                   {String(i + 1).padStart(2, '0')}
                 </div>
-                <Icon style={{ width: 20, height: 20, color: '#C5C7CB', marginBottom: 6 }} strokeWidth={1.5} />
+                <Icon style={{ width: 20, height: 20, color: '#F0F1F3', marginBottom: 6 }} strokeWidth={1.5} />
                 <div className="font-body font-[500]" style={{ fontSize: 14, color: '#FFFFFF', marginBottom: 2 }}>
                   {item.label}
                 </div>
-                <div className="font-body font-[300]" style={{ fontSize: 12, color: '#6E7378', lineHeight: 1.5, maxWidth: 120 }}>
+                <div className="font-body font-[300]" style={{ fontSize: 12, color: '#B8BCC2', lineHeight: 1.5, maxWidth: 120 }}>
                   {item.detail.split('—')[0].trim()}
                 </div>
               </div>
               {i < engagements.length - 1 && (
                 <div className="flex items-center self-center" style={{ padding: '0 4px', marginTop: 36 }}>
-                  <ArrowRight style={{ width: 16, height: 16, color: 'rgba(197,199,203,0.3)' }} />
+                  <ArrowRight style={{ width: 16, height: 16, color: 'rgba(240, 241, 243,0.3)' }} />
                 </div>
               )}
             </div>
@@ -244,17 +244,17 @@ const EngagementFlow = () => (
         return (
           <div key={i} className="flex items-start gap-3">
             <div style={{ flexShrink: 0, width: 32 }}>
-              <div className="font-mono font-[700]" style={{ fontSize: 20, color: '#C5C7CB', opacity: 0.3 }}>
+              <div className="font-mono font-[700]" style={{ fontSize: 20, color: '#F0F1F3', opacity: 0.3 }}>
                 {String(i + 1).padStart(2, '0')}
               </div>
             </div>
             <div className="flex items-start gap-3">
-              <Icon style={{ width: 18, height: 18, color: '#C5C7CB', flexShrink: 0, marginTop: 2 }} strokeWidth={1.5} />
+              <Icon style={{ width: 18, height: 18, color: '#F0F1F3', flexShrink: 0, marginTop: 2 }} strokeWidth={1.5} />
               <div>
                 <div className="font-body font-[500]" style={{ fontSize: 13, color: '#FFFFFF', marginBottom: 2 }}>
                   {item.label}
                 </div>
-                <div className="font-body font-[300]" style={{ fontSize: 12, color: '#6E7378', lineHeight: 1.6 }}>
+                <div className="font-body font-[300]" style={{ fontSize: 12, color: '#B8BCC2', lineHeight: 1.6 }}>
                   {item.detail}
                 </div>
               </div>
@@ -313,7 +313,7 @@ const IdentityServices = () => {
               >
                 <div
                   className="font-mono font-[400] uppercase"
-                  style={{ fontSize: 10, letterSpacing: '0.15em', color: '#C5C7CB', marginBottom: 12 }}
+                  style={{ fontSize: 10, letterSpacing: '0.15em', color: '#F0F1F3', marginBottom: 12 }}
                 >
                   {cat.header}
                 </div>
@@ -324,9 +324,9 @@ const IdentityServices = () => {
                       className="font-mono font-[400]"
                       style={{
                         fontSize: 11,
-                        color: '#C5C7CB',
-                        backgroundColor: 'rgba(197,199,203,0.06)',
-                        border: '1px solid rgba(197,199,203,0.2)',
+                        color: '#F0F1F3',
+                        backgroundColor: 'rgba(240, 241, 243,0.06)',
+                        border: '1px solid rgba(240, 241, 243,0.2)',
                         padding: '6px 12px',
                         borderRadius: 2,
                       }}
@@ -358,7 +358,7 @@ const IdentityServices = () => {
                   transition: 'all 250ms ease',
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(197,199,203,0.3)';
+                  e.currentTarget.style.borderColor = 'rgba(240, 241, 243,0.3)';
                   e.currentTarget.style.backgroundColor = '#25282C';
                 }}
                 onMouseLeave={(e) => {
@@ -367,12 +367,12 @@ const IdentityServices = () => {
                 }}
               >
                 <h4 className="font-body font-[500]" style={{ fontSize: 15, color: '#FFFFFF', marginBottom: 4 }}>{pkg.name}</h4>
-                <p className="font-body font-[300]" style={{ fontSize: 12, color: '#6E7378', marginBottom: 8 }}>{pkg.tagline}</p>
+                <p className="font-body font-[300]" style={{ fontSize: 12, color: '#B8BCC2', marginBottom: 8 }}>{pkg.tagline}</p>
                 <ul className="flex-1" style={{ display: 'flex', flexDirection: 'column', gap: 8, marginBottom: 8 }}>
                   {pkg.specs.map((spec, j) => (
                     <li key={j} className="flex items-start gap-2">
-                      <Check style={{ width: 14, height: 14, color: '#C5C7CB', flexShrink: 0, marginTop: 1 }} />
-                      <span className="font-body font-[300]" style={{ fontSize: 12, color: '#6E7378' }}>{spec}</span>
+                      <Check style={{ width: 14, height: 14, color: '#F0F1F3', flexShrink: 0, marginTop: 1 }} />
+                      <span className="font-body font-[300]" style={{ fontSize: 12, color: '#B8BCC2' }}>{spec}</span>
                     </li>
                   ))}
                 </ul>
@@ -386,8 +386,8 @@ const IdentityServices = () => {
         <div
           className="flex flex-col md:flex-row items-start md:items-center justify-between gap-3"
           style={{
-            backgroundColor: 'rgba(197,199,203,0.05)',
-            border: '1px solid rgba(197,199,203,0.15)',
+            backgroundColor: 'rgba(240, 241, 243,0.05)',
+            border: '1px solid rgba(240, 241, 243,0.15)',
             borderRadius: 4,
             padding: '40px 48px',
           }}
@@ -396,7 +396,7 @@ const IdentityServices = () => {
             <h4 className="font-display font-[700]" style={{ fontSize: 20, color: '#FFFFFF', marginBottom: 6 }}>
               Identity Is the Perimeter.
             </h4>
-            <p className="font-body font-[300]" style={{ fontSize: 13, color: '#6E7378', lineHeight: 1.6 }}>
+            <p className="font-body font-[300]" style={{ fontSize: 13, color: '#B8BCC2', lineHeight: 1.6 }}>
               Every breach starts with an identity. Silxor enforces verification at every layer.
             </p>
           </div>
@@ -406,13 +406,13 @@ const IdentityServices = () => {
             style={{
               fontSize: 11,
               letterSpacing: '0.12em',
-              backgroundColor: '#C5C7CB',
+              backgroundColor: '#F0F1F3',
               color: '#0B0B0B',
               padding: '12px 24px',
               borderRadius: 2,
             }}
             onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = '#FFFFFF')}
-            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#C5C7CB')}
+            onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = '#F0F1F3')}
           >
             Request Identity Assessment
             <ArrowRight style={{ width: 14, height: 14 }} />

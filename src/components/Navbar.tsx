@@ -93,11 +93,11 @@ const Navbar = () => {
             style={{
               width: 28,
               height: 28,
-              background: "linear-gradient(135deg, #C5C7CB 0%, #6E7378 55%, #25282C 100%)",
+              background: "linear-gradient(135deg, #F0F1F3 0%, #B8BCC2 55%, #25282C 100%)",
             }}
           >
             <div className="absolute" style={{ inset: 1, backgroundColor: "#141414" }} />
-            <div className="absolute" style={{ inset: 6, backgroundColor: "#C5C7CB" }} />
+            <div className="absolute" style={{ inset: 6, backgroundColor: "#F0F1F3" }} />
           </div>
           <span
             className="font-display font-[800] text-white tracking-tight"
@@ -118,7 +118,7 @@ const Navbar = () => {
                   style={{
                     fontSize: 8,
                     letterSpacing: "0.15em",
-                    color: active ? "#C5C7CB" : "#6E7378",
+                    color: active ? "#F0F1F3" : "#B8BCC2",
                     marginBottom: 3,
                   }}
                 >
@@ -141,8 +141,8 @@ const Navbar = () => {
                     height: 2,
                     marginTop: 4,
                     width: active ? "100%" : 0,
-                    backgroundColor: "#C5C7CB",
-                    boxShadow: active ? "0 0 8px rgba(197,199,203,0.5)" : "none",
+                    backgroundColor: "#F0F1F3",
+                    boxShadow: active ? "0 0 8px rgba(240, 241, 243,0.5)" : "none",
                   }}
                   aria-hidden
                 />
@@ -192,7 +192,7 @@ const Navbar = () => {
             className="relative group overflow-hidden transition-all duration-300 active:scale-95 hover:bg-white"
             style={{
               padding: "12px 22px",
-              backgroundColor: "#C5C7CB",
+              backgroundColor: "#F0F1F3",
               color: "#0B0B0B",
               fontSize: 11,
               letterSpacing: "0.15em",
@@ -226,12 +226,12 @@ const Navbar = () => {
           aria-label="Toggle menu"
         >
           {mobileOpen ? (
-            <X className="w-5 h-5" style={{ color: "#C5C7CB" }} />
+            <X className="w-5 h-5" style={{ color: "#F0F1F3" }} />
           ) : (
             <div className="flex flex-col items-end gap-[4px]">
-              <span style={{ width: 22, height: 1, backgroundColor: "#C5C7CB", display: "block" }} />
-              <span style={{ width: 14, height: 1, backgroundColor: "#C5C7CB", display: "block" }} />
-              <span style={{ width: 22, height: 1, backgroundColor: "#C5C7CB", display: "block" }} />
+              <span style={{ width: 22, height: 1, backgroundColor: "#F0F1F3", display: "block" }} />
+              <span style={{ width: 14, height: 1, backgroundColor: "#F0F1F3", display: "block" }} />
+              <span style={{ width: 22, height: 1, backgroundColor: "#F0F1F3", display: "block" }} />
             </div>
           )}
         </button>
@@ -247,8 +247,8 @@ const Navbar = () => {
           style={{
             height: "100%",
             width: `${scrollPct}%`,
-            background: "linear-gradient(90deg, transparent 0%, #C5C7CB 50%, transparent 100%)",
-            boxShadow: "0 0 8px rgba(197,199,203,0.5)",
+            background: "linear-gradient(90deg, transparent 0%, #F0F1F3 50%, transparent 100%)",
+            boxShadow: "0 0 8px rgba(240, 241, 243,0.5)",
             transition: "width 120ms linear",
           }}
         />
@@ -278,8 +278,8 @@ const Navbar = () => {
                     display: "inline-block",
                     width: 6,
                     height: 6,
-                    backgroundColor: active ? "#C5C7CB" : "transparent",
-                    border: "1px solid #C5C7CB",
+                    backgroundColor: active ? "#F0F1F3" : "transparent",
+                    border: "1px solid #F0F1F3",
                   }}
                 />
                 {link.label}
@@ -290,18 +290,18 @@ const Navbar = () => {
               fontFamily: "'JetBrains Mono', monospace",
               fontSize: 12,
               letterSpacing: "0.15em",
-              color: active ? "#FFFFFF" : "#C5C7CB",
+              color: active ? "#FFFFFF" : "#F0F1F3",
               borderBottom: "1px solid #25282C",
             };
             return link.hash ? (
               <a key={i} href={link.hash} onClick={(e) => handleNavClick(e, link)} className={cls} style={st}>
                 {inner}
-                <span style={{ fontSize: 9, color: "#6E7378" }}>{String(i + 1).padStart(2, "0")}</span>
+                <span style={{ fontSize: 9, color: "#B8BCC2" }}>{String(i + 1).padStart(2, "0")}</span>
               </a>
             ) : (
               <Link key={i} to={link.to} onClick={(e) => handleNavClick(e, link)} className={cls} style={st}>
                 {inner}
-                <span style={{ fontSize: 9, color: "#6E7378" }}>{String(i + 1).padStart(2, "0")}</span>
+                <span style={{ fontSize: 9, color: "#B8BCC2" }}>{String(i + 1).padStart(2, "0")}</span>
               </Link>
             );
           })}
@@ -317,7 +317,7 @@ const Navbar = () => {
               fontSize: 12,
               letterSpacing: "0.15em",
               fontWeight: 700,
-              backgroundColor: "#C5C7CB",
+              backgroundColor: "#F0F1F3",
               color: "#0B0B0B",
               padding: "14px 20px",
               borderRadius: 2,

@@ -17,14 +17,14 @@
     --popover-foreground: 0 0% 100%;
 
     /* Stainless Steel Silver */
-    --primary: 220 5% 79%; /* #C5C7CB */
+    --primary: 220 5% 79%; /* #F0F1F3 */
     --primary-foreground: 0 0% 4%;
 
     --secondary: 220 7% 16%;
     --secondary-foreground: 0 0% 100%;
 
     --muted: 220 7% 16%;
-    --muted-foreground: 214 4% 45%; /* #6E7378 */
+    --muted-foreground: 216 8% 74%; /* #B8BCC2 */
 
     --accent: 220 5% 79%;
     --accent-foreground: 0 0% 4%;
@@ -32,7 +32,7 @@
     --destructive: 0 70% 58%;
     --destructive-foreground: 0 0% 100%;
 
-    --text-muted: 214 4% 45%;
+    --text-muted: 216 8% 74%;
 
     --border: 0 0% 100% / 0.10;
     --border-highlight: 0 0% 100% / 0.18;
@@ -82,7 +82,7 @@
 
   /* Selection */
   ::selection {
-    background: rgba(197, 199, 203, 0.3);
+    background: rgba(240, 241, 243, 0.3);
     color: #FFFFFF;
   }
 
@@ -94,11 +94,11 @@
     background: #141414;
   }
   ::-webkit-scrollbar-thumb {
-    background: rgba(197, 199, 203, 0.4);
+    background: rgba(240, 241, 243, 0.4);
     border-radius: 0;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: rgba(197, 199, 203, 0.8);
+    background: rgba(240, 241, 243, 0.8);
   }
 }
 
@@ -111,9 +111,9 @@
   }
 
   .surface-elevated:hover {
-    border-color: rgba(197, 199, 203, 0.3);
+    border-color: rgba(240, 241, 243, 0.3);
     background: #25282C;
-    border-top-color: rgba(197, 199, 203, 0.5);
+    border-top-color: rgba(240, 241, 243, 0.5);
   }
 
   .functional-glass {
@@ -123,14 +123,14 @@
   }
 
   .text-institutional {
-    color: #6E7378;
+    color: #B8BCC2;
     font-size: 14px;
     line-height: 1.7;
     font-weight: 300;
   }
 
   .accent-border {
-    border-left: 2px solid rgba(197, 199, 203, 0.4);
+    border-left: 2px solid rgba(240, 241, 243, 0.4);
   }
 
   .container-content {
@@ -182,7 +182,7 @@
     font-size: 10px;
     font-weight: 400;
     letter-spacing: 0.2em;
-    color: #C5C7CB;
+    color: #F0F1F3;
     text-transform: uppercase;
     margin-bottom: 16px;
   }
@@ -192,7 +192,7 @@
     display: block;
     width: 24px;
     height: 1px;
-    background: #C5C7CB;
+    background: #F0F1F3;
   }
 
   /* Blinking cursor animation */
@@ -228,7 +228,7 @@
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border: 1px solid #C5C7CB;
+    border: 1px solid #F0F1F3;
     transform: translate(-50%, -50%);
     animation: pulse-ring 2s ease-out infinite;
   }
@@ -246,7 +246,7 @@
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     font-weight: 400;
-    color: #6E7378;
+    color: #B8BCC2;
     padding: 6px 12px;
     border-radius: 2px;
     gap: 6px;

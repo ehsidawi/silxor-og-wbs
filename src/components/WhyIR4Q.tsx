@@ -34,7 +34,7 @@ const WhySilxor = () => {
               <h3 className="font-body font-[500]" style={{ fontSize: 15, color: "#FFFFFF", marginBottom: 6 }}>
                 {pillar.title}
               </h3>
-              <p className="font-body font-[300]" style={{ fontSize: 13, color: "#6E7378", lineHeight: 1.65 }}>
+              <p className="font-body font-[300]" style={{ fontSize: 13, color: "#B8BCC2", lineHeight: 1.65 }}>
                 {pillar.body}
               </p>
             </div>

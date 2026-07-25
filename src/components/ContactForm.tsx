@@ -81,13 +81,13 @@ const ContactForm = () => {
     fontSize: 11,
     textTransform: "uppercase",
     letterSpacing: "0.08em",
-    color: "#6E7378",
+    color: "#B8BCC2",
     marginBottom: 8,
     display: "block",
   };
 
   const handleFocus = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    e.currentTarget.style.borderColor = "rgba(197,199,203,0.4)";
+    e.currentTarget.style.borderColor = "rgba(240, 241, 243,0.4)";
   };
   const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     e.currentTarget.style.borderColor = "rgba(255,255,255,0.08)";
@@ -183,7 +183,7 @@ const ContactForm = () => {
             style={{
               fontSize: 11,
               letterSpacing: "0.1em",
-              backgroundColor: "#C5C7CB",
+              backgroundColor: "#F0F1F3",
               color: "#0B0B0B",
               padding: "14px 28px",
               borderRadius: 2,
@@ -197,7 +197,7 @@ const ContactForm = () => {
               }
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.backgroundColor = "#C5C7CB";
+              e.currentTarget.style.backgroundColor = "#F0F1F3";
             }}
           >
             {submitting ? t("Sending...", "جارٍ الإرسال...") : t("Send Message", "إرسال الرسالة")}
@@ -205,7 +205,7 @@ const ContactForm = () => {
         </div>
 
         {status === "success" && (
-          <div className="sm:col-span-2 font-body font-[300] text-center" style={{ fontSize: 14, color: "#C5C7CB", animation: "fadeIn 300ms ease" }}>
+          <div className="sm:col-span-2 font-body font-[300] text-center" style={{ fontSize: 14, color: "#F0F1F3", animation: "fadeIn 300ms ease" }}>
             {t("Your email client has opened with your message pre filled. Please send it to complete your inquiry.", "تم فتح عميل البريد الإلكتروني مع رسالتك المعبأة مسبقاً. يرجى إرسالها لإتمام استفسارك.")}
           </div>
         )}

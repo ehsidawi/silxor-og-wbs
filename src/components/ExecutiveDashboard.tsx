@@ -14,7 +14,7 @@ const Ring = ({ pct, label, value }: { pct: number; label: string; value: string
             cx="54"
             cy="54"
             r={r}
-            stroke="#C5C7CB"
+            stroke="#F0F1F3"
             strokeWidth="4"
             fill="none"
             strokeDasharray={`${dash} ${c}`}
@@ -34,7 +34,7 @@ const Ring = ({ pct, label, value }: { pct: number; label: string; value: string
       </div>
       <span
         className="font-mono uppercase mt-2"
-        style={{ fontSize: 10, letterSpacing: "0.18em", color: "#6E7378" }}
+        style={{ fontSize: 10, letterSpacing: "0.18em", color: "#B8BCC2" }}
       >
         {label}
       </span>
@@ -47,13 +47,13 @@ const Bar = ({ label, pct }: { label: string; pct: number }) => (
     <div className="flex items-center justify-between mb-1">
       <span
         className="font-mono uppercase"
-        style={{ fontSize: 10, letterSpacing: "0.15em", color: "#C5C7CB" }}
+        style={{ fontSize: 10, letterSpacing: "0.15em", color: "#F0F1F3" }}
       >
         {label}
       </span>
       <span
         className="font-mono"
-        style={{ fontSize: 10, color: "#6E7378" }}
+        style={{ fontSize: 10, color: "#B8BCC2" }}
       >
         {pct}%
       </span>
@@ -63,7 +63,7 @@ const Bar = ({ label, pct }: { label: string; pct: number }) => (
         style={{
           height: "100%",
           width: `${pct}%`,
-          background: "linear-gradient(90deg, #6E7378, #C5C7CB)",
+          background: "linear-gradient(90deg, #B8BCC2, #F0F1F3)",
           transition: "width 1.4s ease",
         }}
       />
@@ -124,7 +124,7 @@ const ExecutiveDashboard = () => {
               </div>
               <div
                 className="font-mono uppercase mt-2"
-                style={{ fontSize: 10, letterSpacing: "0.18em", color: "#6E7378" }}
+                style={{ fontSize: 10, letterSpacing: "0.18em", color: "#B8BCC2" }}
               >
                 {k.label}
               </div>
@@ -137,7 +137,7 @@ const ExecutiveDashboard = () => {
           <div className="surface-elevated" style={{ padding: 22 }}>
             <div
               className="font-mono uppercase mb-4"
-              style={{ fontSize: 10, letterSpacing: "0.2em", color: "#C5C7CB" }}
+              style={{ fontSize: 10, letterSpacing: "0.2em", color: "#F0F1F3" }}
             >
               {t("OPERATING POSTURE", "الوضع التشغيلي")}
             </div>
@@ -150,7 +150,7 @@ const ExecutiveDashboard = () => {
           <div className="surface-elevated" style={{ padding: 22 }}>
             <div
               className="font-mono uppercase mb-4"
-              style={{ fontSize: 10, letterSpacing: "0.2em", color: "#C5C7CB" }}
+              style={{ fontSize: 10, letterSpacing: "0.2em", color: "#F0F1F3" }}
             >
               {t("PRACTICE MATURITY", "نضج الممارسات")}
             </div>

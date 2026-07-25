@@ -55,10 +55,10 @@ const Footer = () => {
             <Link to="/" className="flex items-center gap-3 mb-3">
               <span className="font-display font-[800]" style={{ fontSize: 24, color: "#FFFFFF" }}>
                 Silxor
-                <span className="inline-block ml-1" style={{ width: 6, height: 6, backgroundColor: "#C5C7CB", verticalAlign: "middle", marginBottom: 2 }} />
+                <span className="inline-block ml-1" style={{ width: 6, height: 6, backgroundColor: "#F0F1F3", verticalAlign: "middle", marginBottom: 2 }} />
               </span>
             </Link>
-            <p className="font-body font-[300]" style={{ fontSize: 14, color: "#6E7378", lineHeight: 1.7 }}>
+            <p className="font-body font-[300]" style={{ fontSize: 14, color: "#B8BCC2", lineHeight: 1.7 }}>
               {t(
                 "Silxor Tech and Cyber Global delivers strategy, engineering, security, cloud, AI, and managed services for institutions that cannot fail.",
                 "تقدم سيلكسور تك وسايبر العالمية الاستراتيجية والهندسة والأمن والسحابة والذكاء الاصطناعي والخدمات المدارة."
@@ -80,9 +80,9 @@ const Footer = () => {
                     key={l.label}
                     to={l.to}
                     className="block font-body font-[300] transition-colors duration-200"
-                    style={{ fontSize: 14, color: "#6E7378" }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = "#C5C7CB")}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = "#6E7378")}
+                    style={{ fontSize: 14, color: "#B8BCC2" }}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = "#F0F1F3")}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = "#B8BCC2")}
                   >
                     {l.label}
                   </Link>
@@ -102,7 +102,7 @@ const Footer = () => {
         </div>
 
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 24 }}>
-          <p className="font-body font-[300]" style={{ fontSize: 12, color: "#6E7378" }}>
+          <p className="font-body font-[300]" style={{ fontSize: 12, color: "#B8BCC2" }}>
             {t("© 2026 Silxor Tech and Cyber Global.", "© 2026 سيلكسور تك وسايبر العالمية.")}
           </p>
         </div>

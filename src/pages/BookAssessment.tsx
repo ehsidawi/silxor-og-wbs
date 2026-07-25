@@ -88,7 +88,7 @@ const BookAssessment = () => {
           style={{
             fontSize: 12,
             letterSpacing: "0.2em",
-            color: "#C5C7CB",
+            color: "#F0F1F3",
             textTransform: "uppercase",
             fontWeight: 700,
             fontFamily: arFont,
@@ -101,7 +101,7 @@ const BookAssessment = () => {
           style={{
             fontSize: 11,
             letterSpacing: "0.2em",
-            color: "#6E7378",
+            color: "#B8BCC2",
             textTransform: "uppercase",
           }}
         >
@@ -129,7 +129,7 @@ const BookAssessment = () => {
           style={{
             fontSize: 16,
             lineHeight: 1.7,
-            color: "#C5C7CB",
+            color: "#F0F1F3",
             maxWidth: 640,
             marginBottom: 8,
             fontFamily: arFont,
@@ -161,7 +161,7 @@ const BookAssessment = () => {
               alignItems: "center",
               fontSize: 10,
               letterSpacing: "0.2em",
-              color: "#6E7378",
+              color: "#B8BCC2",
               textTransform: "uppercase",
               padding: "4px 8px 12px",
               borderBottom: "1px solid rgba(255,255,255,0.06)",
@@ -169,7 +169,7 @@ const BookAssessment = () => {
             }}
           >
             <span>{t("CAL // ASSESSMENT", "CAL // تقييم")}</span>
-            <span style={{ color: "#C5C7CB" }} className="animate-pulse">
+            <span style={{ color: "#F0F1F3" }} className="animate-pulse">
               LIVE ●
             </span>
           </div>
@@ -190,7 +190,7 @@ const BookAssessment = () => {
           style={{
             fontSize: 10,
             letterSpacing: "0.2em",
-            color: "#6E7378",
+            color: "#B8BCC2",
             textTransform: "uppercase",
             marginTop: 16,
             textAlign: "center",

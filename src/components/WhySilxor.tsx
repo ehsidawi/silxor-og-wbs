@@ -45,7 +45,7 @@ const WhySilxor = () => {
               >
                 <span
                   className="font-mono uppercase"
-                  style={{ fontSize: 11, letterSpacing: "0.15em", color: "#C5C7CB" }}
+                  style={{ fontSize: 11, letterSpacing: "0.15em", color: "#F0F1F3" }}
                 >
                   {r.label}
                 </span>
@@ -54,7 +54,7 @@ const WhySilxor = () => {
                     width: 22,
                     height: 22,
                     borderRadius: 2,
-                    background: "#C5C7CB",
+                    background: "#F0F1F3",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",

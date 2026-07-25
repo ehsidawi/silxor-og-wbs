@@ -59,17 +59,17 @@ const Industries = () => {
                     width: 34,
                     height: 34,
                     borderRadius: 4,
-                    border: "1px solid rgba(197,199,203,0.2)",
+                    border: "1px solid rgba(240, 241, 243,0.2)",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                   }}
                 >
-                  <Icon style={{ width: 16, height: 16, color: "#C5C7CB" }} strokeWidth={1.5} />
+                  <Icon style={{ width: 16, height: 16, color: "#F0F1F3" }} strokeWidth={1.5} />
                 </div>
                 <span
                   className="font-mono uppercase"
-                  style={{ fontSize: 10, letterSpacing: "0.15em", color: "#C5C7CB" }}
+                  style={{ fontSize: 10, letterSpacing: "0.15em", color: "#F0F1F3" }}
                 >
                   {it.label}
                 </span>
