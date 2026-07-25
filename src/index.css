@@ -7,7 +7,7 @@
 @layer base {
   :root {
     /* Titanium / Stainless / Matte Black */
-    --background: 0 0% 4%; /* #0B0B0B */
+    --background: 0 0% 8%; /* #141414 */
     --foreground: 0 0% 100%; /* #FFFFFF */
 
     --card: 220 7% 16%; /* #25282C */
