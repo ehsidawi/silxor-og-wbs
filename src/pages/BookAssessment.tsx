@@ -168,7 +168,7 @@ const BookAssessment = () => {
               marginBottom: 12,
             }}
           >
-            <span>{t("CAL // TECHNICAL ASSESSMENT", "CAL // تقييم تقني")}</span>
+            <span>{t("CAL // ASSESSMENT", "CAL // تقييم")}</span>
             <span style={{ color: "#C5C7CB" }} className="animate-pulse">
               LIVE ●
             </span>
