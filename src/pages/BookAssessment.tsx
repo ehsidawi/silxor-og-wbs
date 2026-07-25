@@ -58,12 +58,11 @@ const BookAssessment = () => {
 
     Cal.ns[CAL_NAMESPACE]("ui", {
       cssVarsPerTheme: {
-        light: { "cal-brand": "#0B0B0B" },
-        dark: { "cal-brand": "#C5C7CB" },
+        light: { "cal-brand": "#000000" },
+        dark: { "cal-brand": "#ffffff" },
       },
       hideEventTypeDetails: false,
       layout: "month_view",
-      theme: "dark",
     });
   }, []);
 
