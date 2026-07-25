@@ -5,6 +5,7 @@ import { useEffect } from "react";
 
 interface Card {
   org: string;
+  year: number;
   title?: string;
   industry: string;
   technology: string;
