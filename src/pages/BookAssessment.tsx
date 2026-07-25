@@ -2,8 +2,8 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/context/LanguageContext";
 
-const CAL_LINK = "silxor/technical-assessment";
-const CAL_NAMESPACE = "technical-assessment";
+const CAL_LINK = "silxor/assessment";
+const CAL_NAMESPACE = "assessment";
 
 const BookAssessment = () => {
   const { t, language } = useLanguage();
