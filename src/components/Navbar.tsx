@@ -187,8 +187,11 @@ const Navbar = () => {
             <LanguageToggle />
           </div>
 
-          <Link
-            to="/book"
+          <button
+            type="button"
+            data-cal-namespace="assessment"
+            data-cal-link="silxor/assessment"
+            data-cal-config='{"layout":"month_view"}'
             className="relative group overflow-hidden transition-all duration-300 active:scale-95 hover:bg-white"
             style={{
               padding: "12px 22px",
@@ -200,6 +203,8 @@ const Navbar = () => {
               textTransform: "uppercase",
               fontFamily: "'DM Sans', sans-serif",
               borderRadius: 2,
+              border: "none",
+              cursor: "pointer",
             }}
           >
             <span
@@ -216,7 +221,7 @@ const Navbar = () => {
                 <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="square" />
               </svg>
             </span>
-          </Link>
+          </button>
         </div>
 
         {/* Mobile toggle */}
