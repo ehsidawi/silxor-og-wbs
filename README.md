@@ -32,10 +32,10 @@ This template is built with:
 
 ```sh
 # 1. Clone the template
-git clone <YOUR_GIT_URL>
+git clone https://github.com/ehsidawi/silxor-og-wbs-2a3ff6ca.git
 
 # 2. Enter the project
-cd <YOUR_PROJECT_NAME>
+cd silxor-og-wbs-2a3ff6ca
 
 # 3. Install dependencies
 npm i
