@@ -1,73 +1,108 @@
-# Welcome to your Lovable project
+# Original Silxor Next.js Design Website Template
 
-## Project info
+The official Silxor design system starter — a portable, matte-black + stainless-steel enterprise website template originally built for **Silxor Group Holding**. Use this repo as the base for every new Silxor-branded site.
 
-**URL**: https://lovable.dev/projects/e2641111-d7a6-479d-94c8-ec8e0020c813
+## What this template is
 
-## How can I edit this code?
+A high-contrast, engineering-forward corporate website shell with:
 
-There are several ways of editing your application.
+- Matte black + stainless steel color system
+- JetBrains Mono / Work Sans typography
+- Precision-aligned industrial layout language
+- Bilingual EN/AR support (via React context)
+- Sticky side-rail navigation, scroll-spy, and mobile drawer
+- Compliance/enterprise iconography (ISO 27001, Tier IV, SLA)
+- Mailto-driven CTAs (no backend forms required by default)
+- Cal.com booking page integration (`/book` route)
 
-**Use Lovable**
+## Tech stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e2641111-d7a6-479d-94c8-ec8e0020c813) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
+This template is built with:
 
 - Vite
+- React 18
 - TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- Tailwind CSS v3
+- shadcn/ui
+- Framer Motion
 
-## How can I deploy this project?
+> The Silxor design system can be ported to Next.js by copying the same tokens and components into a Next.js app.
 
-Simply open [Lovable](https://lovable.dev/projects/e2641111-d7a6-479d-94c8-ec8e0020c813) and click on Share -> Publish.
+## Quick start
 
-## Can I connect a custom domain to my Lovable project?
+```sh
+# 1. Clone the template
+git clone <YOUR_GIT_URL>
 
-Yes, you can!
+# 2. Enter the project
+cd <YOUR_PROJECT_NAME>
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+# 3. Install dependencies
+npm i
+# or
+bun i
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+# 4. Start the dev server
+npm run dev
+# or
+bun run dev
+```
+
+Open `http://localhost:8080` in your browser.
+
+## How to use this template
+
+1. **Copy the repo** for each new Silxor website or client project.
+2. **Keep the design system files intact** — update only `src/components/`, `src/pages/`, text content, and `index.html` metadata.
+3. **Update branding** in:
+   - `index.html` (`<title>`, meta tags, JSON-LD)
+   - `src/components/Hero.tsx` (headline, subhead)
+   - `src/components/Navbar.tsx` (nav links, logo wordmark)
+   - `src/components/Footer.tsx` (copyright, links)
+4. **Update the global email** used by CTAs in `src/components/ContactForm.tsx` and any `mailto:` helpers.
+5. **Replace or extend pages** inside `src/pages/`. Routes are defined in `src/App.tsx`.
+6. **Update Cal.com booking slug** in `src/pages/BookAssessment.tsx` if you need a different scheduling link.
+7. **Deploy** via Lovable (`Share → Publish`) or push to your own host.
+
+## Design system tokens
+
+| Token | Value | Usage |
+|-------|-------|-------|
+| Background | `#141414` | Page / section backgrounds |
+| Surface | `#25282C` | Cards, nav segments, footers |
+| Border | `rgba(255,255,255,0.06)` (hover 0.18) | Dividers, hairlines, frames |
+| Primary text | `#FFFFFF` | Headlines, body copy |
+| Muted text | `#B8BCC2` | Captions, secondary text |
+| Steel accent | `#F0F1F3` | CTAs, highlights, brand marks |
+| Success / Alert | `#2A9D5C` / `#C94C4C` | Status indicators |
+
+**Fonts:** JetBrains Mono (display, mono, code) and Work Sans (body, UI).
+
+## Key components
+
+- `Hero.tsx` — Industrial split hero with giant wordmark and spec sheet card.
+- `Navbar.tsx` — Precision sovereign nav with scroll-spy and animated links.
+- `SideRail.tsx` — Sticky left rail with vertical section index.
+- `Footer.tsx` — Compact corporate footer.
+- `ContactForm.tsx` — Universal mailto generator for all email clients.
+- `BookAssessment.tsx` — Cal.com inline booking page themed to match the site.
+- `Services.tsx`, `Industries.tsx`, `Partners.tsx`, `WhySilxor.tsx` — Enterprise content blocks.
+
+## Notes
+
+- All CTAs default to dynamic `mailto:` links to keep contact flow simple and client-side only.
+- The `Book an Assessment` CTA routes to `/book` and uses a Cal.com inline embed.
+- Bilingual EN/AR toggle is wired through `LanguageContext`; Arabic text uses the Cairo font stack.
+- No backend forms are included unless Lovable Cloud / Supabase is explicitly enabled.
+
+## Deploy
+
+Deploy from Lovable with `Share → Publish`, or build manually:
+
+```sh
+npm run build
+```
+
+## License
+
+© 2026 Silxor Group Holding. All rights reserved.
