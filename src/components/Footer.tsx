@@ -101,10 +101,21 @@ const Footer = () => {
           ))}
         </div>
 
-        <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 24 }}>
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2" style={{ borderTop: "1px solid rgba(255,255,255,0.06)", paddingTop: 24 }}>
           <p className="font-body font-[300]" style={{ fontSize: 12, color: "#B8BCC2" }}>
             {t("© 2026 Silxor Group Holding.", "© 2026 مجموعة سيلكسور القابضة.")}
           </p>
+          <a
+            href="https://www.linkedin.com/in/ehsidawi"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-body font-[300] transition-colors duration-200"
+            style={{ fontSize: 12, color: "#B8BCC2" }}
+            onMouseEnter={(e) => (e.currentTarget.style.color = "#F0F1F3")}
+            onMouseLeave={(e) => (e.currentTarget.style.color = "#B8BCC2")}
+          >
+            {t("Designed by hyberid", "Designed by hyberid")}
+          </a>
         </div>
       </div>
     </footer>
