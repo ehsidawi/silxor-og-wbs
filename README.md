@@ -35,7 +35,7 @@ This template is built with:
 git clone https://github.com/ehsidawi/silxor-og-wbs.git
 
 # 2. Enter the project
-cd silxor-og-wbs-2a3ff6ca
+cd silxor-og-wbs
 
 # 3. Install dependencies
 npm i
