@@ -60,8 +60,11 @@ const StartEngagement = () => {
         </div>
 
         <div className="flex justify-center" style={{ marginTop: 48 }}>
-          <a
-            href="/book"
+          <button
+            type="button"
+            data-cal-namespace="assessment"
+            data-cal-link="silxor/assessment"
+            data-cal-config='{"layout":"month_view"}'
             className="font-mono font-[400] uppercase transition-all duration-200 flex items-center gap-2"
             style={{
               fontSize: 12,
@@ -70,12 +73,14 @@ const StartEngagement = () => {
               color: "#0B0B0B",
               padding: "16px 32px",
               borderRadius: 2,
+              border: "none",
+              cursor: "pointer",
             }}
             onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#FFFFFF")}
             onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#F0F1F3")}
           >
             {t("Book an Assessment", "احجز تقييماً")}
-          </a>
+          </button>
         </div>
         
       </div>
