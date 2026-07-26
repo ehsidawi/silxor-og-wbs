@@ -1,0 +1,9 @@
+# CODEOWNERS for silxor-og-wbs
+# This file defines who must review and approve changes before they can be merged into main.
+# GitHub branch protection rules must be enabled to enforce these requirements.
+
+# Global rule: all files in the repository require review by the maintainer
+* @ehsidawi
+
+# If you create a dedicated maintainer team later, replace the line above with:
+# * @ehsidawi/maintainers
