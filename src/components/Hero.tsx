@@ -88,8 +88,11 @@ const Hero = () => {
               )}
             </p>
             <div className="flex flex-wrap items-center gap-4">
-              <Link
-                to="/book"
+              <button
+                type="button"
+                data-cal-namespace="assessment"
+                data-cal-link="silxor/assessment"
+                data-cal-config='{"layout":"month_view"}'
                 className="inline-flex items-center justify-center uppercase transition-colors"
                 style={{
                   fontSize: 12,
@@ -99,12 +102,14 @@ const Hero = () => {
                   padding: "16px 32px",
                   fontWeight: 700,
                   fontFamily: arFont,
+                  border: "none",
+                  cursor: "pointer",
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.backgroundColor = "#F0F1F3")}
                 onMouseLeave={(e) => (e.currentTarget.style.backgroundColor = "#FFFFFF")}
               >
                 {t("Book an Assessment", "احجز تقييماً")}
-              </Link>
+              </button>
               <a
                 href="#infrastructure"
                 className="inline-flex items-center justify-center uppercase transition-colors"
