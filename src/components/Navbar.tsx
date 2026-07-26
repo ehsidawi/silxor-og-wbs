@@ -313,10 +313,13 @@ const Navbar = () => {
           <div className="flex items-center justify-center py-6">
             <LanguageToggle />
           </div>
-          <Link
-            to="/book"
+          <button
+            type="button"
+            data-cal-namespace="assessment"
+            data-cal-link="silxor/assessment"
+            data-cal-config='{"layout":"month_view"}'
             onClick={() => setMobileOpen(false)}
-            className="flex items-center justify-center gap-2 uppercase"
+            className="flex items-center justify-center gap-2 uppercase w-full"
             style={{
               fontFamily: "'DM Sans', sans-serif",
               fontSize: 12,
@@ -326,13 +329,15 @@ const Navbar = () => {
               color: "#0B0B0B",
               padding: "14px 20px",
               borderRadius: 2,
+              border: "none",
+              cursor: "pointer",
             }}
           >
             {t("Book an Assessment", "احجز تقييماً")}
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden>
               <path d="M17 8l4 4m0 0l-4 4m4-4H3" strokeLinecap="square" />
             </svg>
-          </Link>
+          </button>
         </div>
       </div>
     </nav>
