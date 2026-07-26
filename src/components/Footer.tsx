@@ -114,7 +114,7 @@ const Footer = () => {
             onMouseEnter={(e) => (e.currentTarget.style.color = "#F0F1F3")}
             onMouseLeave={(e) => (e.currentTarget.style.color = "#B8BCC2")}
           >
-            {t("Designed by hyberid", "Designed by hyberid")}
+            {t("Designed by Ehsan Nidawi", "Designed by Ehsan Nidawi")}
           </a>
         </div>
       </div>
