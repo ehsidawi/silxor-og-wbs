@@ -32,7 +32,7 @@ This template is built with:
 
 ```sh
 # 1. Clone the template
-git clone https://github.com/ehsidawi/silxor-og-wbs-2a3ff6ca.git
+git clone https://github.com/ehsidawi/silxor-og-wbs.git
 
 # 2. Enter the project
 cd silxor-og-wbs-2a3ff6ca
